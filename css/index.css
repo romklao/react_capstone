@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+    font-family: Roboto;        
+    margin: 0 auto;
+}
+
+/*html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+} */
+
+#landingPage {
+    position: absolute;
+    margin: 0 auto;
+    top: 0%;
+}
+
+.imageCouch {
+    width: 100%;
+    height: auto;
+}
+
+.landingIntro {
+    position: absolute;
+    text-align: center;
+    top: 27%;
+    left: 50%;
+    font-size: 45px;
+
+    transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -o-transform: translateX(-50%) translateY(-50%);
+}
+
+.secondPage {
+    position: absolute;
+    margin: 0 auto;
+    top: 105%;
+}
+
+.imageBed {
+    width: 100%;
+    height: auto;
+}
+
+.thirdPage {
+    position: absolute;
+    margin: 0 auto;
+    top: 205%;
+}
+
+.imageDining {
+    width: 100%;
+    height: auto;
+}
+
+.fourthPage {
+    position: absolute;
+    margin: 0 auto;
+    top: 305%;
+}
+
+.imageTvstand {
+    max-width: 100%;
+    height: auto;
+}
+
+.fifthPage {
+    position: absolute;
+    margin: 0 auto;
+    top: 375%;
+}
+
+.imageCrib {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+@media (max-width: 500px) {
+    .landingIntro {
+        font-size: 17px;
+        top: 17%;
+    }
+    #landingPage {
+        top: 10%;
+    }
+    .secondPage {
+        top: 55%;
+    }
+    .thirdPage {
+        top: 98%;
+    }
+    .fourthPage {
+        top: 143%;
+    }
+    .fifthPage {
+        top: 172%;
+    }
+}
+
+
+
