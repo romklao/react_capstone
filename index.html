@@ -2,105 +2,117 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Thinkful React Capstone</title>
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/journal/bootstrap.min.css">
+        <!-- Latest compiled and minified CSS -->
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css"> -->
+
+        <!-- Optional theme -->
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap-theme.min.css"> -->
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/slate/bootstrap.min.css">
         <link rel="stylesheet" href="css/index.css">
 
     </head>
-    <body>
+    <body><!-- 
         <nav class="navbar navbar-default navbar-fixed-top">
-          <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">H.O.M.E</a>
-            </div>
-
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <ul class="nav navbar-nav">
-                <!-- <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Room <span class="caret"></span></a>
-                  <ul class="dropdown-menu" role="menu">
-                    <li class="divider"></li>
-                    <li><a href="#">Bedroom</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Bathroom</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Kid's Room</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Kitchen</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Dining Room</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Living Room</a></li>
-                    <li class="divider"></li> 
-                  </ul>
-                </li> -->
-              </ul>
-              <form class="navbar-form navbar-left" role="search">
-                <div class="form-group">
-                  <input type="text" class="form-control input-sm" placeholder="Search">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">R.O.M.E</a>
                 </div>
-                <button type="submit" class="btn btn-default btn-sm">Submit</button>
-              </form>
-              <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Log In</a></li>
-                <li><a href="#">Sign Up</a></li>
-              </ul>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <form class="navbar-form navbar-left" role="search">
+                        <div class="form-group">
+                          <input type="text" class="form-control input-md" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default btn-md">Submit</button>
+                    </form>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">Log In</a></li>
+                        <li><a href="#">Sign Up</a></li>
+                    </ul>
+                </div>
             </div>
-          </div>
         </nav>
-        
+        <div>
+            <div class="row landingPage">
+                <div class="col-lg-12 col-xs-12">
+                    <div>
+                        <img src="css/images/livingroom.jpg" class="imageLivingroom">
+                    </div>
+                </div>
+            </div>
+            <div class="row landingIntro">
+                <div class="col-lg-12 col-md-12">
+                    <div>
+                        <p class="title">We can help you decorate your home</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row whatWeDo">
+                <div class="col-lg-12 col-sm-12">
+                    <div class="explain">
+                        <p>Search for products, sign up to save your favorite items and share with your friends</p>
+                        <button class="btn btn-info loginBtn ">Log In</button>
+                        <button class="btn btn-success signupBtn">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row image-list">
+                <div class="col-lg-3 col-sm-6 col-xs-6 imageBox">
+                    <img src="css/images/chair2.jpg" class="imageFurnitures">
+                </div>
+                <div class="col-lg-3 col-sm-6 col-xs-6 imageBox">
+                    <img src="css/images/sofa2.jpg" class="imageFurnitures">
+                </div>
+                <div class="col-lg-3 col-sm-6 col-xs-6 imageBox">
+                    <img src="css/images/table1.jpg" class="imageFurnitures">
+                </div>
+                <div class="col-lg-3 col-sm-6 col-xs-6 imageBox">
+                    <img src="css/images/clock.jpg" class="imageFurnitures">
+                </div>
+            </div>
+            <div class="row image-list">
+                <div class="col-lg-3 col-sm-6 col-xs-6 imageBox">
+                    <img src="css/images/drawer.jpg" class="imageFurnitures">
+                </div>
+                <div class="col-lg-3 col-sm-6 col-xs-6 imageBox">
+                    <img src="css/images/light.jpg" class="imageFurnitures">
+                </div>
+                <div class="col-lg-3 col-sm-6 col-xs-6 imageBox">
+                    <img src="css/images/chair3.jpg" class="imageFurnitures">
+                </div>
+                <div class="col-lg-3 col-sm-6 col-xs-6 imageBox">
+                    <img src="css/images/chair6.jpg" class="imageFurnitures">
+                </div>
+            </div>
+            <div class="row image-list">
+                <div class="col-lg-3 col-sm-6 col-xs-6 imageBox">
+                    <img src="css/images/pillow.jpg" class="imageFurnitures">
+                </div>
+                <div class="col-lg-3 col-sm-6 col-xs-6 imageBox">
+                    <img src="css/images/mirror1.jpg" class="imageFurnitures">
+                </div>
+                <div class="col-lg-3 col-sm-6 col-xs-6 imageBox">
+                    <img src="css/images/crib.jpg" class="imageFurnitures">
+                </div>
+                <div class="col-lg-3 col-sm-6 col-xs-6 imageBox">
+                    <img src="css/images/chair5.jpg" class="imageFurnitures">
+                </div>
+            </div>
+        </div>
+ -->
 
-        <div class="row" id="landingPage">
-            <div class="col-lg-12 col-sm-12">
-                <div>
-                    <img src="css/images/couch1.jpg" class="imageCouch">
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12 col-sm-12 landingIntro">
-                <div>
-                    <p>H.O.M.E can help you decorate your home</p>
-                </div>
-            </div>
-        </div>
-        <div class="row secondPage">
-            <div class="col-lg-12 col-sm-12">
-                <div class="">
-                    <img src="css/images/bed.jpg" class="imageBed">
-                </div>
-            </div>
-        </div>
-        <div class="row thirdPage">
-            <div class="col-lg-12 col-sm-12">
-                <div>
-                    <img src="css/images/dining2.jpg" class="imageDining">
-                </div>
-            </div>
-        </div>
-        <div class="row fourthPage">
-            <div class="col-lg-12 col-sm-12">
-                <div class="forthImage">
-                    <img src="css/images/tvstand3.jpg" class="imageTvstand">
-                </div>
-            </div>
-        </div>
-        <div class="row fifthPage">
-            <div class="col-lg-12 col-sm-12">
-                <div>
-                    <img src="css/images/crib2.jpg" class="imageCrib">
-                </div>
-            </div>
-        </div>
-        
+        <div id="app"></div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
         <!-- Latest compiled and minified JavaScript -->
