@@ -6,66 +6,54 @@ import * as actions from '../actions/index';
 export class LoginModal extends React.Component {
     constructor(props) {
         super(props);
-
+        // this.state = {
+        //     username: '',
+        //     password: ''
+        // }
+        // this.onChange = this.onChange.bind(this);
         this.submitLoginForm = this.submitLoginForm.bind(this);
         this.hide = this.hide.bind(this);
     }
 
-
-    hide(event) {
-        event.preventDefault();
-        props.dispatch(actions.hideLogin());
-    }
+    // onChange(event) {
+    //     this.setState({[event.target.name]: event.target.value});
+    // }
 
     submitLoginForm(event) {
         event.preventDefault();
         var addEmail = this.addEmailInput.value;
         this.addEmailInput.value = '';
-        this.props.dispatch(actions.inputLogin(addEmail));
 
         var addPassword = this.addPasswordInput.value;
         this.addPasswordInput.value = '';
-        this.props.dispatch(actions.inputLogin(addPassword));
+
+        this.props.dispatch(actions.loginForm(addEmail, addPassword));
     }
+
+    hide(event) {
+        event.preventDefault();
+        this.props.dispatch(actions.hideLogin());
+    };
 
     render() {
         return (
-            // <div className="modal overlay">
-            //     <div className="modal-dialog">
-            //         <div className="modal-content">
-            //             <div className="modal-header">
-            //                 <button type="button" className="close" data-dismiss="modal" aria-hidden="true" onClick={this.hide}>&times;</button>
-            //                 <h4 className="modal-title">Fill out the information below to log in</h4>
-            //             </div>
-            //             <form onSubmit={this.submitLoginForm}>
-            //                 <div className="modal-body">
-            //                     <input type="email" ref={element => this.addEmailInput = element} id="login_email" className="form-control login_input" name="email" placeholder="Email address" />
-            //                     <input type="password" ref={element => this.addPasswordInput = element} id="login_password" className="form-control login_input" placeholder="Password" />
-            //                 </div>
-            //                 <div className="modal-footer">
-            //                     <button type="button" className="btn btn-default" data-dismiss="modal" onClick={this.hide}>Close</button>
-            //                     <button type="button" className="btn btn-primary">Submit</button>
-            //                 </div>
-            //             </form>
-            //         </div>
-            //     </div>
-            // </div>
-            <div className="overlay" id="modal">
-                <div className="content">
-                    <div className="header">
-                        <button type="button" className="close" onClick={this.hide}>&times;</button>
-                        <p className="titleLogin">Fill out the information below to log in</p>
-                    </div>
-                    <div>
+            <div className="overlay">
+                <div className="modal-dialog">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <button type="button" className="close" data-dismiss="modal" aria-hidden="true" onClick={this.hide}>&times;</button>
+                            <h4 className="modal-title">Fill out the information below to log in</h4>
+                        </div>
                         <form onSubmit={this.submitLoginForm}>
-                             <div className="body">
-                                <input type="email" ref={element => this.addEmailInput = element} id="login_email" className="form-control login_input" name="email" placeholder="Email address" />
-                                 <input type="password" ref={element => this.addPasswordInput = element} id="login_password" className="form-control login_input" placeholder="Password" />
-                             </div>
-                             <div className="footer">
-                                 <button type="button" className="btn btn-default" data-dismiss="modal" onClick={this.hide}>Close</button>
-                                 <button type="button" className="btn btn-primary">Submit</button>
-                             </div>
+                            <h4 className="errorMessage">{this.props.errorMessage}</h4>
+                            <div className="modal-body">
+                                <input type="text" ref={element => this.addEmailInput = element} className="form-control login_input login_email" placeholder="Username" />
+                                <input type="password" ref={element => this.addPasswordInput = element} className="form-control login_input login_pass" placeholder="Password" />
+                            </div>
+                            <div className="modal-footer">
+                                <button type="button" className="btn btn-default closeBtn" data-dismiss="modal" onClick={this.hide}>Close</button>
+                                <button type="submit" className="btn btn-default submitBtn">Submit</button>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -74,4 +62,11 @@ export class LoginModal extends React.Component {
     };
 };
 
-export default connect()(LoginModal);
+const mapStateToProps = (state, props) => {
+    return {
+        errorMessage: state.errorMessage,
+    }
+}
+
+
+export default connect(mapStateToProps)(LoginModal);

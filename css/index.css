@@ -22,6 +22,14 @@ html, body {
     margin: 0 auto;
 }
 
+.search_input {
+    margin-right: 5px;
+}
+
+/*.searchSubmit {
+    border-color: #B2C0C9;
+}*/
+
 .imageLivingroom {
     position: fixed;
     margin: 0 auto;
@@ -32,20 +40,20 @@ html, body {
 
 .landingIntro {
     position: fixed;
-    top: 41.5%;
-    left: 24%;
+    top: 18.5%; /*41.5%*/
+    left: 27%;
 }
 .title{
-    background-color: rgba(0,0,0,0.3);
-    border-radius: 3px; 
-    color: white;
+    /*background-color: rgba(0,0,0,0.3);
+    border-radius: 3px;*/ 
+    color: grey;
     font-size: 35px;
-    padding: 5px 15px 5px 15px;
+    /*padding: 5px 15px 5px 15px;*/
 }
 
 .container {
     position: absolute;
-    background-color: #F8F8F8; /*#f7f2ed*/
+    background-color: #f7fbfc; /* f2f9fc #f7f2ed #F8F8F8 #F5FAFE f9fbfc*/
     margin: 0 auto;
     padding: 100px 130px 130px 130px;
     width: 100%;
@@ -54,9 +62,9 @@ html, body {
 
 .whatWeDo {
     font-size: 25px;
-    color: #41474D;
+    color: grey; /*#41474D*/
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 55px;
     border:1px solid white;
     background-color: white;/* #f9f2ea*/
     padding-bottom: 40px;
@@ -69,19 +77,45 @@ html, body {
     background-color: #edf3fc;
 }
 
-.loginBtn, .signupBtn {
-    margin-top: 15px;
-    font-size: 16px;
-    border-radius: 2px;
+.explain {
+    margin-bottom: 20px;
 }
 
-.loginBtn {
+.loginBtn, .signupBtn {
+    /*margin-top: 15px;*/
+    margin-right: 3px;
+    margin-left: 3px;
+    /*font-size: 16px;
+    border-radius: 2px;*/
+}
+
+.loginBtn, .closeBtn{
     border-color: #228CAB;
 }
 
-.signupBtn {
+.signupBtn, .submitBtn {
     border-color: #389738;
 }
+
+.close {
+    color:grey;
+}
+
+.close:hover {
+    color: grey;
+}
+
+.login_input, .signup {
+    width: 370px;
+}
+
+.login_email, .signup_input {
+    margin-bottom: 10px;
+}
+
+.signup_confirm, .login_pass {
+    margin-bottom: 22px;
+} 
 
 .imageBox {
     border: 0px solid #F8F8F8;
@@ -105,34 +139,34 @@ html, body {
 }
 
 .overlay {
-    width: 500px;
-    height: 300px;
-    color: #fff;
-    background-color: white;
     position: absolute;
-    border: 1px solid white;
-    border-radius: 3px;
-    padding: 10px 30px 10px 30px;
-    top: 320%;
-    left: 28%;
+    color: grey;
+    top: 20%;
+    left: 26%;
     margin: 0 auto;
     z-index: 1000;
 }
-.content {
-    color: black;
-    background: white;
-    height: auto;
-    margin: 0 auto;
+
+.modal-content {
+/*    background-color: white;
+*/    width: 410px;
 }
 
-button.close {
-/*    margin-top: 5px;
-*/}
-
-.titleLogin {
-    padding-top: 10px;
-    padding-bottom: 20px;
+.modal-header {
+    text-align: center;
 }
+
+.modal-title {
+    color: grey;
+}
+
+.errorMessage {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    color: red;
+}
+
 
 
 @media (max-width: 500px) {

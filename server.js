@@ -1,100 +1,220 @@
-const mongoose = require('mongoose');
-mongoose.Promise = global.Promise;
 
+const mongoose = require('mongoose');
 const express = require('express');
 const mongo = require('mongo');
+const morgan = require('morgan');
 const bodyParser = require('body-parser');
-const {PORT, DATABASE_URL} = require('./config');
-const passport = require('passport');
 const jsonParser = bodyParser.json();
+const {PORT, DATABASE_URL} = require('./config');
+const {User} = require('./models');
+const router = express.Router();
+const {BasicStrategy} = require('passport-http')
+const validator = require('validator');
+const isEmpty = require('lodash/isEmpty');
+const bcrypt = require('bcrypt');
 
 const app = express();
 
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
+
+
 app.use(express.static('build'));
 app.use(jsonParser);
-
-var amazon = require('amazon-product-api');
-
-
-
+app.use(morgan('common'));
 
 app.post('/signup', (req, res) => {
+    console.log('signup')
+
     if (!req.body) {
-    return res.status(400).json({message: 'No request body'});
+      res.statusMessage = "No request body";
+      return res.status(400).end();
     }
+
+    var {username, email, password, passwordConfirmation} = req.body;
+            console.log('req.body', req.body)
 
     if (!('username' in req.body)) {
-    return res.status(422).json({message: 'Missing field: username'});
+      res.statusMessage = "Incorrect field: username";
+      return res.status(422).end();
     }
 
-    let {username, password, email} = req.body;
-
     if (typeof username !== 'string') {
-    return res.status(422).json({message: 'Incorrect field type: username'});
+      res.statusMessage = "Incorrect field type: username";
+      return res.status(422).end();
     }
 
     username = username.trim();
 
     if (username === '') {
-    return res.status(422).json({message: 'Missing field: username'});
-    }
-
-    if (!(password)) {
-    return res.status(422).json({message: 'Missing field: password'});
-    }
-
-    if (typeof password !== 'string') {
-    return res.status(422).json({message: 'Incorrect field type: password'});
-    }
-
-    password = password.trim();
-
-    if (password === '') {
-    return res.status(422).json({message: 'Incorrect field length: password'});
+      res.statusMessage = "Missing field: username";
+      return res.status(422).end();
     }
 
     if (!(email)) {
-    return res.status(422).json({message: 'Missing field: email'});
+      res.statusMessage = "Missing field: email";
+      return res.status(422).end();
+    return res.status(422).send('Missing field: email');
     }
 
     if (typeof email !== 'string') {
-    return res.status(422).json({message: 'Incorrect field type: email'});
+      res.statusMessage = "Incorrect field type: email";
+      return res.status(422).end();
     }
 
     email = email.trim();
 
     if (email === '') {
-    return res.status(422).json({message: 'Incorrect field length: email'});
+      res.statusMessage = "Missing field: email";
+      return res.status(422).end();
     }
 
+    if (!(password)) {
+      res.statusMessage = "Missing field: password";
+      return res.status(422).end();
+    }
+
+    if (typeof password !== 'string') {
+      res.statusMessage = "Incorrect field type: password";
+      return res.status(422).end();
+    }
+
+    password = password.trim();
+
+    if (password === '') {
+      res.statusMessage = "Missing field: password";
+      return res.status(422).end();
+    }
+
+    if (!(passwordConfirmation)) {
+      res.statusMessage = "Missing field: confirm password";
+      return res.status(422).end();
+    }
+
+    if (typeof passwordConfirmation !== 'string') {
+      res.statusMessage = "Incorrect field type: confirm password";
+      return res.status(422).end();
+    }
+
+    passwordConfirmation = passwordConfirmation.trim();
+
+    if (passwordConfirmation === '') {
+      res.statusMessage = "Missing field: confirm password";
+      return res.status(422).end();
+    }
+
+    if (password !== passwordConfirmation) {
+      res.statusMessage = "password and confirm password must match";
+      return res.status(422).end();
+    }
     // check for existing user
     return User
-    .find({username})
+    .find({email})
     .count()
     .exec()
     .then(count => {
+
       if (count > 0) {
-        return res.status(422).json({message: 'username already taken'});
+        res.statusMessage = "email already taken";
+        return res.status(422).end();
       }
       // if no existing user, hash password
       return User.hashPassword(password)
-    })
-    .then(hash => {
+    }).then(hash => {
       return User
         .create({
           username: username,
           password: hash,
           email: email
         })
-    })
-    .then(user => {
+    }).then(user => {
+      console.log('user', user)
       return res.status(201).json(user.apiRepr());
-    })
-    .catch(err => {
-      res.status(500).json({message: 'Internal server error'})
+    }).catch(error => {
+      res.statusMessage = "Internal server error";
+      return res.status(500).end();
     });
 });
 
+
+// passport.use(new LocalStrategy(
+//     function(username, password, done) {
+//     User
+//       .findOne({ username: username }, function(error, user) {
+//           console.log('user', user)
+//           if (error) { 
+//             return done(error); 
+//           }
+//           if (!user) {
+//             return done(null, false, { message: 'Incorrect username.' });
+//           }
+//           if (!user.validPassword(password)) {
+//             return done(null, false, { message: 'Incorrect password.' });
+//           }
+//           return done(null, user);
+//     });
+//   }
+// ));
+
+// app.use(passport.initialize());
+
+// passport.serializeUser(function(user, done) {
+//   done(null, user);
+// });
+
+// passport.deserializeUser(function(user, done) {
+//   done(null, user);
+// });
+
+// app.post('/login',
+//   passport.authenticate(
+//     'local', 
+//     {session: true}),
+//     (req, res) => res.json({user: req.user.apiRepr()})
+// );
+
+const basicStrategy = new BasicStrategy({ disableBasicChallenge: true },function(username, password, callback) {
+    console.log('username', username, 'password', password);
+  let user;
+
+  User
+    .findOne({ $or:[{'username': username}, {'email':username}] })
+    .exec()
+    .then(_user => {
+      user = _user;
+      if (!user) {
+        return callback(null, false, {message: 'Incorrect username'});
+      }
+      console.log('user', user);
+      return user.validatePassword(password);
+    })
+    .then(isValid => {
+      if (!isValid) {
+        return callback(null, false, {message: 'Incorrect password'});
+      }
+      else {
+        return callback(null, user)
+      }
+    });
+});
+
+passport.use(basicStrategy);
+app.use(passport.initialize());
+
+app.post('/login',
+  passport.authenticate(
+    'basic',
+    {session: false}),
+    (req, res) => res.json({user: req.user.apiRepr()})
+);
+
+
+var amazon = require('amazon-product-api');
+var client = amazon.createClient({
+  awsId: "AKIAJMVO6AWNUL6FKAYQ",
+  awsSecret: "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",
+  awsTag: "home202007-20"
+});
 
 app.get('/amazon/:index', function(req, res){
     console.log(req.params.index);

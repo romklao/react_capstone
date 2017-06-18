@@ -3,55 +3,56 @@ import {connect} from 'react-redux';
 
 import * as actions from '../actions/index';
 
-export class SignupModal extends React.Component {
+class SignupModal extends React.Component {
     constructor(props) {
         super(props);
-        this.submitSignupForm = this.submitSignupForm.bind(this);
+        this.state = {
+            username: '',
+            email: '',
+            password: '',
+            passwordConfirmation: '',
+        }
+        this.onChange = this.onChange.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
+        this.hide = this.hide.bind(this);
     }
 
-    submitSignupForm(event) {
+    onChange(event) {
+        this.setState({[event.target.name]: event.target.value});
+    }
+
+    onSubmit(event) {
         event.preventDefault();
-        var addUsername = this.addUsernameInput.value;
-        this.addUsernameInput.value = '';
-        this.props.dispatch(actions.inputSignup(addUsername));
-
-        var addEmail = this.addEmailInput.value;
-        this.addEmailInput.value = '';
-        this.props.dispatch(actions.inputSignup(addEmail));
-
-        var addPassword = this.addPasswordInput.value;
-        this.addPasswordInput.value = '';
-        this.props.dispatch(actions.inputSignup(addPassword));
-
-        var addConfirmPassword = this.addConfirmPasswordInput.value;
-        this.addConfirmPasswordInput.value = '';
-        this.props.dispatch(actions.inputSignup(addConfirmPassword));
+        console.log('this.state', this.state);
+        this.props.dispatch(actions.signupForm(this.state));
     }
 
     hide(event) {
         event.preventDefault();
-        props.dispatch(actions.hideSignup());
+        this.props.dispatch(actions.hideSignup());
     };
 
     render() {
+
         return (
-            <div className="modal fade">
+            <div className="overlay">
                 <div className="modal-dialog">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <button type="button" className="close" data-dismiss="modal" aria-hidden="true" onClick={hide}>&times;</button>
-                            <h4 className="modal-title">Fill out the information below to log in</h4>
+                            <button type="button" className="close" data-dismiss="modal" aria-hidden="true" onClick={this.hide}>&times;</button>
+                            <h4 className="modal-title">Fill out the information below to Sign up</h4>
                         </div>
-                        <form onSubmit={this.submitSignupForm}>
+                        <h4 className="errorMessage">{this.props.errorMessage}</h4>
+                        <form onSubmit={this.onSubmit}>
                             <div className="modal-body">
-                                <input type="text" ref={element => this.addUsernameInput = element} id="login_email" className="form-control signup_input" name="email" placeholder="Username" />
-                                <input type="email" ref={element => this.addEmailInput = element} id="login_email" className="form-control signup_input" name="email" placeholder="Email address" />
-                                <input type="password" ref={element => this.addPasswordInput = element} id="login_password" className="form-control signup_input" placeholder="Password" />
-                                <input type="password" ref={element => this.addConfirmPasswordInput = element} id="login_password" className="form-control signup_input" placeholder="Password" />
+                                <input type="text" name="username" value={this.state.username} onChange={this.onChange} className="form-control signup_input signup" placeholder="Username" />
+                                <input type="email" name="email" value={this.state.email} onChange={this.onChange} className="form-control signup_input signup" placeholder="Email address" />
+                                <input type="password" name="password" value={this.state.password} onChange={this.onChange} placeholder="Password" className="form-control signup_input signup" />
+                                <input type="password" name="passwordConfirmation" value={this.state.passwordConfirmation} onChange={this.onChange} className="form-control signup_input signup signup_confirm" placeholder="Confirm password" />
                             </div>
                             <div className="modal-footer">
-                                <button type="button" className="btn btn-default" data-dismiss="modal" onClick={hide}>Close</button>
-                                <button type="button" className="btn btn-primary">Submit</button>
+                                <button type="button" className="btn btn-default closeBtn" data-dismiss="modal" onClick={this.hide}>Close</button>
+                                <button type="submit" className="btn btn-default submitBtn">Submit</button>
                             </div>
                         </form>
                     </div>
@@ -61,4 +62,10 @@ export class SignupModal extends React.Component {
     };
 };
 
-export default connect()(SignupModal);
+const mapStateToProps = (state, props) => {
+    return {
+        errorMessage: state.errorMessage,
+    }
+}
+
+export default connect(mapStateToProps)(SignupModal);

@@ -9,7 +9,7 @@ export function LandingPage(props) {
             <div className="row landingPage">
                 <div className="col-lg-12 col-xs-12">
                     <div>
-                        <img src="css/images/livingroom.jpg" className="imageLivingroom" />
+                        <img src="css/images/living3.jpg" className="imageLivingroom" />
                     </div>
                 </div>
             </div>

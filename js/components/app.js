@@ -6,19 +6,14 @@ import Navbar from './navbar';
 import LandingPage from './landingPage';
 import WhatWeDoBox from './whatWeDoBox';
 import ImageList from './imageList';
+import HomepageContainer from './homepageContainer'
 
 
 export function App(props) {
     return (
         <div className="decorHome">
             <Navbar/>
-            <div>
-                <LandingPage />
-            </div>
-            <div className="container">
-                <WhatWeDoBox />
-                <ImageList />
-            </div>
+            <HomepageContainer />
         </div>
     );
 }

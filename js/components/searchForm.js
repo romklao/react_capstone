@@ -17,9 +17,9 @@ export class SearchForm extends React.Component {
         return (
             <form className="navbar-form navbar-left" role="search">
                 <div className="form-group">
-                  <input type="text" className="form-control input-md" placeholder="Search" />
+                  <input type="text" className="form-control input-md search_input" placeholder="Search" />
                 </div>
-                <button type="submit" className="btn btn-default btn-md">Submit</button>
+                <button type="submit" className="btn btn-default btn-md searchSubmit">Submit</button>
             </form>
         );
     };

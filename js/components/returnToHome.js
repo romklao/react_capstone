@@ -4,10 +4,6 @@ import {connect} from 'react-redux';
 import * as actions from '../actions/index';
 
 export function ReturnToHome(props) {
-    let returnToHome = event => {
-        event.preventDefault();
-        props.dispatch(actions.returnToHome());        
-    };
 
     return (
         <div className="navbar-header">
@@ -17,7 +13,7 @@ export function ReturnToHome(props) {
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
             </button>
-            <a className="navbar-brand" href="#" onClick={returnToHome}>R.O.M.E</a>
+            <a className="navbar-brand" href="#">R.O.M.E</a>
         </div>
     );
 }

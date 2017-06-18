@@ -3,14 +3,17 @@ require('babel-polyfill');
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
+import {Router, Route, IndexRoute, IndexRedirect, hashHistory} from 'react-router';
 
 import store from './store';
-import App from './components/app';
+import Routes from './components/routes';
+// import HomepageContainer from './homepageContainer'
+
 
 document.addEventListener('DOMContentLoaded', () =>
     ReactDOM.render(
         <Provider store={store}>
-            <App />
+            <Routes />
         </Provider>,
         document.getElementById('app')
     )

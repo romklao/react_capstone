@@ -17,10 +17,10 @@ export function WhatWeDoBox(props) {
     return (
         <div className="row whatWeDo">
             <div className="col-lg-12 col-sm-12">
-                <div className="explain">
-                    <p>Search for products, sign up to save your favorite items and share with your friends</p>
-                    <button className="btn btn-info loginBtn" onClick={showLogin}>Log In</button>
-                    <button className="btn btn-success signupBtn" onClick={showSignup}>Sign Up</button>
+                <div className="explainBox">
+                    <p className="explain">Search for products, sign up to save your favorite items and share with your friends</p>
+                    <button className="btn btn-default loginBtn" onClick={showLogin}>Log In</button>
+                    <button className="btn btn-default signupBtn" onClick={showSignup}>Sign Up</button>
                 </div>
             </div>
         </div>
