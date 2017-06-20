@@ -29,7 +29,7 @@ class SignupModal extends React.Component {
 
     hide(event) {
         event.preventDefault();
-        this.props.dispatch(actions.hideSignup());
+        this.props.dispatch(actions.hide());
     };
 
     render() {

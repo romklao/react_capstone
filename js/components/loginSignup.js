@@ -1,5 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {Link} from 'react-router';
+
 
 import * as actions from '../actions/index'
 
@@ -33,11 +35,11 @@ class LoginSignup extends React.Component {
                 </ul>
             );
         } 
-        if (!this.props.authenticated) {
+        else {
             return (
                 <ul className="nav navbar-nav navbar-right">
-                    <li><a href="#" onClick={this.showLogin}>Log In</a></li>
-                    <li><a href="#" onClick={this.showSignup}>Sign Up</a></li>
+                    <li><Link to="/" onClick={this.showLogin}>Log In</Link></li>
+                    <li><Link to="/" onClick={this.showSignup}>Sign Up</Link></li>
                 </ul>
             );
         }

@@ -5,11 +5,12 @@ const initialState = {
     showLogin: false,
     showSignup: false,
     loggedIn: false,
-    authenticated: false,
     shouldRedirect: false,
+    authenticated: false,
     errorMessage: null,
     successMessage: null,
-    displayInformation: [],
+    searchInput: null,
+    searchResults: null,
     favoriteItems: [],
     user: null
 }
@@ -25,14 +26,6 @@ export const decorHomeReducer = function(state, action) {
         );
         return state;
 
-    } else if (action.type === actions.HIDE_SIGNUP) {
-        state = Object.assign({}, 
-            state, {
-                showSignup: false
-            } 
-        );
-        return state;
-
     } else if (action.type === actions.SHOW_LOGIN) {
         state = Object.assign({}, 
             state, {
@@ -41,13 +34,15 @@ export const decorHomeReducer = function(state, action) {
         );
         return state;
 
-    } else if (action.type === actions.HIDE_LOGIN) {
+    } else if (action.type === actions.HIDE) {
         state = Object.assign({}, 
             state, {
-                showLogin: false
+                showSignup: false,
+                showLogin: false,
             } 
         );
         return state;
+
     } else if (action.type === actions.SIGNUP_SUCCESS) {
         var successMessage = 'Welcome'
         state = Object.assign({},
@@ -62,6 +57,7 @@ export const decorHomeReducer = function(state, action) {
         );
         console.log('SIGNUP state', state, 'SIGNUP action', action)
         return state;
+
     } else if (action.type === actions.SIGNUP_ERROR) {
         state = Object.assign({},
             state, {
@@ -72,6 +68,7 @@ export const decorHomeReducer = function(state, action) {
         );
         console.log('SIGNUP state', state, 'SIGNUP action', action)
         return state;
+
     } else if (action.type === actions.LOGIN_SUCCESS) {
         state = Object.assign({},
             state, {
@@ -85,6 +82,7 @@ export const decorHomeReducer = function(state, action) {
         );
         console.log('LOGIN state', state, 'LOGIN action', action)
         return state;
+
     } else if (action.type === actions.LOGIN_ERROR) {
         state = Object.assign({},
             state, {
@@ -94,6 +92,37 @@ export const decorHomeReducer = function(state, action) {
             }
         );
         console.log('LOGIN state', state, 'LOGIN action', action)
+        return state;
+
+    } else if (action.type === actions.SEARCH_SUBMIT) {
+        state = Object.assign({},
+            state, {
+                searchInput: action.searchInput
+            }
+        );
+        console.log('search submit state', state, 'search submit action', action)
+        return state;
+
+    } else if (action.type === actions.SEARCH_SUCCESS) {
+        state = Object.assign({},
+            state, {
+                searchResults: action.searchResults,
+                searchInput: action.searchInput,
+                shouldRedirect: true,
+                page: action.page,
+
+            }
+        );
+        console.log('search state', state, 'search action', action)
+        return state;
+
+    } else if (action.type === actions.SEARCH_ERROR) {
+        state = Object.assign({},
+            state, {
+                error: action.error,
+            }
+        );
+        console.log('search state', state, 'search action', action)
         return state;
     }
     console.log('state', state, 'action' , action)

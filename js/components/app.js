@@ -13,7 +13,10 @@ export function App(props) {
     return (
         <div className="decorHome">
             <Navbar/>
-            <HomepageContainer />
+            // <HomepageContainer />
+            <div>
+                {props.children}
+            </div>
         </div>
     );
 }

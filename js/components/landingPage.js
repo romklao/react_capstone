@@ -5,7 +5,7 @@ import * as actions from '../actions/index';
 
 export function LandingPage(props) {
     return (
-        <div>
+        <div className="landing">
             <div className="row landingPage">
                 <div className="col-lg-12 col-xs-12">
                     <div>

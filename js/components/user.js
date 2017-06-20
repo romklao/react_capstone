@@ -3,21 +3,25 @@ import {connect} from 'react-redux';
 
 import * as actions from '../actions/index';
 
-export function UserLogin(props) {
-    let username;
-    if(props.user) {
-        console.log('user login')
+class UserLogin extends React.Component {
+    constructor(props) {
+        super(props); 
     }
-
-    return (
-        <div className="user">
-            <p>welcome</p>
-        </div>
-    )
+    
+    render () {
+        return (
+            <div className="row userBox">
+                <div className="col-lg-12 col-sm-12 user">
+                    <p>welcome {this.props.user}!</p>
+                </div>
+            </div>
+        );
+    }
 }
 
 const mapStateToProps = (state, props) => ({
-    user: state.user
+    user: state.user,
+    authenticated: localStorage.authHeaders,
 });
 
 export default connect(mapStateToProps)(UserLogin);

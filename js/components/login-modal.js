@@ -32,7 +32,7 @@ export class LoginModal extends React.Component {
 
     hide(event) {
         event.preventDefault();
-        this.props.dispatch(actions.hideLogin());
+        this.props.dispatch(actions.hide());
     };
 
     render() {

@@ -26,9 +26,18 @@ html, body {
     margin-right: 5px;
 }
 
-/*.searchSubmit {
-    border-color: #B2C0C9;
-}*/
+.searchResults {
+    position: absolute;
+    background-color: #f7fbfc; /* f2f9fc #f7f2ed #F8F8F8 #F5FAFE f9fbfc*/
+    margin: 0 auto;
+    width: 100%;
+    top: 7%;
+    z-index: 1000;
+}
+
+.searchResults > div {
+    text-align: center;
+}
 
 .imageLivingroom {
     position: fixed;
@@ -40,7 +49,7 @@ html, body {
 
 .landingIntro {
     position: fixed;
-    top: 18.5%; /*41.5%*/
+    top: 21.5%; /* 48 41.5%*/
     left: 27%;
 }
 .title{
@@ -82,11 +91,8 @@ html, body {
 }
 
 .loginBtn, .signupBtn {
-    /*margin-top: 15px;*/
     margin-right: 3px;
     margin-left: 3px;
-    /*font-size: 16px;
-    border-radius: 2px;*/
 }
 
 .loginBtn, .closeBtn{
@@ -167,11 +173,31 @@ html, body {
     color: red;
 }
 
+.userBox {
+    position: absolute;
+    background-color: #f7fbfc; /* f2f9fc #f7f2ed #F8F8F8 #F5FAFE f9fbfc*/
+    margin: 0 auto;
+    top: 7%;
+/*    height: 20%;
+*/    width: 100%;
+    z-index: 1000;
+}
+
+.userBox > div {
+    text-align: center;
+}
+
+.userBox > div > p {
+    font-size: 35px;
+}
+
+
+
 
 
 @media (max-width: 500px) {
     .landingIntro {
-        left: 8%;
+        left: 13%;
         top: 18%;
     }
     .title {
@@ -183,6 +209,15 @@ html, body {
     }
     .whatWeDo {
         font-size: 17px;
+    }
+    .modal-content {
+        width: 370px;
+    }
+    .overlay {
+        left: 1%;
+    }
+    .login_input, .signup {
+        width: 330px;
     }
 }
 
@@ -197,6 +232,7 @@ html, body {
     .container {
         top: 37%;
     }
+
 }
 
 

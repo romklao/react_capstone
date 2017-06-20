@@ -104,7 +104,7 @@ app.post('/signup', (req, res) => {
     }
 
     if (password !== passwordConfirmation) {
-      res.statusMessage = "password and confirm password must match";
+      res.statusMessage = "password must match";
       return res.status(422).end();
     }
     // check for existing user
@@ -216,18 +216,28 @@ var client = amazon.createClient({
   awsTag: "home202007-20"
 });
 
-app.get('/amazon/:index', function(req, res){
-    console.log(req.params.index);
-    client.itemSearch({
-      keywords: req.params.index,
-      searchIndex: 'All',
-      responseGroup: 'ItemAttributes,Offers,Images'
-      }, function(err, data){
-        console.log(data);
-        res.json(data);
-      }
-    );
+app.get('/amazon/:search_text', function(req, res){
+  var keywords = req.params.search_text;
+  var page = req.query.page;
+  if (page === '') {
+    page = 1;
+  } else {
+    page = parseInt(page);
+  }
+  console.log(keywords, page);
+  client.itemSearch({
+    keywords: req.params.search_text,
+    searchIndex: 'All',
+    responseGroup: 'ItemAttributes, Offers, Images',
+    itemPage: page,
+    }, function(err, data){
+      console.log(data);
+      res.json(data);
+    }
+  );
 });
+
+
 
 let server;
 
