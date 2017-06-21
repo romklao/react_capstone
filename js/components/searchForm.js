@@ -12,7 +12,6 @@ class SearchForm extends React.Component {
     submitSearchForm(event) {
         event.preventDefault();
         var addSearchText = this.addSearchTextInput.value;
-        this.addSearchTextInput.value = '';
 
         var addSearchPage = this.addSearchPageInput.value;
         this.addSearchPageInput.value = '0';

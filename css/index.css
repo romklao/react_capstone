@@ -26,18 +26,92 @@ html, body {
     margin-right: 5px;
 }
 
-.searchResults {
+.searchResultsContainer {
     position: absolute;
-    background-color: #f7fbfc; /* f2f9fc #f7f2ed #F8F8F8 #F5FAFE f9fbfc*/
+    background-color: #f7fbfc; /* #f7fbfc #f7f2ed #F8F8F8 #F5FAFE f9fbfc*/
     margin: 0 auto;
     width: 100%;
     top: 7%;
     z-index: 1000;
+    padding: 80px 100px 100px 100px;
+}
+
+.searchResults {
+    background-color: white;
+    padding-right: 10px;
+    margin: 0 auto;
 }
 
 .searchResults > div {
     text-align: center;
+    margin: 0 auto;
 }
+
+.searchText {
+    margin: 0 auto;
+}
+
+.searchText > h1 {
+    color: grey;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    margin-top: 60px;
+}
+
+.imageResults {
+    border: 0px solid #F8F8F8;
+    text-align: center;
+    background-color: white; /*#F8F8F8*/
+    max-height: 500px;
+    padding: 20px 10px 20px 10px;
+    margin: 0 auto;
+}
+
+.imageResults > img {
+    max-width: 93%;
+    margin: 0 auto;
+    max-height: 460px;
+}
+
+.heartFav {
+    position: absolute;
+    margin-left: 5px;
+    font-size: 20px;
+    color: #b9bdbf;
+}
+
+.loginBtn, .signupBtn {
+    margin-right: 3px;
+    margin-left: 3px;
+}
+
+.loginBtn, .closeBtn{
+    border-color: #228CAB;
+}
+
+.signupBtn, .submitBtn {
+    border-color: #389738;
+}
+
+.close {
+    color:grey;
+}
+
+.close:hover {
+    color: grey;
+}
+
+.login_input, .signup {
+    width: 370px;
+}
+
+.login_email, .signup_input {
+    margin-bottom: 10px;
+}
+
+.signup_confirm, .login_pass {
+    margin-bottom: 22px;
+} 
 
 .imageLivingroom {
     position: fixed;
@@ -90,38 +164,6 @@ html, body {
     margin-bottom: 20px;
 }
 
-.loginBtn, .signupBtn {
-    margin-right: 3px;
-    margin-left: 3px;
-}
-
-.loginBtn, .closeBtn{
-    border-color: #228CAB;
-}
-
-.signupBtn, .submitBtn {
-    border-color: #389738;
-}
-
-.close {
-    color:grey;
-}
-
-.close:hover {
-    color: grey;
-}
-
-.login_input, .signup {
-    width: 370px;
-}
-
-.login_email, .signup_input {
-    margin-bottom: 10px;
-}
-
-.signup_confirm, .login_pass {
-    margin-bottom: 22px;
-} 
 
 .imageBox {
     border: 0px solid #F8F8F8;
@@ -185,6 +227,7 @@ html, body {
 
 .userBox > div {
     text-align: center;
+    margin-top: 30px;
 }
 
 .userBox > div > p {

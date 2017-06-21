@@ -5,7 +5,7 @@ import {Router, Route, IndexRoute, IndexRedirect, hashHistory, browserHistory} f
 import * as actions from '../actions/index';
 
 import App from './app';
-import HomepageContainer from './homepageContainer';
+import LandingPageContainer from './landingPageContainer';
 import UserLogin from './user';
 import ShowSearchResults from './searchResults'
 
@@ -15,9 +15,8 @@ export function Routes(props) {
     return (
         <Router history={ hashHistory }>
             <Route path="/" component={App} >
-                <IndexRoute component={HomepageContainer} />
+                <IndexRoute component={LandingPageContainer} />
                 <Route path="user" component={UserLogin} />
-                <Route path="search_results" component={ShowSearchResults} />
             </Route>
         </Router>
     );

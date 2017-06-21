@@ -225,6 +225,7 @@ app.get('/amazon/:search_text', function(req, res){
     page = parseInt(page);
   }
   console.log(keywords, page);
+
   client.itemSearch({
     keywords: req.params.search_text,
     searchIndex: 'All',
@@ -236,6 +237,31 @@ app.get('/amazon/:search_text', function(req, res){
     }
   );
 });
+
+app.post('/favorites',
+    passport.authenticate(
+        'basic',
+        {session: false}
+    ),
+    (req, res) => {
+        var ImageSets = req.body.ImageSets[0].ImageSet.map(function(image) {
+          return image.LargeImage[0].URL[0]
+        })
+        product = {ImageSets, 
+                  DetailPageURL: req.body.DetailPageURL, 
+                  OfferSummary: req.body.OfferSummary}
+        User.findByIdAndUpdate(
+            req.user._id,
+            {$push: {"favorites": {product}}},
+            {safe: true, upsert: true, new : true},
+            function(err, model) {
+                console.log('err', err);
+                console.log('model.favorites', model.favorites)
+                res.json(model.favorites);
+            }
+        );
+    }
+);
 
 
 

@@ -11,8 +11,9 @@ const initialState = {
     successMessage: null,
     searchInput: null,
     searchResults: null,
-    favoriteItems: [],
-    user: null
+    favorites: null,
+    landingPageHidden: localStorage.authHeaders !== undefined,
+    user: localStorage.username ? localStorage.username : null,
 }
 
 export const decorHomeReducer = function(state, action) {
@@ -51,6 +52,7 @@ export const decorHomeReducer = function(state, action) {
                 loggedIn: true,
                 authenticated: true,
                 shouldRedirect: true,
+                landingPageHidden: true,
                 showSignup: false,
                 showLogin: false,
             }
@@ -76,6 +78,7 @@ export const decorHomeReducer = function(state, action) {
                 loggedIn: true,
                 authenticated: true,
                 shouldRedirect: true,
+                landingPageHidden:true,
                 showLogin: false,
                 showSignup: false,
             }
@@ -109,6 +112,7 @@ export const decorHomeReducer = function(state, action) {
                 searchResults: action.searchResults,
                 searchInput: action.searchInput,
                 shouldRedirect: true,
+                landingPageHidden: true,
                 page: action.page,
 
             }
@@ -116,7 +120,7 @@ export const decorHomeReducer = function(state, action) {
         console.log('search state', state, 'search action', action)
         return state;
 
-    } else if (action.type === actions.SEARCH_ERROR) {
+    }  else if (action.type === actions.SEARCH_ERROR) {
         state = Object.assign({},
             state, {
                 error: action.error,
@@ -124,6 +128,16 @@ export const decorHomeReducer = function(state, action) {
         );
         console.log('search state', state, 'search action', action)
         return state;
+
+    } else if (action.type === actions.ADD_FAVORITE_SUCCESS) {
+        state = Object.assign({},
+            state, {
+                favorites: action.products,
+            }
+        );
+        console.log('favorites state', state, 'favorites action', action)
+        return state;
+
     }
     console.log('state', state, 'action' , action)
     return state;

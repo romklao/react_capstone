@@ -50,7 +50,7 @@ export const signupForm = (newUserData) => dispatch => {
         console.log('response2', data);
         localStorage.authHeaders = fetchData.headers.Authorization;
         hashHistory.push('/user');
-        $('.indexPage').hide();
+        // $('.indexPage').hide();
         return dispatch(signupSuccess(data.username));
     })
     .catch(error => {
@@ -93,8 +93,9 @@ export const loginForm = (email, password) => dispatch => {
     .then(response => response.json())
     .then(data => {
         localStorage.authHeaders = fetchData.headers.Authorization;
+        localStorage.username = data.user.username;
         hashHistory.push('/user');
-        $('.indexPage').hide();
+        // $('.indexPage').hide();
         console.log('data', data);
         return dispatch(loginSuccess(data.user.username));
     })
@@ -118,6 +119,7 @@ export const loginError = error => ({
 
 export const logout = () => dispatch => {
     localStorage.removeItem('authHeaders');
+    localStorage.removeItem('username');
     //hashHistory.push('/');
     window.location = '/';
 }
@@ -145,8 +147,6 @@ export const searchSubmit = (search_text, page) => dispatch => {
     .then(response => response.json())
     .then(data => {
         console.log('Apidata', data);
-        hashHistory.push('/search_results');
-        $('.indexPage').hide();
         return dispatch(makeSearchSuccessMsg(data, search_text, page));
     })
     .catch(error => {
@@ -168,6 +168,52 @@ export const searchError = error => ({
     type: SEARCH_ERROR,
     error: error,
 })
+
+export const addFavorites = (product) => dispatch => {
+    console.log('product', product);
+
+    let url = '/favorites';
+    let fetchData = {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json',
+                'Authorization': localStorage.authHeaders,
+            },
+            body: JSON.stringify(product),
+    }
+    return fetch(url, fetchData).then(response => {
+        console.log('response', response.body)
+        if (!response.ok) {
+            throw Error(response.statusText);
+        }
+        return response;
+    })
+    .then(response => response.json())
+    .then(data => {
+        // hashHistory.push('/');
+        // $('.indexPage').hide();
+        console.log('data', data);
+        return dispatch(addFavoritesSuccess(data));
+    })
+    .catch(error => {
+        console.log('error1', error)
+        return dispatch(addFavoritesError(error.message));
+    })
+}
+
+export const ADD_FAVORITE_SUCCESS = 'ADD_FAVORITE_SUCCESS';
+export const addFavoritesSuccess = (products) => ({
+    type: ADD_FAVORITE_SUCCESS,
+    products: products,
+})
+
+export const ADD_FAVORITE_ERROR = 'ADD_FAVORITE_ERROR';
+export const addFavoritesError = error => ({
+    type: ADD_FAVORITE_ERROR,
+    error: error,
+})
+
 
 
 

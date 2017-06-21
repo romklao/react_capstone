@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 import * as actions from '../actions/index';
 
-export function LandingPage(props) {
+function LandingPage(props) {
     return (
         <div className="landing">
             <div className="row landingPage">
