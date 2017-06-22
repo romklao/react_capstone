@@ -47,10 +47,12 @@ export const signupForm = (newUserData) => dispatch => {
     })
     .then(response => response.json())
     .then(data => {
-        console.log('response2', data);
         localStorage.authHeaders = fetchData.headers.Authorization;
+        localStorage.username = data.username;
         hashHistory.push('/user');
-        // $('.indexPage').hide();
+
+        console.log('response2', data);
+        console.log('username', data.username)
         return dispatch(signupSuccess(data.username));
     })
     .catch(error => {
@@ -150,7 +152,7 @@ export const searchSubmit = (search_text, page) => dispatch => {
         return dispatch(makeSearchSuccessMsg(data, search_text, page));
     })
     .catch(error => {
-        console.log('error1', error.message)
+        console.log('error1', error)
         return dispatch(searchError(error.message));
     })
 }
@@ -191,8 +193,7 @@ export const addFavorites = (product) => dispatch => {
     })
     .then(response => response.json())
     .then(data => {
-        // hashHistory.push('/');
-        // $('.indexPage').hide();
+        
         console.log('data', data);
         return dispatch(addFavoritesSuccess(data));
     })

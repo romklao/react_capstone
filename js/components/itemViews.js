@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 import * as actions from '../actions/index';
 
-class ImageResults extends React.Component {
+class ItemView extends React.Component {
     constructor(props) {
         super(props);
         this.addFavorites = this.addFavorites.bind(this);
@@ -16,12 +16,19 @@ class ImageResults extends React.Component {
 
     render () {
         return (
-            <div className="col-lg-6 col-sm-12 col-xs-12 imageResults">
+            <div className="col-lg-6 col-sm-12 col-xs-12 itemsResults">
                 <img src={this.props.imageUrl} />
                 <span className={this.props.icon} onClick={this.addFavorites}></span>
+                <p className="price">{this.props.price}</p>
             </div>
         );
     }
 }
 
-export default connect()(ImageResults);
+const mapStateToProps = (state, props) => {
+    return {
+        favorites: state.favorites,
+    }
+} 
+
+export default connect(mapStateToProps)(ItemView);

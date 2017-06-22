@@ -17,11 +17,15 @@ class UserLogin extends React.Component {
     render () {
 
         return (
-            <div className="row userBox">
-                <div className="col-lg-12 col-sm-12 user">
-                    <p>welcome {this.props.user}!</p>
+            <div>
+                <div className="row userBox">
+                    <div className="col-lg-12 col-sm-12 user">
+                        <p>Welcome {this.props.user}!</p>
+                    </div>
                 </div>
-                <ShowSearchResults />
+                <div className="searchResultsContainer">
+                    <ShowSearchResults />
+                </div>
             </div>
         );
     }

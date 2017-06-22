@@ -31,6 +31,8 @@ class LoginSignup extends React.Component {
         if (this.props.authenticated) {
             return (
                 <ul className="nav navbar-nav navbar-right">
+                    <li className="loginHi">Hi! {this.props.user}</li>
+                    <li><a href="#">Favorites</a></li>
                     <li><a href="#" onClick={this.logoutUser}>Log Out</a></li>
                 </ul>
             );
@@ -48,6 +50,7 @@ class LoginSignup extends React.Component {
 
 const mapStateToProps = (state, props) => {
     return {
+        user: state.user,
         authenticated: localStorage.authHeaders,
     }
 }

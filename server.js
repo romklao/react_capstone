@@ -218,7 +218,9 @@ var client = amazon.createClient({
 
 app.get('/amazon/:search_text', function(req, res){
   var keywords = req.params.search_text;
+    console.log('params', req.params)
   var page = req.query.page;
+  console.log('page', parseInt(req.query.page));
   if (page === '') {
     page = 1;
   } else {
@@ -247,7 +249,8 @@ app.post('/favorites',
         var ImageSets = req.body.ImageSets[0].ImageSet.map(function(image) {
           return image.LargeImage[0].URL[0]
         })
-        product = {ImageSets, 
+        product = {ASIN: req.body.ASIN,
+                  ImageSets, 
                   DetailPageURL: req.body.DetailPageURL, 
                   OfferSummary: req.body.OfferSummary}
         User.findByIdAndUpdate(

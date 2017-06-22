@@ -3,20 +3,37 @@ import {connect} from 'react-redux';
 
 import * as actions from '../actions/index';
 import SearchForm from './searchForm';
-import ImageResults from './itemViews';
+import ItemView from './itemViews';
 import Pagination from './pagination';
 
 function ShowSearchResults(props) {
         if (props.searchResults == null) {
-            return <div></div>
+            return <div></div>;
         }
+
         var results = [];
         for (var i=0; i<10; i++) {
-            var imgURL = props.searchResults[i].ImageSets[0].ImageSet[0].LargeImage[0].URL[0];
-            results.push(<ImageResults imageUrl={imgURL} 
-                                       icon="glyphicon glyphicon-heart heartFav"
+            var item = props.searchResults[i];
+            var price = item.OfferSummary[0].LowestNewPrice[0].FormattedPrice[0];
+                console.log('price', price);
+            var imgURL = item.ImageSets[0].ImageSet[0].LargeImage[0].URL[0];
+
+            var icon = "glyphicon glyphicon-heart heartFav"
+
+            if (props.favorites) {
+                for (var favorite of props.favorites) {
+                    if (favorite.product.ASIN && item.ASIN[0] == favorite.product.ASIN[0]) {
+                      icon += " changeTored";
+                      break;
+                    }
+                  }
+            }
+
+            results.push(<ItemView imageUrl={imgURL} 
+                                       icon={icon} 
                                        key={i}
-                                       product={props.searchResults[i]} />);
+                                       product={item}
+                                       price={price} />);
         }
         console.log('searchResults', props.searchResults)
         console.log('results', results)
@@ -42,6 +59,7 @@ const mapStateToProps = (state, props) => {
     return {
         searchResults: state.searchResults,
         searchInput: state.searchInput,
+        favorites: state.favorites,
     }
 } 
 

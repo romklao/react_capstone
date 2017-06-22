@@ -6,18 +6,10 @@ import * as actions from '../actions/index';
 export class LoginModal extends React.Component {
     constructor(props) {
         super(props);
-        // this.state = {
-        //     username: '',
-        //     password: ''
-        // }
-        // this.onChange = this.onChange.bind(this);
+        
         this.submitLoginForm = this.submitLoginForm.bind(this);
         this.hide = this.hide.bind(this);
     }
-
-    // onChange(event) {
-    //     this.setState({[event.target.name]: event.target.value});
-    // }
 
     submitLoginForm(event) {
         event.preventDefault();

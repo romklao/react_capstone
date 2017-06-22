@@ -47,6 +47,11 @@ html, body {
     margin: 0 auto;
 }
 
+.price {
+    font-size: 17px;
+    color: #AE4343;
+}
+
 .searchText {
     margin: 0 auto;
 }
@@ -58,19 +63,25 @@ html, body {
     margin-top: 60px;
 }
 
-.imageResults {
+.itemsResults {
     border: 0px solid #F8F8F8;
     text-align: center;
     background-color: white; /*#F8F8F8*/
     max-height: 500px;
     padding: 20px 10px 20px 10px;
     margin: 0 auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
-.imageResults > img {
+.itemsResults > img {
     max-width: 93%;
     margin: 0 auto;
     max-height: 460px;
+}
+
+.itemsResults > p {
+    margin-top: 5px;
 }
 
 .heartFav {
@@ -78,6 +89,10 @@ html, body {
     margin-left: 5px;
     font-size: 20px;
     color: #b9bdbf;
+}
+
+.changeToRed {
+    color: red;
 }
 
 .loginBtn, .signupBtn {
@@ -111,6 +126,13 @@ html, body {
 
 .signup_confirm, .login_pass {
     margin-bottom: 22px;
+}
+
+.loginHi {
+    margin-top: 15px;
+    margin-right: 10px;
+    font-size: 16px;
+    color: grey;
 } 
 
 .imageLivingroom {
@@ -219,9 +241,9 @@ html, body {
     position: absolute;
     background-color: #f7fbfc; /* f2f9fc #f7f2ed #F8F8F8 #F5FAFE f9fbfc*/
     margin: 0 auto;
-    top: 7%;
-/*    height: 20%;
-*/    width: 100%;
+    top: 30%;
+    width: 100%;
+    height: 100%;
     z-index: 1000;
 }
 
@@ -232,6 +254,10 @@ html, body {
 
 .userBox > div > p {
     font-size: 35px;
+}
+
+.emptyDiv {
+    margin: 0 auto;
 }
 
 

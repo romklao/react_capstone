@@ -10,7 +10,6 @@ import UserLogin from './user';
 
 
 function LandingPageContainer(props) {
-    console.log('LandingPageContainer')
     if (props.searchResults) {
         return (
             <div className="searchResultsContainer">
@@ -20,7 +19,7 @@ function LandingPageContainer(props) {
     } else if (props.authenticated) {
         if (props.searchResults) {
             return (
-                <div>
+                <div className="searchResultsContainer">
                     <ShowSearchResults />
                 </div>
             );

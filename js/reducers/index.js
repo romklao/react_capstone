@@ -8,7 +8,6 @@ const initialState = {
     shouldRedirect: false,
     authenticated: false,
     errorMessage: null,
-    successMessage: null,
     searchInput: null,
     searchResults: null,
     favorites: null,
@@ -45,16 +44,15 @@ export const decorHomeReducer = function(state, action) {
         return state;
 
     } else if (action.type === actions.SIGNUP_SUCCESS) {
-        var successMessage = 'Welcome'
         state = Object.assign({},
             state, {
                 user: action.user,
                 loggedIn: true,
                 authenticated: true,
                 shouldRedirect: true,
-                landingPageHidden: true,
-                showSignup: false,
+                landingPageHidden:true,
                 showLogin: false,
+                showSignup: false,
             }
         );
         console.log('SIGNUP state', state, 'SIGNUP action', action)
