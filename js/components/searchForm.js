@@ -13,9 +13,7 @@ class SearchForm extends React.Component {
         event.preventDefault();
         var addSearchText = this.addSearchTextInput.value;
 
-        
-
-        this.props.dispatch(actions.searchSubmit(addSearchText, '1'));
+        this.props.dispatch(actions.searchSubmit(addSearchText, 1));
     }
 
     render() {
