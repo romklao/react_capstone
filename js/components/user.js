@@ -15,7 +15,15 @@ class UserLogin extends React.Component {
     }
     
     render () {
-
+        if (!this.props.searchResults) {
+            return (
+                <div className="row userBox">
+                    <div className="col-lg-12 col-sm-12 user">
+                        <p>Welcome {this.props.user}!</p>
+                    </div>
+                </div>
+            );
+        }
         return (
             <div>
                 <div className="row userBox">
@@ -34,6 +42,7 @@ class UserLogin extends React.Component {
 const mapStateToProps = (state, props) => ({
     user: state.user,
     authenticated: localStorage.authHeaders,
+    searchResults: state.searchResults,
 });
 
 export default connect(mapStateToProps)(UserLogin);

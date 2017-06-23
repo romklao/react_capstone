@@ -22,9 +22,10 @@ export const hide = () => ({
     type: HIDE
 })
 
-export const ADD_FAVORITE_ITEMS = 'ADD_FAVORITE_ITEMS';
-export const addFavoriteItems = () => ({
-    type: ADD_FAVORITE_ITEMS
+export const SHOW_FAVORITES_ITEMS = 'SHOW_FAVORITES_ITEMS';
+export const showFavoriteItems = (products) => ({
+    type: SHOW_FAVORITES_ITEMS,
+    products: products,
 })
 
 export const signupForm = (newUserData) => dispatch => {
@@ -47,7 +48,7 @@ export const signupForm = (newUserData) => dispatch => {
     })
     .then(response => response.json())
     .then(data => {
-        localStorage.authHeaders = fetchData.headers.Authorization;
+        localStorage.authHeaders = "Basic " + btoa(newUserData.email + ":" + newUserData.password);
         localStorage.username = data.username;
         hashHistory.push('/user');
 
@@ -212,6 +213,48 @@ export const addFavoritesSuccess = (products) => ({
 export const ADD_FAVORITE_ERROR = 'ADD_FAVORITE_ERROR';
 export const addFavoritesError = error => ({
     type: ADD_FAVORITE_ERROR,
+    error: error,
+})
+
+export const getFavorites = () => dispatch => {
+
+    let url = '/favorites';
+    let fetchData = {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json',
+                'Authorization': localStorage.authHeaders,
+            },
+    }
+    return fetch(url, fetchData).then(response => {
+        console.log('response', response.body)
+        if (!response.ok) {
+            throw Error(response.statusText);
+        }
+        return response;
+    })
+    .then(response => response.json())
+    .then(data => {
+        
+        console.log('data', data);
+        return dispatch(getFavoriteSuccess(data));
+    })
+    .catch(error => {
+        console.log('error1', error)
+        return dispatch(getFavoriteError(error.message));
+    })
+}
+
+export const GET_FAVORITES_SUCCESS = 'GET_FAVORITES_SUCCESS';
+export const getFavoriteSuccess = products => ({
+    type: GET_FAVORITES_SUCCESS,
+    products: products,
+})
+
+export const GET_FAVORITES_ERROR = 'GET_FAVORITES_ERROR';
+export const getFavoriteError = error => ({
+    type: GET_FAVORITES_ERROR,
     error: error,
 })
 

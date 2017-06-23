@@ -11,6 +11,7 @@ const initialState = {
     searchInput: null,
     searchResults: null,
     favorites: null,
+    showFavoriteItems: false,
     landingPageHidden: localStorage.authHeaders !== undefined,
     user: localStorage.username ? localStorage.username : null,
 }
@@ -119,9 +120,11 @@ export const decorHomeReducer = function(state, action) {
         return state;
 
     }  else if (action.type === actions.SEARCH_ERROR) {
+        var errorMessage = "No Results!"
         state = Object.assign({},
             state, {
                 error: action.error,
+                errorMessage: errorMessage,
             }
         );
         console.log('search state', state, 'search action', action)
@@ -136,7 +139,17 @@ export const decorHomeReducer = function(state, action) {
         console.log('favorites state', state, 'favorites action', action)
         return state;
 
+    } else if (action.type === actions.GET_FAVORITES_SUCCESS) {
+        state = Object.assign({},
+            state, {
+                favorites: action.products,
+                showFavoriteItems: true,
+            }
+        );
+        console.log('showfavorites state', state, 'showfavorites action', action)
+        return state;
     }
+
     console.log('state', state, 'action' , action)
     return state;
 }

@@ -246,6 +246,7 @@ app.post('/favorites',
         {session: false}
     ),
     (req, res) => {
+      console.log('addfav')
         var ImageSets = req.body.ImageSets[0].ImageSet.map(function(image) {
           return image.LargeImage[0].URL[0]
         })
@@ -263,6 +264,17 @@ app.post('/favorites',
                 res.json(model.favorites);
             }
         );
+    }
+);
+
+app.get('/favorites',
+    passport.authenticate(
+        'basic',
+        {session: false}
+    ),
+    (req, res) => {
+        console.log('favorites', req.user.favorites)
+        res.json(req.user.favorites);
     }
 );
 

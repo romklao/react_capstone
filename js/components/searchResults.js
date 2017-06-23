@@ -7,33 +7,26 @@ import ItemView from './itemViews';
 import Pagination from './pagination';
 
 function ShowSearchResults(props) {
-        if (props.searchResults == null) {
-            return <div></div>;
-        }
+        if (props.searchResults) {
+            var results = [];
+            for (var i=0; i<10; i++) {
+                var item = props.searchResults[i];
+                    console.log('item', item)
+                var price;
+                if (item.OfferSummary) {
+                    price = item.OfferSummary[0].LowestNewPrice[0].FormattedPrice[0];
+                    console.log('price', price);
+                }
+                var imgURL = item.ImageSets[0].ImageSet[0].LargeImage[0].URL[0];
 
-        var results = [];
-        for (var i=0; i<10; i++) {
-            var item = props.searchResults[i];
-            var price = item.OfferSummary[0].LowestNewPrice[0].FormattedPrice[0];
-                console.log('price', price);
-            var imgURL = item.ImageSets[0].ImageSet[0].LargeImage[0].URL[0];
+                var icon = "glyphicon glyphicon-heart heartFav"
 
-            var icon = "glyphicon glyphicon-heart heartFav"
-
-            if (props.favorites) {
-                for (var favorite of props.favorites) {
-                    if (favorite.product.ASIN && item.ASIN[0] == favorite.product.ASIN[0]) {
-                      icon += " changeTored";
-                      break;
-                    }
-                  }
+                results.push(<ItemView imageUrl={imgURL} 
+                                           icon={icon} 
+                                           key={i}
+                                           product={item}
+                                           price={price} />);
             }
-
-            results.push(<ItemView imageUrl={imgURL} 
-                                       icon={icon} 
-                                       key={i}
-                                       product={item}
-                                       price={price} />);
         }
         console.log('searchResults', props.searchResults)
         console.log('results', results)
@@ -44,7 +37,7 @@ function ShowSearchResults(props) {
                         <h1>The results of {props.searchInput} !</h1>
                     </div>
                 </div>
-                <div className="row imageSet">
+                <div className="row">
                     {results}
                 </div>
                 <div className="row">

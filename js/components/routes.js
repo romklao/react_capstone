@@ -7,7 +7,8 @@ import * as actions from '../actions/index';
 import App from './app';
 import LandingPageContainer from './landingPageContainer';
 import UserLogin from './user';
-import ShowSearchResults from './searchResults'
+import ShowSearchResults from './searchResults';
+import ShowFavorites from './showFavorites';
 
 
 export function Routes(props) {
@@ -17,6 +18,7 @@ export function Routes(props) {
             <Route path="/" component={App} >
                 <IndexRoute component={LandingPageContainer} />
                 <Route path="user" component={UserLogin} />
+                <Route path="myfavorites" component={ShowFavorites} />
             </Route>
         </Router>
     );

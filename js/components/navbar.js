@@ -7,17 +7,18 @@ import SignupModal from './signup-modal';
 import LoginSignup from './loginSignup';
 import ReturnToHome from './returnToHome';
 import SearchForm from './searchForm'
-
+import ShowFavorites from './showFavorites'
 
 export function Navbar(props) {
     var loginModal;
-    var signupModal
+    var signupModal;
     if(props.showLogin) {
         loginModal = <LoginModal />
     }
     if(props.showSignup) {
         signupModal = <SignupModal />
     }
+    
     console.log('props', props)
 
     return (
@@ -29,6 +30,7 @@ export function Navbar(props) {
                     <LoginSignup />
                     {loginModal}
                     {signupModal}
+
                 </div>
             </div>
         </nav>
@@ -37,7 +39,9 @@ export function Navbar(props) {
 
 const mapStateToProps = (state, props) => ({
     showSignup: state.showSignup,
-    showLogin: state.showLogin
+    showLogin: state.showLogin,
+    favorites: state.favorites,
+
 })
 
 export default connect(mapStateToProps)(Navbar);

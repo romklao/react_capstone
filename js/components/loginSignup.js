@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router';
-
+import {Router, Route, IndexRoute, IndexRedirect, hashHistory, browserHistory} from 'react-router';
 
 import * as actions from '../actions/index'
 
@@ -11,6 +11,7 @@ class LoginSignup extends React.Component {
         this.showLogin = this.showLogin.bind(this);
         this.showSignup = this.showSignup.bind(this);
         this.logoutUser = this.logoutUser.bind(this);
+        this.getFavoriteItems = this.getFavoriteItems.bind(this);
     }
     showLogin(event) {
         event.preventDefault();
@@ -22,9 +23,14 @@ class LoginSignup extends React.Component {
         this.props.dispatch(actions.showSignup());
     }
 
-    logoutUser (event) {
+    logoutUser(event) {
         event.preventDefault();
         this.props.dispatch(actions.logout());
+    }
+
+    getFavoriteItems(event) {
+        event.preventDefault();
+        hashHistory.push('/myfavorites');
     }
 
     render() {
@@ -32,7 +38,7 @@ class LoginSignup extends React.Component {
             return (
                 <ul className="nav navbar-nav navbar-right">
                     <li className="loginHi">Hi! {this.props.user}</li>
-                    <li><a href="#">Favorites</a></li>
+                    <li><a href="#" onClick={this.getFavoriteItems}>Favorites</a></li>
                     <li><a href="#" onClick={this.logoutUser}>Log Out</a></li>
                 </ul>
             );
