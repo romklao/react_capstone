@@ -194,7 +194,6 @@ export const addFavorites = (product) => dispatch => {
     })
     .then(response => response.json())
     .then(data => {
-        
         console.log('data', data);
         return dispatch(addFavoritesSuccess(data));
     })

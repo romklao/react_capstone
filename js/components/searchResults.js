@@ -27,24 +27,29 @@ function ShowSearchResults(props) {
                                            product={item}
                                            price={price} />);
             }
-        }
-        console.log('searchResults', props.searchResults)
-        console.log('results', results)
-        return (
-            <div className="searchResults">
-                <div className="row">
-                    <div className="col-lg-12 col-sm-12 searchText">
-                        <h1>The results of {props.searchInput} !</h1>
+            console.log('searchResults', props.searchResults)
+            console.log('results', results)
+            return (
+                <div className="searchResults">
+                    <div className="row">
+                        <div className="col-lg-12 col-sm-12 searchText">
+                            <h1>The results of {props.searchInput} !</h1>
+                        </div>
+                    </div>
+                    <div className="row">
+                        {results}
+                    </div>
+                    <div className="row">
+                        <Pagination />
                     </div>
                 </div>
-                <div className="row">
-                    {results}
-                </div>
-                <div className="row">
-                    <Pagination />
-                </div>
-            </div>
-        );
+            );
+        } 
+        if (props.errorSearchMessage) {
+            return (
+                <h1 className="errorSearch">{props.errorSearchMessage}</h1>
+            )
+        }
     
 }
 
@@ -53,6 +58,7 @@ const mapStateToProps = (state, props) => {
         searchResults: state.searchResults,
         searchInput: state.searchInput,
         favorites: state.favorites,
+        errorSearchMessage: state.errorSearchMessage,
     }
 } 
 

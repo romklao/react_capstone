@@ -16,6 +16,10 @@ function LandingPageContainer(props) {
                 <ShowSearchResults />
             </div>
         );
+    } else if (props.errorSearchMessage) {
+        return (
+            <h1 className="errorSearch">{props.errorSearchMessage}</h1>
+        )
     } else if (props.authenticated) {
         if (props.searchResults) {
             return (
@@ -23,6 +27,10 @@ function LandingPageContainer(props) {
                     <ShowSearchResults />
                 </div>
             );
+        // } else if (props.errorSearchMessage) {
+        //     return (
+        //         <h1 className="errorSearch">{props.errorSearchMessage}</h1>
+        //     );
         } else {
             return (
                 <div>
@@ -50,6 +58,7 @@ const mapStateToProps = (state, props) => {
         landingPageHidden: state.landingPageHidden,
         searchResults: state.searchResults,
         authenticated: localStorage.authHeaders,
+        errorSearchMessage: state.errorSearchMessage,
     }
 }
 

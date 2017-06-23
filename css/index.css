@@ -93,7 +93,7 @@ html, body {
 }
 
 .itemsResults > img {
-    max-width: 460px;
+    max-width: 455px;
     margin: 0 auto;
     max-height: 440px;
 }
@@ -253,6 +253,12 @@ html, body {
     margin-top: 20px;
     margin-bottom: 0px;
     color: red;
+}
+
+.errorSearch {
+    position: absolute;
+    top: 35%;
+    left: 40%;
 }
 
 .userBox {
