@@ -113,7 +113,6 @@ export const decorHomeReducer = function(state, action) {
                 shouldRedirect: true,
                 landingPageHidden: true,
                 page: action.page,
-
             }
         );
         console.log('search state', state, 'search action', action)
@@ -134,12 +133,22 @@ export const decorHomeReducer = function(state, action) {
         state = Object.assign({},
             state, {
                 favorites: action.products,
+                showFavorites: true,
             }
         );
         console.log('favorites state', state, 'favorites action', action)
         return state;
 
-    } else if (action.type === actions.GET_FAVORITES_ERROR) {
+    } else if (action.type === actions.GET_FAVORITES_SUCCESS) {
+        state = Object.assign({},
+            state, {
+                favorites: action.products,
+            }
+        );
+        console.log('showfavorites state', state, 'showfavorites action', action)
+        return state;
+
+    }else if (action.type === actions.GET_FAVORITES_ERROR) {
         state = Object.assign({},
             state, {
                 error: action.error,
@@ -147,6 +156,16 @@ export const decorHomeReducer = function(state, action) {
         );
         console.log('showfavorites state', state, 'showfavorites action', action)
         return state;
+        
+    } else if (action.type === actions.DELETE_FAVORITES_SUCCESS) {
+        state = Object.assign({},
+            state, {
+                favorites: action.products,
+            }
+        );
+        console.log('showfavorites state', state, 'showfavorites action', action)
+        return state;
+
     }
 
     console.log('state', state, 'action' , action)

@@ -5,7 +5,7 @@ const mongo = require('mongo');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
-const {PORT, DATABASE_URL} = require('./config');
+const {PORT, DATABASE_URL, AWSID, AWSSECRET, AWSTAG} = require('./config');
 const {User} = require('./models');
 const router = express.Router();
 const {BasicStrategy} = require('passport-http')
@@ -137,42 +137,6 @@ app.post('/signup', (req, res) => {
 });
 
 
-// passport.use(new LocalStrategy(
-//     function(username, password, done) {
-//     User
-//       .findOne({ username: username }, function(error, user) {
-//           console.log('user', user)
-//           if (error) { 
-//             return done(error); 
-//           }
-//           if (!user) {
-//             return done(null, false, { message: 'Incorrect username.' });
-//           }
-//           if (!user.validPassword(password)) {
-//             return done(null, false, { message: 'Incorrect password.' });
-//           }
-//           return done(null, user);
-//     });
-//   }
-// ));
-
-// app.use(passport.initialize());
-
-// passport.serializeUser(function(user, done) {
-//   done(null, user);
-// });
-
-// passport.deserializeUser(function(user, done) {
-//   done(null, user);
-// });
-
-// app.post('/login',
-//   passport.authenticate(
-//     'local', 
-//     {session: true}),
-//     (req, res) => res.json({user: req.user.apiRepr()})
-// );
-
 const basicStrategy = new BasicStrategy({ disableBasicChallenge: true },function(username, password, callback) {
     console.log('username', username, 'password', password);
   let user;
@@ -211,16 +175,16 @@ app.post('/login',
 
 var amazon = require('amazon-product-api');
 var client = amazon.createClient({
-  awsId: "AKIAJMVO6AWNUL6FKAYQ",
-  awsSecret: "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",
-  awsTag: "home202007-20"
+  awsId: AWSID,
+  awsSecret: AWSSECRET,
+  awsTag: AWSTAG
 });
 
 app.get('/amazon/:search_text', function(req, res){
   var keywords = req.params.search_text;
     console.log('params', req.params)
   var page = req.query.page;
-  console.log('page', parseInt(req.query.page));
+    console.log('page', parseInt(req.query.page));
   if (page === '') {
     page = 1;
   } else {
@@ -277,6 +241,23 @@ app.get('/favorites',
         res.json(req.user.favorites);
     }
 );
+
+app.delete('/favorites',
+    passport.authenticate(
+        'basic',
+        {session: false}
+    ),
+    (req, res) => {
+      console.log('req', req.body.product.ASIN)
+    User.findByIdAndUpdate(
+        req.user._id,
+        {$pull: {"favorites": {_id: req.body._id}}},
+        {safe: true, upsert: true, new : true},
+        function(err, model) {
+            console.log(err);
+            res.json(req.user.favorites);
+        });
+});
 
 
 

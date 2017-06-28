@@ -13,10 +13,10 @@ class ShowFavorites extends React.Component {
     }
 
     render () {
-        
+
         if (this.props.authenticated) {
             var favoritesResults = [];
-            var icon = "glyphicon glyphicon-heart heartFav changeToRed"
+            var icon2 = "glyphicon glyphicon-heart heartFav changeToRed"
             if (this.props.favorites) {
                 for (var i=0; i < this.props.favorites.length; i++) {
                     var favItem = this.props.favorites[i];
@@ -25,29 +25,29 @@ class ShowFavorites extends React.Component {
                         var imgURL = favItem.product.ImageSets[0];
                         
                         favoritesResults.push(<ItemView imageUrl={imgURL} 
-                                           icon={icon} 
+                                           icon2={icon2} 
                                            key={i}
+                                           product={favItem}
                                            price={price} />);
                     }
                 }
                 console.log('favRe', favoritesResults)
             }
-        }
-
-        return (
-            <div className="showFavoritesContainer">
-                <div className="showFavorites">
-                    <div className="row">
-                        <div className="col-lg-12 col-sm-12 searchText">
-                            <h1>Your favorite items!</h1>
+            return (
+                <div className="showFavoritesContainer">
+                    <div className="showFavorites">
+                        <div className="row">
+                            <div className="col-lg-12 col-sm-12 searchText">
+                                <h1>Your favorite items!</h1>
+                            </div>
+                        </div>
+                        <div className="row">
+                            {favoritesResults}
                         </div>
                     </div>
-                    <div className="row">
-                        {favoritesResults}
-                    </div>
                 </div>
-            </div>
-        );
+            );
+        }
     }
 }
 
@@ -55,6 +55,7 @@ const mapStateToProps = (state, props) => {
     return {
         authenticated: localStorage.authHeaders,
         favorites: state.favorites,
+        searchResults: state.searchResults,
     }
 }
 

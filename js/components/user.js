@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 
 import * as actions from '../actions/index';
 import ShowSearchResults from './searchResults';
+import ShowFavorites from './showFavorites';
 
 
 class UserLogin extends React.Component {
@@ -16,28 +17,21 @@ class UserLogin extends React.Component {
     
     render () {
         if (this.props.authenticated) {
-            if (!this.props.searchResults) {
+            if (this.props.searchResults) {
                 return (
-                    <div className="row userBox">
-                        <div className="col-lg-12 col-sm-12 user">
-                            <p>Welcome {this.props.user}!</p>
-                        </div>
+                    <div className="searchResultsContainer">
+                        <ShowSearchResults />
                     </div>
                 );
             } else if (this.props.errorSearchMessage) {
                 return (
-                    <h1 className="errorSearch">{props.errorSearchMessage}</h1>
+                    <h1 className="errorSearch">{this.props.errorSearchMessage}</h1>
                 );
             } else {
                 return (
-                    <div>
-                        <div className="row userBox">
-                            <div className="col-lg-12 col-sm-12 user">
-                                <p>Welcome {this.props.user}!</p>
-                            </div>
-                        </div>
-                        <div className="searchResultsContainer">
-                            <ShowSearchResults />
+                    <div className="row userBox">
+                        <div className="col-lg-12 col-sm-12 user">
+                            <p>Welcome {this.props.user}!</p>
                         </div>
                     </div>
                 );
@@ -51,6 +45,7 @@ const mapStateToProps = (state, props) => ({
     authenticated: localStorage.authHeaders,
     searchResults: state.searchResults,
     errorSearchMessage: state.errorSearchMessage,
+    favorites: state.favorites,
 });
 
 export default connect(mapStateToProps)(UserLogin);

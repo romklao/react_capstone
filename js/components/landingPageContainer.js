@@ -27,10 +27,10 @@ function LandingPageContainer(props) {
                     <ShowSearchResults />
                 </div>
             );
-        // } else if (props.errorSearchMessage) {
-        //     return (
-        //         <h1 className="errorSearch">{props.errorSearchMessage}</h1>
-        //     );
+        } else if (props.errorSearchMessage) {
+            return (
+                <h1 className="errorSearch">{props.errorSearchMessage}</h1>
+            );
         } else {
             return (
                 <div>
@@ -63,3 +63,7 @@ const mapStateToProps = (state, props) => {
 }
 
 export default connect(mapStateToProps)(LandingPageContainer);
+
+
+
+

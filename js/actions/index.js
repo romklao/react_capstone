@@ -98,7 +98,6 @@ export const loginForm = (email, password) => dispatch => {
         localStorage.authHeaders = fetchData.headers.Authorization;
         localStorage.username = data.user.username;
         hashHistory.push('/user');
-        // $('.indexPage').hide();
         console.log('data', data);
         return dispatch(loginSuccess(data.user.username));
     })
@@ -257,6 +256,47 @@ export const getFavoriteError = error => ({
     error: error,
 })
 
+export const deleteFavorites = (product) => dispatch => {
+    console.log('product', product)
+    let url = '/favorites';
+    let fetchData = {
+            method: 'DELETE',
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json',
+                'Authorization': localStorage.authHeaders,
+            },
+            body: JSON.stringify(product),
+    }
+    return fetch(url, fetchData).then(response => {
+        console.log('response', response.body)
+        if (!response.ok) {
+            throw Error(response.statusText);
+        }
+        return response;
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('data', data);
+        return dispatch(deleteFavoriteSuccess(data));
+    })
+    .catch(error => {
+        console.log('error1', error)
+        return dispatch(deleteFavoriteError(error.message));
+    })
+}
+
+export const DELETE_FAVORITES_SUCCESS = 'DELETE_FAVORITES_SUCCESS';
+export const deleteFavoriteSuccess = products => ({
+    type: DELETE_FAVORITES_SUCCESS,
+    products: products,
+})
+
+export const DELETE_FAVORITES_ERROR = 'DELETE_FAVORITES_ERROR';
+export const deleteFavoriteError = error => ({
+    type: DELETE_FAVORITES_ERROR,
+    error: error,
+})
 
 
 

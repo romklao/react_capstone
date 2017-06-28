@@ -66,9 +66,19 @@ html, body {
     margin: 0 auto;
 }
 
+.amazonLogo, .price {
+    display: inline-block;
+}
 .price {
     font-size: 17px;
     color: #AE4343;
+    margin-top: 10px;
+}
+
+.amazonLogo {
+    width: 50px;
+    padding-bottom: 4px;
+    margin-left: 5px;
 }
 
 .searchText {
@@ -98,10 +108,6 @@ html, body {
     max-height: 440px;
 }
 
-.itemsResults > p {
-    margin-top: 5px;
-}
-
 .heartFav {
     position: absolute;
     margin-left: 5px;
@@ -109,8 +115,28 @@ html, body {
     color: #b9bdbf;
 }
 
-.changeToRed {
+.heartFav:hover {
     color: red;
+    cursor: pointer;
+}
+
+.changeToRed {
+    color: #ed023d;
+}
+
+.leftArrow, .rightArrow {
+    position: absolute;
+    top: 40%;
+    font-size: 17px;
+    color: lightgrey;
+}
+
+.leftArrow {
+    left: 1.5%;
+}
+
+.rightArrow {
+    left: 94%;
 }
 
 .loginBtn, .signupBtn {
@@ -273,7 +299,8 @@ html, body {
 
 .userBox > div {
     text-align: center;
-    margin-top: 30px;
+    position: absolute;
+    top: 35%;
 }
 
 .userBox > div > p {

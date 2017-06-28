@@ -11,21 +11,28 @@ function ShowSearchResults(props) {
             var results = [];
             for (var i=0; i<10; i++) {
                 var item = props.searchResults[i];
-                    console.log('item', item)
                 var price;
+
                 if (item.OfferSummary) {
                     price = item.OfferSummary[0].LowestNewPrice[0].FormattedPrice[0];
-                    console.log('price', price);
                 }
                 var imgURL = item.ImageSets[0].ImageSet[0].LargeImage[0].URL[0];
-
-                var icon = "glyphicon glyphicon-heart heartFav"
+                var icon = "glyphicon glyphicon-heart heartFav";
+                var leftArrow = "glyphicon glyphicon-chevron-left leftArrow";
+                var rightArrow = "glyphicon glyphicon-chevron-right rightArrow";
+                var pageUrl = item.DetailPageURL[0];
+                var blank = "_blank"
 
                 results.push(<ItemView imageUrl={imgURL} 
-                                           icon={icon} 
-                                           key={i}
-                                           product={item}
-                                           price={price} />);
+                                       icon={icon} 
+                                       key={i}
+                                       product={item}
+                                       price={price}
+                                       leftArrow={leftArrow}
+                                       rightArrow={rightArrow}
+                                       pageUrl={pageUrl}
+                                       blank ={blank}
+                                       amazonLogoUrl="css/images/amazonLogo.png"/>);
             }
             console.log('searchResults', props.searchResults)
             console.log('results', results)
@@ -45,12 +52,6 @@ function ShowSearchResults(props) {
                 </div>
             );
         } 
-        if (props.errorSearchMessage) {
-            return (
-                <h1 className="errorSearch">{props.errorSearchMessage}</h1>
-            )
-        }
-    
 }
 
 const mapStateToProps = (state, props) => {
@@ -58,6 +59,7 @@ const mapStateToProps = (state, props) => {
         searchResults: state.searchResults,
         searchInput: state.searchInput,
         favorites: state.favorites,
+        authenticated: state.authenticated,
         errorSearchMessage: state.errorSearchMessage,
     }
 } 

@@ -13,7 +13,7 @@ export function ReturnToHome(props) {
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
             </button>
-            <a className="navbar-brand" href="#">R.O.M.E</a>
+            <a className="navbar-brand" href="#">RomeDecor</a>
         </div>
     );
 }

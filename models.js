@@ -4,7 +4,10 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
 const FavoriteSchema = mongoose.Schema({
-    product: {type: Object, required: true}
+    product: {
+        type: Object, 
+        required: true
+    }
 });
 
 FavoriteSchema.methods.apiRepr = function() {

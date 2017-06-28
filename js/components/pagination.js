@@ -25,7 +25,6 @@ class Pagination extends React.Component {
                     <li><a href="#" value="3" onClick={() => this.onClick(3)}>3</a></li>
                     <li><a href="#" value="4" onClick={() => this.onClick(4)}>4</a></li>
                     <li><a href="#" value="5" onClick={() => this.onClick(5)}>5</a></li>
-                    <li><a href="#" value="6" onClick={() => this.onClick(6)}>6</a></li>
                 </ul>
             </div>
         );
