@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 import * as actions from '../actions/index';
 import ShowSearchResults from './showFavorites';
-import ItemView from './itemViews';
+import ItemViews from './itemViews';
 
 
 class ShowFavorites extends React.Component {
@@ -16,19 +16,25 @@ class ShowFavorites extends React.Component {
 
         if (this.props.authenticated) {
             var favoritesResults = [];
-            var icon2 = "glyphicon glyphicon-heart heartFav changeToRed"
+            var icon2 = "glyphicon glyphicon-heart changeToRed"
             if (this.props.favorites) {
                 for (var i=0; i < this.props.favorites.length; i++) {
                     var favItem = this.props.favorites[i];
                     if (favItem.product.OfferSummary) {
-                        var price = favItem.product.OfferSummary[0].LowestNewPrice[0].FormattedPrice[0];
-                        var imgURL = favItem.product.ImageSets[0];
+                        let price = favItem.product.OfferSummary[0].LowestNewPrice[0].FormattedPrice[0];
+                        let imgURL = favItem.product.ImageSets[0];
+                        let pageUrl = favItem.product.DetailPageURL[0];
+                        let blank = "_blank";
+                        let amazonLogoUrl = "css/images/amazonLogo.png";
                         
-                        favoritesResults.push(<ItemView imageUrl={imgURL} 
-                                           icon2={icon2} 
-                                           key={i}
-                                           product={favItem}
-                                           price={price} />);
+                        favoritesResults.push(<ItemViews imageUrl={imgURL} 
+                                                       icon2={icon2} 
+                                                       key={i}
+                                                       product={favItem}
+                                                       price={price}
+                                                       pageUrl={pageUrl}
+                                                       blank ={blank}
+                                                       amazonLogoUrl={amazonLogoUrl} />);
                     }
                 }
                 console.log('favRe', favoritesResults)

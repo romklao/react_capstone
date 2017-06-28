@@ -38,6 +38,7 @@ html, body {
 .searchResults {
     background-color: white;
     padding-right: 15px;
+    padding-left: 15px;
     margin: 0 auto;
 }
 
@@ -58,6 +59,7 @@ html, body {
 .showFavorites {
     background-color: white;
     padding-right: 15px;
+    padding-left: 15px;
     margin: 0 auto;
 }
 
@@ -67,18 +69,21 @@ html, body {
 }
 
 .amazonLogo, .price {
+    position: absolute;
+    top: 85%;
     display: inline-block;
 }
 .price {
     font-size: 17px;
     color: #AE4343;
-    margin-top: 10px;
+    left: 35%;
 }
 
 .amazonLogo {
     width: 50px;
     padding-bottom: 4px;
     margin-left: 5px;
+    left: 60%;
 }
 
 .searchText {
@@ -92,9 +97,14 @@ html, body {
     margin-top: 60px;
 }
 
+.itemViewsBox {
+    text-align: center;
+}
+
 .itemsResults {
     border: 0px solid #F8F8F8;
     text-align: center;
+    height: 510px;
     background-color: white;
     padding: 20px 10px 20px 10px;
     margin: 0 auto;
@@ -103,16 +113,20 @@ html, body {
 }
 
 .itemsResults > img {
-    max-width: 455px;
-    margin: 0 auto;
-    max-height: 440px;
+    max-width: 100%;
+    margin: 0;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+    max-height: 400px;
 }
 
 .heartFav {
     position: absolute;
-    margin-left: 5px;
+    left: 95%;
     font-size: 20px;
     color: #b9bdbf;
+    margin-bottom: 5px;
 }
 
 .heartFav:hover {
@@ -120,8 +134,43 @@ html, body {
     cursor: pointer;
 }
 
+.clickAdd, .removeFavorite {
+    display: none;
+    position: absolute;
+    top: -0.75%;
+    left: 72%;
+    border: 1px solid lightgrey;
+    padding: 1px 4px 1px 4px;
+    border-radius: 3px;
+}
+
+.clickAdd {
+    left: 75%;
+}
+
+.removeFavorite {
+    display: none;
+}
+
+.heartFav:hover + .clickAdd {
+    display: block;
+}
+
 .changeToRed {
     color: #ed023d;
+    position: absolute;
+    left: 95%;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.changeToRed:hover {
+    color: lightgrey;
+    cursor: pointer;
+}
+
+.changeToRed:hover + .removeFavorite {
+    display: block;
 }
 
 .leftArrow, .rightArrow {
@@ -132,11 +181,11 @@ html, body {
 }
 
 .leftArrow {
-    left: 1.5%;
+    left: 7%;
 }
 
 .rightArrow {
-    left: 94%;
+    left: 93%;
 }
 
 .loginBtn, .signupBtn {
@@ -348,6 +397,19 @@ html, body {
     }
     .loginHi {
         margin-left: 14px;
+    }
+    .itemsResults {
+        height: 330px;
+        border-bottom: 1px solid #edeaea;
+    }
+    .clickAdd, .removeFavorite {
+        left: 60%;
+    }
+    .removeFavorite {
+        left: 52%;
+    }
+    .userBox > div {
+        left: 16.5%;
     }
 }
 

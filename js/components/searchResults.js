@@ -3,27 +3,28 @@ import {connect} from 'react-redux';
 
 import * as actions from '../actions/index';
 import SearchForm from './searchForm';
-import ItemView from './itemViews';
+import ItemViews from './itemViews';
 import Pagination from './pagination';
 
 function ShowSearchResults(props) {
         if (props.searchResults) {
-            var results = [];
-            for (var i=0; i<10; i++) {
-                var item = props.searchResults[i];
-                var price;
+            let results = [];
+            for (let i=0; i<10; i++) {
+                let item = props.searchResults[i];
+                let price;
 
                 if (item.OfferSummary) {
                     price = item.OfferSummary[0].LowestNewPrice[0].FormattedPrice[0];
                 }
-                var imgURL = item.ImageSets[0].ImageSet[0].LargeImage[0].URL[0];
-                var icon = "glyphicon glyphicon-heart heartFav";
-                var leftArrow = "glyphicon glyphicon-chevron-left leftArrow";
-                var rightArrow = "glyphicon glyphicon-chevron-right rightArrow";
-                var pageUrl = item.DetailPageURL[0];
-                var blank = "_blank"
+                let imgURL = item.ImageSets[0].ImageSet[0].LargeImage[0].URL[0];
+                let icon = "glyphicon glyphicon-heart heartFav";
+                let leftArrow = "glyphicon glyphicon-chevron-left leftArrow";
+                let rightArrow = "glyphicon glyphicon-chevron-right rightArrow";
+                let pageUrl = item.DetailPageURL[0];
+                let blank = "_blank";
+                let amazonLogoUrl = "css/images/amazonLogo.png";
 
-                results.push(<ItemView imageUrl={imgURL} 
+                results.push(<ItemViews imageUrl={imgURL} 
                                        icon={icon} 
                                        key={i}
                                        product={item}
@@ -32,7 +33,7 @@ function ShowSearchResults(props) {
                                        rightArrow={rightArrow}
                                        pageUrl={pageUrl}
                                        blank ={blank}
-                                       amazonLogoUrl="css/images/amazonLogo.png"/>);
+                                       amazonLogoUrl={amazonLogoUrl}/>);
             }
             console.log('searchResults', props.searchResults)
             console.log('results', results)
@@ -43,7 +44,7 @@ function ShowSearchResults(props) {
                             <h1>The results of {props.searchInput} !</h1>
                         </div>
                     </div>
-                    <div className="row">
+                    <div className="row itemViewsBox">
                         {results}
                     </div>
                     <div className="row">

@@ -2,8 +2,9 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import * as actions from '../actions/index';
+import SignupModal from './signup-modal';
 
-class ItemView extends React.Component {
+class ItemViews extends React.Component {
     constructor(props) {
         super(props);
 
@@ -24,6 +25,9 @@ class ItemView extends React.Component {
     addFavoriteItems(event) {
         event.preventDefault();
         this.props.dispatch(actions.addFavorites(this.props.product));
+        if (!this.props.authenticated) {
+            this.props.dispatch(actions.showSignup());
+        }
     }
 
     deleteFavoriteItems(event) {
@@ -75,20 +79,22 @@ class ItemView extends React.Component {
     }
 
     render () {
-        let item = this.props.product;
-        let imageUrl = item.ImageSets[0].ImageSet[this.state.index].LargeImage[0].URL[0];
-        let newArray = [];
+        // let item = this.props.product;
+        // let imageUrl = item.ImageSets[0].ImageSet[this.state.index].LargeImage[0].URL[0];
+        // let newArray = [];
 
-        for (let i =0; i<this.state.index; i++) {
-            newArray.push(imageUrl);
-        }
+        // for (let i =0; i<this.state.index; i++) {
+        //     newArray.push(imageUrl);
+        // }
 
         return (
             <div className="col-lg-6 col-sm-12 col-xs-12 itemsResults">
-                <img src={this.props.imageUrl} />
+                <img src={this.props.imageUrl}/>
                 <span className={this.props.icon} onClick={this.addFavoriteItems}></span>
+                <p className="clickAdd">add favorite</p>
                 <span className={this.props.icon2} onClick={this.deleteFavoriteItems}></span>
-                <p className="price">{this.props.price}</p>
+                <p className="removeFavorite">Remove favorite</p>
+                <span className="price">{this.props.price}</span>
                 <span className={this.props.leftArrow} onClick={this.previousImage}></span>
                 <span className={this.props.rightArrow} onClick={this.nextImage}></span>
                 <a href={this.props.pageUrl} target={this.props.blank}><img src={this.props.amazonLogoUrl} className="amazonLogo"/></a>
@@ -101,8 +107,8 @@ const mapStateToProps = (state, props) => {
     return {
         favorites: state.favorites,
         searchResults: state.searchResults,
-
+        authenticated: localStorage.authHeaders,
     }
 } 
 
-export default connect(mapStateToProps)(ItemView);
+export default connect(mapStateToProps)(ItemViews);
