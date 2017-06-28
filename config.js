@@ -9,3 +9,4 @@ exports.AWSID = process.env.AWSID;
 exports.AWSSECRET = process.env.AWSSECRET;
 exports.AWSTAG = process.env.AWSTAG; 
 
+console.log('process.env.AWSID', process.env.AWSID)
