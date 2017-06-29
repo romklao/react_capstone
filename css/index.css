@@ -70,7 +70,7 @@ html, body {
 
 .amazonLogo, .price {
     position: absolute;
-    top: 85%;
+    top: 90%;
     display: inline-block;
 }
 .price {
@@ -84,6 +84,14 @@ html, body {
     padding-bottom: 4px;
     margin-left: 5px;
     left: 60%;
+}
+
+.productTitle {
+    position: absolute;
+    top: 78%;
+    padding-left: 15px;
+    padding-right: 10px;
+    color: #135593;
 }
 
 .searchText {
@@ -101,29 +109,56 @@ html, body {
     text-align: center;
 }
 
-.itemsResults {
-    border: 0px solid #F8F8F8;
+.itemResults {
     text-align: center;
     height: 510px;
     background-color: white;
     padding: 20px 10px 20px 10px;
     margin: 0 auto;
     margin-top: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
+    border: 0.5px solid #eaf1f7;
 }
 
-.itemsResults > img {
-    max-width: 100%;
+.itemResults:hover .leftArrow, .itemResults:hover .rightArrow {
+    opacity: 1.0;
+}
+
+.leftArrow, .rightArrow {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 800ms;
+}
+
+.leftArrow;hover , .rightArrow:hover {
+    cursor: pointer;
+}
+
+.leftArrow {
+    left: 0%;
+    width: 30px;
+    top: 40%;
+}
+
+.rightArrow {
+    left: 92.5%;
+    width: 45px;
+    top: 37.5%;
+}
+
+#imageProduct {
+    max-width: 95%;
     margin: 0;
     margin-right: 10px;
     margin-left: 10px;
     margin-top: 10px;
-    max-height: 400px;
+    max-height: 360px;
 }
 
 .heartFav {
     position: absolute;
-    left: 95%;
+    left: 94%;
+    top: 3%;
     font-size: 20px;
     color: #b9bdbf;
     margin-bottom: 5px;
@@ -137,7 +172,7 @@ html, body {
 .clickAdd, .removeFavorite {
     display: none;
     position: absolute;
-    top: -0.75%;
+    top: 0%;
     left: 72%;
     border: 1px solid lightgrey;
     padding: 1px 4px 1px 4px;
@@ -159,7 +194,8 @@ html, body {
 .changeToRed {
     color: #ed023d;
     position: absolute;
-    left: 95%;
+    top: 3%;
+    left: 94%;
     font-size: 20px;
     margin-bottom: 5px;
 }
@@ -171,21 +207,6 @@ html, body {
 
 .changeToRed:hover + .removeFavorite {
     display: block;
-}
-
-.leftArrow, .rightArrow {
-    position: absolute;
-    top: 40%;
-    font-size: 17px;
-    color: lightgrey;
-}
-
-.leftArrow {
-    left: 7%;
-}
-
-.rightArrow {
-    left: 93%;
 }
 
 .loginBtn, .signupBtn {
@@ -242,11 +263,8 @@ html, body {
     left: 27%;
 }
 .title{
-    /*background-color: rgba(0,0,0,0.3);
-    border-radius: 3px;*/ 
     color: grey;
     font-size: 35px;
-    /*padding: 5px 15px 5px 15px;*/
 }
 
 .container {
@@ -399,17 +417,38 @@ html, body {
         margin-left: 14px;
     }
     .itemsResults {
-        height: 330px;
+        height: 440px;
         border-bottom: 1px solid #edeaea;
     }
-    .clickAdd, .removeFavorite {
+    .clickAdd {
         left: 60%;
     }
     .removeFavorite {
-        left: 52%;
+        left: 47%;
     }
     .userBox > div {
         left: 16.5%;
+    }
+    .productTitle {
+        top: 60%;
+    }
+    .heartFav {
+        left: 91%;
+        top: 2%;
+        font-size: 17px;
+    }
+    .changeToRed {
+        left: 91%;
+        top: 2%;
+        font-size: 17px;
+    }
+    .rightArrow {
+        left: 90.5%;
+        width: 30px;
+    }
+    .leftArrow {
+        width: 20px;
+        top: 39%;
     }
 }
 

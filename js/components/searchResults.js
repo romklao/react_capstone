@@ -18,19 +18,21 @@ function ShowSearchResults(props) {
                 }
                 let imgURL = item.ImageSets[0].ImageSet[0].LargeImage[0].URL[0];
                 let icon = "glyphicon glyphicon-heart heartFav";
-                let leftArrow = "glyphicon glyphicon-chevron-left leftArrow";
-                let rightArrow = "glyphicon glyphicon-chevron-right rightArrow";
+                let arrowLeftUrl = "css/images/arrowLeft.png";
+                let arrowRightUrl = "css/images/right.png";
                 let pageUrl = item.DetailPageURL[0];
                 let blank = "_blank";
                 let amazonLogoUrl = "css/images/amazonLogo.png";
+                let productTitle = item.ItemAttributes[0].Title[0];
 
                 results.push(<ItemViews imageUrl={imgURL} 
                                        icon={icon} 
                                        key={i}
                                        product={item}
                                        price={price}
-                                       leftArrow={leftArrow}
-                                       rightArrow={rightArrow}
+                                       productTitle={productTitle}
+                                       arrowLeftUrl={arrowLeftUrl}
+                                       arrowRightUrl={arrowRightUrl}
                                        pageUrl={pageUrl}
                                        blank ={blank}
                                        amazonLogoUrl={amazonLogoUrl}/>);

@@ -26,15 +26,22 @@ class ShowFavorites extends React.Component {
                         let pageUrl = favItem.product.DetailPageURL[0];
                         let blank = "_blank";
                         let amazonLogoUrl = "css/images/amazonLogo.png";
-                        
+                        let arrowLeftUrl = "css/images/arrowLeft.png";
+                        let arrowRightUrl = "css/images/right.png";
+                        let productTitle = favItem.product.ItemAttributes[0];
+                        console.log('productTitle', favItem.product.ItemAttributes[0])
+
                         favoritesResults.push(<ItemViews imageUrl={imgURL} 
-                                                       icon2={icon2} 
-                                                       key={i}
-                                                       product={favItem}
-                                                       price={price}
-                                                       pageUrl={pageUrl}
-                                                       blank ={blank}
-                                                       amazonLogoUrl={amazonLogoUrl} />);
+                                                        icon2={icon2} 
+                                                        key={i}
+                                                        product={favItem}
+                                                        price={price}
+                                                        pageUrl={pageUrl}
+                                                        arrowLeftUrl={arrowLeftUrl}
+                                                        arrowRightUrl={arrowRightUrl}
+                                                        blank ={blank}
+                                                        productTitle={productTitle}
+                                                        amazonLogoUrl={amazonLogoUrl} />);
                     }
                 }
                 console.log('favRe', favoritesResults)

@@ -88,15 +88,17 @@ class ItemViews extends React.Component {
         // }
 
         return (
-            <div className="col-lg-6 col-sm-12 col-xs-12 itemsResults">
-                <img src={this.props.imageUrl}/>
+            <div className="col-lg-6 col-sm-12 col-xs-12 itemResults">
+                <img src={this.props.imageUrl} id="imageProduct"/>
+                <img src={this.props.arrowLeftUrl} onClick={this.previousImage} className="leftArrow"/>
+                <img src={this.props.arrowRightUrl} onClick={this.nextImage} className="rightArrow"/>
                 <span className={this.props.icon} onClick={this.addFavoriteItems}></span>
                 <p className="clickAdd">add favorite</p>
                 <span className={this.props.icon2} onClick={this.deleteFavoriteItems}></span>
                 <p className="removeFavorite">Remove favorite</p>
+                <p className="productTitle">{this.props.productTitle}</p>
                 <span className="price">{this.props.price}</span>
-                <span className={this.props.leftArrow} onClick={this.previousImage}></span>
-                <span className={this.props.rightArrow} onClick={this.nextImage}></span>
+                
                 <a href={this.props.pageUrl} target={this.props.blank}><img src={this.props.amazonLogoUrl} className="amazonLogo"/></a>
             </div>
         );

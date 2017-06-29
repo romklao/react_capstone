@@ -217,7 +217,8 @@ app.post('/favorites',
         product = {ASIN: req.body.ASIN,
                   ImageSets, 
                   DetailPageURL: req.body.DetailPageURL, 
-                  OfferSummary: req.body.OfferSummary}
+                  OfferSummary: req.body.OfferSummary,
+                  ItemAttributes: req.body.ItemAttributes[0].Title}
         User.findByIdAndUpdate(
             req.user._id,
             {$push: {"favorites": {product}}},
