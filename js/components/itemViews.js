@@ -25,14 +25,20 @@ class ItemViews extends React.Component {
     addFavoriteItems(event) {
         event.preventDefault();
         this.props.dispatch(actions.addFavorites(this.props.product));
+        if (this.props.confirmAddFavoriteMessage) {
+            alert(this.props.confirmAddFavoriteMessage);
+        }
         if (!this.props.authenticated) {
-            this.props.dispatch(actions.showSignup());
+            this.props.dispatch(actions.showLogin());
         }
     }
 
     deleteFavoriteItems(event) {
         event.preventDefault(event);
-        this.props.dispatch(actions.deleteFavorites(this.props.product));
+        this.props.dispatch(actions.deleteFavorites(this.props.product)
+        ).then(() =>
+            this.props.dispatch(actions.getFavorites())
+        )
     }
 
     switchImage(event) {
@@ -110,6 +116,7 @@ const mapStateToProps = (state, props) => {
         favorites: state.favorites,
         searchResults: state.searchResults,
         authenticated: localStorage.authHeaders,
+        confirmAddFavoriteMessage: state.confirmAddFavoriteMessage
     }
 } 
 

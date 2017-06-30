@@ -9,6 +9,7 @@ const initialState = {
     authenticated: false,
     errorMessage: null,
     errorSearchMessage: null,
+    confirmAddFavoriteMessage: null,
     searchInput: null,
     searchResults: null,
     favorites: null,
@@ -130,10 +131,12 @@ export const decorHomeReducer = function(state, action) {
         return state;
 
     } else if (action.type === actions.ADD_FAVORITE_SUCCESS) {
+        var confirmAddFavoriteMessage = 'Add favorite success!'
         state = Object.assign({},
             state, {
                 favorites: action.products,
                 showFavorites: true,
+                confirmAddFavoriteMessage: confirmAddFavoriteMessage
             }
         );
         console.log('favorites state', state, 'favorites action', action)

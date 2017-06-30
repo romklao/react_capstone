@@ -64,6 +64,7 @@ const mapStateToProps = (state, props) => {
         favorites: state.favorites,
         authenticated: state.authenticated,
         errorSearchMessage: state.errorSearchMessage,
+        confirmAddFavoriteMessage: state.confirmAddFavoriteMessage
     }
 } 
 

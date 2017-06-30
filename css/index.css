@@ -187,9 +187,9 @@ html, body {
     display: none;
 }
 
-.heartFav:hover + .clickAdd {
+/*.heartFav:hover + .clickAdd {
     display: block;
-}
+}*/
 
 .changeToRed {
     color: #ed023d;
@@ -205,9 +205,9 @@ html, body {
     cursor: pointer;
 }
 
-.changeToRed:hover + .removeFavorite {
+/*.changeToRed:hover + .removeFavorite {
     display: block;
-}
+}*/
 
 .loginBtn, .signupBtn {
     margin-right: 3px;

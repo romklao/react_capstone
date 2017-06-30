@@ -15,12 +15,12 @@ class ShowFavorites extends React.Component {
     render () {
 
         if (this.props.authenticated) {
-            var favoritesResults = [];
-            var icon2 = "glyphicon glyphicon-heart changeToRed"
+            let favoritesResults = [];
             if (this.props.favorites) {
                 for (var i=0; i < this.props.favorites.length; i++) {
                     var favItem = this.props.favorites[i];
                     if (favItem.product.OfferSummary) {
+                        let icon2 = "glyphicon glyphicon-heart changeToRed"
                         let price = favItem.product.OfferSummary[0].LowestNewPrice[0].FormattedPrice[0];
                         let imgURL = favItem.product.ImageSets[0];
                         let pageUrl = favItem.product.DetailPageURL[0];
@@ -29,7 +29,6 @@ class ShowFavorites extends React.Component {
                         let arrowLeftUrl = "css/images/arrowLeft.png";
                         let arrowRightUrl = "css/images/right.png";
                         let productTitle = favItem.product.ItemAttributes[0];
-                        console.log('productTitle', favItem.product.ItemAttributes[0])
 
                         favoritesResults.push(<ItemViews imageUrl={imgURL} 
                                                         icon2={icon2} 
