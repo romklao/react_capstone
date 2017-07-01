@@ -25,9 +25,6 @@ class ItemViews extends React.Component {
     addFavoriteItems(event) {
         event.preventDefault();
         this.props.dispatch(actions.addFavorites(this.props.product));
-        if (this.props.confirmAddFavoriteMessage) {
-            alert(this.props.confirmAddFavoriteMessage);
-        }
         if (!this.props.authenticated) {
             this.props.dispatch(actions.showLogin());
         }
@@ -97,7 +94,7 @@ class ItemViews extends React.Component {
             <div className="col-lg-6 col-sm-12 col-xs-12 itemResults">
                 <img src={this.props.imageUrl} id="imageProduct"/>
                 <img src={this.props.arrowLeftUrl} onClick={this.previousImage} className="leftArrow"/>
-                <img src={this.props.arrowRightUrl} onClick={this.nextImage} className="rightArrow"/>
+                <img src={this.props.arrowRightUrl} onClick={this.nextImage} className="rightArrow"/>               
                 <span className={this.props.icon} onClick={this.addFavoriteItems}></span>
                 <p className="clickAdd">add favorite</p>
                 <span className={this.props.icon2} onClick={this.deleteFavoriteItems}></span>

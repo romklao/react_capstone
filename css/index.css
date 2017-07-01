@@ -157,11 +157,14 @@ html, body {
 
 .heartFav {
     position: absolute;
-    left: 94%;
-    top: 3%;
+    left: 93%;
+    top: 2%;
     font-size: 20px;
     color: #b9bdbf;
-    margin-bottom: 5px;
+    border: none;
+    background-color: white;
+    padding: 0px;
+    text-align: center;
 }
 
 .heartFav:hover {
