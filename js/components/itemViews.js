@@ -82,6 +82,7 @@ class ItemViews extends React.Component {
         let blank = "_blank";
         let amazonLogoUrl = "css/images/amazonLogo.png";
         let productTitle = item.ItemAttributes[0].Title[0];
+        let productFeature = item.ItemAttributes[0].Feature;
 
         return (
             <div className="col-lg-6 col-sm-12 col-xs-12 itemResults">
@@ -94,8 +95,8 @@ class ItemViews extends React.Component {
                 </div>
                 <div className="productDescription">
                     <p className="productTitle">{productTitle}</p>
-                    <span className="price">{price}</span>
                     <a href={pageUrl} target={blank}><img src={amazonLogoUrl} className="amazonLogo"/></a>
+                    <span className="price">{price}</span>
                 </div>
             </div>
         );

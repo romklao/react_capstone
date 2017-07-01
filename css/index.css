@@ -28,8 +28,8 @@ html, body {
 
 .searchResultsContainer {
     position: absolute;
-    background-color: #f7fbfc; /* #f7fbfc #f7f2ed #F8F8F8 #F5FAFE f9fbfc*/
-    margin: 0 auto;
+/*    background-color: #f7fbfc;  #f7fbfc #f7f2ed #F8F8F8 #F5FAFE f9fbfc
+*/    margin: 0 auto;
     width: 100%;
     top: 7%;
     padding: 80px 100px 100px 100px;
@@ -49,7 +49,6 @@ html, body {
 
 .showFavoritesContainer {
     position: absolute;
-    background-color: #f7fbfc; /* #f7fbfc #f7f2ed #F8F8F8 #F5FAFE f9fbfc*/
     margin: 0 auto;
     width: 100%;
     top: 7%;
@@ -68,27 +67,27 @@ html, body {
     margin: 0 auto;
 }
 
+.productDescription {
+    margin-top: 10px;
+    background-color: white;
+    padding: 10px;
+}
+
 .amazonLogo, .price {
-    position: absolute;
-    top: 90%;
     display: inline-block;
 }
 .price {
     font-size: 17px;
     color: #AE4343;
-    left: 35%;
 }
 
 .amazonLogo {
     width: 50px;
     padding-bottom: 4px;
     margin-left: 5px;
-    left: 60%;
 }
 
 .productTitle {
-    position: absolute;
-    top: 78%;
     padding-left: 15px;
     padding-right: 10px;
     color: #135593;
@@ -114,12 +113,12 @@ html, body {
 .itemResults {
     text-align: center;
     height: 510px;
-    background-color: white;
+    background-color: #F5FAFE;
     padding: 20px 10px 20px 10px;
     margin: 0 auto;
     margin-top: 5px;
     margin-bottom: 20px;
-    border: 0.5px solid #eaf1f7;
+    border: 0.5px solid #c9d6ea;
 }
 
 .itemResults:hover .leftArrow, .itemResults:hover .rightArrow {
@@ -167,10 +166,10 @@ html, body {
     background-color: white;
     padding: 0px;
     text-align: center;
+    background-color: #F5FAFE;
 }
 
 .heartFav:hover {
-    color: red;
     cursor: pointer;
 }
 
@@ -197,17 +196,12 @@ html, body {
 }
 
 .changeToRed:hover {
-    color: lightgrey;
     cursor: pointer;
 }
 
 .hidden {
     display: none;
 }
-
-/*.changeToRed:hover + .removeFavorite {
-    display: block;
-}*/
 
 .loginBtn, .signupBtn {
     margin-right: 3px;
