@@ -204,6 +204,20 @@ app.get('/amazon/:search_text', function(req, res){
   );
 });
 
+
+function cleanDollars(obj) {
+  for (var property in obj) {
+    if (obj.hasOwnProperty(property)) {
+      if (property[0] === '$') {
+        delete obj[property];
+      } else if (typeof obj[property] == "object") {
+        cleanDollars(obj[property]);
+      }
+    }
+  }
+  return obj;
+}
+
 app.post('/favorites',
     passport.authenticate(
         'basic',
@@ -211,14 +225,7 @@ app.post('/favorites',
     ),
     (req, res) => {
       console.log('addfav')
-        var ImageSets = req.body.ImageSets[0].ImageSet.map(function(image) {
-          return image.LargeImage[0].URL[0]
-        })
-        product = {ASIN: req.body.ASIN,
-                  ImageSets, 
-                  DetailPageURL: req.body.DetailPageURL, 
-                  OfferSummary: req.body.OfferSummary,
-                  ItemAttributes: req.body.ItemAttributes[0].Title}
+        let product = cleanDollars(req.body);
         User.findByIdAndUpdate(
             req.user._id,
             {$push: {"favorites": {product}}},
@@ -249,14 +256,15 @@ app.delete('/favorites',
         {session: false}
     ),
     (req, res) => {
-      console.log('req', req.body.product.ASIN)
+      console.log('req', req.body)
     User.findByIdAndUpdate(
         req.user._id,
         {$pull: {"favorites": {_id: req.body._id}}},
         {safe: true, upsert: true, new : true},
         function(err, model) {
-            console.log(err);
+            console.log('err', err);
             res.json(req.user.favorites);
+            console.log('req.user.favorites', req.user.favorites)
         });
 });
 

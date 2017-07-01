@@ -92,6 +92,8 @@ html, body {
     padding-left: 15px;
     padding-right: 10px;
     color: #135593;
+    width: 95%;
+    text-align: left;
 }
 
 .searchText {
@@ -152,7 +154,7 @@ html, body {
     margin-right: 10px;
     margin-left: 10px;
     margin-top: 10px;
-    max-height: 360px;
+    max-height: 330px;
 }
 
 .heartFav {
@@ -190,22 +192,17 @@ html, body {
     display: none;
 }
 
-/*.heartFav:hover + .clickAdd {
-    display: block;
-}*/
-
 .changeToRed {
     color: #ed023d;
-    position: absolute;
-    top: 3%;
-    left: 94%;
-    font-size: 20px;
-    margin-bottom: 5px;
 }
 
 .changeToRed:hover {
     color: lightgrey;
     cursor: pointer;
+}
+
+.hidden {
+    display: none;
 }
 
 /*.changeToRed:hover + .removeFavorite {
@@ -380,6 +377,8 @@ html, body {
 .emptyDiv {
     margin: 0 auto;
 }
+
+
 
 
 

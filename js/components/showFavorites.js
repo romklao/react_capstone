@@ -7,40 +7,22 @@ import ItemViews from './itemViews';
 
 
 class ShowFavorites extends React.Component {
-        constructor(props) {
-            super(props);
-            this.props.dispatch(actions.getFavorites());
+    constructor(props) {
+        super(props);
+        this.props.dispatch(actions.getFavorites());
     }
 
     render () {
 
         if (this.props.authenticated) {
             let favoritesResults = [];
+
             if (this.props.favorites) {
                 for (var i=0; i < this.props.favorites.length; i++) {
                     var favItem = this.props.favorites[i];
                     if (favItem.product.OfferSummary) {
-                        let icon2 = "glyphicon glyphicon-heart changeToRed"
-                        let price = favItem.product.OfferSummary[0].LowestNewPrice[0].FormattedPrice[0];
-                        let imgURL = favItem.product.ImageSets[0];
-                        let pageUrl = favItem.product.DetailPageURL[0];
-                        let blank = "_blank";
-                        let amazonLogoUrl = "css/images/amazonLogo.png";
-                        let arrowLeftUrl = "css/images/arrowLeft.png";
-                        let arrowRightUrl = "css/images/right.png";
-                        let productTitle = favItem.product.ItemAttributes[0];
-
-                        favoritesResults.push(<ItemViews imageUrl={imgURL} 
-                                                        icon2={icon2} 
-                                                        key={i}
-                                                        product={favItem}
-                                                        price={price}
-                                                        pageUrl={pageUrl}
-                                                        arrowLeftUrl={arrowLeftUrl}
-                                                        arrowRightUrl={arrowRightUrl}
-                                                        blank ={blank}
-                                                        productTitle={productTitle}
-                                                        amazonLogoUrl={amazonLogoUrl} />);
+                        favoritesResults.push(<ItemViews product={favItem.product}
+                                                        key={i} />);
                     }
                 }
                 console.log('favRe', favoritesResults)

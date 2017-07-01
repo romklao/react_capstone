@@ -9,33 +9,12 @@ import Pagination from './pagination';
 function ShowSearchResults(props) {
         if (props.searchResults) {
             let results = [];
+
             for (let i=0; i<10; i++) {
-                let item = props.searchResults[i];
-                let price;
+                let product = props.searchResults[i];
 
-                if (item.OfferSummary) {
-                    price = item.OfferSummary[0].LowestNewPrice[0].FormattedPrice[0];
-                }
-                let imgURL = item.ImageSets[0].ImageSet[0].LargeImage[0].URL[0];
-                let icon = "glyphicon glyphicon-heart heartFav";
-                let arrowLeftUrl = "css/images/arrowLeft.png";
-                let arrowRightUrl = "css/images/right.png";
-                let pageUrl = item.DetailPageURL[0];
-                let blank = "_blank";
-                let amazonLogoUrl = "css/images/amazonLogo.png";
-                let productTitle = item.ItemAttributes[0].Title[0];
-
-                results.push(<ItemViews imageUrl={imgURL} 
-                                       icon={icon} 
-                                       key={i}
-                                       product={item}
-                                       price={price}
-                                       productTitle={productTitle}
-                                       arrowLeftUrl={arrowLeftUrl}
-                                       arrowRightUrl={arrowRightUrl}
-                                       pageUrl={pageUrl}
-                                       blank ={blank}
-                                       amazonLogoUrl={amazonLogoUrl}/>);
+                results.push(<ItemViews product={product}
+                                        key={i} />);
             }
             console.log('searchResults', props.searchResults)
             console.log('results', results)

@@ -18,8 +18,6 @@ export function Navbar(props) {
     if(props.showSignup) {
         signupModal = <SignupModal />
     }
-    
-    console.log('props', props)
 
     return (
         <nav className="navbar navbar-default navbar-fixed-top">

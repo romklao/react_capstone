@@ -9,9 +9,6 @@ class ItemViews extends React.Component {
         super(props);
 
         this.state = {
-            background: [],
-            current: undefined,
-            ready: false,
             index: 0
         }
         this.addFavoriteItems = this.addFavoriteItems.bind(this);
@@ -28,9 +25,9 @@ class ItemViews extends React.Component {
         }
     }
 
-    deleteFavoriteItems(event) {
-        event.preventDefault(event);
-        this.props.dispatch(actions.deleteFavorites(this.props.product)
+    deleteFavoriteItems(favoriteId) {
+        this.props.dispatch(actions.deleteFavorites(
+            {_id: favoriteId})
         ).then(() =>
             this.props.dispatch(actions.getFavorites())
         )
@@ -53,23 +50,53 @@ class ItemViews extends React.Component {
     }
 
     render () {
-        let item = this.props.product;
-        let imageUrl = item.ImageSets[0].ImageSet[this.state.index].LargeImage[0].URL[0];
+        var item = this.props.product;
+        var imageUrl = item.ImageSets[0].ImageSet[this.state.index].LargeImage[0].URL[0];
 
+        let favoriteId = '';
+        if (this.props.favorites) {
+            for (let fav of this.props.favorites) {
+                if (fav.product.ASIN[0] === item.ASIN[0]) {
+                    favoriteId = fav._id;
+                    break;
+                }
+            }
+        }
+
+        let addFavIcon = "glyphicon glyphicon-heart heartFav";
+        let delFavIcon = "glyphicon glyphicon-heart heartFav changeToRed";
+
+        if (favoriteId) {
+            addFavIcon += " hidden"
+        } else {
+            delFavIcon += " hidden"
+        }
+
+        let price;
+        if (item.OfferSummary) {
+            price = item.OfferSummary[0].LowestNewPrice[0].FormattedPrice[0];
+        }
+        let arrowLeftUrl = "css/images/arrowLeft.png";
+        let arrowRightUrl = "css/images/right.png";
+        let pageUrl = item.DetailPageURL[0];
+        let blank = "_blank";
+        let amazonLogoUrl = "css/images/amazonLogo.png";
+        let productTitle = item.ItemAttributes[0].Title[0];
 
         return (
             <div className="col-lg-6 col-sm-12 col-xs-12 itemResults">
-                <img src={imageUrl} id="imageProduct"/>
-                <img src={this.props.arrowLeftUrl} onClick={this.previousImage} className="leftArrow"/>
-                <img src={this.props.arrowRightUrl} onClick={this.nextImage} className="rightArrow"/>               
-                <span className={this.props.icon} onClick={this.addFavoriteItems}></span>
-                <p className="clickAdd">add favorite</p>
-                <span className={this.props.icon2} onClick={this.deleteFavoriteItems}></span>
-                <p className="removeFavorite">Remove favorite</p>
-                <p className="productTitle">{this.props.productTitle}</p>
-                <span className="price">{this.props.price}</span>
-                
-                <a href={this.props.pageUrl} target={this.props.blank}><img src={this.props.amazonLogoUrl} className="amazonLogo"/></a>
+                <div>
+                    <img src={imageUrl} id="imageProduct"/>
+                    <img src={arrowLeftUrl} onClick={this.previousImage} className="leftArrow"/>
+                    <img src={arrowRightUrl} onClick={this.nextImage} className="rightArrow"/>               
+                    <span className={addFavIcon} onClick={this.addFavoriteItems}></span>
+                    <span className={delFavIcon} onClick={() => this.deleteFavoriteItems(favoriteId)}></span>
+                </div>
+                <div className="productDescription">
+                    <p className="productTitle">{productTitle}</p>
+                    <span className="price">{price}</span>
+                    <a href={pageUrl} target={blank}><img src={amazonLogoUrl} className="amazonLogo"/></a>
+                </div>
             </div>
         );
     }
