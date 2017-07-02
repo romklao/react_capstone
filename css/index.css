@@ -26,6 +26,145 @@ html, body {
     margin-right: 5px;
 }
 
+.loginBtn, .signupBtn {
+    margin-right: 3px;
+    margin-left: 3px;
+}
+
+.loginBtn, .closeBtn{
+    border-color: #228CAB;
+}
+
+.signupBtn, .submitBtn {
+    border-color: #389738;
+}
+
+.close {
+    color:grey;
+}
+
+.close:hover {
+    color: grey;
+}
+
+.login_input, .signup {
+    width: 370px;
+}
+
+.login_email, .signup_input {
+    margin-bottom: 10px;
+}
+
+.signup_confirm, .login_pass {
+    margin-bottom: 22px;
+}
+
+.loginHi {
+    margin-top: 15px;
+    margin-right: 10px;
+    font-size: 16px;
+    color: grey;
+} 
+
+.errorMessage {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    color: red;
+}
+
+.imageLivingroom {
+    position: fixed;
+    margin: 0 auto;
+    width: 100%;
+    left: 0;
+    height: auto;
+}
+
+.landingIntro {
+    position: fixed;
+    top: 16.5%;
+    left: 27%;
+}
+
+.title{
+    color: grey;
+    font-size: 35px;
+}
+
+.container {
+    position: absolute;
+    background-color: #F5FAFE; /* f2f9fc #f7f2ed #F8F8F8 #F5FAFE f9fbfc*/
+    margin: 0 auto;
+    padding: 100px 130px 130px 130px;
+    width: 100%;
+    top: 100%;
+}
+
+.whatWeDo {
+    font-size: 25px;
+    color: grey; /*#41474D*/
+    text-align: center;
+    margin-bottom: 55px;
+    border:1px solid white;
+    background-color: white;/* #f9f2ea*/
+    padding-bottom: 40px;
+    padding-top: 40px;
+    max-height: 200px; 
+}
+
+.whatWeDo:hover {
+    transition: 0.5s ease;
+    background-color: #edf3fc;
+}
+
+.explain {
+    margin-bottom: 20px;
+}
+
+
+.imageBox {
+    border: 0px solid #F8F8F8;
+    border-left: none;
+    border-bottom: none;
+    text-align: center;
+    background-color: white; /*#F8F8F8*/
+    max-height: 235px;
+    padding: 3px 20px 3px 20px;
+}
+
+.imageBox:hover {
+    transition: 0.5s ease;
+    background-color: #edf3fc;
+}
+
+.imageFurnitures {
+    max-width: 100%;
+    margin: 0 auto;
+    max-height: 226px;
+}
+
+.overlay {
+    position: absolute;
+    color: grey;
+    top: 250%;
+    left: 26%;
+    margin: 0 auto;
+    z-index: 1000;
+}
+
+.modal-content {
+   width: 410px;
+}
+
+.modal-header {
+    text-align: center;
+}
+
+.modal-title {
+    color: grey;
+}
+
 .searchResultsContainer {
     position: absolute;
     margin: 0 auto;
@@ -52,6 +191,13 @@ html, body {
     width: 100%;
     top: 7%;
     padding: 40px 100px 100px 100px;
+}
+
+.errorSearch {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
 }
 
 .showFavorites {
@@ -196,151 +342,6 @@ html, body {
     display: none;
 }
 
-.loginBtn, .signupBtn {
-    margin-right: 3px;
-    margin-left: 3px;
-}
-
-.loginBtn, .closeBtn{
-    border-color: #228CAB;
-}
-
-.signupBtn, .submitBtn {
-    border-color: #389738;
-}
-
-.close {
-    color:grey;
-}
-
-.close:hover {
-    color: grey;
-}
-
-.login_input, .signup {
-    width: 370px;
-}
-
-.login_email, .signup_input {
-    margin-bottom: 10px;
-}
-
-.signup_confirm, .login_pass {
-    margin-bottom: 22px;
-}
-
-.loginHi {
-    margin-top: 15px;
-    margin-right: 10px;
-    font-size: 16px;
-    color: grey;
-} 
-
-.imageLivingroom {
-    position: fixed;
-    margin: 0 auto;
-    width: 100%;
-    left: 0;
-    height: auto;
-}
-
-.landingIntro {
-    position: fixed;
-    top: 21.5%; /* 48 41.5%*/
-    left: 27%;
-}
-.title{
-    color: grey;
-    font-size: 35px;
-}
-
-.container {
-    position: absolute;
-    background-color: #F5FAFE; /* f2f9fc #f7f2ed #F8F8F8 #F5FAFE f9fbfc*/
-    margin: 0 auto;
-    padding: 100px 130px 130px 130px;
-    width: 100%;
-    top: 100%;
-}
-
-.whatWeDo {
-    font-size: 25px;
-    color: grey; /*#41474D*/
-    text-align: center;
-    margin-bottom: 55px;
-    border:1px solid white;
-    background-color: white;/* #f9f2ea*/
-    padding-bottom: 40px;
-    padding-top: 40px;
-    max-height: 200px; 
-}
-
-.whatWeDo:hover {
-    transition: 0.5s ease;
-    background-color: #edf3fc;
-}
-
-.explain {
-    margin-bottom: 20px;
-}
-
-
-.imageBox {
-    border: 0px solid #F8F8F8;
-    border-left: none;
-    border-bottom: none;
-    text-align: center;
-    background-color: white; /*#F8F8F8*/
-    max-height: 235px;
-    padding: 3px 20px 3px 20px;
-}
-
-.imageBox:hover {
-    transition: 0.5s ease;
-    background-color: #edf3fc;
-}
-
-.imageFurnitures {
-    max-width: 100%;
-    margin: 0 auto;
-    max-height: 226px;
-}
-
-.overlay {
-    position: absolute;
-    color: grey;
-    top: 250%;
-    left: 26%;
-    margin: 0 auto;
-    z-index: 1000;
-}
-
-.modal-content {
-   width: 410px;
-}
-
-.modal-header {
-    text-align: center;
-}
-
-.modal-title {
-    color: grey;
-}
-
-.errorMessage {
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 0px;
-    color: red;
-}
-
-.errorSearch {
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-}
-
 .userBox {
     position: fixed;
     top: 6%;
@@ -360,13 +361,6 @@ html, body {
     color: grey;
     margin-top: 25px;
 }
-
-.emptyDiv {
-    margin: 0 auto;
-}
-
-
-
 
 
 
