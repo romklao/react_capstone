@@ -309,15 +309,14 @@ html, body {
 .overlay {
     position: absolute;
     color: grey;
-    top: 20%;
+    top: 250%;
     left: 26%;
     margin: 0 auto;
     z-index: 1000;
 }
 
 .modal-content {
-/*    background-color: white;
-*/    width: 410px;
+   width: 410px;
 }
 
 .modal-header {
@@ -338,7 +337,7 @@ html, body {
 .errorSearch {
     position: absolute;
     top: 35%;
-    left: 40%;
+    left: 42%;
 }
 
 .userBox {

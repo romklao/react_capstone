@@ -19,7 +19,7 @@ function LandingPageContainer(props) {
     } else if (props.errorSearchMessage) {
         return (
             <h1 className="errorSearch">{props.errorSearchMessage}</h1>
-        )
+        );
     } else if (props.authenticated) {
         if (props.searchResults) {
             return (
