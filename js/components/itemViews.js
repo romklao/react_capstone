@@ -78,7 +78,7 @@ class ItemViews extends React.Component {
         if (item.OfferSummary) {
             price = item.OfferSummary[0].LowestNewPrice[0].FormattedPrice[0];
         }
-        if (item.ItemAttributes) {
+        if (item.ItemAttributes[0].Title) {
             productTitle = item.ItemAttributes[0].Title[0];
         }
         var arrowLeftUrl = "css/images/arrowLeft.png";

@@ -30,9 +30,13 @@ class UserLogin extends React.Component {
             } else {
                 return (
                     <div className="row userBox">
+                        <div className="col-lg-12 col-xs-12">
+                            <img src="css/images/background3.jpg"/>
+                        </div>
                         <div className="col-lg-12 col-sm-12 user">
                             <p>Welcome {this.props.user}!</p>
                         </div>
+                        
                     </div>
                 );
             }
