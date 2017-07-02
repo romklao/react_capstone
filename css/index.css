@@ -28,11 +28,10 @@ html, body {
 
 .searchResultsContainer {
     position: absolute;
-/*    background-color: #f7fbfc;  #f7fbfc #f7f2ed #F8F8F8 #F5FAFE f9fbfc
-*/    margin: 0 auto;
+    margin: 0 auto;
     width: 100%;
     top: 7%;
-    padding: 80px 100px 100px 100px;
+    padding: 30px 100px 100px 100px;
 }
 
 .searchResults {
@@ -52,7 +51,7 @@ html, body {
     margin: 0 auto;
     width: 100%;
     top: 7%;
-    padding: 80px 100px 100px 100px;
+    padding: 40px 100px 100px 100px;
 }
 
 .showFavorites {
@@ -353,6 +352,7 @@ html, body {
 .userBox > div > p {
     font-size: 35px;
     color: grey;
+    margin-top: 25px;
 }
 
 .emptyDiv {
