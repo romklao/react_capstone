@@ -54,9 +54,9 @@ class ItemViews extends React.Component {
             var imageUrl = item.ImageSets[0].ImageSet[this.state.index].LargeImage[0].URL[0];
         }
 
-        let favoriteId = '';
+        var favoriteId = '';
         if (this.props.favorites) {
-            for (let fav of this.props.favorites) {
+            for (var fav of this.props.favorites) {
                 if (fav.product.ASIN[0] === item.ASIN[0]) {
                     favoriteId = fav._id;
                     break;
@@ -64,8 +64,8 @@ class ItemViews extends React.Component {
             }
         }
 
-        let addFavIcon = "glyphicon glyphicon-heart heartFav";
-        let delFavIcon = "glyphicon glyphicon-heart heartFav changeToRed";
+        var addFavIcon = "glyphicon glyphicon-heart heartFav";
+        var delFavIcon = "glyphicon glyphicon-heart heartFav changeToRed";
 
         if (favoriteId) {
             addFavIcon += " hidden"
@@ -73,20 +73,20 @@ class ItemViews extends React.Component {
             delFavIcon += " hidden"
         }
 
-        let price;
-        let productTitle;
+        var price;
+        var productTitle;
         if (item.OfferSummary) {
             price = item.OfferSummary[0].LowestNewPrice[0].FormattedPrice[0];
         }
-        if (item.ItemAttributes[0].Title[0]) {
-            let productTitle = item.ItemAttributes[0].Title[0];
+        if (item.ItemAttributes[0]) {
+            productTitle = item.ItemAttributes[0].Title[0];
         }
-        let arrowLeftUrl = "css/images/arrowLeft.png";
-        let arrowRightUrl = "css/images/rightArrow.png";
-        let pageUrl = item.DetailPageURL[0];
-        let blank = "_blank";
-        let amazonLogoUrl = "css/images/amazonLogo.png";
-        let productFeature = item.ItemAttributes[0].Feature;
+        var arrowLeftUrl = "css/images/arrowLeft.png";
+        var arrowRightUrl = "css/images/rightArrow.png";
+        var pageUrl = item.DetailPageURL[0];
+        var blank = "_blank";
+        var amazonLogoUrl = "css/images/amazonLogo.png";
+        var productFeature = item.ItemAttributes[0].Feature;
 
         return (
             <div className="col-lg-6 col-sm-12 col-xs-12 itemResults">
