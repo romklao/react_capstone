@@ -27,7 +27,7 @@ function ShowSearchResults(props) {
                         </h1>
                     </div>
                 </div>
-                <div className="row itemViewsBox">
+                <div className="row searchResultsBox">
                     {results}
                 </div>
                 <div className="row">

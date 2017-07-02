@@ -207,6 +207,13 @@ html, body {
     margin: 0 auto;
 }
 
+.showFavoriteResults, .searchResultsBox {
+    border: 1px solid #c9d6ea;
+    border-bottom: none;
+    border-right: none;
+    text-align: center;
+}
+
 .showFavorites > div {
     text-align: center;
     margin: 0 auto;
@@ -259,9 +266,12 @@ html, body {
     padding-bottom: 6px;
 }
 
-.itemViewsBox {
+/*.searchResultsBox {
     text-align: center;
-}
+    border: 1px solid #c9d6ea;
+    border-bottom: none;
+    border-right: none;
+}*/
 
 .itemResults {
     text-align: center;
@@ -269,9 +279,8 @@ html, body {
     background-color: #F5FAFE;
     padding: 20px 10px 15px 10px;
     margin: 0 auto;
-    margin-top: 5px;
-    margin-bottom: 20px;
-    border: 0.5px solid #c9d6ea;
+    border-right: 0.5px solid #c9d6ea;
+    border-bottom: 0.5px solid #c9d6ea;
 }
 
 .itemResults:hover .leftArrow, .itemResults:hover .rightArrow {

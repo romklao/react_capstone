@@ -37,7 +37,7 @@ class ShowFavorites extends React.Component {
                                 </h1>
                             </div>
                         </div>
-                        <div className="row">
+                        <div className="row showFavoriteResults">
                             {favoritesResults}
                         </div>
                     </div>
