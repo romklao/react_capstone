@@ -107,6 +107,12 @@ html, body {
     margin-top: 60px;
 }
 
+.furIcon {
+    width: 35px;
+    margin-right: 6px;
+    padding-bottom: 6px;
+}
+
 .itemViewsBox {
     text-align: center;
 }

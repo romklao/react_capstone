@@ -22,7 +22,9 @@ function ShowSearchResults(props) {
                 <div className="searchResults">
                     <div className="row">
                         <div className="col-lg-12 col-sm-12 searchText">
-                            <h1>The results of {props.searchInput} !</h1>
+                            <h1>
+                                <img src="css/images/dressing.png" className="furIcon"/>The results of {props.searchInput}
+                            </h1>
                         </div>
                     </div>
                     <div className="row itemViewsBox">

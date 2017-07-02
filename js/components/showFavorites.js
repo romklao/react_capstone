@@ -32,7 +32,9 @@ class ShowFavorites extends React.Component {
                     <div className="showFavorites">
                         <div className="row">
                             <div className="col-lg-12 col-sm-12 searchText">
-                                <h1>Your favorite items!</h1>
+                                <h1>
+                                    <img src="css/images/lamp.png" className="furIcon"/>Your favorite items
+                                </h1>
                             </div>
                         </div>
                         <div className="row">
