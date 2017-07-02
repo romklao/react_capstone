@@ -18,6 +18,8 @@ const app = express();
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
+app.use(express.static(__dirname + '/build'));
+
 
 app.use(express.static('build'));
 app.use(jsonParser);
