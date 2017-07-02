@@ -98,9 +98,11 @@ class ItemViews extends React.Component {
                     <span className={delFavIcon} onClick={() => this.deleteFavoriteItems(favoriteId)}></span>
                 </div>
                 <div className="productDescription">
-                    <p className="productTitle">{productTitle}</p>
-                    <a href={pageUrl} target={blank}><img src={amazonLogoUrl} className="amazonLogo"/></a>
-                    <span className="price">{price}</span>
+                    <div className="productTitleBox">
+                        <p className="productTitle">{productTitle}</p>
+                        <a href={pageUrl} target={blank}><img src={amazonLogoUrl} className="amazonLogo"/></a>
+                        <span className="price">{price}</span>
+                    </div>
                 </div>
             </div>
         );

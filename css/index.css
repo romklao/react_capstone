@@ -225,6 +225,22 @@ html, body {
     position: absolute;
     width: 96%;
     bottom: 5%;
+    height: 150px;
+}
+
+.productTitleBox {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 96%;
+    text-align: center;
+}
+
+.productTitle {
+    padding-left: 15px;
+    padding-right: 15px;
+    color: #135593;
+    text-align: left;
 }
 
 .amazonLogo, .price {
@@ -239,14 +255,6 @@ html, body {
     width: 50px;
     padding-bottom: 4px;
     margin-left: 5px;
-}
-
-.productTitle {
-    padding-left: 15px;
-    padding-right: 10px;
-    color: #135593;
-    width: 95%;
-    text-align: left;
 }
 
 .searchText {
@@ -265,13 +273,6 @@ html, body {
     margin-right: 6px;
     padding-bottom: 6px;
 }
-
-/*.searchResultsBox {
-    text-align: center;
-    border: 1px solid #c9d6ea;
-    border-bottom: none;
-    border-right: none;
-}*/
 
 .itemResults {
     text-align: center;
