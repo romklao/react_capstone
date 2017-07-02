@@ -391,13 +391,14 @@ html, body {
         font-size: 17px;
     }
     .modal-content {
-        width: 370px;
+        width: 350px;
     }
     .overlay {
         left: 1%;
+        top: 50%;
     }
     .login_input, .signup {
-        width: 330px;
+        width: 310px;
     }
     .itemsResults > img {
         max-width: 260px;
