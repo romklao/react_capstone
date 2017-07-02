@@ -17,8 +17,7 @@ class ItemViews extends React.Component {
         this.nextImage = this.nextImage.bind(this);
     }
 
-    addFavoriteItems(event) {
-        event.preventDefault();
+    addFavoriteItems() {
         this.props.dispatch(actions.addFavorites(this.props.product));
         if (!this.props.authenticated) {
             this.props.dispatch(actions.showLogin());

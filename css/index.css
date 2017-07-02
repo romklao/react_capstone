@@ -68,9 +68,11 @@ html, body {
 }
 
 .productDescription {
-    margin-top: 10px;
     background-color: white;
     padding: 10px;
+    position: absolute;
+    width: 96%;
+    top: 71.5%;
 }
 
 .amazonLogo, .price {
@@ -100,7 +102,7 @@ html, body {
 }
 
 .searchText > h1 {
-    color: grey;
+    color: #135593;
     margin: 0 auto;
     margin-bottom: 50px;
     margin-top: 60px;
@@ -112,9 +114,9 @@ html, body {
 
 .itemResults {
     text-align: center;
-    height: 510px;
+    height: 520px;
     background-color: #F5FAFE;
-    padding: 20px 10px 20px 10px;
+    padding: 20px 10px 15px 10px;
     margin: 0 auto;
     margin-top: 5px;
     margin-bottom: 20px;
@@ -136,15 +138,15 @@ html, body {
 }
 
 .leftArrow {
-    left: 0%;
-    width: 30px;
+    left: 2.5%;
+    width: 20px;
     top: 40%;
 }
 
 .rightArrow {
     left: 92.5%;
-    width: 45px;
-    top: 37.5%;
+    width: 28px;
+    top: 38.5%;
 }
 
 #imageProduct {
@@ -154,6 +156,37 @@ html, body {
     margin-left: 10px;
     margin-top: 10px;
     max-height: 330px;
+}
+
+@keyframes imageProductFadeInOut {
+  0% {
+    opacity:1;
+  }
+  17% {
+    opacity:1;
+  }
+  25% {
+    opacity:0;
+  }
+  92% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+#imageProduct {
+  animation-delay: 6s;
+}
+#imageProduct {
+  animation-delay: 4s;
+}
+#imageProduct {
+  animation-delay: 2s;
+}
+#imageProduct {
+  animation-delay: 0;
 }
 
 .heartFav {
@@ -171,20 +204,6 @@ html, body {
 
 .heartFav:hover {
     cursor: pointer;
-}
-
-.clickAdd, .removeFavorite {
-    display: none;
-    position: absolute;
-    top: 0%;
-    left: 72%;
-    border: 1px solid lightgrey;
-    padding: 1px 4px 1px 4px;
-    border-radius: 3px;
-}
-
-.clickAdd {
-    left: 75%;
 }
 
 .removeFavorite {
@@ -407,7 +426,7 @@ html, body {
         max-height: 260px;
     }
     .showFavoritesContainer, .searchResultsContainer {
-        padding: 80px 50px 80px 50px;
+        padding: 80px 20px 80px 20px;
     }
     .loginHi {
         margin-left: 14px;
@@ -445,6 +464,13 @@ html, body {
     .leftArrow {
         width: 20px;
         top: 39%;
+    }
+    .productDescription {
+        width: 93.5%;
+        top: 62.5%;
+    }
+    #imageProduct {
+        max-width: 92%;
     }
 }
 
