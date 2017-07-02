@@ -1,6 +1,6 @@
 # HomeDecor
  
-Live Demo : (https://enigmatic-mesa-94213.herokuapp.com/#/)
+Live Demo : https://enigmatic-mesa-94213.herokuapp.com/#/
 
 # Introduction
 
