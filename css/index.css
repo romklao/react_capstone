@@ -337,7 +337,8 @@ html, body {
 .errorSearch {
     position: absolute;
     top: 35%;
-    left: 42%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
 }
 
 .userBox {
