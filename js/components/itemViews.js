@@ -76,7 +76,7 @@ class ItemViews extends React.Component {
             price = item.OfferSummary[0].LowestNewPrice[0].FormattedPrice[0];
         }
         let arrowLeftUrl = "css/images/arrowLeft.png";
-        let arrowRightUrl = "css/images/right.png";
+        let arrowRightUrl = "css/images/rightArrow.png";
         let pageUrl = item.DetailPageURL[0];
         let blank = "_blank";
         let amazonLogoUrl = "css/images/amazonLogo.png";
