@@ -50,7 +50,9 @@ class ItemViews extends React.Component {
 
     render () {
         var item = this.props.product;
-        var imageUrl = item.ImageSets[0].ImageSet[this.state.index].LargeImage[0].URL[0];
+        if (item.ImageSets[0]) {
+            var imageUrl = item.ImageSets[0].ImageSet[this.state.index].LargeImage[0].URL[0];
+        }
 
         let favoriteId = '';
         if (this.props.favorites) {
