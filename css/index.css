@@ -324,6 +324,7 @@ html, body {
 
 .heartFav:hover {
     cursor: pointer;
+    color: #ed023d;
 }
 
 .removeFavorite {
