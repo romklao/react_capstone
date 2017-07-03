@@ -46,8 +46,8 @@ class LoginSignup extends React.Component {
         else {
             return (
                 <ul className="nav navbar-nav navbar-right">
-                    <li><Link to="/" onClick={this.showLogin}>Log In</Link></li>
-                    <li><Link to="/" onClick={this.showSignup}>Sign Up</Link></li>
+                    <li><Link to="/" onClick={this.showLogin} id="loginLink">Log In</Link></li>
+                    <li><Link to="/" onClick={this.showSignup} id="signupLink">Sign Up</Link></li>
                 </ul>
             );
         }

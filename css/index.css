@@ -51,6 +51,10 @@ html, body {
     color: grey;
 }
 
+#loginLink, #signupLink {
+    color: black;
+}
+
 .login_input, .signup {
     width: 370px;
 }
@@ -92,7 +96,7 @@ html, body {
 }
 
 .title{
-    color: grey;
+    color: black;
     font-size: 35px;
 }
 
@@ -107,7 +111,7 @@ html, body {
 
 .whatWeDo {
     font-size: 25px;
-    color: grey; /*#41474D*/
+    color: black; /*#41474D*/
     text-align: center;
     margin-bottom: 55px;
     border:1px solid white;
@@ -115,11 +119,6 @@ html, body {
     padding-bottom: 40px;
     padding-top: 40px;
     max-height: 200px; 
-}
-
-.whatWeDo:hover {
-    transition: 0.5s ease;
-    background-color: #edf3fc;
 }
 
 .explain {
