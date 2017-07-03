@@ -359,6 +359,9 @@ html, body {
     margin: 0 auto;
     width: 100%;
     height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
 }
 
 .userBox > div {
@@ -394,7 +397,7 @@ html, body {
         width: 350px;
     }
     .overlay {
-        left: 1%;
+        left: 3.5%;
         top: 50%;
     }
     .login_input, .signup {
@@ -422,7 +425,14 @@ html, body {
         left: 47%;
     }
     .userBox > div {
-        left: 16.5%;
+        left: 0%;
+        width: 50%;
+        padding: 0px;
+    }
+    .userBox > div > p {
+        font-size: 25px;
+        width: 100%;
+        margin-left: 90px;
     }
     .productTitle {
         top: 60%;
