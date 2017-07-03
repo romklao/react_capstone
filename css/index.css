@@ -22,6 +22,10 @@ html, body {
     margin: 0 auto;
 }
 
+#homeIcon {
+    width: 42px;
+}
+
 .search_input {
     margin-right: 5px;
 }

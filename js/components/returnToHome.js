@@ -13,6 +13,7 @@ export function ReturnToHome(props) {
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
             </button>
+            <a className="navbar-brand" id="homeIcon" href="#"><img src="css/images/home.png" width="21px"/></a>
             <a className="navbar-brand" href="#">HomeDecor</a>
         </div>
     );
