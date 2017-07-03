@@ -280,8 +280,8 @@ html, body {
     background-color: #F5FAFE;
     padding: 20px 10px 15px 10px;
     margin: 0 auto;
-    border-right: 0.5px solid #c9d6ea;
-    border-bottom: 0.5px solid #c9d6ea;
+    border-right: 1px solid #c9d6ea;
+    border-bottom: 1px solid #c9d6ea;
 }
 
 .itemResults:hover .leftArrow, .itemResults:hover .rightArrow {
@@ -322,7 +322,7 @@ html, body {
 .heartFav {
     position: absolute;
     left: 93%;
-    top: 2%;
+    top: 1.5%;
     font-size: 20px;
     color: #b9bdbf;
     border: none;
