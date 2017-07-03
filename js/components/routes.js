@@ -24,10 +24,9 @@ export function Routes(props) {
     );
 };
 
-const mapStateToProps = (state, props) => {
-    return {
-        user: state.user,
-    };
-};
+const mapStateToProps = (state, props) => ({
+    user: state.user,
+
+});
 
 export default connect(mapStateToProps)(Routes);

@@ -53,14 +53,12 @@ function LandingPageContainer(props) {
     }
 }
 
-const mapStateToProps = (state, props) => {
-    return {
-        landingPageHidden: state.landingPageHidden,
-        searchResults: state.searchResults,
-        authenticated: localStorage.authHeaders,
-        errorSearchMessage: state.errorSearchMessage,
-    }
-}
+const mapStateToProps = (state, props) => ({
+    landingPageHidden: state.landingPageHidden,
+    searchResults: state.searchResults,
+    authenticated: localStorage.authHeaders,
+    errorSearchMessage: state.errorSearchMessage,
+});
 
 export default connect(mapStateToProps)(LandingPageContainer);
 

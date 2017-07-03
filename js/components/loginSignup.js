@@ -54,12 +54,10 @@ class LoginSignup extends React.Component {
     }
 }
 
-const mapStateToProps = (state, props) => {
-    return {
-        user: state.user,
-        authenticated: localStorage.authHeaders,
-    }
-}
+const mapStateToProps = (state, props) => ({
+    user: state.user,
+    authenticated: localStorage.authHeaders,
+});
 export default connect(mapStateToProps)(LoginSignup);
 
 

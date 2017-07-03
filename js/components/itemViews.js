@@ -109,13 +109,11 @@ class ItemViews extends React.Component {
     }
 }
 
-const mapStateToProps = (state, props) => {
-    return {
-        favorites: state.favorites,
-        searchResults: state.searchResults,
-        authenticated: localStorage.authHeaders,
-        confirmAddFavoriteMessage: state.confirmAddFavoriteMessage
-    }
-} 
+const mapStateToProps = (state, props) => ({
+    favorites: state.favorites,
+    searchResults: state.searchResults,
+    authenticated: localStorage.authHeaders,
+    confirmAddFavoriteMessage: state.confirmAddFavoriteMessage
+}) 
 
 export default connect(mapStateToProps)(ItemViews);

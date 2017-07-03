@@ -36,11 +36,11 @@ export function Navbar(props) {
 };
 
 const mapStateToProps = (state, props) => ({
+
     showSignup: state.showSignup,
     showLogin: state.showLogin,
     favorites: state.favorites,
-
-})
+});
 
 export default connect(mapStateToProps)(Navbar);
 

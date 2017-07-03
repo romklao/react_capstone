@@ -19,7 +19,7 @@ export function WhatWeDoBox(props) {
 
     return (
         <div className="row whatWeDo">
-            <div className="col-lg-12 col-sm-12">
+            <div className="col-lg-12 col-md-6 col-sm-12 col-xs-12">
                 <div className="explainBox">
                     <p className="explain">Search for products, sign up to save your favorite items and share with your friends</p>
                     <button className="btn btn-default loginBtn" onClick={showLogin}>Log In</button>
@@ -33,7 +33,7 @@ export function WhatWeDoBox(props) {
 const mapStateToProps = (state, props) => ({
     showSignup: state.showSignup,
     showLogin: state.showLogin,
-})
+});
 
 export default connect(mapStateToProps)(WhatWeDoBox);
 

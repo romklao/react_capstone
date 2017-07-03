@@ -47,12 +47,10 @@ class ShowFavorites extends React.Component {
     }
 }
 
-const mapStateToProps = (state, props) => { 
-    return {
-        authenticated: localStorage.authHeaders,
-        favorites: state.favorites,
-        searchResults: state.searchResults,
-    }
-}
+const mapStateToProps = (state, props) => ({ 
+    authenticated: localStorage.authHeaders,
+    favorites: state.favorites,
+    searchResults: state.searchResults,
+});
 
 export default connect(mapStateToProps)(ShowFavorites);

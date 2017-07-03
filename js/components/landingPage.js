@@ -7,14 +7,14 @@ function LandingPage(props) {
     return (
         <div className="landing">
             <div className="row landingPage">
-                <div className="col-lg-12 col-xs-12">
+                <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div>
                         <img src="css/images/living3.jpg" className="imageLivingroom" />
                     </div>
                 </div>
             </div>
             <div className="row landingIntro">
-                <div className="col-lg-12 col-md-12">
+                <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div>
                         <p className="title">We can help you decorate your home</p>
                     </div>

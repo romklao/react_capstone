@@ -62,10 +62,8 @@ class SignupModal extends React.Component {
     };
 };
 
-const mapStateToProps = (state, props) => {
-    return {
-        errorMessage: state.errorMessage,
-    }
-}
+const mapStateToProps = (state, props) => ({
+    errorMessage: state.errorMessage,
+});
 
 export default connect(mapStateToProps)(SignupModal);

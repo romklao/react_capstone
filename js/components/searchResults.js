@@ -38,16 +38,14 @@ function ShowSearchResults(props) {
     }
 }
 
-const mapStateToProps = (state, props) => {
-    return {
-        searchResults: state.searchResults,
-        searchInput: state.searchInput,
-        favorites: state.favorites,
-        authenticated: state.authenticated,
-        errorSearchMessage: state.errorSearchMessage,
-        confirmAddFavoriteMessage: state.confirmAddFavoriteMessage
-    }
-} 
+const mapStateToProps = (state, props) => ({
+    searchResults: state.searchResults,
+    searchInput: state.searchInput,
+    favorites: state.favorites,
+    authenticated: state.authenticated,
+    errorSearchMessage: state.errorSearchMessage,
+    confirmAddFavoriteMessage: state.confirmAddFavoriteMessage
+});
 
 export default connect(mapStateToProps)(ShowSearchResults);
 

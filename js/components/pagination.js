@@ -31,11 +31,10 @@ class Pagination extends React.Component {
     }
 }
 
-const mapStateToProps = (state, props) => {
-    return {
-        searchInput: state.searchInput,
-    }
-}
+const mapStateToProps = (state, props) => ({
+    searchInput: state.searchInput,
+
+});
 
 export default connect(mapStateToProps)(Pagination);
 
