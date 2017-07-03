@@ -51,9 +51,9 @@ html, body {
     color: grey;
 }
 
-#loginLink, #signupLink {
+/*#loginLink, #signupLink {
     color: black;
-}
+}*/
 
 .login_input, .signup {
     width: 370px;

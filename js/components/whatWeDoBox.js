@@ -2,6 +2,9 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import * as actions from '../actions/index';
+import LoginModal from './login-modal';
+import SignupModal from './signup-modal';
+import LoginSignup from './loginSignup';
 
 export function WhatWeDoBox(props) {
     let showSignup = event => {
@@ -27,5 +30,10 @@ export function WhatWeDoBox(props) {
     ); 
 }
 
-export default connect()(WhatWeDoBox);
+const mapStateToProps = (state, props) => ({
+    showSignup: state.showSignup,
+    showLogin: state.showLogin,
+})
+
+export default connect(mapStateToProps)(WhatWeDoBox);
 
