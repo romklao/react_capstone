@@ -448,8 +448,9 @@ html, body {
         font-size: 17px;
     }
     .rightArrow {
-        left: 90.5%;
+        left: 89.5%;
         width: 30px;
+        top: 38%;
     }
     .leftArrow {
         width: 20px;
