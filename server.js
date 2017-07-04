@@ -14,6 +14,7 @@ const isEmpty = require('lodash/isEmpty');
 const bcrypt = require('bcrypt');
 
 const app = express();
+mongoose.Promise = global.Promise;
 
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;

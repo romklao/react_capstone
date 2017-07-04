@@ -23,7 +23,7 @@ export const decorHomeReducer = function(state, action) {
     if (action.type === actions.SHOW_SIGNUP) {
         state = Object.assign({}, 
             state, {
-                showSignup: true
+                showSignup: true,
             } 
         );
         return state;
@@ -31,9 +31,10 @@ export const decorHomeReducer = function(state, action) {
     } else if (action.type === actions.SHOW_LOGIN) {
         state = Object.assign({}, 
             state, {
-                showLogin: true
+                showLogin: true,
             } 
         );
+        console.log('state showLogin', state)
         return state;
 
     } else if (action.type === actions.HIDE) {

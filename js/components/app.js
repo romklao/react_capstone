@@ -9,12 +9,25 @@ import WhatWeDoBox from './whatWeDoBox';
 import ImageList from './imageList';
 import LandingPageContainer from './landingPageContainer';
 import UserLogin from './user';
+import LoginModal from './login-modal';
+import SignupModal from './signup-modal';
 
 
 export function App(props) {
+    var loginModal;
+    var signupModal;
+    if(props.showLogin) {
+        loginModal = <LoginModal />
+    }
+    if(props.showSignup) {
+        signupModal = <SignupModal />
+    }
+
     return (
         <div className="decorHome">
             <Navbar/>
+            {loginModal}
+            {signupModal}
             <div>
                 {props.children}
             </div>
@@ -22,4 +35,10 @@ export function App(props) {
     );
 }
 
-export default connect()(App);
+const mapStateToProps = (state, props) => ({
+    showSignup: state.showSignup,
+    showLogin: state.showLogin,
+    favorites: state.favorites,
+});
+
+export default connect(mapStateToProps)(App);
