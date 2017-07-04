@@ -468,6 +468,7 @@ html, body {
     }
     #imageProduct {
         max-width: 92%;
+        max-height: 300px;
     }
 }
 
