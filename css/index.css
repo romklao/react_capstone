@@ -34,6 +34,10 @@ html, body {
     margin-right: 5px;
 }
 
+.searchSubmit {
+    padding: 10px;
+}
+
 .loginBtn, .signupBtn {
     margin-right: 3px;
     margin-left: 3px;

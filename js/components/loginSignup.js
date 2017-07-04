@@ -38,21 +38,34 @@ class LoginSignup extends React.Component {
             return (
                 <ul className="nav navbar-nav navbar-right">
                     <li className="loginHi">Hi! {this.props.user}</li>
-                    <li><a href="#" onClick={this.getFavoriteItems}>Favorites</a></li>
-                    <li><a href="#" onClick={this.logoutUser}>Log Out</a></li>
+                    <li>
+                        <a href="#" className="hidden-xs" onClick={this.getFavoriteItems}>Favorites</a>
+                        <a href="#" className="visible-xs" data-toggle="collapse" data-target=".navbar-collapse" onClick={this.getFavoriteItems}>Favorites</a>
+                    </li>
+                    <li>
+                        <a href="#" className="hidden-xs" onClick={this.logoutUser}>Log Out</a>
+                        <a href="#" className="visible-xs" data-toggle="collapse" data-target=".navbar-collapse" onClick={this.logoutUser}>Log Out</a>
+                    </li>
                 </ul>
             );
         } 
         else {
             return (
                 <ul className="nav navbar-nav navbar-right">
-                    <li><Link to="/" onClick={this.showLogin} id="loginLink">Log In</Link></li>
-                    <li><Link to="/" onClick={this.showSignup} id="signupLink">Sign Up</Link></li>
+                    <li>
+                        <a href="/" onClick={this.showLogin} className="hidden-xs" id="loginLink">Log In</a>
+                        <a href="/" onClick={this.showLogin} className="visible-xs" data-toggle="collapse" data-target=".navbar-collapse">Log In</a>
+                    </li>
+                    <li>
+                        <a href="/" onClick={this.showSignup} className="hidden-xs" id="signupLink">Sign Up</a>
+                        <a href="/" onClick={this.showSignup} className="visible-xs" data-toggle="collapse" data-target=".navbar-collapse">Sign Up</a>
+                    </li>
                 </ul>
             );
         }
     }
 }
+
 
 const mapStateToProps = (state, props) => ({
     user: state.user,

@@ -90,7 +90,7 @@ class ItemViews extends React.Component {
 
         return (
             <div className="col-lg-6 col-sm-12 col-xs-12 itemResults">
-                <div>
+                <div className="imageProductBox">
                     <img src={imageUrl} id="imageProduct"/>
                     <img src={arrowLeftUrl} onClick={this.previousImage} className="leftArrow"/>
                     <img src={arrowRightUrl} onClick={this.nextImage} className="rightArrow"/>               

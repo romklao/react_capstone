@@ -23,7 +23,8 @@ class SearchForm extends React.Component {
                     <input type="text" ref={element => this.addSearchTextInput = element} 
                         className="form-control input-md search_input" placeholder="Search" />
                 </div>
-                <button type="submit" className="btn btn-default btn-md searchSubmit">Submit</button>
+                <button type="submit" className="btn btn-default hidden-xs">Submit</button>
+                <button type="submit" className="btn btn-default visible-xs" data-toggle="collapse" data-target=".navbar-collapse">Submit</button>
             </form>
         );
     };
