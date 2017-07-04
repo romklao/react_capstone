@@ -55,10 +55,6 @@ html, body {
     color: grey;
 }
 
-/*#loginLink, #signupLink {
-    color: black;
-}*/
-
 .login_input, .signup {
     width: 370px;
 }
@@ -317,12 +313,12 @@ html, body {
 }
 
 #imageProduct {
-    max-width: 80%;
+    max-width: 87%;
     margin: 0;
     margin-right: 10px;
     margin-left: 10px;
     margin-top: 10px;
-    max-height: 320px;
+    max-height: 330px;
 }
 
 .heartFav {
@@ -467,7 +463,8 @@ html, body {
     }
     .productDescription {
         width: 93.5%;
-        top: 62.5%;
+        bottom: 5%;
+        height: 31%;
     }
     #imageProduct {
         max-width: 92%;
