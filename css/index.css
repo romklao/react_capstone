@@ -471,6 +471,9 @@ html, body {
         max-width: 92%;
         max-height: 300px;
     }
+    .imageFurnitures {
+        max-height: 175px;
+    }
 }
 
 @media (min-width: 510px) and (max-width: 1100px) {
