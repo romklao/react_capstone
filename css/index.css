@@ -385,9 +385,6 @@ html, body {
 
 
 @media (max-width: 500px) {
-    #navbarFixed {
-        z-index: 100;
-    }
     .landingIntro {
         left: 13%;
         top: 18%;
@@ -407,7 +404,7 @@ html, body {
     }
     .overlay {
         left: 3.5%;
-        top: 30%;
+        top: 15%;
     }
     .login_input, .signup {
         width: 310px;
