@@ -17,7 +17,7 @@ html, body {
     z-index: 100;
 }
 
-.landingPage, {
+.landingPage {
     position: absolute;
     text-align: center;
     width: 100%;
@@ -361,12 +361,11 @@ html, body {
 
 .userBox {
     position: fixed;
+    background-color: black;
     top: 6%;
-    margin: 0 auto;
+    margin: 0;
     width: 100%;
     height: 100%;
-    left: 50%;
-    transform: translateX(-50%);
     text-align: center;
 }
 
@@ -378,8 +377,12 @@ html, body {
 
 .userBox > div > p {
     font-size: 35px;
-    color: grey;
+    color: white;
     margin-top: 25px;
+}
+
+.userBackground {
+    max-height: 670px;
 }
 
 
