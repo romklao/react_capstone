@@ -75,7 +75,7 @@ class ItemViews extends React.Component {
 
         var price;
         var productTitle;
-        if (item.OfferSummary) {
+        if (item.OfferSummary[0].LowestNewPrice) {
             price = item.OfferSummary[0].LowestNewPrice[0].FormattedPrice[0];
         }
         if (item.ItemAttributes[0].Title) {
