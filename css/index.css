@@ -183,6 +183,16 @@ input:-webkit-autofill:active {
     color: grey;
 }
 
+.searchText {
+    margin: 0 auto;
+}
+
+.searchText > h1 {
+    margin: 0 auto;
+    margin-bottom: 50px;
+    margin-top: 60px;
+}
+
 .searchResultsContainer {
     position: absolute;
     margin: 0 auto;
@@ -274,17 +284,6 @@ input:-webkit-autofill:active {
     width: 50px;
     padding-bottom: 4px;
     margin-left: 5px;
-}
-
-.searchText {
-    margin: 0 auto;
-}
-
-.searchText > h1 {
-    color: grey;
-    margin: 0 auto;
-    margin-bottom: 50px;
-    margin-top: 60px;
 }
 
 .furIcon {
