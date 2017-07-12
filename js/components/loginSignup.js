@@ -39,11 +39,11 @@ class LoginSignup extends React.Component {
                 <ul className="nav navbar-nav navbar-right">
                     <li className="loginHi">Hi! {this.props.user}</li>
                     <li>
-                        <a href="#" className="hidden-xs" onClick={this.getFavoriteItems}>Favorites</a>
+                        <a href="#" className="hidden-xs" id="favLink" onClick={this.getFavoriteItems}>Favorites</a>
                         <a href="#" className="visible-xs" data-toggle="collapse" data-target=".navbar-collapse" onClick={this.getFavoriteItems}>Favorites</a>
                     </li>
                     <li>
-                        <a href="#" className="hidden-xs" onClick={this.logoutUser}>Log Out</a>
+                        <a href="#" className="hidden-xs" id="logoutLink" onClick={this.logoutUser}>Log Out</a>
                         <a href="#" className="visible-xs" data-toggle="collapse" data-target=".navbar-collapse" onClick={this.logoutUser}>Log Out</a>
                     </li>
                 </ul>
