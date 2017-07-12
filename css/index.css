@@ -66,6 +66,11 @@ input:-webkit-autofill:active {
     color: grey;
 }
 
+#loginLink, #signupLink {
+    font-size: 15px;
+    color: black;
+}
+
 .login_input, .signup {
     width: 370px;
 }
