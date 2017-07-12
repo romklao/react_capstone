@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-    font-family: Roboto;        
+    font-family: Roboto;
     margin: 0 auto;
 }
 
@@ -127,9 +127,9 @@ input:-webkit-autofill:active {
     margin-bottom: 55px;
     border:1px solid white;
     background-color: white;/* #f9f2ea*/
-    padding-bottom: 40px;
+    padding-bottom: 45px;
     padding-top: 40px;
-    max-height: 200px; 
+    max-height: 250px; 
 }
 
 .explain {
@@ -234,6 +234,7 @@ input:-webkit-autofill:active {
 
 .productDescription {
     background-color: white;
+    font-size: 15px;        
     padding: 10px;
     position: absolute;
     width: 96%;
@@ -475,11 +476,12 @@ input:-webkit-autofill:active {
     .productDescription {
         width: 93.5%;
         bottom: 5%;
-        height: 33%;
+        height: 35%;
+        font-size: 15px;        
     }
     #imageProduct {
         max-width: 92%;
-        max-height: 300px;
+        max-height: 295px;
     }
     .imageFurnitures {
         max-height: 175px;
@@ -496,6 +498,9 @@ input:-webkit-autofill:active {
     }
     .container {
         top: 37%;
+    }
+    .whatWeDo {
+        font-size: 17px;
     }
 
 }
