@@ -17,6 +17,7 @@ function LandingPage(props) {
                 <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div>
                         <p className="title">We can help you decorate your home</p>
+                        <img src="css/images/arrow.png" />
                     </div>
                 </div>
             </div>

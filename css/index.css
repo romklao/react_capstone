@@ -112,8 +112,16 @@ input:-webkit-autofill:active {
 
 .landingIntro {
     position: fixed;
+    text-align: center;
     top: 16.5%;
     left: 27%;
+}
+
+.landingIntro > div > div > img {
+    position: absolute;
+    top: 500px;
+    width: 32px;
+    color: black;
 }
 
 .title{
