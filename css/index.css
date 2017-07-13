@@ -120,7 +120,7 @@ input:-webkit-autofill:active {
 .landingIntro > div > div > img {
     position: absolute;
     top: 500px;
-    width: 32px;
+    width: 30px;
     color: black;
 }
 
@@ -416,6 +416,10 @@ input:-webkit-autofill:active {
     .landingIntro {
         left: 13%;
         top: 18%;
+    }
+    .landingIntro > div > div > img {
+        top: 115px;
+        width: 18px;
     }
     .title {
         font-size: 18px;
