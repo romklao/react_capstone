@@ -27,9 +27,10 @@ class ItemViews extends React.Component {
     deleteFavoriteItems(favoriteId) {
         this.props.dispatch(actions.deleteFavorites(
             {_id: favoriteId})
-        ).then(() =>
-            this.props.dispatch(actions.getFavorites())
         )
+        // .then(() =>
+        //     this.props.dispatch(actions.getFavorites())
+        // )
     }
 
     previousImage() {

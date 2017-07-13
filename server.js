@@ -20,6 +20,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
 app.use(express.static('build'));
+app.use(express.static('sweetalert-master'));
 
 app.use(jsonParser);
 app.use(morgan('common'));

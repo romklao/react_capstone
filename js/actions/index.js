@@ -256,37 +256,79 @@ export const getFavoriteError = error => ({
     error: error,
 })
 
-export const deleteFavorites = (product) => dispatch => {
+export const deleteFavorites = (product, callback) => dispatch => {
     console.log('product', product)
-    if (confirm("Are you sure you want to remove the item?")) {
-        let url = '/favorites';
-        let fetchData = {
-                method: 'DELETE',
-                headers: {
-                    'Accept': 'application/json, text/plain, */*',
-                    'Content-Type': 'application/json',
-                    'Authorization': localStorage.authHeaders,
-                },
-                body: JSON.stringify(product),
-        }
-        return fetch(url, fetchData).then(response => {
-            console.log('response', response.body)
-            if (!response.ok) {
-                throw Error(response.statusText);
+    swal({
+        title: "Are you sure you want to delete the item?",
+        showCancelButton: true,
+        confirmButtonColor: "#DD6B55",
+        confirmButtonText: "Yes, delete it!",
+        cancelButtonText: "No, cancel!",
+        closeOnConfirm: true,
+        closeOnCancel: true
+        },
+        function(isConfirm) {
+           if (isConfirm) {
+                let url = '/favorites';
+                let fetchData = {
+                        method: 'DELETE',
+                        headers: {
+                            'Accept': 'application/json, text/plain, */*',
+                            'Content-Type': 'application/json',
+                            'Authorization': localStorage.authHeaders,
+                        },
+                        body: JSON.stringify(product),
+                }
+                return fetch(url, fetchData).then(response => {
+                    console.log('response', response.body)
+                    if (!response.ok) {
+                        throw Error(response.statusText);
+                    }
+                    return response;
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('data', data);
+                    dispatch(getFavorites());
+                    return dispatch(deleteFavoriteSuccess(data));
+                })
+                .catch(error => {
+                    console.log('error1', error)
+                    return dispatch(deleteFavoriteError(error.message));
+                })
             }
-            return response;
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log('data', data);
-            return dispatch(deleteFavoriteSuccess(data));
-        })
-        .catch(error => {
-            console.log('error1', error)
-            return dispatch(deleteFavoriteError(error.message));
-        })
-    }
+        }
+    );
 }
+//     if (confirm("Are you sure you want to remove the item?")) {
+//         let url = '/favorites';
+//         let fetchData = {
+//                 method: 'DELETE',
+//                 headers: {
+//                     'Accept': 'application/json, text/plain, */*',
+//                     'Content-Type': 'application/json',
+//                     'Authorization': localStorage.authHeaders,
+//                 },
+//                 body: JSON.stringify(product),
+//         }
+//         return fetch(url, fetchData).then(response => {
+//             console.log('response', response.body)
+//             if (!response.ok) {
+//                 throw Error(response.statusText);
+//             }
+//             return response;
+//         })
+//         .then(response => response.json())
+//         .then(data => {
+//             console.log('data', data);
+//             return dispatch(deleteFavoriteSuccess(data));
+//         })
+//         .catch(error => {
+//             console.log('error1', error)
+//             return dispatch(deleteFavoriteError(error.message));
+//         })
+//     }
+// }
 
 export const DELETE_FAVORITES_SUCCESS = 'DELETE_FAVORITES_SUCCESS';
 export const deleteFavoriteSuccess = products => ({
