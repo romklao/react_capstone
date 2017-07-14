@@ -249,8 +249,8 @@ input:-webkit-autofill:active {
 }
 
 .showFavoriteResults, .searchResultsBox {
-    border: 1px solid #c9d6ea;
-    /*border-bottom: none;
+/*    border: 1px solid #c9d6ea;
+*/    /*border-bottom: none;
     border-right: none;*/
     text-align: center;
 }
