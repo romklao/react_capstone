@@ -23,7 +23,7 @@ function ShowSearchResults(props) {
                 <div className="row">
                     <div className="col-lg-12 col-sm-12 searchText">
                         <h1>
-                            <img src="css/images/lamp.png" className="furIcon"/>The results of {props.searchInput}
+                            <img src="css/images/home.png" className="furIcon"/>The results of {props.searchInput}
                         </h1>
                     </div>
                 </div>
