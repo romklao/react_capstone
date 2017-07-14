@@ -250,8 +250,8 @@ input:-webkit-autofill:active {
 
 .showFavoriteResults, .searchResultsBox {
     border: 1px solid #c9d6ea;
-    border-bottom: none;
-    border-right: none;
+    /*border-bottom: none;
+    border-right: none;*/
     text-align: center;
 }
 
@@ -311,8 +311,7 @@ input:-webkit-autofill:active {
     background-color: #F5FAFE;
     padding: 20px 10px 15px 10px;
     margin: 0 auto;
-    border-right: 1px solid #c9d6ea;
-    border-bottom: 1px solid #c9d6ea;
+    border: 1px solid white; /*#c9d6ea*/
 }
 
 .itemResults:hover .leftArrow, .itemResults:hover .rightArrow {

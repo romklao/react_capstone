@@ -25,6 +25,9 @@ app.use(express.static('sweetalert-master'));
 app.use(jsonParser);
 app.use(morgan('common'));
 
+
+// <-------- Sign up by using 'POST' method ---------> 
+
 app.post('/signup', (req, res) => {
     console.log('signup')
 
@@ -138,6 +141,7 @@ app.post('/signup', (req, res) => {
     });
 });
 
+// <---------- Log in by using basicStrategy ------------>
 
 const basicStrategy = new BasicStrategy({ disableBasicChallenge: true },function(username, password, callback) {
     console.log('username', username, 'password', password);
@@ -174,6 +178,7 @@ app.post('/login',
     (req, res) => res.json({user: req.user.apiRepr()})
 );
 
+// <----------- Retrieve data from Amazon API -------------->
 
 var amazon = require('amazon-product-api');
 var client = amazon.createClient({
@@ -206,6 +211,8 @@ app.get('/amazon/:search_text', function(req, res){
   );
 });
 
+// <-------- Some datas have $ so we could not save datas in the app's API. 
+// We have to clean $ first before storing datas. --------->
 
 function cleanDollars(obj) {
   for (var property in obj) {
@@ -227,17 +234,18 @@ app.post('/favorites',
     ),
     (req, res) => {
       console.log('addfav')
-        let product = cleanDollars(req.body);
-        User.findByIdAndUpdate(
-            req.user._id,
-            {$push: {"favorites": {product}}},
-            {safe: true, upsert: true, new : true},
-            function(err, model) {
-                console.log('err', err);
-                console.log('model.favorites', model.favorites)
-                res.json(model.favorites);
-            }
-        );
+      
+      let product = cleanDollars(req.body);
+      User.findByIdAndUpdate(
+        req.user._id,
+        {$push: {"favorites": {product}}},
+        {safe: true, upsert: true, new : true},
+        function(err, model) {
+          console.log('err', err);
+          console.log('model.favorites', model.favorites)
+          res.json(model.favorites);
+        }
+      );
     }
 );
 
@@ -269,8 +277,6 @@ app.delete('/favorites',
             console.log('req.user.favorites', req.user.favorites)
         });
 });
-
-
 
 let server;
 
