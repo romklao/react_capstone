@@ -231,14 +231,14 @@ input:-webkit-autofill:active {
 
 .leftArrow {
     left: 2.5%;
-    width: 20px;
-    top: 40%;
+    width: 22px;
+    top: 40%; /*#969899*/
 }
 
 .rightArrow {
     left: 92.5%;
-    width: 29px;
-    top: 38.9%;
+    width: 22px;
+    top: 40%;
 }
 
 .imageProductBox {

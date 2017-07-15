@@ -82,8 +82,8 @@ class ItemViews extends React.Component {
         if (item.ItemAttributes[0].Title) {
             productTitle = item.ItemAttributes[0].Title[0];
         }
-        var arrowLeftUrl = "css/images/arrowLeft.png";
-        var arrowRightUrl = "css/images/rightArrow.png";
+        var arrowLeftUrl = "css/images/left-arrow.png";
+        var arrowRightUrl = "css/images/right-arrow.png";
         var pageUrl = item.DetailPageURL[0];
         var blank = "_blank";
         var amazonLogoUrl = "css/images/amazonLogo.png";
