@@ -262,7 +262,7 @@ input:-webkit-autofill:active {
     background-color: white;
     top: 69.5%;
     position: absolute;
-    width: 92%;
+    width: 92.2%;
     height: 150px;
 }
 
@@ -488,14 +488,18 @@ input:-webkit-autofill:active {
         top: 39%;
     }
     .productDescription {
+        font-size: 14px;
+        top: 62.5%;
         width: 89%;
-        font-size: 14px;        
+        height: 190px;       
     }
     .imageProductBox {
-        width: 350;
+        height: 310px;
     }
     #imageProduct {
         max-width: 80%;
+        top: 29.5%;
+        max-height: 280px;
     }
     .imageFurnitures {
         max-height: 175px;
