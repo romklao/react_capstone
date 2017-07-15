@@ -230,15 +230,15 @@ input:-webkit-autofill:active {
 }
 
 .leftArrow {
-    left: 2.5%;
+    left: 3%;
     width: 22px;
-    top: 40%; /*#969899*/
+    top: 33%; /*#969899*/
 }
 
 .rightArrow {
     left: 92.5%;
     width: 22px;
-    top: 40%;
+    top: 33%;
 }
 
 .imageProductBox {
