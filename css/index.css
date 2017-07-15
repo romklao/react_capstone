@@ -439,7 +439,7 @@ input:-webkit-autofill:active {
         width: 310px;
     }
     .itemResults {
-        margin-bottom: 20px;
+        margin-bottom: 16px;
     }
     .productDescription {
         font-size: 14px;
