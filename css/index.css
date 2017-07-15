@@ -243,7 +243,7 @@ input:-webkit-autofill:active {
 
 .imageProductBox {
     background-color: white;
-    height: 347px;
+    height: 348px;
 }
 
 #imageProduct {
@@ -302,9 +302,9 @@ input:-webkit-autofill:active {
 
 .heartFav {
     position: absolute;
-    left: 95%;
-    top: 0.4%;
-    font-size: 18px;
+    left: 95.5%;
+    top: 0.5%;
+    font-size: 17px;
     color: #b9bdbf;
     border: none;
     background-color: white;
@@ -340,13 +340,6 @@ input:-webkit-autofill:active {
     width: 100%;
     top: 7%;
     padding: 30px 100px 100px 100px;
-}
-
-.searchResults {
-    background-color: white;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin: 0 auto;
 }
 
 .searchResults > div {
@@ -387,8 +380,6 @@ input:-webkit-autofill:active {
     text-align: center;
     margin: 0 auto;
 }
-
-
 
 .userBox {
     position: fixed;
@@ -483,14 +474,8 @@ input:-webkit-autofill:active {
         max-height: 300px;
         margin-top: 50%;
     }
-    .heartFav {
-        left: 91%;
-        top: 2%;
-        font-size: 17px;
-    }
-    .changeToRed {
-        left: 91%;
-        top: 2%;
+    .heartFav, .changeToRed {
+        left: 94%;
         font-size: 17px;
     }
     .rightArrow {
@@ -503,14 +488,14 @@ input:-webkit-autofill:active {
         top: 39%;
     }
     .productDescription {
-        width: 93.5%;
-        bottom: 5%;
-        height: 35%;
+        width: 89%;
         font-size: 14px;        
     }
+    .imageProductBox {
+        width: 350;
+    }
     #imageProduct {
-        max-width: 92%;
-        max-height: 295px;
+        max-width: 80%;
     }
     .imageFurnitures {
         max-height: 175px;
