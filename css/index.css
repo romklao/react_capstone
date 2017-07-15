@@ -425,6 +425,9 @@ input:-webkit-autofill:active {
     .whatWeDo {
         font-size: 17px;
     }
+    .imageFurnitures {
+        max-height: 175px;
+    }
     .modal-content {
         width: 350px;
     }
@@ -434,6 +437,23 @@ input:-webkit-autofill:active {
     }
     .login_input, .signup {
         width: 310px;
+    }
+    .itemResults {
+        margin-bottom: 20px;
+    }
+    .productDescription {
+        font-size: 14px;
+        top: 62.5%;
+        width: 89%;
+        height: 190px;       
+    }
+    .imageProductBox {
+        height: 310px;
+    }
+    #imageProduct {
+        max-width: 80%;
+        top: 29.5%;
+        max-height: 280px;
     }
     .showFavoritesContainer, .searchResultsContainer {
         padding: 80px 20px 80px 20px;
@@ -462,23 +482,6 @@ input:-webkit-autofill:active {
     }
     .leftArrow {
         left: 1%;
-    }
-    .productDescription {
-        font-size: 14px;
-        top: 62.5%;
-        width: 89%;
-        height: 190px;       
-    }
-    .imageProductBox {
-        height: 310px;
-    }
-    #imageProduct {
-        max-width: 80%;
-        top: 29.5%;
-        max-height: 280px;
-    }
-    .imageFurnitures {
-        max-height: 175px;
     }
 }
 
