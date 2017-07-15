@@ -206,6 +206,134 @@ input:-webkit-autofill:active {
     margin-top: 60px;
 }
 
+.itemResults {
+    text-align: center;
+    height: 560px;
+    background-color: #F5FAFE;
+    padding: 20px;
+    margin: 0 auto;
+    border: 1px solid white;
+}
+
+.itemResults:hover .leftArrow, .itemResults:hover .rightArrow {
+    opacity: 1.0;
+}
+
+.leftArrow, .rightArrow {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 800ms;
+}
+
+.leftArrow;hover , .rightArrow:hover {
+    cursor: pointer;
+}
+
+.leftArrow {
+    left: 2.5%;
+    width: 20px;
+    top: 40%;
+}
+
+.rightArrow {
+    left: 92.5%;
+    width: 29px;
+    top: 38.9%;
+}
+
+.imageProductBox {
+    background-color: white;
+    height: 347px;
+}
+
+#imageProduct {
+    max-width: 87%;
+    margin: 0;
+    margin-top: 10px;
+    max-height: 310px;
+    margin-bottom: 10px;
+    position: absolute;
+    left: 50%;
+    top: 33%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.productDescription {
+    background-color: white;
+    top: 69.5%;
+    position: absolute;
+    width: 92%;
+    height: 150px;
+}
+
+.productTitleBox {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+.productTitle {
+    padding-left: 15px;
+    padding-right: 15px;
+    color: #135593;
+    text-align: left;
+}
+
+.amazonLogo, .price {
+    display: inline-block;
+}
+.price {
+    font-size: 17px;
+    color: #AE4343;
+}
+
+.amazonLogo {
+    width: 50px;
+    padding-bottom: 4px;
+    margin-left: 5px;
+}
+
+.furIcon {
+    width: 35px;
+    margin-right: 6px;
+    padding-bottom: 6px;
+}
+
+.heartFav {
+    position: absolute;
+    left: 95%;
+    top: 0.4%;
+    font-size: 18px;
+    color: #b9bdbf;
+    border: none;
+    background-color: white;
+    padding: 0px;
+    text-align: center;
+    background-color: #F5FAFE;
+}
+
+.heartFav:hover {
+    cursor: pointer;
+    color: #ed023d;
+}
+
+.removeFavorite {
+    display: none;
+}
+
+.changeToRed {
+    color: #ed023d;
+}
+
+.changeToRed:hover {
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
 .searchResultsContainer {
     position: absolute;
     margin: 0 auto;
@@ -260,128 +388,7 @@ input:-webkit-autofill:active {
     margin: 0 auto;
 }
 
-.productDescription {
-    background-color: white;
-    font-size: 15px;        
-    padding: 10px;
-    position: absolute;
-    width: 96%;
-    bottom: 5%;
-    height: 150px;
-}
 
-.productTitleBox {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 96%;
-    text-align: center;
-}
-
-.productTitle {
-    padding-left: 15px;
-    padding-right: 15px;
-    color: #135593;
-    text-align: left;
-}
-
-.amazonLogo, .price {
-    display: inline-block;
-}
-.price {
-    font-size: 17px;
-    color: #AE4343;
-}
-
-.amazonLogo {
-    width: 50px;
-    padding-bottom: 4px;
-    margin-left: 5px;
-}
-
-.furIcon {
-    width: 35px;
-    margin-right: 6px;
-    padding-bottom: 6px;
-}
-
-.itemResults {
-    text-align: center;
-    height: 560px;
-    background-color: #F5FAFE;
-    padding: 20px 10px 15px 10px;
-    margin: 0 auto;
-    border: 1px solid white; /*#c9d6ea*/
-}
-
-.itemResults:hover .leftArrow, .itemResults:hover .rightArrow {
-    opacity: 1.0;
-}
-
-.leftArrow, .rightArrow {
-    position: absolute;
-    opacity: 0;
-    transition: opacity 800ms;
-}
-
-.leftArrow;hover , .rightArrow:hover {
-    cursor: pointer;
-}
-
-.leftArrow {
-    left: 2.5%;
-    width: 20px;
-    top: 40%;
-}
-
-.rightArrow {
-    left: 92.5%;
-    width: 29px;
-    top: 38.9%;
-}
-
-#imageProduct {
-    max-width: 87%;
-    margin: 0;
-    margin-right: 10px;
-    margin-left: 10px;
-    margin-top: 10px;
-    max-height: 330px;
-}
-
-.heartFav {
-    position: absolute;
-    left: 93%;
-    top: 1.5%;
-    font-size: 20px;
-    color: #b9bdbf;
-    border: none;
-    background-color: white;
-    padding: 0px;
-    text-align: center;
-    background-color: #F5FAFE;
-}
-
-.heartFav:hover {
-    cursor: pointer;
-    color: #ed023d;
-}
-
-.removeFavorite {
-    display: none;
-}
-
-.changeToRed {
-    color: #ed023d;
-}
-
-.changeToRed:hover {
-    cursor: pointer;
-}
-
-.hidden {
-    display: none;
-}
 
 .userBox {
     position: fixed;
