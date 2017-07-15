@@ -370,9 +370,6 @@ input:-webkit-autofill:active {
 }
 
 .showFavoriteResults, .searchResultsBox {
-/*    border: 1px solid #c9d6ea;
-*/    /*border-bottom: none;
-    border-right: none;*/
     text-align: center;
 }
 
@@ -438,26 +435,11 @@ input:-webkit-autofill:active {
     .login_input, .signup {
         width: 310px;
     }
-    .itemsResults > img {
-        max-width: 260px;
-        margin: 0 auto;
-        max-height: 260px;
-    }
     .showFavoritesContainer, .searchResultsContainer {
         padding: 80px 20px 80px 20px;
     }
     .loginHi {
         margin-left: 14px;
-    }
-    .itemsResults {
-        height: 440px;
-        border-bottom: 1px solid #edeaea;
-    }
-    .clickAdd {
-        left: 60%;
-    }
-    .removeFavorite {
-        left: 47%;
     }
     .userBox > div {
         left: 0%;
