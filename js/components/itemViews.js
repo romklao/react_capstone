@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import * as actions from '../actions/index';
-import SignupModal from './signup-modal';
+// import SignupModal from './signup-modal';
 
 class ItemViews extends React.Component {
     constructor(props) {
@@ -28,9 +28,6 @@ class ItemViews extends React.Component {
         this.props.dispatch(actions.deleteFavorites(
             {_id: favoriteId})
         )
-        // .then(() =>
-        //     this.props.dispatch(actions.getFavorites())
-        // )
     }
 
     previousImage() {

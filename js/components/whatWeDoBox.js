@@ -2,8 +2,8 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import * as actions from '../actions/index';
-import LoginModal from './login-modal';
-import SignupModal from './signup-modal';
+import LoginModal from './LoginModal';
+import SignupModal from './SignupModal';
 import LoginSignup from './loginSignup';
 
 export function WhatWeDoBox(props) {

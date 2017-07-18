@@ -66,7 +66,6 @@ class LoginSignup extends React.Component {
     }
 }
 
-
 const mapStateToProps = (state, props) => ({
     user: state.user,
     authenticated: localStorage.authHeaders,

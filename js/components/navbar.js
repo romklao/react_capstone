@@ -2,15 +2,14 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import * as actions from '../actions/index';
-import LoginModal from './login-modal';
-import SignupModal from './signup-modal';
+import LoginModal from './LoginModal';
+import SignupModal from './SignupModal';
 import LoginSignup from './loginSignup';
 import ReturnToHome from './returnToHome';
 import SearchForm from './searchForm'
 import ShowFavorites from './showFavorites'
 
 export function Navbar(props) {
-
     return (
         <nav className="navbar navbar-default navbar-fixed-top" id="navbarFixed">
             <div className="container-fluid">

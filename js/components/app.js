@@ -9,9 +9,8 @@ import WhatWeDoBox from './whatWeDoBox';
 import ImageList from './imageList';
 import LandingPageContainer from './landingPageContainer';
 import UserLogin from './user';
-import LoginModal from './login-modal';
-import SignupModal from './signup-modal';
-
+import LoginModal from './LoginModal';
+import SignupModal from './SignupModal';
 
 export function App(props) {
     var loginModal;
@@ -22,7 +21,6 @@ export function App(props) {
     if(props.showSignup) {
         signupModal = <SignupModal />
     }
-
     return (
         <div className="decorHome">
             <Navbar/>
