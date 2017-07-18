@@ -1,3 +1,4 @@
+'use strict'
 
 const mongoose = require('mongoose');
 const express = require('express');
@@ -12,16 +13,14 @@ const {BasicStrategy} = require('passport-http')
 const validator = require('validator');
 const isEmpty = require('lodash/isEmpty');
 const bcrypt = require('bcrypt');
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
 
 const app = express();
 mongoose.Promise = global.Promise;
 
-const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
-
 app.use(express.static('build'));
 app.use(express.static('sweetalert-master'));
-
 app.use(jsonParser);
 app.use(morgan('common'));
 
@@ -29,21 +28,17 @@ app.use(morgan('common'));
 // <-------- Sign up by using 'POST' method ---------> 
 
 app.post('/signup', (req, res) => {
-    console.log('signup')
-
     if (!req.body) {
       res.statusMessage = "No request body";
       return res.status(400).end();
     }
 
     var {username, email, password, passwordConfirmation} = req.body;
-            console.log('req.body', req.body)
 
     if (!('username' in req.body)) {
       res.statusMessage = "Incorrect field: username";
       return res.status(422).end();
     }
-
     if (typeof username !== 'string') {
       res.statusMessage = "Incorrect field type: username";
       return res.status(422).end();
@@ -55,11 +50,9 @@ app.post('/signup', (req, res) => {
       res.statusMessage = "Missing field: username";
       return res.status(422).end();
     }
-
     if (!(email)) {
       res.statusMessage = "Missing field: email";
       return res.status(422).end();
-    return res.status(422).send('Missing field: email');
     }
 
     if (typeof email !== 'string') {
@@ -133,7 +126,6 @@ app.post('/signup', (req, res) => {
           email: email
         })
     }).then(user => {
-      console.log('user', user)
       return res.status(201).json(user.apiRepr());
     }).catch(error => {
       res.statusMessage = "Internal server error";
@@ -144,7 +136,6 @@ app.post('/signup', (req, res) => {
 // <---------- Log in by using basicStrategy ------------>
 
 const basicStrategy = new BasicStrategy({ disableBasicChallenge: true },function(username, password, callback) {
-    console.log('username', username, 'password', password);
   let user;
 
   User
@@ -155,7 +146,6 @@ const basicStrategy = new BasicStrategy({ disableBasicChallenge: true },function
       if (!user) {
         return callback(null, false, {message: 'Incorrect username'});
       }
-      console.log('user', user);
       return user.validatePassword(password);
     })
     .then(isValid => {
@@ -189,15 +179,13 @@ var client = amazon.createClient({
 
 app.get('/amazon/:search_text', function(req, res){
   var keywords = req.params.search_text;
-    console.log('params', req.params)
   var page = req.query.page;
-    console.log('page', parseInt(req.query.page));
+
   if (page === '') {
     page = 1;
   } else {
     page = parseInt(page);
   }
-  console.log(keywords, page);
 
   client.itemSearch({
     keywords: req.params.search_text,
@@ -205,14 +193,13 @@ app.get('/amazon/:search_text', function(req, res){
     responseGroup: 'ItemAttributes, Offers, Images',
     itemPage: page,
     }, function(err, data){
-      console.log(data);
       res.json(data);
     }
   );
 });
 
 // <-------- Some datas have $ so we could not save datas in the app's API. 
-// We have to clean $ first before storing datas. --------->
+// We need to clean $ first before storing datas. --------->
 
 function cleanDollars(obj) {
   for (var property in obj) {
@@ -233,16 +220,12 @@ app.post('/favorites',
         {session: false}
     ),
     (req, res) => {
-      console.log('addfav')
-      
       let product = cleanDollars(req.body);
       User.findByIdAndUpdate(
         req.user._id,
         {$push: {"favorites": {product}}},
         {safe: true, upsert: true, new : true},
         function(err, model) {
-          console.log('err', err);
-          console.log('model.favorites', model.favorites)
           res.json(model.favorites);
         }
       );
@@ -255,8 +238,7 @@ app.get('/favorites',
         {session: false}
     ),
     (req, res) => {
-        console.log('favorites', req.user.favorites)
-        res.json(req.user.favorites);
+      res.json(req.user.favorites);
     }
 );
 
@@ -266,15 +248,12 @@ app.delete('/favorites',
         {session: false}
     ),
     (req, res) => {
-      console.log('req', req.body)
     User.findByIdAndUpdate(
         req.user._id,
         {$pull: {"favorites": {_id: req.body._id}}},
         {safe: true, upsert: true, new : true},
         function(err, model) {
-            console.log('err', err);
-            res.json(req.user.favorites);
-            console.log('req.user.favorites', req.user.favorites)
+          res.json(req.user.favorites);
         });
 });
 
@@ -287,7 +266,6 @@ function runServer(databaseUrl) {
         return reject(err);
       }
       server = app.listen(PORT, () => {
-        console.log(`Your app is listening on port ${PORT}`);
         resolve();
       })
       .on('error', err => {
