@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import * as actions from '../actions/index';
 import LoginModal from './LoginModal';
 import SignupModal from './SignupModal';
-import LoginSignup from './loginSignup';
+import LoginSignup from './LoginSignup';
 import ReturnToHome from './returnToHome';
 import SearchForm from './searchForm'
 import ShowFavorites from './showFavorites'

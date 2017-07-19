@@ -35,7 +35,11 @@ function ShowSearchResults(props) {
                 </div>
             </div>
         );
-    }
+    } else if (props.errorSearchMessage) {
+        return (
+            <h1 className="errorSearch">{props.errorSearchMessage}</h1>
+        );
+    } 
 }
 
 const mapStateToProps = (state, props) => ({

@@ -2,10 +2,10 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import * as actions from '../actions/index';
-import Navbar from './navbar';
+import Navbar from './Navbar';
 import LandingPage from './landingPage';
 import ShowSearchResults from './searchResults';
-import WhatWeDoBox from './whatWeDoBox';
+import WhatWeDoBox from './WhatWeDoBox';
 import ImageList from './imageList';
 import LandingPageContainer from './landingPageContainer';
 import UserLogin from './user';
