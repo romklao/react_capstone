@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 import * as actions from '../actions/index';
 import ShowSearchResults from './SearchResults';
-import ShowFavorites from './showFavorites';
+import ShowFavorites from './ShowFavorites';
 
 
 class UserLogin extends React.Component {

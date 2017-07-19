@@ -8,7 +8,7 @@ import App from './App';
 import LandingPageContainer from './LandingPageContainer';
 import UserLogin from './user';
 import ShowSearchResults from './SearchResults';
-import ShowFavorites from './showFavorites';
+import ShowFavorites from './ShowFavorites';
 
 
 export function Routes(props) {
