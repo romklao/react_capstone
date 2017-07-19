@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 import * as actions from '../actions/index';
 
-export function ReturnToHome(props) {
+export function BackToHome(props) {
 
     return (
         <div className="navbar-header">
@@ -19,4 +19,4 @@ export function ReturnToHome(props) {
     );
 }
 
-export default connect()(ReturnToHome);
+export default connect()(BackToHome);
