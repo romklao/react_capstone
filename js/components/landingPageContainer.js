@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 import * as actions from '../actions/index';
 import LandingPage from './landingPage';
-import WhatWeDoBox from './whatWeDoBox';
+import WhatWeDoBox from './WhatWeDoBox';
 import ImageList from './imageList';
 import ShowSearchResults from './searchResults';
 import UserLogin from './user';
