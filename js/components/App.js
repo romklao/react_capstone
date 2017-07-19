@@ -3,12 +3,12 @@ import {connect} from 'react-redux';
 
 import * as actions from '../actions/index';
 import Nav from './Nav';
-import LandingPage from './LandingPage';
-import ShowSearchResults from './SearchResults';
-import WhatWeDo from './WhatWeDo';
-import ShowImageList from './ShowImageList';
-import LandingPageContainer from './LandingPageContainer';
-import UserLogin from './user';
+// import LandingPage from './LandingPage';
+// import ShowSearchResults from './SearchResults';
+// import WhatWeDo from './WhatWeDo';
+// import ShowImageList from './ShowImageList';
+// import LandingPageContainer from './LandingPageContainer';
+// import UserLogin from './User';
 import LoginModal from './LoginModal';
 import SignupModal from './SignupModal';
 
