@@ -7,7 +7,7 @@ import {Router, Route, IndexRoute, IndexRedirect, hashHistory} from 'react-route
 
 import store from './store';
 import Routes from './components/routes';
-import LandingPageContainer from './components/landingPageContainer';
+import LandingPageContainer from './components/LandingPageContainer';
 
 
 document.addEventListener('DOMContentLoaded', () =>
