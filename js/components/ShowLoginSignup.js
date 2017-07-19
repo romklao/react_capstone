@@ -70,5 +70,5 @@ const mapStateToProps = (state, props) => ({
     user: state.user,
     authenticated: localStorage.authHeaders,
 });
-export default connect(mapStateToProps)(LogInSignUp);
+export default connect(mapStateToProps)(ShowLoginSignUp);
 
