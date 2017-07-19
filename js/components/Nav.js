@@ -9,7 +9,7 @@ import ReturnToHome from './returnToHome';
 import SearchForm from './searchForm';
 import ShowFavorites from './showFavorites';
 
-export function Navbar(props) {
+export function Nav(props) {
     return (
         <nav className="navbar navbar-default navbar-fixed-top" id="navbarFixed">
             <div className="container-fluid">
@@ -29,4 +29,4 @@ const mapStateToProps = (state, props) => ({
     favorites: state.favorites,
 });
 
-export default connect(mapStateToProps)(Navbar);
+export default connect(mapStateToProps)(Nav);

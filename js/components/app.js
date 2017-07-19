@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import * as actions from '../actions/index';
-import Navbar from './Navbar';
+import Nav from './Nav';
 import LandingPage from './landingPage';
 import ShowSearchResults from './searchResults';
 import WhatWeDoBox from './WhatWeDoBox';
@@ -23,7 +23,7 @@ export function App(props) {
     }
     return (
         <div className="decorHome">
-            <Navbar/>
+            <Nav/>
             {loginModal}
             {signupModal}
             <div>
