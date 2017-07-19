@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import * as actions from '../actions/index';
 import SearchForm from './searchForm';
 import ItemViews from './ItemViews';
-import Pagination from './pagination';
+import Pagination from './Pagination';
 
 function ShowSearchResults(props) {
     if (props.searchResults) {
