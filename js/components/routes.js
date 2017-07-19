@@ -5,7 +5,7 @@ import {Router, Route, IndexRoute, IndexRedirect, hashHistory, browserHistory} f
 import * as actions from '../actions/index';
 
 import App from './App';
-import LandingPageContainer from './landingPageContainer';
+import LandingPageContainer from './LandingPageContainer';
 import UserLogin from './user';
 import ShowSearchResults from './searchResults';
 import ShowFavorites from './showFavorites';

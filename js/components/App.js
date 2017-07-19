@@ -7,7 +7,7 @@ import LandingPage from './LandingPage';
 import ShowSearchResults from './searchResults';
 import WhatWeDo from './WhatWeDo';
 import ShowImageList from './ShowImageList';
-import LandingPageContainer from './landingPageContainer';
+import LandingPageContainer from './LandingPageContainer';
 import UserLogin from './user';
 import LoginModal from './LoginModal';
 import SignupModal from './SignupModal';
