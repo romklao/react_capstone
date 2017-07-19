@@ -7,7 +7,7 @@ import * as actions from '../actions/index';
 import App from './App';
 import LandingPageContainer from './LandingPageContainer';
 import UserLogin from './user';
-import ShowSearchResults from './searchResults';
+import ShowSearchResults from './SearchResults';
 import ShowFavorites from './showFavorites';
 
 
