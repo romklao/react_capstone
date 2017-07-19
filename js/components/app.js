@@ -6,7 +6,7 @@ import Nav from './Nav';
 import LandingPage from './landingPage';
 import ShowSearchResults from './searchResults';
 import WhatWeDo from './WhatWeDo';
-import ImageList from './imageList';
+import ShowImageList from './ShowImageList';
 import LandingPageContainer from './landingPageContainer';
 import UserLogin from './user';
 import LoginModal from './LoginModal';

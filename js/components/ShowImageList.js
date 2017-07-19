@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 import ShowImage from './ShowImage';
 
-export function ImageList(props) {
+export function ShowImageList(props) {
     return (
         <div>
             <div className="row image-list">
@@ -28,6 +28,6 @@ export function ImageList(props) {
     );
 }
 
-export default connect()(ImageList);
+export default connect()(ShowImageList);
 
 
