@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import {Router, Route, IndexRoute, IndexRedirect, hashHistory, browserHistory} from 'react-router';
 import * as actions from '../actions/index';
 
-import App from './app';
+import App from './App';
 import LandingPageContainer from './landingPageContainer';
 import UserLogin from './user';
 import ShowSearchResults from './searchResults';

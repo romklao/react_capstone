@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 import * as actions from '../actions/index';
 import ShowSearchResults from './showFavorites';
-import ItemViews from './itemViews';
+import ItemViews from './ItemViews';
 
 
 class ShowFavorites extends React.Component {
