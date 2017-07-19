@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import * as actions from '../actions/index';
 import LoginModal from './LoginModal';
 import SignupModal from './SignupModal';
-import LogInSignUp from './LogInSignUp';
+import ShowLoginSignUp from './ShowLoginSignUp';
 import ReturnToHome from './returnToHome';
 import SearchForm from './searchForm';
 import ShowFavorites from './showFavorites';
@@ -16,7 +16,7 @@ export function Nav(props) {
                 <ReturnToHome />
                 <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <SearchForm />
-                    <LogInSignUp />
+                    <ShowLoginSignUp />
                 </div>
             </div>
         </nav>
