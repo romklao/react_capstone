@@ -1,6 +1,7 @@
 # HomeDecor
  
 Live Demo : https://enigmatic-mesa-94213.herokuapp.com/#/
+<img src="css/images/sofabackground.jpg" style="width: 100px;">
 
 # Introduction
 
