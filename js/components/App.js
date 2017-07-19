@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 import * as actions from '../actions/index';
 import Nav from './Nav';
-import LandingPage from './landingPage';
+import LandingPage from './LandingPage';
 import ShowSearchResults from './searchResults';
 import WhatWeDo from './WhatWeDo';
 import ShowImageList from './ShowImageList';
