@@ -2,7 +2,6 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import * as actions from '../actions/index';
-// import SearchForm from './searchForm';
 import ItemViews from './ItemViews';
 import Pagination from './Pagination';
 
@@ -33,7 +32,7 @@ function ShowSearchResults(props) {
                 </div>
             </div>
         );
-    } else if (props.errorSearchMessage) {
+    } else {
         return (
             <h1 className="errorSearch">{props.errorSearchMessage}</h1>
         );
