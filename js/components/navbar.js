@@ -6,8 +6,8 @@ import LoginModal from './LoginModal';
 import SignupModal from './SignupModal';
 import LoginSignup from './LoginSignup';
 import ReturnToHome from './returnToHome';
-import SearchForm from './searchForm'
-import ShowFavorites from './showFavorites'
+import SearchForm from './searchForm';
+import ShowFavorites from './showFavorites';
 
 export function Navbar(props) {
     return (
@@ -30,5 +30,3 @@ const mapStateToProps = (state, props) => ({
 });
 
 export default connect(mapStateToProps)(Navbar);
-
-
