@@ -5,7 +5,7 @@ import * as actions from '../actions/index';
 import LoginModal from './LoginModal';
 import SignupModal from './SignupModal';
 import LoginSignupNav from './LoginSignupNav';
-import ReturnToHome from './returnToHome';
+import ReturnToHome from './ReturnToHome';
 import SearchForm from './searchForm';
 import ShowFavorites from './showFavorites';
 
