@@ -28,7 +28,6 @@ export const showFavoriteItems = (products) => ({
 })
 
 export const signupForm = (newUserData) => dispatch => {
-    console.log('postSignup', newUserData)
     let url = '/signup';
     let fetchData = {
             method: 'POST',
@@ -39,7 +38,6 @@ export const signupForm = (newUserData) => dispatch => {
             body: JSON.stringify(newUserData),
     }
     return fetch(url, fetchData).then(response => {
-        console.log('response', response.body)
         if (!response.ok) {
             throw Error(response.statusText);
         }
@@ -51,12 +49,9 @@ export const signupForm = (newUserData) => dispatch => {
         localStorage.username = data.username;
         hashHistory.push('/user');
 
-        console.log('response2', data);
-        console.log('username', data.username)
         return dispatch(signupSuccess(data.username));
     })
     .catch(error => {
-        console.log('error1', error.message)
         return dispatch(signupError(error.message));
     })
 }
@@ -74,8 +69,6 @@ export const signupError = (error) => ({
 })
 
 export const loginForm = (email, password) => dispatch => {
-    console.log('login', email, password);
-
     let url = '/login';
     let fetchData = {
             method: 'POST',
@@ -86,7 +79,6 @@ export const loginForm = (email, password) => dispatch => {
             },
     }
     return fetch(url, fetchData).then(response => {
-        console.log('response', response.body)
         if (!response.ok) {
             throw Error(response.statusText);
         }
@@ -97,11 +89,9 @@ export const loginForm = (email, password) => dispatch => {
         localStorage.authHeaders = fetchData.headers.Authorization;
         localStorage.username = data.user.username;
         hashHistory.push('/user');
-        console.log('data', data);
         return dispatch(loginSuccess(data.user.username));
     })
     .catch(error => {
-        console.log('error1', error.message)
         return dispatch(loginError(error.message));
     })
 }
@@ -147,11 +137,9 @@ export const searchSubmit = (search_text, page) => dispatch => {
     })
     .then(response => response.json())
     .then(data => {
-        console.log('Apidata', data);
         return dispatch(makeSearchSuccessMsg(data, search_text, page));
     })
     .catch(error => {
-        console.log('error1', error)
         return dispatch(searchError(error.message));
     })
 }
@@ -171,8 +159,6 @@ export const searchError = error => ({
 })
 
 export const addFavorites = (product) => dispatch => {
-    console.log('product', product);
-
     let url = '/favorites';
     let fetchData = {
             method: 'POST',
@@ -184,7 +170,6 @@ export const addFavorites = (product) => dispatch => {
             body: JSON.stringify(product),
     }
     return fetch(url, fetchData).then(response => {
-        console.log('response', response.body)
         if (!response.ok) {
             throw Error(response.statusText);
         }
@@ -192,11 +177,9 @@ export const addFavorites = (product) => dispatch => {
     })
     .then(response => response.json())
     .then(data => {
-        console.log('data', data);
         return dispatch(addFavoritesSuccess(data));
     })
     .catch(error => {
-        console.log('error1', error)
         return dispatch(addFavoritesError(error.message));
     })
 }
@@ -225,7 +208,6 @@ export const getFavorites = () => dispatch => {
             },
     }
     return fetch(url, fetchData).then(response => {
-        console.log('response', response.body)
         if (!response.ok) {
             throw Error(response.statusText);
         }
@@ -233,12 +215,9 @@ export const getFavorites = () => dispatch => {
     })
     .then(response => response.json())
     .then(data => {
-        
-        console.log('data', data);
         return dispatch(getFavoriteSuccess(data));
     })
     .catch(error => {
-        console.log('error1', error)
         return dispatch(getFavoriteError(error.message));
     })
 }
@@ -256,7 +235,6 @@ export const getFavoriteError = error => ({
 })
 
 export const deleteFavorites = (product, callback) => dispatch => {
-    console.log('product', product)
     swal({
         title: "Are you sure you want to delete the item?",
         showCancelButton: true,
@@ -279,7 +257,6 @@ export const deleteFavorites = (product, callback) => dispatch => {
                         body: JSON.stringify(product),
                 }
                 return fetch(url, fetchData).then(response => {
-                    console.log('response', response.body)
                     if (!response.ok) {
                         throw Error(response.statusText);
                     }
@@ -287,12 +264,10 @@ export const deleteFavorites = (product, callback) => dispatch => {
                 })
                 .then(response => response.json())
                 .then(data => {
-                    console.log('data', data);
                     dispatch(getFavorites());
                     return dispatch(deleteFavoriteSuccess(data));
                 })
                 .catch(error => {
-                    console.log('error1', error)
                     return dispatch(deleteFavoriteError(error.message));
                 })
             }
