@@ -1,6 +1,6 @@
 # HomeDecor
 
-<img src="css/images/sofabackground.jpg" width="200" height="150">
+<img src="css/images/sofabackground.jpg" width="150" height="100">
  
 Live Demo : https://enigmatic-mesa-94213.herokuapp.com/#/
 
