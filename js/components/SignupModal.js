@@ -23,7 +23,6 @@ class SignupModal extends React.Component {
 
     onSubmit(event) {
         event.preventDefault();
-        console.log('this.state', this.state);
         this.props.dispatch(actions.signupForm(this.state));
     }
 
