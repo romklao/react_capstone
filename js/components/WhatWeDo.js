@@ -6,7 +6,7 @@ import LoginModal from './LoginModal';
 import SignupModal from './SignupModal';
 import LoginSignupNav from './LoginSignupNav';
 
-export function WhatWeDoBox(props) {
+export function WhatWeDo(props) {
     let showSignup = event => {
         event.preventDefault();
         props.dispatch(actions.showSignup());
@@ -35,5 +35,5 @@ const mapStateToProps = (state, props) => ({
     showLogin: state.showLogin,
 });
 
-export default connect(mapStateToProps)(WhatWeDoBox);
+export default connect(mapStateToProps)(WhatWeDo);
 

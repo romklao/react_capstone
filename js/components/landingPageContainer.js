@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 import * as actions from '../actions/index';
 import LandingPage from './landingPage';
-import WhatWeDoBox from './WhatWeDoBox';
+import WhatWeDo from './WhatWeDo';
 import ImageList from './imageList';
 import ShowSearchResults from './searchResults';
 import UserLogin from './user';
@@ -45,7 +45,7 @@ function LandingPageContainer(props) {
                     <LandingPage />
                 </div>
                 <div className="container">
-                    <WhatWeDoBox />
+                    <WhatWeDo />
                     <ImageList />
                 </div>
             </div>

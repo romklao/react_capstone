@@ -5,7 +5,7 @@ import * as actions from '../actions/index';
 import Nav from './Nav';
 import LandingPage from './landingPage';
 import ShowSearchResults from './searchResults';
-import WhatWeDoBox from './WhatWeDoBox';
+import WhatWeDo from './WhatWeDo';
 import ImageList from './imageList';
 import LandingPageContainer from './landingPageContainer';
 import UserLogin from './user';
