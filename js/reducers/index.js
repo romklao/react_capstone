@@ -34,7 +34,6 @@ export const decorHomeReducer = function(state, action) {
                 showLogin: true,
             } 
         );
-        console.log('state showLogin', state)
         return state;
 
     } else if (action.type === actions.HIDE) {
@@ -58,7 +57,6 @@ export const decorHomeReducer = function(state, action) {
                 showSignup: false,
             }
         );
-        console.log('SIGNUP state', state, 'SIGNUP action', action)
         return state;
 
     } else if (action.type === actions.SIGNUP_ERROR) {
@@ -69,7 +67,6 @@ export const decorHomeReducer = function(state, action) {
                 errorMessage: action.error
             }
         );
-        console.log('SIGNUP state', state, 'SIGNUP action', action)
         return state;
 
     } else if (action.type === actions.LOGIN_SUCCESS) {
@@ -84,7 +81,6 @@ export const decorHomeReducer = function(state, action) {
                 showSignup: false,
             }
         );
-        console.log('LOGIN state', state, 'LOGIN action', action)
         return state;
 
     } else if (action.type === actions.LOGIN_ERROR) {
@@ -95,7 +91,6 @@ export const decorHomeReducer = function(state, action) {
                 errorMessage: action.error
             }
         );
-        console.log('LOGIN state', state, 'LOGIN action', action)
         return state;
 
     } else if (action.type === actions.SEARCH_SUBMIT) {
@@ -104,7 +99,6 @@ export const decorHomeReducer = function(state, action) {
                 searchInput: action.searchInput
             }
         );
-        console.log('search submit state', state, 'search submit action', action)
         return state;
 
     } else if (action.type === actions.SEARCH_SUCCESS) {
@@ -117,7 +111,6 @@ export const decorHomeReducer = function(state, action) {
                 page: action.page,
             }
         );
-        console.log('search state', state, 'search action', action)
         return state;
 
     }  else if (action.type === actions.SEARCH_ERROR) {
@@ -128,7 +121,6 @@ export const decorHomeReducer = function(state, action) {
                 errorSearchMessage: errorSearchMessage,
             }
         );
-        console.log('search state', state, 'search action', action)
         return state;
 
     } else if (action.type === actions.ADD_FAVORITE_SUCCESS) {
@@ -140,7 +132,6 @@ export const decorHomeReducer = function(state, action) {
                 confirmAddFavoriteMessage: confirmAddFavoriteMessage
             }
         );
-        console.log('favorites state', state, 'favorites action', action)
         return state;
 
     } else if (action.type === actions.GET_FAVORITES_SUCCESS) {
@@ -149,7 +140,6 @@ export const decorHomeReducer = function(state, action) {
                 favorites: action.products,
             }
         );
-        console.log('showfavorites state', state, 'showfavorites action', action)
         return state;
 
     }else if (action.type === actions.GET_FAVORITES_ERROR) {
@@ -158,7 +148,6 @@ export const decorHomeReducer = function(state, action) {
                 error: action.error,
             }
         );
-        console.log('showfavorites state', state, 'showfavorites action', action)
         return state;
         
     } else if (action.type === actions.DELETE_FAVORITES_SUCCESS) {
@@ -167,12 +156,8 @@ export const decorHomeReducer = function(state, action) {
                 favorites: action.products,
             }
         );
-        console.log('showfavorites state', state, 'showfavorites action', action)
         return state;
-
     }
-
-    console.log('state', state, 'action' , action)
     return state;
 }
 
