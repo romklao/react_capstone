@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import * as actions from '../actions/index';
 import LoginModal from './LoginModal';
 import SignupModal from './SignupModal';
-import ShowLoginSignUp from './ShowLoginSignUp';
+import LoginSignupNav from './LoginSignupNav';
 
 export function WhatWeDoBox(props) {
     let showSignup = event => {

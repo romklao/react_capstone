@@ -5,7 +5,7 @@ import {Router, Route, IndexRoute, IndexRedirect, hashHistory, browserHistory} f
 
 import * as actions from '../actions/index'
 
-class ShowLoginSignUp extends React.Component {
+class LoginSignupNav extends React.Component {
     constructor(props) {
         super(props);
         this.showLogin = this.showLogin.bind(this);
@@ -70,5 +70,5 @@ const mapStateToProps = (state, props) => ({
     user: state.user,
     authenticated: localStorage.authHeaders,
 });
-export default connect(mapStateToProps)(ShowLoginSignUp);
+export default connect(mapStateToProps)(LoginSignupNav);
 
