@@ -6,7 +6,7 @@ import LoginModal from './LoginModal';
 import SignupModal from './SignupModal';
 import LoginSignupNav from './LoginSignupNav';
 import BackToHome from './BackToHome';
-import SearchForm from './searchForm';
+import SearchForm from './SearchForm';
 import ShowFavorites from './showFavorites';
 
 export function Nav(props) {
