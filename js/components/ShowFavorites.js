@@ -24,7 +24,6 @@ class ShowFavorites extends React.Component {
                                                         key={i} />);
                     }
                 }
-                console.log('favRe', favoritesResults)
             }
             return (
                 <div className="showFavoritesContainer">

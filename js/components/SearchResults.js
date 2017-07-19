@@ -16,8 +16,6 @@ function ShowSearchResults(props) {
             results.push(<ItemViews product={product}
                                     key={i} />);
         }
-        console.log('searchResults', props.searchResults)
-        console.log('results', results)
         return (
             <div className="searchResults">
                 <div className="row">
