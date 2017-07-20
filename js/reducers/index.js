@@ -114,9 +114,10 @@ export const decorHomeReducer = function(state, action) {
         return state;
 
     }  else if (action.type === actions.SEARCH_ERROR) {
-        var errorSearchMessage = "No results!"
+        var errorSearchMessage = "No results!";
         state = Object.assign({},
             state, {
+                searchResults: null,
                 error: action.error,
                 errorSearchMessage: errorSearchMessage,
             }

@@ -21,23 +21,11 @@ function LandingPageContainer(props) {
             <h1 className="errorSearch">{props.errorSearchMessage}</h1>
         );
     } else if (props.authenticated) {
-        if (props.searchResults) {
-            return (
-                <div className="searchResultsContainer">
-                    <ShowSearchResults />
-                </div>
-            );
-        } else if (props.errorSearchMessage) {
-            return (
-                <h1 className="errorSearch">{props.errorSearchMessage}</h1>
-            );
-        } else {
-            return (
-                <div>
-                    <UserLogin />
-                </div>
-            );
-        }
+        return (
+            <div>
+                <UserLogin />
+            </div>
+        );
     } else {
         return (
             <div className="indexPage">
