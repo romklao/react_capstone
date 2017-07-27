@@ -84,6 +84,10 @@ input:-webkit-autofill:active {
     border-color: #228CAB;
 }
 
+.visible-xs:hover {
+    border-color: #228CAB;
+}
+
 .login_input, .signup {
     width: 370px;
 }
@@ -193,7 +197,7 @@ input:-webkit-autofill:active {
 }
 
 .modal-content {
-   width: 410px;
+    width: 410px;
 }
 
 .modal-header {
