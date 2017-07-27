@@ -124,7 +124,7 @@ input:-webkit-autofill:active {
     color: black;
 }
 
-.title{
+.title {
     color: black;
     font-size: 35px;
 }
@@ -283,6 +283,7 @@ input:-webkit-autofill:active {
 .amazonLogo, .price {
     display: inline-block;
 }
+
 .price {
     font-size: 17px;
     color: #AE4343;
@@ -403,7 +404,6 @@ input:-webkit-autofill:active {
 .userBackground {
     max-height: 670px;
 }
-
 
 
 @media (max-width: 500px) {

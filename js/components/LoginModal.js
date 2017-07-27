@@ -39,8 +39,8 @@ export class LoginModal extends React.Component {
                         <form onSubmit={this.submitLoginForm}>
                             <h4 className="errorMessage">{this.props.errorMessage}</h4>
                             <div className="modal-body">
-                                <input type="text" ref={element => this.addEmailInput = element} className="form-control login_input login_email" placeholder="Username" />
-                                <input type="password" ref={element => this.addPasswordInput = element} className="form-control login_input login_pass" placeholder="Password" />
+                                <input type="text" ref={element => this.addEmailInput = element} className="form-control login_input login_email" placeholder="Username" value="rom1@gmail.com"/>
+                                <input type="password" ref={element => this.addPasswordInput = element} className="form-control login_input login_pass" placeholder="Password" value="123"/>
                             </div>
                             <div className="modal-footer">
                                 <button type="button" className="btn btn-default closeBtn" data-dismiss="modal" onClick={this.hide}>Close</button>
