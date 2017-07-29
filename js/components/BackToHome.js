@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import * as actions from '../actions/index';
+import SearchForm from './SearchForm';
 
 export function BackToHome(props) {
 

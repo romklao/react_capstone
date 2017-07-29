@@ -4,6 +4,7 @@ import { handle } from 'redux-pack';
 const initialState = {
     showLogin: false,
     showSignup: false,
+    showSearchForm: false,
     loggedIn: false,
     shouldRedirect: false,
     authenticated: false,
@@ -36,6 +37,14 @@ export const decorHomeReducer = function(state, action) {
             } 
         );
         console.log('stateLogin', state)
+        return state;
+
+    } else if (action.type === actions.BACK_TO_HOME) {
+        state = Object.assign({}, 
+            state, {
+                showSearchForm: true
+            } 
+        );
         return state;
 
     } else if (action.type === actions.HIDE) {

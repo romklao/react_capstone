@@ -10,6 +10,7 @@ import SearchForm from './SearchForm';
 import ShowFavorites from './ShowFavorites';
 
 export function Nav(props) {
+    
     return (
         <nav className="navbar navbar-default navbar-fixed-top" id="navbarFixed">
             <div className="container-fluid">

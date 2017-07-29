@@ -21,6 +21,11 @@ export const hide = () => ({
     type: HIDE
 })
 
+export const BACK_TO_HOME = 'BACK_TO_HOME';
+export const backTohome = () => ({
+    type: BACK_TO_HOME
+})
+
 export const SHOW_FAVORITES_ITEMS = 'SHOW_FAVORITES_ITEMS';
 export const showFavoriteItems = (products) => ({
     type: SHOW_FAVORITES_ITEMS,
@@ -111,7 +116,6 @@ export const loginError = error => ({
 export const logout = () => dispatch => {
     localStorage.removeItem('authHeaders');
     localStorage.removeItem('username');
-    //hashHistory.push('/');
     window.location = '/';
 }
 
@@ -137,6 +141,7 @@ export const searchSubmit = (search_text, page) => dispatch => {
     })
     .then(response => response.json())
     .then(data => {
+        hashHistory.push('/');
         return dispatch(makeSearchSuccessMsg(data, search_text, page));
     })
     .catch(error => {
