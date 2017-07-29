@@ -7,7 +7,7 @@ export class LoginModal extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            email: 'rom1@gmail.com',
+            email: 'demo@testing.com',
             password: '123'
         }
         this.onChange = this.onChange.bind(this);
