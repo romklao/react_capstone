@@ -6,20 +6,22 @@ import * as actions from '../actions/index';
 export class LoginModal extends React.Component {
     constructor(props) {
         super(props);
-        
-        this.submitLoginForm = this.submitLoginForm.bind(this);
+        this.state = {
+            email: 'rom1@gmail.com',
+            password: '123'
+        }
+        this.onChange = this.onChange.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
         this.hide = this.hide.bind(this);
     }
 
-    submitLoginForm(event) {
+    onChange(event) {
+        this.setState({[event.target.name]: event.target.value});
+    }
+
+    onSubmit(event) {
         event.preventDefault();
-        var addEmail = this.addEmailInput.value;
-        this.addEmailInput.value = '';
-
-        var addPassword = this.addPasswordInput.value;
-        this.addPasswordInput.value = '';
-
-        this.props.dispatch(actions.loginForm(addEmail, addPassword));
+        this.props.dispatch(actions.loginForm(this.state));
     }
 
     hide(event) {
@@ -36,11 +38,11 @@ export class LoginModal extends React.Component {
                             <button type="button" className="close" data-dismiss="modal" aria-hidden="true" onClick={this.hide}>&times;</button>
                             <h4 className="modal-title">Fill out the information below to log in</h4>
                         </div>
-                        <form onSubmit={this.submitLoginForm}>
+                        <form onSubmit={this.onSubmit}>
                             <h4 className="errorMessage">{this.props.errorMessage}</h4>
                             <div className="modal-body">
-                                <input type="text" ref={element => this.addEmailInput = element} className="form-control login_input login_email" placeholder="Username" value="rom1@gmail.com"/>
-                                <input type="password" ref={element => this.addPasswordInput = element} className="form-control login_input login_pass" placeholder="Password" value="123"/>
+                                <input type="text" name="email" value={this.state.email} onChange={this.onChange} className="form-control login_input login_email" placeholder="Username" />
+                                <input type="password" name="password" value={this.state.password} onChange={this.onChange} className="form-control login_input login_pass" placeholder="Password" />
                             </div>
                             <div className="modal-footer">
                                 <button type="button" className="btn btn-default closeBtn" data-dismiss="modal" onClick={this.hide}>Close</button>

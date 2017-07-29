@@ -68,14 +68,14 @@ export const signupError = (error) => ({
     error: error
 })
 
-export const loginForm = (email, password) => dispatch => {
+export const loginForm = (userData) => dispatch => {
     let url = '/login';
     let fetchData = {
             method: 'POST',
             headers: {
                 'Accept': 'application/json, text/plain, */*',
                 'Content-Type': 'application/json',
-                'Authorization': "Basic " + btoa(email + ":" + password),
+                'Authorization': "Basic " + btoa(userData.email + ":" + userData.password),
             },
     }
     return fetch(url, fetchData).then(response => {

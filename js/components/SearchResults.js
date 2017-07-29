@@ -32,10 +32,6 @@ function ShowSearchResults(props) {
                 </div>
             </div>
         );
-    } else {
-        return (
-            <h1 className="errorSearch">{props.errorSearchMessage}</h1>
-        );
     } 
 }
 

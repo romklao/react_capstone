@@ -19,6 +19,7 @@ const initialState = {
 
 export const decorHomeReducer = function(state, action) {
     state = state || initialState;
+    console.log('state', state)
  
     if (action.type === actions.SHOW_SIGNUP) {
         state = Object.assign({}, 
@@ -34,6 +35,7 @@ export const decorHomeReducer = function(state, action) {
                 showLogin: true,
             } 
         );
+        console.log('stateLogin', state)
         return state;
 
     } else if (action.type === actions.HIDE) {
