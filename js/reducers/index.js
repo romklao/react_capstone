@@ -39,14 +39,6 @@ export const decorHomeReducer = function(state, action) {
         console.log('stateLogin', state)
         return state;
 
-    } else if (action.type === actions.BACK_TO_HOME) {
-        state = Object.assign({}, 
-            state, {
-                showSearchForm: true
-            } 
-        );
-        return state;
-
     } else if (action.type === actions.HIDE) {
         state = Object.assign({}, 
             state, {
@@ -128,6 +120,7 @@ export const decorHomeReducer = function(state, action) {
         var errorSearchMessage = "No results!";
         state = Object.assign({},
             state, {
+                favorites: null,
                 searchResults: null,
                 error: action.error,
                 errorSearchMessage: errorSearchMessage,
