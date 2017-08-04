@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 import * as actions from '../actions/index';
 import ItemViews from './ItemViews';
-
+import SearchForm from './SearchForm';
 
 class ShowFavorites extends React.Component {
     constructor(props) {
@@ -26,17 +26,20 @@ class ShowFavorites extends React.Component {
                 }
             }
             return (
-                <div className="showFavoritesContainer">
-                    <div className="showFavorites">
-                        <div className="row">
-                            <div className="col-lg-12 col-sm-12 searchText">
-                                <h1>
-                                    <img src="css/images/home.png" className="furIcon"/>Your favorite items
-                                </h1>
+                <div className="showFavoritesWrap">
+                    <SearchForm />
+                    <div className="showFavoritesContainer">
+                        <div className="showFavorites">
+                            <div className="row">
+                                <div className="col-lg-12 col-sm-12 searchText">
+                                    <h1>
+                                        <img src="css/images/home.png" className="furIcon"/>Your favorite items
+                                    </h1>
+                                </div>
                             </div>
-                        </div>
-                        <div className="row showFavoriteResults">
-                            {favoritesResults}
+                            <div className="row showFavoriteResults">
+                                {favoritesResults}
+                            </div>
                         </div>
                     </div>
                 </div>

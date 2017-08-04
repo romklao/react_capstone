@@ -10,6 +10,7 @@ html, body {
     background-color: white;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 body.waiting * {
@@ -50,35 +51,43 @@ input:-webkit-autofill:active {
 }
 
 .imageLivingroom {
-    background: url('images/living3.jpg');
-    background-repeat: no-repeat;
-    background-position: center center;
+    position: fixed;
     margin: 0;
     padding: 0;
-/*    max-width: 100%;
-*/   height: 100%;
-
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-}
-
-.imageLivingroom {
-    position: fixed;
-    margin: 0 auto;
     left: 0;
+    width: auto;
+    max-height: 100%;
 }
 
 .landingPage {
-    position: absolute;
+    position: fixed;
     text-align: center;
     width: 100%;
     padding: 0;
     margin: 0;
 }
 
+.landingIntro {
+    position: fixed;
+    text-align: center;
+    top: 16.5%;
+    width: 100%;
+}
+
+.landingIntro > div > div > img {
+    position: absolute;
+    top: 500px;
+    width: 30px;
+    color: black;
+}
+
+.title {
+    color: black;
+    font-size: 35px;
+}
+
 .formWrap {
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .loginSignupLandingPage {
@@ -122,12 +131,8 @@ input:-webkit-autofill:active {
 
 .loginBtn:hover, .submitBtn:hover, .submitSearchXs:hover,
 .signupBtn:hover, .closeBtn:hover, .submitSearch:hover {
-    border-color: #023f7c;
+    border-color: #023f7c; /*#389738*/
 }
-
-/*.signupBtn, .closeBtn {
-    border-color: #389738;
-}*/
 
 #loginLink, #signupLink, #logoutLink, #favLink {
     font-size: 17px;
@@ -137,15 +142,6 @@ input:-webkit-autofill:active {
 #loginLink:hover, #signupLink:hover, #logoutLink:hover, #favLink:hover {
     color: #228CAB;
 }
-
-.hidden-xs {
-    font-size: 13px;
-    color: black;
-}
-
-/*.hidden-xs:hover {
-    border-color: #228CAB;
-}*/
 
 .visible-xs:hover {
     border-color: #228CAB;
@@ -160,10 +156,6 @@ input:-webkit-autofill:active {
     margin-bottom: 15px;
 }
 
-/*.login_email, .signup_input {
-    margin-bottom: 15px;
-}*/
-
 .signup_confirm, .login_pass {
     margin-bottom: 22px;
 }
@@ -174,25 +166,6 @@ input:-webkit-autofill:active {
     font-size: 16px;
     color: black;
 } 
-
-.landingIntro {
-    position: fixed;
-    text-align: center;
-    top: 16.5%;
-    width: 100%;
-}
-
-.landingIntro > div > div > img {
-    position: absolute;
-    top: 500px;
-    width: 30px;
-    color: black;
-}
-
-.title {
-    color: black;
-    font-size: 35px;
-}
 
 .container {
     position: absolute;
@@ -431,22 +404,30 @@ input:-webkit-autofill:active {
 }
 
 .searchText {
-    margin: 0 auto;
+    margin: 0;
+    padding: 0; 
 }
 
 .searchResults > div {
     text-align: center;
     margin: 0 auto;
     margin-bottom: 50px;
-    margin-top: 60px;
+    margin-top: 40px;
+}
+
+.showFavoritesWrap {
+    position: absolute;
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    top: 10%;
 }
 
 .showFavoritesContainer {
     position: absolute;
     margin: 0 auto;
     width: 100%;
-    top: 7%;
-    padding: 40px 100px 100px 100px;
+    padding: 0px 100px 100px 100px;
 }
 
 .errorSearch {
@@ -470,24 +451,23 @@ input:-webkit-autofill:active {
 .showFavorites > div {
     text-align: center;
     margin: 0 auto;
+    margin-top: 50px;
 }
 
-.userBox, .userBox > div, .userBox > div > p {
+.userBox, .userBox > div, .userBox > div > p, .userBackground {
     margin: 0;
     padding: 0;
 }
 
 .userBox {
     position: fixed;
-    width: 101%;
-    height: 100%;
-    left: -11px;
     text-align: center;
+    overflow-x: hidden;
 }
 
 .userBox > div {
     text-align: center;
-    position: absolute;
+    position: fixed;
     top: 5%;
 }
 
@@ -497,7 +477,10 @@ input:-webkit-autofill:active {
 }
 
 .userBackground {
-    max-height: 690px;
+    position: fixed;
+    left: 0;
+    width: : auto;
+    max-height: 100%;
 }
 
 
@@ -507,10 +490,14 @@ input:-webkit-autofill:active {
         left: 3.6%;
     }
     .landingIntro > div > div > img {
-        top: 475px;
+        top: 450px;
     }
-    .submitSearch, .search_input {
-        display: inline-block !important;
+    .visible-xs {
+        color: black !important;
+        font-size: 17px;
+    }
+    .visible-xs:hover {
+        color: #228CAB !important;
     }
     .submitSearchXs {
         margin-left: 0;
@@ -523,6 +510,9 @@ input:-webkit-autofill:active {
     }
     .imageFurnitures {
         max-height: 175px;
+    }
+    .overlay {
+        height: 100%;
     }
     .modal-dialog, .modal-signup {
         width: 380px;
@@ -550,26 +540,19 @@ input:-webkit-autofill:active {
         top: 29.5%;
         max-height: 280px;
     }
-    .showFavoritesContainer, .searchResultsContainer {
-        padding: 80px 20px 80px 20px;
+    .showFavoritesContainer {
+        padding: 0px 0px 80px 0px;
+    }
+    .searchResultsContainer {
+        padding: 20px 20px 80px 20px;        
     }
     .loginHi {
         margin-left: 14px;
     }
-    .userBox > div {
-        left: 0%;
-        width: 50%;
-        padding: 0px;
-    }
     .userBox > div > p {
-        font-size: 25px;
+        font-size: 26px;
         width: 100%;
-        margin-left: 98px;
         margin-top: 80px;
-    }
-    .userBackground {
-        max-height: 300px;
-        margin-top: 50%;
     }
     .heartFav, .changeToRed {
         left: 94%;

@@ -18,9 +18,9 @@ function LandingPage(props) {
     return (
         <div className="landing">
             <div className="row landingPage">
-                <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 imageLivingroom">
                     <div>
-                        <img src="css/images/living3.jpg" className="imageLivingroom"/>
+                        <img src="css/images/living3.jpg"/>
                     </div>
                 </div>
             </div>
