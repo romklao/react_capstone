@@ -11,7 +11,7 @@ import ShowFavorites from './ShowFavorites';
 export function Nav(props) {
     
     return (
-        <nav className="navbar-fixed-top" id="navbarFixed">
+        <nav className="navbar navbar-default navbar-fixed-top" id="navbarFixed">
             <div className="container-fluid">
                 <BackToHome />
                 <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

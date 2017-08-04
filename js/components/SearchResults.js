@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import * as actions from '../actions/index';
 import ItemViews from './ItemViews';
 import Pagination from './Pagination';
+import SearchForm from './SearchForm';
 
 function ShowSearchResults(props) {
     if (props.searchResults) {
@@ -16,19 +17,22 @@ function ShowSearchResults(props) {
                                     key={i} />);
         }
         return (
-            <div className="searchResults">
-                <div className="row">
-                    <div className="col-lg-12 col-sm-12 searchText">
-                        <h1>
-                            <img src="css/images/home.png" className="furIcon"/>The results of {props.searchInput}
-                        </h1>
+            <div>
+                <SearchForm />
+                <div className="searchResults">
+                    <div className="row">
+                        <div className="col-lg-12 col-sm-12 searchText">
+                            <h1>
+                                <img src="css/images/home.png" className="furIcon"/>The results of {props.searchInput}
+                            </h1>
+                        </div>
                     </div>
-                </div>
-                <div className="row searchResultsBox">
-                    {results}
-                </div>
-                <div className="row">
-                    <Pagination />
+                    <div className="row searchResultsBox">
+                        {results}
+                    </div>
+                    <div className="row">
+                        <Pagination />
+                    </div>
                 </div>
             </div>
         );
