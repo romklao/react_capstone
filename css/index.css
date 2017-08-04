@@ -76,7 +76,7 @@ input:-webkit-autofill:active {
 
 .landingIntro > div > div > img {
     position: absolute;
-    top: 500px;
+    top: 180px;
     width: 30px;
     color: black;
 }
@@ -490,7 +490,7 @@ input:-webkit-autofill:active {
         left: 3.6%;
     }
     .landingIntro > div > div > img {
-        top: 450px;
+        top: 540px;
     }
     .visible-xs {
         color: black !important;
@@ -562,45 +562,6 @@ input:-webkit-autofill:active {
         left: 1%;
     }
 }
-
-/*@media (min-width: 705px) and (max-width: 800px) {
-    .landingPage {
-        top: 3%;
-    }
-    .landingIntro {
-        left: 10%;
-        top: 18%;
-    }
-    .form-group {
-        position: absolute;
-        left: 7%;
-        top: -100%;
-    }
-    .search_input {
-        width: 250px !important;
-    }
-    .submitSearch {
-        position: absolute;
-        left: 59%;
-        top: -100%;
-        padding-bottom: 9px;
-    }
-    .whatWeDo {
-        font-size: 17px;
-    }
-    .userBox > div > p {
-        font-size: 25px;
-        width: 70%;
-        margin-left: 98px;
-        margin-top: 80px;
-    }
-    .userBackground {
-        max-height: 400px;
-        margin-top: 20%;
-    }
-
-}*/
-
 
 
 
