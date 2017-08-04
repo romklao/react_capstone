@@ -20,7 +20,6 @@ const initialState = {
 
 export const decorHomeReducer = function(state, action) {
     state = state || initialState;
-    console.log('state', state)
  
     if (action.type === actions.SHOW_SIGNUP) {
         state = Object.assign({}, 

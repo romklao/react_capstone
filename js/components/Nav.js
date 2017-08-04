@@ -6,17 +6,15 @@ import LoginModal from './LoginModal';
 import SignupModal from './SignupModal';
 import LoginSignupNav from './LoginSignupNav';
 import BackToHome from './BackToHome';
-import SearchForm from './SearchForm';
 import ShowFavorites from './ShowFavorites';
 
 export function Nav(props) {
     
     return (
-        <nav className="navbar navbar-default navbar-fixed-top" id="navbarFixed">
+        <nav className="navbar-fixed-top" id="navbarFixed">
             <div className="container-fluid">
                 <BackToHome />
                 <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <SearchForm />
                     <LoginSignupNav />
                 </div>
             </div>

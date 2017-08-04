@@ -32,24 +32,23 @@ export class LoginModal extends React.Component {
     render() {
         return (
             <div className="overlay">
+                <div>
+                    <button type="button" className="close" data-dismiss="modal" aria-hidden="true" onClick={this.hide}>&times;</button>
+                </div>
                 <div className="modal-dialog">
-                    <div className="modal-content">
-                        <div className="modal-header">
-                            <button type="button" className="close" data-dismiss="modal" aria-hidden="true" onClick={this.hide}>&times;</button>
-                            <h4 className="modal-title">Fill out the information below to log in</h4>
+                    <h4 className="errorMessage">{this.props.errorMessage}</h4>
+                    <form onSubmit={this.onSubmit}>
+                        <h4 className="modal-title" >Fill out the information below to log in</h4>
+                        <div>
+                            <input type="text" name="email" value={this.state.email} onChange={this.onChange} className="login_input login_email" placeholder="Username" />
+                            <input type="password" name="password" value={this.state.password} onChange={this.onChange} className="login_input login_pass" placeholder="Password" />
                         </div>
-                        <form onSubmit={this.onSubmit}>
-                            <h4 className="errorMessage">{this.props.errorMessage}</h4>
-                            <div className="modal-body">
-                                <input type="text" name="email" value={this.state.email} onChange={this.onChange} className="form-control login_input login_email" placeholder="Username" />
-                                <input type="password" name="password" value={this.state.password} onChange={this.onChange} className="form-control login_input login_pass" placeholder="Password" />
-                            </div>
-                            <div className="modal-footer">
-                                <button type="button" className="btn btn-default closeBtn" data-dismiss="modal" onClick={this.hide}>Close</button>
-                                <button type="submit" className="btn btn-default submitBtn">Submit</button>
-                            </div>
-                        </form>
-                    </div>
+                        <div>
+                            <button type="button" className="btn btn-default closeBtn" data-dismiss="modal" onClick={this.hide}>Close</button>
+                            <button type="submit" className="btn btn-default submitBtn">Submit</button>
+                        </div>
+                    </form>
+                    
                 </div>
             </div>
         );

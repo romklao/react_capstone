@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import * as actions from '../actions/index';
 import ShowSearchResults from './SearchResults';
 import ShowFavorites from './ShowFavorites';
+import SearchForm from './SearchForm';
 
 
 class UserLogin extends React.Component {
@@ -31,10 +32,11 @@ class UserLogin extends React.Component {
                 return (
                     <div className="row userBox">
                         <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <img src="css/images/sofabackground.jpg" className="userBackground"/>
+                            <img src="css/images/sofaUser.jpg" className="userBackground"/>
                         </div>
                         <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 user">
                             <p>Welcome {this.props.user}!</p>
+                            <SearchForm />
                         </div>
                         
                     </div>
