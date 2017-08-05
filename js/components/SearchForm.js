@@ -7,6 +7,9 @@ import Downloading from './Downloading';
 class SearchForm extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            loading: true
+        }
         this.submitSearchForm = this.submitSearchForm.bind(this);
     }
 
@@ -15,9 +18,15 @@ class SearchForm extends React.Component {
         var addSearchText = this.addSearchTextInput.value;
         this.addSearchTextInput.value = '';
         this.props.dispatch(actions.searchSubmit(addSearchText, 1));
+        this.setState({loading: false});
     }
 
     render() {
+        if (this.props.loading) {
+            return (
+                <Downloading />
+            );
+        }
         return (
             <div className="formWrap">
                 <form onSubmit={this.submitSearchForm} role="search">

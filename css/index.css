@@ -75,7 +75,7 @@ input:-webkit-autofill:active {
 .landingIntro {
     position: fixed;
     text-align: center;
-    top: 16.5%;
+    top: 22%;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -409,7 +409,7 @@ input:-webkit-autofill:active {
     margin: 0 auto;
     width: 100%;
     top: 7%;
-    padding: 30px 100px 50px 100px;
+    padding: 0px 100px 50px 100px;
 }
 
 .searchText {
@@ -429,14 +429,14 @@ input:-webkit-autofill:active {
     text-align: center;
     margin: 0 auto;
     width: 100%;
-    top: 10%;
+    top: 7%;
 }
 
 .showFavoritesContainer {
     position: absolute;
     margin: 0 auto;
     width: 100%;
-    padding: 0px 100px 100px 100px;
+    padding: 0px 100px 50px 100px;
 }
 
 .errorSearch {
@@ -448,8 +448,6 @@ input:-webkit-autofill:active {
 
 .showFavorites {
     background-color: white;
-    padding-right: 15px;
-    padding-left: 15px;
     margin: 0 auto;
 }
 
@@ -460,7 +458,7 @@ input:-webkit-autofill:active {
 .showFavorites > div {
     text-align: center;
     margin: 0 auto;
-    margin-top: 50px;
+    margin-top: 40px;
 }
 
 .userBox, .userBox > div, .userBox > div > p, .userBackground {
@@ -553,8 +551,11 @@ input:-webkit-autofill:active {
         top: 29.5%;
         max-height: 280px;
     }
+    .showFavoritesWrap {
+        top: 10%;
+    }
     .showFavoritesContainer {
-        padding: 0;
+        padding: 20px 20px 50px 20px;        
     }
     .searchResultsContainer {
         padding: 20px 20px 50px 20px;        

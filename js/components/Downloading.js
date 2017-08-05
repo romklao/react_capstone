@@ -6,7 +6,7 @@ import * as actions from '../actions/index';
 function Downloading(props) {
     return (
         <div className="waiting">
-
+            <p>Hello</p>
         </div>
     )
 }

@@ -8,7 +8,8 @@ class ItemViews extends React.Component {
         super(props);
 
         this.state = {
-            index: 0
+            index: 0,
+            loading: true
         }
         this.addFavoriteItems = this.addFavoriteItems.bind(this);
         this.deleteFavoriteItems = this.deleteFavoriteItems.bind(this);
