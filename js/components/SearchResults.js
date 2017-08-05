@@ -21,7 +21,7 @@ function ShowSearchResults(props) {
                 <SearchForm />
                 <div className="searchResults">
                     <div className="row">
-                        <div className="col-lg-12 col-sm-12 searchText">
+                        <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 searchText">
                             <h1>
                                 <img src="css/images/home.png" className="furIcon"/>The results of {props.searchInput}
                             </h1>

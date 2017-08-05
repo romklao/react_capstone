@@ -17,6 +17,11 @@ body.waiting * {
     cursor: progress;
 }
 
+.col-lg-12 {
+    margin: 0;
+    padding: 0;
+}
+
 .download {
     position: absolute;
     top: 50%;
@@ -72,6 +77,8 @@ input:-webkit-autofill:active {
     text-align: center;
     top: 16.5%;
     width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .landingIntro > div > div > img {
@@ -402,7 +409,7 @@ input:-webkit-autofill:active {
     margin: 0 auto;
     width: 100%;
     top: 7%;
-    padding: 30px 100px 100px 100px;
+    padding: 30px 100px 50px 100px;
 }
 
 .searchText {
@@ -488,11 +495,15 @@ input:-webkit-autofill:active {
 
 @media (max-width: 784px) {
     .landingIntro {
-        top: 12%;
-        left: 3.6%;
+        top: 10%;
+        padding: 5px;
     }
     .landingIntro > div > div > img {
-        top: 540px;
+        top: 260px;
+        left: 47%;
+    }
+    .formWrap {
+        margin-top: 20px;
     }
     .visible-xs {
         color: black !important;
@@ -543,10 +554,10 @@ input:-webkit-autofill:active {
         max-height: 280px;
     }
     .showFavoritesContainer {
-        padding: 0px 0px 80px 0px;
+        padding: 0;
     }
     .searchResultsContainer {
-        padding: 20px 20px 80px 20px;        
+        padding: 20px 20px 50px 20px;        
     }
     .loginHi {
         margin-left: 14px;
