@@ -83,7 +83,6 @@ input:-webkit-autofill:active {
 
 .landingIntro > div > div > img {
     position: absolute;
-    z-index: 200;
     top: 450px;
     left: 55%;
     width: 30px;
@@ -493,7 +492,14 @@ input:-webkit-autofill:active {
 
 
 @media (max-width: 784px) {
+    .landingPage {
+        position: absolute;
+    }
+    .imageLivingroom {
+        position: absolute;
+    }
     .landingIntro {
+        position: absolute;
         top: 10%;
         padding: 5px;
     }
@@ -526,15 +532,9 @@ input:-webkit-autofill:active {
     .overlay {
         height: 100%;
     }
-    .modal-dialog, .modal-signup {
-/*        width: 380px;
-*/    }
     .modal-signup {
         margin-top: 140px;
     }
-    /*.login_input, .signup {
-        width: 310px;
-    }*/
     .itemResults {
         margin-bottom: 16px;
     }
