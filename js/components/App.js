@@ -13,7 +13,6 @@ class App extends React.Component {
             loading: true
         };
     }
-
     componentDidMount() {
         setTimeout(() => this.setState({ loading: false }), 1500);
     }
@@ -23,10 +22,9 @@ class App extends React.Component {
         let loginModal;
         let signupModal;
 
-        if (loading) {
+        if(loading) {
             return null;
         }
-
         if(this.props.showLogin) {
             loginModal = <LoginModal />
         }
