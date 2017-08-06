@@ -492,6 +492,9 @@ input:-webkit-autofill:active {
 
 
 @media (max-width: 784px) {
+    html, body {
+        overflow-x: hidden;
+    }
     .landingPage {
         position: absolute;
     }
