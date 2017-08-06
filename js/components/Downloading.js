@@ -8,7 +8,7 @@ function Downloading(props) {
         <div className="waiting">
             <p>Hello</p>
         </div>
-    )
+    );
 }
 
 const mapStateToProps = (state, props) => ({

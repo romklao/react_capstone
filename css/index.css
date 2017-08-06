@@ -83,7 +83,9 @@ input:-webkit-autofill:active {
 
 .landingIntro > div > div > img {
     position: absolute;
-    top: 180px;
+    z-index: 200;
+    top: 450px;
+    left: 55%;
     width: 30px;
     color: black;
 }
@@ -155,7 +157,7 @@ input:-webkit-autofill:active {
 }
 
 .login_input, .signup {
-    width: 370px;
+    width: 350px;
     height: 37px;
     border-radius: 3px;
     border: 1px solid lightgrey;
@@ -228,8 +230,8 @@ input:-webkit-autofill:active {
     top: 0;
 }
 
-.modal-dialog, .modal-signup {
-    width: 440px;
+.modal-login, .modal-signup {
+    width: 400px;
     text-align: center;
     padding: 25px 25px 50px 25px;
     border: 1px solid grey;
@@ -241,15 +243,14 @@ input:-webkit-autofill:active {
 
 .modal-signup {
     margin-top: 100px;
-
 }
 
-.modal-dialog {
+.modal-login {
     margin-top: 170px;
 }
 
 .modal-title {
-    font-size: 22px;
+    font-size: 20px;
     margin: 25px 0;
 }
 
@@ -497,7 +498,7 @@ input:-webkit-autofill:active {
         padding: 5px;
     }
     .landingIntro > div > div > img {
-        top: 260px;
+        top: 550px;
         left: 47%;
     }
     .formWrap {
@@ -526,14 +527,14 @@ input:-webkit-autofill:active {
         height: 100%;
     }
     .modal-dialog, .modal-signup {
-        width: 380px;
-    }
+/*        width: 380px;
+*/    }
     .modal-signup {
         margin-top: 140px;
     }
-    .login_input, .signup {
+    /*.login_input, .signup {
         width: 310px;
-    }
+    }*/
     .itemResults {
         margin-bottom: 16px;
     }
