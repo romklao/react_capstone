@@ -495,14 +495,7 @@ input:-webkit-autofill:active {
     html, body {
         overflow-x: hidden;
     }
-    .landingPage {
-        position: absolute;
-    }
-    .imageLivingroom {
-        position: absolute;
-    }
     .landingIntro {
-        position: absolute;
         top: 10%;
         padding: 5px;
     }
