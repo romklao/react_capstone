@@ -6,25 +6,44 @@ import Nav from './Nav';
 import LoginModal from './LoginModal';
 import SignupModal from './SignupModal';
 
-export function App(props) {
-    var loginModal;
-    var signupModal;
-    if(props.showLogin) {
-        loginModal = <LoginModal />
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            loading: true
+        };
     }
-    if(props.showSignup) {
-        signupModal = <SignupModal />
+
+    componentDidMount() {
+        setTimeout(() => this.setState({ loading: false }), 1500);
     }
-    return (
-        <div className="decorHome">
-            <Nav/>
-            {loginModal}
-            {signupModal}
-            <div>
-                {props.children}
+
+    render() {
+        let { loading } = this.state
+        let loginModal;
+        let signupModal;
+
+        if (loading) {
+            return null;
+        }
+
+        if(this.props.showLogin) {
+            loginModal = <LoginModal />
+        }
+        if(this.props.showSignup) {
+            signupModal = <SignupModal />
+        }
+        return (
+            <div className="decorHome">
+                <Nav/>
+                {loginModal}
+                {signupModal}
+                <div>
+                    {this.props.children}
+                </div>
             </div>
-        </div>
-    );
+        );
+    }
 }
 
 const mapStateToProps = (state, props) => ({

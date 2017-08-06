@@ -36,7 +36,7 @@ export class LoginModal extends React.Component {
                     <button type="button" className="close" data-dismiss="modal" aria-hidden="true" onClick={this.hide}>&times;</button>
                 </div>
                 <div className="modal-login">
-                    <h4 className="errorMessage">{this.props.errorMessage}</h4>
+                    <h4 className="errorMessageLogin">{this.props.errorMessage}</h4>
                     <form onSubmit={this.onSubmit}>
                         <h4 className="modal-title" >Fill out the information below to log in</h4>
                         <div>
