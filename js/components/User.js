@@ -26,7 +26,10 @@ class UserLogin extends React.Component {
                 );
             } else if (this.props.errorSearchMessage) {
                 return (
-                    <h1 className="errorSearch">{this.props.errorSearchMessage}</h1>
+                    <div className="errorMsgWrap">
+                        <SearchForm />
+                        <h1 className="errorSearch">{this.props.errorSearchMessage}</h1>
+                    </div>
                 );
             } else {
                 return (

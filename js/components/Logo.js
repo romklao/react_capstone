@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import * as actions from '../actions/index';
 import SearchForm from './SearchForm';
 
-export function BackToHome(props) {
+export function Logo(props) {
 
     return (
         <div className="navbar-header">
@@ -20,4 +20,4 @@ export function BackToHome(props) {
     );
 }
 
-export default connect()(BackToHome);
+export default connect()(Logo);
