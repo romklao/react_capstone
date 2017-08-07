@@ -7,6 +7,7 @@ import WhatWeDo from './WhatWeDo';
 import ShowImageList from './ShowImageList';
 import ShowSearchResults from './SearchResults';
 import UserLogin from './User';
+import SearchForm from './SearchForm';
 
 
 function LandingPageContainer(props) {
@@ -18,7 +19,10 @@ function LandingPageContainer(props) {
         );
     } else if (props.errorSearchMessage) {
         return (
-            <h1 className="errorSearch">{props.errorSearchMessage}</h1>
+            <div className="errorMsgWrap">
+                <SearchForm />
+                <h1 className="errorSearch">{props.errorSearchMessage}</h1>
+            </div>
         );
     } else if (props.authenticated) {
         return (
