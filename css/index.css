@@ -167,7 +167,7 @@ input:-webkit-autofill:active {
     padding-left: 10px;
     border-radius: 3px;
     height: 37px;
-    width: 260px;
+    width: 480px;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -556,6 +556,9 @@ input:-webkit-autofill:active {
     }
     .formWrap {
         margin-top: 20px;
+    }
+    .search_input {
+        width: 260px;
     }
     .visible-xs {
         color: black !important;
