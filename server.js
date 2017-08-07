@@ -30,7 +30,7 @@ app.use(morgan('common'));
 const http = require('http');
 
 setInterval(function() {
-    http.get('http://<your app name>.herokuapp.com');
+    http.get('http://enigmatic-mesa-94213.herokuapp.com');
 }, 300000); // every 5 minutes (300000)
 
 
