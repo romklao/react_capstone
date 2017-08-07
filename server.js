@@ -24,6 +24,15 @@ app.use(express.static('sweetalert-master'));
 app.use(jsonParser);
 app.use(morgan('common'));
 
+// Put function setInterval so it will wake the app every 5 mins 
+// so heroku could not put the app into sleep state
+
+const http = require('http');
+
+setInterval(function() {
+    http.get('http://<your app name>.herokuapp.com');
+}, 300000); // every 5 minutes (300000)
+
 
 // <-------- Sign up by using 'POST' method ---------> 
 

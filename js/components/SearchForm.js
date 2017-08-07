@@ -2,7 +2,6 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import * as actions from '../actions/index';
-import Downloading from './Downloading';
 
 class SearchForm extends React.Component {
     constructor(props) {
@@ -22,11 +21,6 @@ class SearchForm extends React.Component {
     }
 
     render() {
-        if (this.props.loading) {
-            return (
-                <Downloading />
-            );
-        }
         return (
             <div className="formWrap">
                 <form onSubmit={this.submitSearchForm} role="search">
