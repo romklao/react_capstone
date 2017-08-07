@@ -5,7 +5,6 @@ import * as actions from '../actions/index';
 import SearchForm from './SearchForm';
 
 export function Logo(props) {
-
     return (
         <div className="navbar-header">
             <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">

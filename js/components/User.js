@@ -41,7 +41,6 @@ class UserLogin extends React.Component {
                             <p>Welcome {this.props.user}!</p>
                             <SearchForm />
                         </div>
-                        
                     </div>
                 );
             }

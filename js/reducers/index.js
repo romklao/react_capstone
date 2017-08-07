@@ -8,6 +8,7 @@ const initialState = {
     loggedIn: false,
     shouldRedirect: false,
     authenticated: false,
+    returnHome: false,
     errorMessage: null,
     errorSearchMessage: null,
     confirmAddFavoriteMessage: null,
@@ -46,8 +47,8 @@ export const decorHomeReducer = function(state, action) {
             } 
         );
         return state;
-
-    } else if (action.type === actions.SIGNUP_SUCCESS) {
+    }
+    else if (action.type === actions.SIGNUP_SUCCESS) {
         state = Object.assign({},
             state, {
                 user: action.user,
@@ -60,7 +61,6 @@ export const decorHomeReducer = function(state, action) {
             }
         );
         return state;
-
     } else if (action.type === actions.SIGNUP_ERROR) {
         state = Object.assign({},
             state, {

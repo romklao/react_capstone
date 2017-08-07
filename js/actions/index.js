@@ -21,6 +21,11 @@ export const hide = () => ({
     type: HIDE
 })
 
+export const RETURN_HOME = 'RETURN_HOME';
+export const returnHome = () => ({
+    type: RETURN_HOME
+})
+
 export const SHOW_FAVORITES_ITEMS = 'SHOW_FAVORITES_ITEMS';
 export const showFavoriteItems = (products) => ({
     type: SHOW_FAVORITES_ITEMS,
