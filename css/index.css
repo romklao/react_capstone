@@ -584,6 +584,7 @@ input:-webkit-autofill:active {
     }
     .itemResults {
         margin-bottom: 16px;
+        border-color: #c0d0e8;
     }
     .productDescription {
         font-size: 14px;
