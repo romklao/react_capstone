@@ -6,7 +6,7 @@ import LoginModal from './LoginModal';
 import SignupModal from './SignupModal';
 import LoginSignupNav from './LoginSignupNav';
 
-export function WhatWeDo(props) {
+function WhatWeDo(props) {
     let showSignup = event => {
         event.preventDefault();
         props.dispatch(actions.showSignup());
@@ -30,10 +30,5 @@ export function WhatWeDo(props) {
     ); 
 }
 
-const mapStateToProps = (state, props) => ({
-    showSignup: state.showSignup,
-    showLogin: state.showLogin,
-});
-
-export default connect(mapStateToProps)(WhatWeDo);
+export default connect()(WhatWeDo);
 
