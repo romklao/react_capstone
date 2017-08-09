@@ -493,6 +493,7 @@ input:-webkit-autofill:active {
 .errorMsgWrap {
     position: absolute;
     text-align: center;
+    width: 100%;
     top: 28.5%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);

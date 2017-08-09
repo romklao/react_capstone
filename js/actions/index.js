@@ -141,11 +141,10 @@ export const searchSubmit = (search_text, page) => dispatch => {
     })
     .then(response => response.json())
     .then(data => {
-        hashHistory.push('/');
+        console.log('route')
         return dispatch(makeSearchSuccessMsg(data, search_text, page));
     })
     .catch(error => {
-        hashHistory.push('/');
         return dispatch(searchError(error.message));
     })
 }

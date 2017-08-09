@@ -5,8 +5,10 @@ import * as actions from '../actions/index';
 import ItemViews from './ItemViews';
 import Pagination from './Pagination';
 import SearchForm from './SearchForm';
+import {Router, Route, IndexRoute, IndexRedirect, hashHistory, browserHistory} from 'react-router';
 
 function ShowSearchResults(props) {
+
     if (props.searchResults) {
         let results = [];
 
@@ -17,7 +19,7 @@ function ShowSearchResults(props) {
                                     key={i} />);
         }
         return (
-            <div>
+            <div className="searchResultsContainer">
                 <SearchForm />
                 <div className="searchResults">
                     <div className="row">
@@ -34,6 +36,14 @@ function ShowSearchResults(props) {
                         <Pagination />
                     </div>
                 </div>
+            </div>
+        );
+    }
+    else {
+        return (
+            <div className="errorMsgWrap">
+                <SearchForm />
+                <h1 className="errorSearch">No results!</h1>
             </div>
         );
     } 

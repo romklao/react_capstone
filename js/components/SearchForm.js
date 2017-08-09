@@ -2,13 +2,13 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import * as actions from '../actions/index';
+import {Router, Route, IndexRoute, IndexRedirect, hashHistory, browserHistory} from 'react-router';
+import { Redirect } from 'react-router'
+import ShowSearchResults from './SearchResults';
 
 class SearchForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            loading: true
-        }
         this.submitSearchForm = this.submitSearchForm.bind(this);
     }
 
@@ -17,7 +17,8 @@ class SearchForm extends React.Component {
         var addSearchText = this.addSearchTextInput.value;
         this.addSearchTextInput.value = '';
         this.props.dispatch(actions.searchSubmit(addSearchText, 1));
-        this.setState({loading: false});
+        console.log('search', this.props)
+        hashHistory.push('/search');
     }
 
     render() {
@@ -30,10 +31,14 @@ class SearchForm extends React.Component {
                 </form>
             </div>
         );
-    };
+    }
 };
 
-export default connect()(SearchForm);
+const mapStateToProps = (state, props) => ({
+    searchResults: state.searchResults,
+});
+
+export default connect(mapStateToProps)(SearchForm);
 
 
 

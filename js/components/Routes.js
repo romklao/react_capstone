@@ -19,6 +19,7 @@ export function Routes(props) {
                 <IndexRoute component={LandingPageContainer} />
                 <Route path="user" component={UserLogin} />
                 <Route path="myfavorites" component={ShowFavorites} />
+                <Route path="search" component={ShowSearchResults} />
             </Route>
         </Router>
     );

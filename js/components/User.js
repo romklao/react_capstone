@@ -15,12 +15,12 @@ class UserLogin extends React.Component {
             window.location = '/'
         } 
     }
-    
+
     render () {
         if (this.props.authenticated) {
             if (this.props.searchResults) {
                 return (
-                    <div className="searchResultsContainer">
+                    <div>
                         <ShowSearchResults />
                     </div>
                 );

@@ -11,20 +11,7 @@ import SearchForm from './SearchForm';
 
 
 function LandingPageContainer(props) {
-    if (props.searchResults) {
-        return (
-            <div className="searchResultsContainer">
-                <ShowSearchResults />
-            </div>
-        );
-    } else if (props.errorSearchMessage) {
-        return (
-            <div className="errorMsgWrap">
-                <SearchForm />
-                <h1 className="errorSearch">{props.errorSearchMessage}</h1>
-            </div>
-        );
-    } else if (props.authenticated) {
+    if (props.authenticated) {
         return (
             <div>
                 <UserLogin />
