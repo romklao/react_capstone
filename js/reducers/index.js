@@ -150,6 +150,8 @@ export const decorHomeReducer = function(state, action) {
         state = Object.assign({},
             state, {
                 favorites: action.products,
+                searchResults: null,
+                errorSearchMessage: null,
             }
         );
         return state;

@@ -7,10 +7,6 @@ import SearchForm from './SearchForm';
 class UserLogin extends React.Component {
     constructor(props) {
         super(props);
-
-        if (!localStorage.username) {
-            window.location = '/'
-        } 
     }
 
     render () {
@@ -24,6 +20,12 @@ class UserLogin extends React.Component {
                         <p>Welcome {this.props.user}!</p>
                         <SearchForm />
                     </div>
+                </div>
+            );
+        } else {
+            return (
+                <div className="errorMsgWrap">
+                    <h1 className="errorSearch">Please log in or sign up!</h1>
                 </div>
             );
         }
