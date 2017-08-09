@@ -622,6 +622,9 @@ input:-webkit-autofill:active {
     .searchResultsContainer {
         padding: 20px 20px 50px 20px;        
     }
+    .errorMsgWrap {
+        margin-top: 3%;
+    }
     .loginHi {
         margin-left: 14px;
     }
