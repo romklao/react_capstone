@@ -13,17 +13,18 @@ class Pagination extends React.Component {
     onClick(pageNum) {
         this.setState({pageNum: pageNum});
         this.props.dispatch(actions.searchSubmit(this.props.searchInput, pageNum));
+        window.scrollTo(0, 0)
     }
 
     render() {
         return (
             <div className="col-lg-12 col-sm-12" >
                 <ul className="pagination">
-                    <li><a href="#" value="1" onClick={() => this.onClick(1)}>1</a></li>
-                    <li><a href="#" value="2" onClick={() => this.onClick(2)}>2</a></li>
-                    <li><a href="#" value="3" onClick={() => this.onClick(3)}>3</a></li>
-                    <li><a href="#" value="4" onClick={() => this.onClick(4)}>4</a></li>
-                    <li><a href="#" value="5" onClick={() => this.onClick(5)}>5</a></li>
+                    <li><a href="/#/search" value="1" onClick={() => this.onClick(1)}>1</a></li>
+                    <li><a href="/#/search" value="2" onClick={() => this.onClick(2)}>2</a></li>
+                    <li><a href="/#/search" value="3" onClick={() => this.onClick(3)}>3</a></li>
+                    <li><a href="/#/search" value="4" onClick={() => this.onClick(4)}>4</a></li>
+                    <li><a href="/#/search" value="5" onClick={() => this.onClick(5)}>5</a></li>
                 </ul>
             </div>
         );

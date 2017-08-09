@@ -53,7 +53,6 @@ export const decorHomeReducer = function(state, action) {
                 searchResults: null,
             } 
         );
-        console.log('home', state)
         return state;
 
     } else if (action.type === actions.SIGNUP_SUCCESS) {

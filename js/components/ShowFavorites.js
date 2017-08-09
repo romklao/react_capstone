@@ -44,6 +44,13 @@ class ShowFavorites extends React.Component {
                     </div>
                 </div>
             );
+        } else {
+            return (
+                <div className="errorMsgWrap">
+                    <h1 className="errorSearch">No favorite results!</h1>
+                    <h3>Please log in or sign up to save your favorite items</h3>
+                </div>
+            );
         }
     }
 }

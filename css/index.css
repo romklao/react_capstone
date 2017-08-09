@@ -13,9 +13,6 @@ html, body {
     overflow-x: hidden;
 }
 
-body.waiting * {
-    cursor: progress;
-}
 
 /** add :empty to the loader's selectors **/
 
@@ -30,6 +27,8 @@ body.waiting * {
   margin: 60px auto;
   font-size: 10px;
   position: relative;
+  background-color: white;
+  z-index: 100;
   top: 30%;
   text-indent: -9999em;
   border-top: 1.1em solid rgba(0, 0, 0, 0.2);
@@ -624,6 +623,9 @@ input:-webkit-autofill:active {
     }
     .errorMsgWrap {
         margin-top: 3%;
+    }
+    .errorMsgWrap h3 {
+        font-size: 17px;
     }
     .loginHi {
         margin-left: 14px;
