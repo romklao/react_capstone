@@ -43,7 +43,7 @@ function ShowSearchResults(props) {
         return (
             <div className="errorMsgWrap">
                 <SearchForm />
-                <h1 className="errorSearch">No results!</h1>
+                <h1 className="errorSearch">{props.errorSearchMessage}</h1>
             </div>
         );
     } 

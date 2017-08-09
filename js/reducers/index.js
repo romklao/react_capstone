@@ -11,7 +11,6 @@ const initialState = {
     returnHome: false,
     errorMessage: null,
     errorSearchMessage: null,
-    confirmAddFavoriteMessage: null,
     searchInput: null,
     searchResults: null,
     favorites: null,
@@ -36,7 +35,6 @@ export const decorHomeReducer = function(state, action) {
                 showLogin: true,
             } 
         );
-        console.log('stateLogin', state)
         return state;
 
     } else if (action.type === actions.HIDE) {
@@ -106,6 +104,7 @@ export const decorHomeReducer = function(state, action) {
     } else if (action.type === actions.SEARCH_SUCCESS) {
         state = Object.assign({},
             state, {
+                errorSearchMessage: null,
                 searchResults: action.searchResults,
                 searchInput: action.searchInput,
                 shouldRedirect: true,
@@ -131,9 +130,9 @@ export const decorHomeReducer = function(state, action) {
         var confirmAddFavoriteMessage = 'Add favorite success!'
         state = Object.assign({},
             state, {
+                errorSearchMessage: null,
                 favorites: action.products,
                 showFavorites: true,
-                confirmAddFavoriteMessage: confirmAddFavoriteMessage
             }
         );
         return state;

@@ -141,7 +141,6 @@ export const searchSubmit = (search_text, page) => dispatch => {
     })
     .then(response => response.json())
     .then(data => {
-        console.log('route')
         return dispatch(makeSearchSuccessMsg(data, search_text, page));
     })
     .catch(error => {
@@ -190,7 +189,7 @@ export const addFavorites = (product) => dispatch => {
 }
 
 export const ADD_FAVORITE_SUCCESS = 'ADD_FAVORITE_SUCCESS';
-export const addFavoritesSuccess = (products) => ({
+export const addFavoritesSuccess = products => ({
     type: ADD_FAVORITE_SUCCESS,
     products: products,
 })

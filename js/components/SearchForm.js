@@ -17,7 +17,6 @@ class SearchForm extends React.Component {
         var addSearchText = this.addSearchTextInput.value;
         this.addSearchTextInput.value = '';
         this.props.dispatch(actions.searchSubmit(addSearchText, 1));
-        console.log('search', this.props)
         hashHistory.push('/search');
     }
 
