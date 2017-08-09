@@ -541,6 +541,7 @@ input:-webkit-autofill:active {
 .userBox > div > p {
     font-size: 35px;
     margin-top: 65px;
+    color: black;
 }
 
 .userBackground {
