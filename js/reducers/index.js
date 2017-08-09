@@ -45,8 +45,18 @@ export const decorHomeReducer = function(state, action) {
             } 
         );
         return state;
-    }
-    else if (action.type === actions.SIGNUP_SUCCESS) {
+
+    } else if (action.type === actions.RETURN_HOME) {
+        state = Object.assign({}, 
+            state, {
+                errorSearchMessage: null,
+                searchResults: null,
+            } 
+        );
+        console.log('home', state)
+        return state;
+
+    } else if (action.type === actions.SIGNUP_SUCCESS) {
         state = Object.assign({},
             state, {
                 user: action.user,
