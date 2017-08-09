@@ -11,25 +11,17 @@ import SearchForm from './SearchForm';
 
 
 function LandingPageContainer(props) {
-    if (props.authenticated) {
-        return (
+    return (
+        <div className="indexPage">
             <div>
-                <UserLogin />
+                <LandingPage />
             </div>
-        );
-    } else {
-        return (
-            <div className="indexPage">
-                <div>
-                    <LandingPage />
-                </div>
-                <div className="container">
-                    <WhatWeDo />
-                    <ShowImageList />
-                </div>
+            <div className="container">
+                <WhatWeDo />
+                <ShowImageList />
             </div>
-        );
-    }
+        </div>
+    );
 }
 
 const mapStateToProps = (state, props) => ({
