@@ -21,7 +21,7 @@ export function Routes(props) {
                 <IndexRoute component={LandingPageContainer} />
                 <Route path="user" component={UserLogin} />
                 <Route path="myfavorites" component={ShowFavorites} />
-                <Route path="search" component={SearchResults} />
+                <Route path="search/?category=:category&keywords=:keywords&page=:page" component={SearchResults}/>
                 <Route path="product_details" component={ProductDetails} />
                 <Route path="category/:category" component={CategoryViews} />
             </Route>

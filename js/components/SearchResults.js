@@ -13,6 +13,7 @@ class SearchResults extends React.Component {
         super(props);
     }
     render () {
+        console.log('query',this.props.location.query)
         if (this.props.searchResults) {
             console.log('searchResults', this.props.searchResults)
             let results = [];

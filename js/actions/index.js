@@ -141,7 +141,6 @@ export const searchSubmit = (search_text, category, page) => dispatch => {
     })
     .then(response => response.json())
     .then(data => {
-        console.log('data', data)
         return dispatch(makeSearchSuccessMsg(data, search_text, category, page));
     })
     .catch(error => {

@@ -9,7 +9,7 @@ export function CategoryView(props) {
     let getSearchProduct = event => {
         event.preventDefault();
         props.dispatch(actions.searchSubmit(props.keywords, props.category, 1));
-        hashHistory.push('/search');
+        hashHistory.push(`/search/?category=${props.category}&keywords=${props.keywords}&page=1`);
     }
     let styleData = props.styleData;
 
