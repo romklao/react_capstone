@@ -170,6 +170,14 @@ export const showProductDetails = (productDetails) => ({
     productDetails: productDetails,
 })
 
+export const SHOW_PRODUCT_QUICK_VIEW = 'SHOW_PRODUCT_QUICK_VIEW';
+export const showProductQuickView = (productDetails) => ({
+    type: SHOW_PRODUCT_QUICK_VIEW,
+    productDetails: productDetails,
+})
+
+
+
 export const addFavorites = (product) => dispatch => {
     let url = '/favorites';
     let fetchData = {

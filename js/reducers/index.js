@@ -153,6 +153,15 @@ export const decorHomeReducer = function(state, action) {
         state = Object.assign({},
             state, {
                 productDetails: action.productDetails,
+            }
+        );
+        console.log('stateShowProduct', state)
+        return state;
+
+    } else if (action.type === actions.SHOW_PRODUCT_QUICK_VIEW) {
+        state = Object.assign({},
+            state, {
+                productDetails: action.productDetails,
                 showQuickView: true,
             }
         );

@@ -111,6 +111,7 @@ class ProductDetails extends React.Component {
                                         <p className="productTitle">{productTitle}</p>
                                         <span className="price">{price}</span>
                                         <button className="addFavBtn" onClick={this.addFavoriteItems}>Add to Favorites</button>
+                                        <a href={pageUrl} target={blank}><img src={amazonLogoUrl} className="amazonLogo"/></a>
                                     </div>
                                 </div>
                             </div>

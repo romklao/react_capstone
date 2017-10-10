@@ -15,6 +15,8 @@ class ItemView extends React.Component {
         this.addFavoriteItems = this.addFavoriteItems.bind(this);
         this.deleteFavoriteItems = this.deleteFavoriteItems.bind(this);
         this.showProductDetails = this.showProductDetails.bind(this);
+        this.showProductQuickView = this.showProductQuickView.bind(this);
+        this.hide = this.hide.bind(this);
     }
 
     addFavoriteItems() {
@@ -30,8 +32,18 @@ class ItemView extends React.Component {
         )
     }
 
+    hide(event) {
+        event.preventDefault();
+        this.props.dispatch(actions.hide());
+    };
+
+    showProductQuickView() {
+        this.props.dispatch(actions.showProductQuickView(this.props.product));
+    }
+
     showProductDetails() {
         this.props.dispatch(actions.showProductDetails(this.props.product));
+        hashHistory.push('/product_details');
     }
 
     render () {
@@ -64,10 +76,10 @@ class ItemView extends React.Component {
             <div className="col-lg-4 col-sm-6 col-xs-12 itemResults wrapper">
                 <div className="imageProductBox parentImage">
                     <div className="childImage">
-                        <img src={imageUrl} className="imageProduct"/>
+                        <img src={imageUrl} className="imageProduct" onClick={this.showProductDetails}/>
                         <span className={addFavIcon} onClick={this.addFavoriteItems}></span>
                         <span className={delFavIcon} onClick={() => this.deleteFavoriteItems(favoriteId)}></span>
-                        <p className="quickview" onClick={this.showProductDetails}>QUICK VIEW</p>
+                        <p className="quickview" onClick={this.showProductQuickView}>QUICK VIEW</p>
                     </div>
                 </div>
             </div>
