@@ -1,46 +1,71 @@
 * {
     box-sizing: border-box;
-    font-family: Roboto;
+    font-family: Poppins;
     margin: 0 auto;
 }
 
 html, body {
     width: 100%;
     height: 100%;
-    background-color: white;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
 }
 
-
 /** add :empty to the loader's selectors **/
 
 .loader:empty,
 .loader:empty:after {
-  border-radius: 50%;
-  width: 6em;
-  height: 6em;
+    border-radius: 50%;
+    width: 6em;
+    height: 6em;
 }
 
 .loader:empty {
-  margin: 60px auto;
-  font-size: 10px;
-  position: relative;
-  background-color: white;
-  z-index: 100;
-  top: 30%;
-  text-indent: -9999em;
-  border-top: 0.9em solid rgba(0, 0, 0, 0.2);
-  border-right: 0.9em solid rgba(0, 0, 0, 0.2);
-  border-bottom: 0.9em solid rgba(0, 0, 0, 0.2);
-  border-left: 0.9em solid #000000;
-  -webkit-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-animation: load8 1.1s infinite linear;
-  animation: load8 1.1s infinite linear;
+    margin: 60px auto;
+    font-size: 10px;
+    position: relative;
+    background-color: white;
+    z-index: 100;
+    top: 30%;
+    text-indent: -9999em;
+    border-top: 0.9em solid rgba(0, 0, 0, 0.2);
+    border-right: 0.9em solid rgba(0, 0, 0, 0.2);
+    border-bottom: 0.9em solid rgba(0, 0, 0, 0.2);
+    border-left: 0.9em solid #000000;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation: load8 1.1s infinite linear;
+    animation: load8 1.1s infinite linear;
 }
+
+.load {
+    border-radius: 50%;
+    width: 6em;
+    height: 6em;
+}
+
+.load {
+    margin: 60px auto;
+    font-size: 10px;
+    position: fixed;
+    background-color: white;
+    z-index: 100;
+    left: 50%;
+    top: 30%;
+    text-indent: -9999em;
+    border-top: 0.9em solid rgba(0, 0, 0, 0.2);
+    border-right: 0.9em solid rgba(0, 0, 0, 0.2);
+    border-bottom: 0.9em solid rgba(0, 0, 0, 0.2);
+    border-left: 0.9em solid #000000;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation: load8 1.1s infinite linear;
+    animation: load8 1.1s infinite linear;
+}
+
 
 @-webkit-keyframes load8 {
   0% {
@@ -67,7 +92,7 @@ html, body {
 /** End loading spinner **/
 
 
-.col-lg-12 {
+.col-xs-12, .row {
     margin: 0;
     padding: 0;
 }
@@ -90,96 +115,27 @@ input:-webkit-autofill:active {
 }
 
 #navbarFixed {
-    z-index: 100;
-    background-color: #B0B5BB;
-    border-bottom: 2px solid #CADAEA;
+    display: table;
+    z-index: 200;
+    background-color: rgba(255,255,255, 0.9);
+    border-top: 0px solid rgba(47, 46, 46, 1);
+    border-bottom: 0px solid rgba(47, 46, 46, 1);
+    height: 110px;
+    width: 100%;
+}
+
+.container-fluid {
+    width: 980px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
 }
 
 .navbar-brand {
-    color: black;
-    padding: 15px;
+    color: #415357 !important;
     font-size: 23px;
-}
-
-.navbar-brand:hover {
-    color: #228CAB !important;
-}
-
-.navbar {
-    border-width: 0;
-}
-
-.imageLivingroom {
-    position: fixed;
-    margin: 0;
-    padding: 0;
-    left: 0;
-    width: auto;
-    max-height: 100%;
-}
-
-.landingPage {
-    position: fixed;
-    text-align: center;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-}
-
-.landingIntro {
-    position: fixed;
-    text-align: center;
-    top: 22%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-.landingIntro > div > div > img {
-    position: absolute;
-    top: 450px;
-    left: 55%;
-    width: 30px;
-    color: black;
-}
-
-.title {
-    color: black;
-    font-size: 35px;
-}
-
-.formWrap {
-    margin-top: 35px;
-}
-
-.loginSignupLandingPage {
-    position: absolute;
-    width: 100%;
-    margin-top: 140px;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-}
-
-#homeIcon {
-    width: 42px;
-}
-
-.search_input {
-    margin-right: 7px;
-    border: 1px solid lightgrey;
-    padding-left: 10px;
-    border-radius: 3px;
-    height: 37px;
-    width: 480px;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
-}
-
-.searchSubmit {
-    padding: 10px;
-}
-
-.submitSearch {
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    border-bottom: 3px solid rgba(64, 83, 87, 1);
 }
 
 .loginBtn, .signupBtn {
@@ -196,17 +152,13 @@ input:-webkit-autofill:active {
     border-color: #023f7c; /*#389738*/
 }
 
-#loginLink, #signupLink, #logoutLink, #favLink {
+#loginLink, #signupLink, #logoutLink, #favLink, #home, #beauty, #electronics {
     font-size: 17px;
-    color: black;
+    color: #999999;
 }
 
-#loginLink:hover, #signupLink:hover, #logoutLink:hover, #favLink:hover {
-    background-color: white; /*#228CAB*/
-}
-
-.visible-xs:hover {
-    border-color: #228CAB;
+#loginLink:hover, #signupLink:hover, #logoutLink:hover, #favLink:hover, #home:hover, #beauty:hover, #electronics:hover {
+    color: #415357; 
 }
 
 .login_input, .signup {
@@ -229,13 +181,236 @@ input:-webkit-autofill:active {
     color: black;
 } 
 
-.container {
+.indexPage, .categoryPage {
     position: absolute;
-    background-color: #F5FAFE; /* f2f9fc #f7f2ed #F8F8F8 #F5FAFE f9fbfc*/
-    margin: 0 auto;
-    padding: 100px 130px 130px 130px;
+    top: 16%;
+    background-color: #EDEFF0;
+    margin: 0;
+    padding: 0;
+    left: 0;
     width: 100%;
-    top: 100%;
+}
+
+.indexPage > div, .categoryPage > div {
+    margin: 0;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.intro {
+    height: 387px;
+    background-color: #81A6AC;
+    padding: 50px 40px 50px 40px;
+}
+
+.intro > h1 {
+    font-size: 47px;
+    color: #405357;
+    line-height: 1.2em;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+.intro > p {
+    width: 80%;
+    margin-top: 40px;
+    font-size: 21px;
+    border-bottom: 3px solid #617D81;
+    color: white;
+    padding: 5px;
+}
+
+.introImg {
+    height: 387px;
+    background: url('images/soap1.jpg') no-repeat center;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+.imageBox {
+/*    border: 1px solid #F8F8F8;
+*/    text-align: center;
+    background-color: white; /*#F8F8F8*/
+    height: 260px;
+    padding: 0;
+    padding: 15px;
+}
+
+.wrapper {
+    max-width: 100%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Image zoom on hover + Overlay colour */
+.parent, .parentImage {
+    margin: 10px;
+    overflow: hidden;
+    position: relative;
+    float: left;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+}
+
+.child, .childImage {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+}
+
+/* Several different images */
+
+.parent:hover .child, .parent:focus .child {
+    -ms-transform: scale(1.3);
+    -moz-transform: scale(1.3);
+    -webkit-transform: scale(1.3);
+    -o-transform: scale(1.3);
+    transform: scale(1.3);
+}
+
+.parentImage:hover .childImage, .parentImage:focus .childImage {
+    -ms-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.parent:hover .child:before, .parent:focus .child:before {
+    display: block;
+}
+
+.parent:hover a, .parent:focus a {
+    display: block;
+}
+
+.child:before {
+    content: "";
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(63, 127, 191, 0.3);
+}
+
+.bgCleanser {
+    background-image: url("images/cleanser1.jpg");
+}
+
+.parentCleanser {
+    width: 314px;
+    height: 517px;
+}
+
+.bgMoist {
+    background-image: url("images/moist1.jpg");
+}
+
+.parentMoist {
+    width: 618px;
+    height: 270px;
+}
+
+.bgSerum {
+    background-image: url("images/serum1.jpg");
+}
+
+.parentSerum {
+    width: 314px;
+    height: 469px;
+}
+
+.bgTreatment {
+    background-image: url("images/treatment1.jpg");
+}
+
+.parentTreatment {
+    width: 314px;
+    height: 369px;
+} 
+
+.bgEye {
+    background-image: url("images/eye1.jpg");
+}
+
+.parentEye {
+    width: 314px;
+    height: 319px;
+}
+
+.bgSun {
+    background-image: url("images/sun.jpg");
+}
+
+.parentSun {
+    width: 314px;
+    height: 469px;
+}
+
+.bgToner {
+    background-image: url("images/toner2.jpg");
+}
+
+.parentToner {
+    width: 314px;
+    height: 319px;
+}
+
+.bgHand {
+    background-image: url("images/hand.jpg");
+}
+
+.parentHand {
+    width: 650px;
+    height: 270px;
+}
+
+.title {
+    color: black;
+    font-size: 35px;
+}
+
+.formWrap {
+    margin-top: 35px;
+}
+
+.loginSignupLandingPage {
+    position: absolute;
+    width: 100%;
+    margin-top: 140px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.search_input {
+    margin-right: 7px;
+    border: 1px solid lightgrey;
+    padding-left: 10px;
+    border-radius: 3px;
+    height: 37px;
+    width: 480px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.searchSubmit {
+    padding: 10px;
+}
+
+.submitSearch {
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 .whatWeDo {
@@ -254,29 +429,13 @@ input:-webkit-autofill:active {
     margin-bottom: 20px;
 }
 
-.imageBox {
-    border: 0px solid #F8F8F8;
-    border-left: none;
-    border-bottom: none;
-    text-align: center;
-    background-color: white; /*#F8F8F8*/
-    max-height: 235px;
-    padding: 3px 20px 3px 20px;
-}
-
-.imageFurnitures {
-    max-width: 100%;
-    margin: 0 auto;
-    max-height: 226px;
-}
-
 .overlay {
     position: fixed;
     text-align: center;
     width: 100%;
     height: 100%;
     margin: 0 auto;
-    z-index: 1000;
+    z-index: 250;
     background-color: white;
     background:rgba(255,255,255,.95);
     left: 0;
@@ -328,23 +487,99 @@ input:-webkit-autofill:active {
     color: grey;
 }
 
-.itemResults {
+.searchResultsContainer {
+    position: absolute;
+    top: 16%;
+    background-color: #EDEFF0;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    width: 100%;
     text-align: center;
-    height: 560px;
-    background-color: #F5FAFE;
-    padding: 20px;
-    margin: 0 auto;
-    border: 1px solid white;
 }
 
-.itemResults:hover .leftArrow, .itemResults:hover .rightArrow {
+.searchResultsContainer > div {
+    margin: 0;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.searchResultsContainer h1 {
+    color: #415357 !important; /*#228CAB*/
+}
+
+
+.searchResultsBox {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.itemResults {
+    margin: 0;
+    padding: 0;
+}
+
+.imageProductBox {
+    background-color: white;
+    width: 94.50%;
+    height: 310px;
+    display: table;
+    margin: 10px;
+}
+
+.imageProductBox > div {
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.imageProduct {
+    max-width: 80%;
+    margin: 0;
+    max-height: 230px;
+}
+
+.quickview {
+    position: absolute;
+    background: rgba(97, 125, 129, 0.7);
+    color: white;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    padding: 10px;
+    bottom: -2%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    opacity: 0;
+    transition: opacity 800ms;
+}
+
+.itemResults:hover {
+    cursor: pointer;
+}
+
+.itemResults:hover .quickview {
+    opacity: 1.0;
+    cursor: pointer;
+}
+
+.productQuickViewImage:hover .leftArrow, .productQuickViewImage:hover .rightArrow {
     opacity: 1.0;
 }
 
 .leftArrow, .rightArrow {
     position: absolute;
+    display: block;
+    width: 23px;
+    top: 50%;    
+    padding: 50px 3px;
+    background: rgba(63, 191, 170, 0.1);
     opacity: 0;
     transition: opacity 800ms;
+    transform: translateX(-50%) translateY(-50%);
 }
 
 .leftArrow;hover , .rightArrow:hover {
@@ -352,93 +587,33 @@ input:-webkit-autofill:active {
 }
 
 .leftArrow {
-    left: 3%;
-    width: 22px;
-    top: 33%; /*#969899*/
+    left: 2.9%;
 }
 
 .rightArrow {
-    left: 92.5%;
-    width: 22px;
-    top: 33%;
-}
-
-.imageProductBox {
-    background-color: white;
-    height: 348px;
-}
-
-#imageProduct {
-    max-width: 87%;
-    margin: 0;
-    margin-top: 10px;
-    max-height: 310px;
-    margin-bottom: 10px;
-    position: absolute;
-    left: 50%;
-    top: 33%;
-    transform: translateX(-50%) translateY(-50%);
-}
-
-.productDescription {
-    background-color: white;
-    top: 69.5%;
-    position: absolute;
-    width: 92.2%;
-    height: 150px;
-}
-
-.productTitleBox {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    text-align: center;
-}
-
-.productTitle {
-    padding-left: 15px;
-    padding-right: 15px;
-    color: #135593;
-    text-align: left;
-}
-
-.amazonLogo, .price {
-    display: inline-block;
-}
-
-.price {
-    font-size: 17px;
-    color: #AE4343;
-}
-
-.amazonLogo {
-    width: 50px;
-    padding-bottom: 4px;
-    margin-left: 5px;
-}
-
-.furIcon {
-    width: 35px;
-    margin-right: 6px;
-    padding-bottom: 6px;
+    left: 97.2%;
 }
 
 .heartFav {
     position: absolute;
-    left: 95.5%;
-    top: 0.5%;
-    font-size: 17px;
+    left: 87%;
+    top: 6%;
+    font-size: 19px;
     color: #b9bdbf;
     border: none;
     background-color: white;
     padding: 0px;
     text-align: center;
-    background-color: #F5FAFE;
 }
 
 .heartFav:hover {
     cursor: pointer;
     color: #ed023d;
+}
+
+.heartFavView {
+    left: 92%;
+    top: 3%;
 }
 
 .removeFavorite {
@@ -457,25 +632,134 @@ input:-webkit-autofill:active {
     display: none;
 }
 
-.searchResultsContainer {
-    position: absolute;
-    text-align: center;
-    margin: 0 auto;
-    width: 100%;
-    top: 7%;
-    padding: 0px 100px 50px 100px;
-}
-
 .searchText {
     margin: 0;
     padding: 0; 
 }
 
-.searchResults > div {
+.quickViewOuter {
+    position: fixed;
+    background: #808080;
+    z-index: 300;
     text-align: center;
-    margin: 0 auto;
-    margin-bottom: 50px;
-    margin-top: 40px;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    top: 0;
+}
+
+.quickViewMiddle {
+    width: 75%;
+    height: 100%;
+    background: #EDEFF0;
+    overflow: auto;
+}
+
+.quickViewInner {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.closeQuickView {
+    font-size: 28px;
+    border: none;
+    background: none;
+    position: absolute;
+    top: -3%;
+    right: 11%;
+}
+
+.closeQuickView:hover {
+    color: #415357;
+}
+
+.productQuickViewImage {
+    width: 49%;
+    height: 480px;
+    display: table;
+    background: white;
+    margin: 30px;
+}
+
+.productQuickViewImage > div {
+    width: 90%;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    border: 1px solid #E3E7EB;
+}
+
+#quickViewImage {
+    max-width: 100%;
+    max-height: 350px;
+}
+
+.productDescription {
+    margin: 30px 5px;
+    font-size: 22px;
+    text-align: left;
+    width: 43%;
+    color: #66757f;
+}
+
+.price {
+    margin: 30px;
+    display: block;
+    color: #575757;
+    font-size: 23px;
+}
+
+.viewFullDetails {
+    font-size: 17px;
+    text-decoration: underline;
+    color: #7F919C;
+    display: block;
+    margin: 30px;
+}
+
+.viewFullDetails:hover {
+    color: #415357;
+    cursor: pointer;
+}
+
+.price, .viewFullDetails {
+    display: inline-block;
+}
+
+.addFavBtn {
+    width: 93%;
+    padding: 10px 0;
+    background: #768995;
+    border: 1px solid #768995;
+    color: white;
+    font-size: 19px;
+    margin-top: 90px;
+}
+
+.addFavBtn:hover {
+    background: #515f68;
+}
+
+.productDetails {
+    position: absolute;
+    text-align: center;
+    z-index: 150;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #EDEFF0;
+    left: 0;
+    top: 16%;
+}
+
+.productDetails > div {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
 .showFavoritesWrap {
@@ -556,13 +840,16 @@ input:-webkit-autofill:active {
     html, body {
         overflow-x: hidden;
     }
-    .landingIntro {
-        top: 10%;
-        padding: 5px;
+    .navbar-collapse {
+        height: 210px;
     }
-    .landingIntro > div > div > img {
-        top: 530px;
-        left: 47%;
+    .indexPage > div {
+        width: 87%;
+    }
+    .intro > p {
+        margin-top: 20px;
+        width: 94%;
+        font-size: 24px;
     }
     .formWrap {
         margin-top: 20px;
@@ -579,9 +866,6 @@ input:-webkit-autofill:active {
     }
     .submitSearchXs {
         margin-left: 0;
-    }
-    .container {
-        padding: 30px;
     }
     .whatWeDo {
         font-size: 17px;

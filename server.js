@@ -177,8 +177,7 @@ var client = amazon.createClient({
   awsTag: AWSTAG
 });
 
-app.get('/amazon/:search_text', function(req, res){
-  var keywords = req.params.search_text;
+app.get('/amazon/search', function(req, res){
   var page = req.query.page;
 
   if (page === '') {
@@ -188,8 +187,9 @@ app.get('/amazon/:search_text', function(req, res){
   }
 
   client.itemSearch({
-    keywords: req.params.search_text,
-    searchIndex: 'All',
+    keywords: req.query.search_text,
+    searchIndex: req.query.category,
+    sort: 'salesrank', 
     responseGroup: 'ItemAttributes, Offers, Images',
     itemPage: page,
     }, function(err, data){
@@ -198,7 +198,7 @@ app.get('/amazon/:search_text', function(req, res){
   );
 });
 
-// <-------- Some datas have $ so we could not save datas in the app's API. 
+// <-------- Data has $ so we could not save datas in the app's API. 
 // We need to clean $ first before storing datas. --------->
 
 function cleanDollars(obj) {

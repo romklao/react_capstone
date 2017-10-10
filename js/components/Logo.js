@@ -5,7 +5,7 @@ import * as actions from '../actions/index';
 import SearchForm from './SearchForm';
 import {Router, Route, IndexRoute, IndexRedirect, hashHistory, browserHistory} from 'react-router';
 
-export function Logo(props) {
+function Logo(props) {
     let returnHome = event => {
         event.preventDefault();
         props.dispatch(actions.returnHome());
@@ -19,8 +19,7 @@ export function Logo(props) {
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
             </button>
-            <a className="navbar-brand" id="homeIcon" href="/"><img src="css/images/home.png" width="21px"/></a>
-            <a className="navbar-brand" href="#" onClick={returnHome}>HomeDecor</a>
+            <a className="navbar-brand" href="#" onClick={returnHome}>BestProducts</a>
         </div>
     );
 }

@@ -4,7 +4,6 @@ import {connect} from 'react-redux';
 import * as actions from '../actions/index';
 import {Router, Route, IndexRoute, IndexRedirect, hashHistory, browserHistory} from 'react-router';
 import { Redirect } from 'react-router'
-import ShowSearchResults from './SearchResults';
 
 class SearchForm extends React.Component {
     constructor(props) {

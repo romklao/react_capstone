@@ -1,14 +1,16 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import ReactDOM from 'react-dom';
-import {Router, Route, IndexRoute, IndexRedirect, hashHistory, browserHistory} from 'react-router';
+import {Router, Route, Redirect, IndexRoute, IndexRedirect, hashHistory, browserHistory} from 'react-router';
 import * as actions from '../actions/index';
 
 import App from './App';
 import LandingPageContainer from './LandingPageContainer';
 import UserLogin from './User';
-import ShowSearchResults from './SearchResults';
+import SearchResults from './SearchResults';
 import ShowFavorites from './ShowFavorites';
+import CategoryViews from './CategoryViews';
+import ProductDetails from './ProductDetails';
 
 
 export function Routes(props) {
@@ -19,7 +21,9 @@ export function Routes(props) {
                 <IndexRoute component={LandingPageContainer} />
                 <Route path="user" component={UserLogin} />
                 <Route path="myfavorites" component={ShowFavorites} />
-                <Route path="search" component={ShowSearchResults} />
+                <Route path="search" component={SearchResults} />
+                <Route path="product_details" component={ProductDetails} />
+                <Route path="category/:category" component={CategoryViews} />
             </Route>
         </Router>
     );

@@ -30,6 +30,11 @@ export class LoginModal extends React.Component {
     };
 
     render() {
+        if(this.props.loading) {
+            return (
+                <div className="load">null</div>
+            );
+        }
         return (
             <div className="overlay">
                 <div>
@@ -57,6 +62,7 @@ export class LoginModal extends React.Component {
 
 const mapStateToProps = (state, props) => ({
     errorMessage: state.errorMessage,
+    isLoading: state.isLoading
 });
 
 

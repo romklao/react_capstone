@@ -124,8 +124,8 @@ export const logoutUser = () => ({
     type: LOG_OUT_USER
 })
 
-export const searchSubmit = (search_text, page) => dispatch => {
-    let url = `/amazon/${search_text}?page=${page}`;
+export const searchSubmit = (search_text, category, page) => dispatch => {
+    let url = `/amazon/search?search_text=${search_text}&category=${category}&page=${page}`;
     let fetchData = {
             method: 'GET',
             headers: {
@@ -141,7 +141,8 @@ export const searchSubmit = (search_text, page) => dispatch => {
     })
     .then(response => response.json())
     .then(data => {
-        return dispatch(makeSearchSuccessMsg(data, search_text, page));
+        console.log('data', data)
+        return dispatch(makeSearchSuccessMsg(data, search_text, category, page));
     })
     .catch(error => {
         return dispatch(searchError(error.message));
@@ -149,10 +150,11 @@ export const searchSubmit = (search_text, page) => dispatch => {
 }
 
 export const SEARCH_SUCCESS = 'SEARCH_SUCCESS';
-export const makeSearchSuccessMsg = (searchResults, searchInput, page) => ({
+export const makeSearchSuccessMsg = (searchResults, searchInput, category, page) => ({
     type: SEARCH_SUCCESS,
     searchResults: searchResults,
     searchInput: searchInput,
+    category: category,
     page: page
 })
 
@@ -160,6 +162,12 @@ export const SEARCH_ERROR = 'SEARCH_ERROR';
 export const searchError = error => ({
     type: SEARCH_ERROR,
     error: error,
+})
+
+export const SHOW_PRODUCT_DETAILS = 'SHOW_PRODUCT_DETAILS';
+export const showProductDetails = (productDetails) => ({
+    type: SHOW_PRODUCT_DETAILS,
+    productDetails: productDetails,
 })
 
 export const addFavorites = (product) => dispatch => {

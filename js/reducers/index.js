@@ -2,6 +2,7 @@ import * as actions from '../actions/index';
 import { handle } from 'redux-pack';
 
 const initialState = {
+    isLoading: true,
     showLogin: false,
     showSignup: false,
     showSearchForm: false,
@@ -9,10 +10,13 @@ const initialState = {
     shouldRedirect: false,
     authenticated: false,
     returnHome: false,
+    showQuickView: false,
     errorMessage: null,
     errorSearchMessage: null,
     searchInput: null,
+    category: null,
     searchResults: null,
+    productDetails: null,
     favorites: null,
     landingPageHidden: localStorage.authHeaders !== undefined,
     user: localStorage.username ? localStorage.username : null,
@@ -20,7 +24,7 @@ const initialState = {
 
 export const decorHomeReducer = function(state, action) {
     state = state || initialState;
- 
+    console.log(action.type, 'TYPE')
     if (action.type === actions.SHOW_SIGNUP) {
         state = Object.assign({}, 
             state, {
@@ -42,8 +46,10 @@ export const decorHomeReducer = function(state, action) {
             state, {
                 showSignup: false,
                 showLogin: false,
+                showQuickView: false,
             } 
         );
+        console.log('hidestate', state)
         return state;
 
     } else if (action.type === actions.RETURN_HOME) {
@@ -88,6 +94,7 @@ export const decorHomeReducer = function(state, action) {
                 landingPageHidden:true,
                 showLogin: false,
                 showSignup: false,
+                isLoading: true
             }
         );
         return state;
@@ -105,9 +112,11 @@ export const decorHomeReducer = function(state, action) {
     } else if (action.type === actions.SEARCH_SUBMIT) {
         state = Object.assign({},
             state, {
-                searchInput: action.searchInput
+                searchInput: action.searchInput,
+                isLoading: true
             }
         );
+        console.log('state', state)
         return state;
 
     } else if (action.type === actions.SEARCH_SUCCESS) {
@@ -116,11 +125,14 @@ export const decorHomeReducer = function(state, action) {
                 errorSearchMessage: null,
                 searchResults: action.searchResults,
                 searchInput: action.searchInput,
+                category: action.category,
                 shouldRedirect: true,
                 landingPageHidden: true,
                 page: action.page,
+                isLoading: false
             }
         );
+        console.log('stateSuccess', state)
         return state;
 
     }  else if (action.type === actions.SEARCH_ERROR) {
@@ -131,8 +143,20 @@ export const decorHomeReducer = function(state, action) {
                 searchResults: null,
                 error: action.error,
                 errorSearchMessage: errorSearchMessage,
+                isLoading: false
             }
         );
+        console.warn(action.error);
+        return state;
+
+    } else if (action.type === actions.SHOW_PRODUCT_DETAILS) {
+        state = Object.assign({},
+            state, {
+                productDetails: action.productDetails,
+                showQuickView: true,
+            }
+        );
+        console.log('stateShowProduct', state)
         return state;
 
     } else if (action.type === actions.ADD_FAVORITE_SUCCESS) {

@@ -5,6 +5,8 @@ import * as actions from '../actions/index';
 import LoginModal from './LoginModal';
 import SignupModal from './SignupModal';
 import LoginSignupNav from './LoginSignupNav';
+import SearchForm from './SearchForm';
+
 
 function WhatWeDo(props) {
     let showSignup = event => {
@@ -25,6 +27,7 @@ function WhatWeDo(props) {
                     <button className="btn btn-default loginBtn" onClick={showLogin}>Log In</button>
                     <button className="btn btn-default signupBtn" onClick={showSignup}>Sign Up</button>
                 </div>
+                <SearchForm />
             </div>
         </div>
     ); 

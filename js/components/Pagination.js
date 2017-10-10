@@ -12,7 +12,7 @@ class Pagination extends React.Component {
 
     onClick(pageNum) {
         this.setState({pageNum: pageNum});
-        this.props.dispatch(actions.searchSubmit(this.props.searchInput, pageNum));
+        this.props.dispatch(actions.searchSubmit(this.props.searchInput, this.props.category, pageNum));
         window.scrollTo(0, 0)
     }
 
@@ -33,6 +33,7 @@ class Pagination extends React.Component {
 
 const mapStateToProps = (state, props) => ({
     searchInput: state.searchInput,
+    category: state.category,
 
 });
 

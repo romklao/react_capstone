@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import * as actions from '../actions/index';
-import ItemViews from './ItemViews';
+import ItemView from './ItemView';
 import SearchForm from './SearchForm';
 
 class ShowFavorites extends React.Component {
@@ -12,7 +12,6 @@ class ShowFavorites extends React.Component {
     }
 
     render () {
-
         if (this.props.authenticated) {
             let favoritesResults = [];
 
@@ -20,7 +19,7 @@ class ShowFavorites extends React.Component {
                 for (var i=0; i < this.props.favorites.length; i++) {
                     var favItem = this.props.favorites[i];
                     if (favItem.product.OfferSummary) {
-                        favoritesResults.push(<ItemViews product={favItem.product}
+                        favoritesResults.push(<ItemView product={favItem.product}
                                                         key={i} />);
                     }
                 }

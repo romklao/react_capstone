@@ -2,50 +2,50 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import * as actions from '../actions/index';
-import ItemViews from './ItemViews';
+import ItemView from './ItemView';
 import Pagination from './Pagination';
 import SearchForm from './SearchForm';
 import {Router, Route, IndexRoute, IndexRedirect, hashHistory, browserHistory} from 'react-router';
+import LandingPageContainer from './LandingPageContainer';
 
-function ShowSearchResults(props) {
+class SearchResults extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    render () {
+        if (this.props.searchResults) {
+            console.log('searchResults', this.props.searchResults)
+            let results = [];
 
-    if (props.searchResults) {
-        let results = [];
+            for (let i=0; i<10; i++) {
+                let product = this.props.searchResults[i];
 
-        for (let i=0; i<10; i++) {
-            let product = props.searchResults[i];
-
-            results.push(<ItemViews product={product}
-                                    key={i} />);
-        }
-        return (
-            <div className="searchResultsContainer">
-                <SearchForm />
-                <div className="searchResults">
-                    <div className="row">
-                        <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 searchText">
-                            <h1>
-                                <img src="css/images/home.png" className="furIcon"/>The results of {props.searchInput}
-                            </h1>
+                results.push(<ItemView product={product}
+                                        key={i} />);
+            }
+            console.log('results', results);
+            return (
+                <div className="searchResultsContainer">
+                    <div>
+                        <h1>
+                            The results of {this.props.searchInput}
+                        </h1>
+                        <div className="row searchResultsBox">
+                            {results}
+                        </div>
+                        <div className="row">
+                            <Pagination />
                         </div>
                     </div>
-                    <div className="row searchResultsBox">
-                        {results}
-                    </div>
-                    <div className="row">
-                        <Pagination />
-                    </div>
                 </div>
-            </div>
-        );
-    }
-    else {
-        return (
-            <div className="errorMsgWrap">
-                <SearchForm />
-                <h1 className="errorSearch">{props.errorSearchMessage}</h1>
-            </div>
-        );
+            );
+        } else {
+            return (
+                <div className="errorMsgWrap">
+                    <h1 className="errorSearch">{this.props.errorSearchMessage}</h1>
+                </div>
+            );
+        }  
     } 
 }
 
@@ -55,10 +55,11 @@ const mapStateToProps = (state, props) => ({
     favorites: state.favorites,
     authenticated: state.authenticated,
     errorSearchMessage: state.errorSearchMessage,
-    confirmAddFavoriteMessage: state.confirmAddFavoriteMessage
+    confirmAddFavoriteMessage: state.confirmAddFavoriteMessage,
+    isLoading: state.isLoading
 });
 
-export default connect(mapStateToProps)(ShowSearchResults);
+export default connect(mapStateToProps)(SearchResults);
 
 
 

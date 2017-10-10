@@ -33,6 +33,11 @@ class LoginSignupNav extends React.Component {
         hashHistory.push('/myfavorites');
     }
 
+    gotoBeautySearch(event) {
+        event.preventDefault();
+        hashHistory.push('/category/Beauty');
+    }
+
     render() {
         if (this.props.authenticated) {
             return (
@@ -52,6 +57,18 @@ class LoginSignupNav extends React.Component {
         else {
             return (
                 <ul className="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" className="hidden-xs" id="home">Home</a>
+                        <a href="#" className="visible-xs" data-toggle="collapse" data-target=".navbar-collapse">Home</a>
+                    </li>
+                    <li>
+                        <a href="#" className="hidden-xs" id="beauty" onClick={this.gotoBeautySearch}>Beauty</a>
+                        <a href="#" className="visible-xs" data-toggle="collapse" data-target=".navbar-collapse" onClick={this.gotoBeautySearch}>Beauty</a>
+                    </li>
+                    <li>
+                        <a href="#" className="hidden-xs" id="electronics">Electronics</a>
+                        <a href="#" className="visible-xs" data-toggle="collapse" data-target=".navbar-collapse">Electronics</a>
+                    </li>
                     <li>
                         <a href="/" onClick={this.showLogin} className="hidden-xs" id="loginLink">Log In</a>
                         <a href="/" onClick={this.showLogin} className="visible-xs" data-toggle="collapse" data-target=".navbar-collapse">Log In</a>
