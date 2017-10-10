@@ -23,7 +23,7 @@ class ProductQuickViewModal extends React.Component {
     }
 
     addFavoriteItems() {
-        this.props.dispatch(actions.addFavorites(this.props.productDetails));
+        this.props.dispatch(actions.addFavorites(this.props.product));
         if (!this.props.authenticated) {
             this.props.dispatch(actions.showLogin());
         }
@@ -118,9 +118,9 @@ class ProductQuickViewModal extends React.Component {
                             <div className="row productQuickView">
                                 <div className="col-sm-6 col-xs-12 productQuickViewImage">
                                     <div>
-                                        <a href={pageUrl} target={blank}><img src={imageUrl} id="quickViewImage"/></a>
+                                        <img src={imageUrl} id="quickViewImage" onClick={this.showProductDetails}/>
                                         <img src={arrowLeftUrl} onClick={this.previousImage} className="leftArrow"/>
-                                        <img src={arrowRightUrl} onClick={this.nextImage} className="rightArrow"/>               
+                                        <img src={arrowRightUrl} onClick={this.nextImage} className="rightArrow"/>
                                         <span className={addFavIcon} onClick={this.addFavoriteItems}></span>
                                         <span className={delFavIcon} onClick={() => this.deleteFavoriteItems(favoriteId)}></span>
                                     </div>
@@ -129,8 +129,8 @@ class ProductQuickViewModal extends React.Component {
                                     <div className="productTitleBox">
                                         <p className="productTitle">{productTitle}</p>
                                         <span className="price">{price}</span>
-                                        <span onClick={this.showProductDetails} className="viewFullDetails">View Full Details</span>
-                                        <button className="addFavBtn">Add to Favorites</button>
+                                        <span className="viewFullDetails" onClick={this.showProductDetails}>View Full Details</span>
+                                        <button className="addFavBtn" onClick={this.addFavoriteItems}>Add to Favorites</button>
                                     </div>
                                 </div>
                             </div>

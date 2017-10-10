@@ -93,29 +93,30 @@ class ProductDetails extends React.Component {
             var productFeature = item.ItemAttributes[0].Feature;
 
             return (
-                <div className="productDetails">
-                    <div className="row">
-                        <div className="col-sm-6 col-xs-12 productDetailsImage">
-                            <div>
-                                <a href={pageUrl} target={blank}><img src={imageUrl} id="imageProduct"/></a>
-                                <img src={arrowLeftUrl} onClick={this.previousImage} className="leftArrow"/>
-                                <img src={arrowRightUrl} onClick={this.nextImage} className="rightArrow"/>               
-                                <span className={addFavIcon} onClick={this.addFavoriteItems}></span>
-                                <span className={delFavIcon} onClick={() => this.deleteFavoriteItems(favoriteId)}></span>
-                            </div>
-                        </div>
-                        <div className="col-sm-6 col-xs-12 productDescription">
-                            <div>
-                                <div className="productTitleBox">
-                                    <p className="productTitle">{productTitle}</p>
-                                    <a href={pageUrl} target={blank}><img src={amazonLogoUrl} className="amazonLogo"/></a>
-                                    <span className="price">{price}</span>
+                <div className="productDetailsOuter">
+                    <div className="quickViewMiddle">
+                        <div className="quickViewInner">
+                            <div className="row productQuickView">
+                                <div className="col-sm-6 col-xs-12 productQuickViewImage">
+                                    <div>
+                                        <img src={imageUrl} id="quickViewImage" onClick={this.showProductDetails}/>
+                                        <img src={arrowLeftUrl} onClick={this.previousImage} className="leftArrow"/>
+                                        <img src={arrowRightUrl} onClick={this.nextImage} className="rightArrow"/>
+                                        <span className={addFavIcon} onClick={this.addFavoriteItems}></span>
+                                        <span className={delFavIcon} onClick={() => this.deleteFavoriteItems(favoriteId)}></span>
+                                    </div>
+                                </div>
+                                <div className="col-sm-6 col-xs-12 productDescription">
+                                    <div className="productTitleBox">
+                                        <p className="productTitle">{productTitle}</p>
+                                        <span className="price">{price}</span>
+                                        <button className="addFavBtn" onClick={this.addFavoriteItems}>Add to Favorites</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
             );
         } else {
             return (

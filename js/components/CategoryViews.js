@@ -30,7 +30,7 @@ var categoriesData = {
             'bgClass': 'child bgSun',
             'parentClass': 'parent parentSun'
         },
-        'Toner': {
+        'Toner for face': {
             'bgClass': 'child bgToner',
             'parentClass': 'parent parentToner'
         },
