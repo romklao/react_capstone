@@ -4,17 +4,26 @@ import {connect} from 'react-redux';
 import * as actions from '../actions/index';
 import ItemView from './ItemView';
 import Pagination from './Pagination';
-import SearchForm from './SearchForm';
+import Loader from './Loader';
 import {Router, Route, IndexRoute, IndexRedirect, hashHistory, browserHistory} from 'react-router';
 import LandingPageContainer from './LandingPageContainer';
 
 class SearchResults extends React.Component {
     constructor(props) {
         super(props);
+        this.props.dispatch(actions.searchSubmit(this.props.location.query.keywords, 
+                                                 this.props.location.query.category,
+                                                 this.props.location.query.page));
     }
+
     render () {
-        console.log('query',this.props.location.query)
-        if (this.props.searchResults) {
+        if (this.props.isLoading && !this.props.searchResults) {
+            return (
+                <div>
+                    <h1 className="load">Loading</h1>
+                </div>
+            );
+        } else if (this.props.searchResults) {
             console.log('searchResults', this.props.searchResults)
             let results = [];
 
@@ -29,13 +38,14 @@ class SearchResults extends React.Component {
                 <div className="searchResultsContainer">
                     <div>
                         <h1>
-                            The results of {this.props.searchInput}
+                            The Results of {this.props.searchInput}
                         </h1>
                         <div className="row searchResultsBox">
                             {results}
                         </div>
                         <div className="row">
-                            <Pagination />
+                            <Pagination category={this.props.location.query.category}
+                                        keywords={this.props.location.query.keywords} />
                         </div>
                     </div>
                 </div>

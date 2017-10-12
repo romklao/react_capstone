@@ -13,9 +13,7 @@ export function Nav(props) {
         <nav className="navbar navbar-default navbar-fixed-top" id="navbarFixed">
             <div className="container-fluid">
                 <Logo />
-                <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <LoginSignupNav />
-                </div>
+                <LoginSignupNav />
             </div>
         </nav>
     );

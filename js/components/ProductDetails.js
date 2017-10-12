@@ -11,6 +11,7 @@ class ProductDetails extends React.Component {
             index: -1,
             loading: true
         }
+        // this.props.dispatch(actions.showProductDetails(this.props.productDetails));
         this.addFavoriteItems = this.addFavoriteItems.bind(this);
         this.deleteFavoriteItems = this.deleteFavoriteItems.bind(this);
         this.previousImage = this.previousImage.bind(this);
@@ -47,29 +48,41 @@ class ProductDetails extends React.Component {
     }
 
     render () {
+        console.log('query', this.props.location.query.ASIN)
         if(this.props.productDetails) {
-            var item = this.props.productDetails;
+            var productDetails = this.props.productDetails;
             var imageUrl;
             if (this.state.index === -1) {
-                if(item.LargeImage[0].URL[0]) {
-                    imageUrl = item.LargeImage[0].URL[0];                
+                if(productDetails.LargeImage[0].URL[0]) {
+                    imageUrl = productDetails.LargeImage[0].URL[0];
                 }
-            } else if (item.ImageSets[0].ImageSet) {
-                imageUrl = item.ImageSets[0].ImageSet[this.state.index].LargeImage[0].URL[0];
+            } else if (productDetails.ImageSets[0].ImageSet) {
+                imageUrl = productDetails.ImageSets[0].ImageSet[this.state.index].LargeImage[0].URL[0];
             }
 
             var favoriteId = '';
             if (this.props.favorites) {
                 for (var fav of this.props.favorites) {
-                    if (fav.product.ASIN[0] === item.ASIN[0]) {
+                    if (fav.product.ASIN[0] === productDetails.ASIN[0]) {
                         favoriteId = fav._id;
                         break;
                     }
                 }
             }
+            
+            if (productDetails.ItemAttributes["0"].Feature) {
+                var features = [];
+                var featuresLen = productDetails.ItemAttributes["0"].Feature.length;
 
-            var addFavIcon = "glyphicon glyphicon-heart heartFav";
-            var delFavIcon = "glyphicon glyphicon-heart heartFav changeToRed";
+                for (var i=0; i<featuresLen; i++) {
+                    var featuresI = productDetails.ItemAttributes["0"].Feature[i];
+                    features.push(<li key={i}>{featuresI}</li>);
+                }
+            }
+            console.log('features', features)
+
+            var addFavIcon = "glyphicon glyphicon-heart heartFav favHeartDetailsPage";
+            var delFavIcon = "glyphicon glyphicon-heart heartFav changeToRed favHeartDetailsPage";
 
             if (favoriteId) {
                 addFavIcon += " hidden"
@@ -79,29 +92,29 @@ class ProductDetails extends React.Component {
 
             var price;
             var productTitle;
-            if (item.OfferSummary[0].LowestNewPrice) {
-                price = item.OfferSummary[0].LowestNewPrice[0].FormattedPrice[0];
+            if (productDetails.OfferSummary[0].LowestNewPrice) {
+                price = productDetails.OfferSummary[0].LowestNewPrice[0].FormattedPrice[0];
             }
-            if (item.ItemAttributes[0].Title) {
-                productTitle = item.ItemAttributes[0].Title[0];
+            if (productDetails.ItemAttributes[0].Title) {
+                productTitle = productDetails.ItemAttributes[0].Title[0];
             }
             var arrowLeftUrl = "css/images/left-arrow.png";
             var arrowRightUrl = "css/images/right-arrow.png";
-            var pageUrl = item.DetailPageURL[0];
+            var pageUrl = productDetails.DetailPageURL[0];
             var blank = "_blank";
             var amazonLogoUrl = "css/images/amazon.png";
-            var productFeature = item.ItemAttributes[0].Feature;
+            var productFeature = productDetails.ItemAttributes[0].Feature;
 
             return (
                 <div className="productDetailsOuter">
-                    <div className="quickViewMiddle">
-                        <div className="quickViewInner">
+                    <div className="productDetailsMiddle">
+                        <div className="productDetailsInner">
                             <div className="row productQuickView">
                                 <div className="col-sm-6 col-xs-12 productQuickViewImage">
                                     <div>
-                                        <img src={imageUrl} id="quickViewImage" onClick={this.showProductDetails}/>
-                                        <img src={arrowLeftUrl} onClick={this.previousImage} className="leftArrow"/>
-                                        <img src={arrowRightUrl} onClick={this.nextImage} className="rightArrow"/>
+                                        <a href={pageUrl} target={blank}><img src={imageUrl} id="quickViewImage"/></a>
+                                        <img src={arrowLeftUrl} onClick={this.previousImage} className="leftArrow leftArrowDetailsPage"/>
+                                        <img src={arrowRightUrl} onClick={this.nextImage} className="rightArrow rightArrowDetailsPage"/>
                                         <span className={addFavIcon} onClick={this.addFavoriteItems}></span>
                                         <span className={delFavIcon} onClick={() => this.deleteFavoriteItems(favoriteId)}></span>
                                     </div>
@@ -109,8 +122,14 @@ class ProductDetails extends React.Component {
                                 <div className="col-sm-6 col-xs-12 productDescription">
                                     <div className="productTitleBox">
                                         <p className="productTitle">{productTitle}</p>
-                                        <span className="price">{price}</span>
-                                        <button className="addFavBtn" onClick={this.addFavoriteItems}>Add to Favorites</button>
+                                        <span className="price priceDetailsPage">{price}</span>
+                                        <button className="addFavBtn addFavBtnDetailsPage" onClick={this.addFavoriteItems}>Add to Favorites</button>
+                                        <div className="productFeature">
+                                            <p>PRODUCT INFO</p>
+                                            <ul>
+                                                {features}
+                                            </ul>
+                                        </div>
                                         <a href={pageUrl} target={blank}><img src={amazonLogoUrl} className="amazonLogo"/></a>
                                     </div>
                                 </div>

@@ -25,20 +25,13 @@ class ShowFavorites extends React.Component {
                 }
             }
             return (
-                <div className="showFavoritesWrap">
-                    <SearchForm />
-                    <div className="showFavoritesContainer">
-                        <div className="showFavorites">
-                            <div className="row">
-                                <div className="col-lg-12 col-sm-12 searchText">
-                                    <h1>
-                                        <img src="css/images/home.png" className="furIcon"/>Your favorite items
-                                    </h1>
-                                </div>
-                            </div>
-                            <div className="row showFavoriteResults">
-                                {favoritesResults}
-                            </div>
+                <div className="searchResultsContainer">
+                    <div>
+                        <h1>
+                            Your Favorite Items
+                        </h1>
+                        <div className="row searchResultsBox">
+                            {favoritesResults}
                         </div>
                     </div>
                 </div>

@@ -43,20 +43,21 @@ class ItemView extends React.Component {
 
     showProductDetails() {
         this.props.dispatch(actions.showProductDetails(this.props.product));
-        hashHistory.push('/product_details');
+        hashHistory.push(`/product_details?ASIN=${this.props.product.ASIN}`);
+        window.scrollTo(0, 0)
     }
 
     render () {
-        var item = this.props.product;
+        var product = this.props.product;
         var imageUrl;
-            if(item.LargeImage[0].URL[0]) {
-                imageUrl = item.LargeImage[0].URL[0];
+            if(product.LargeImage[0].URL[0]) {
+                imageUrl = product.LargeImage[0].URL[0];
             }
 
         var favoriteId = '';
         if (this.props.favorites) {
             for (var fav of this.props.favorites) {
-                if (fav.product.ASIN[0] === item.ASIN[0]) {
+                if (fav.product.ASIN[0] === product.ASIN[0]) {
                     favoriteId = fav._id;
                     break;
                 }

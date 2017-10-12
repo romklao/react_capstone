@@ -52,7 +52,7 @@ html, body {
     position: fixed;
     background-color: white;
     z-index: 100;
-    left: 50%;
+    left: 47.6%;
     top: 30%;
     text-indent: -9999em;
     border-top: 0.9em solid rgba(0, 0, 0, 0.2);
@@ -138,6 +138,10 @@ input:-webkit-autofill:active {
     border-bottom: 3px solid rgba(64, 83, 87, 1);
 }
 
+.navCategory {
+    margin: 0 20px;
+}
+
 .loginBtn, .signupBtn {
     margin-right: 3px;
     margin-left: 3px;
@@ -174,12 +178,10 @@ input:-webkit-autofill:active {
     margin-bottom: 22px;
 }
 
-.loginHi {
-    margin-top: 13px;
-    margin-right: 10px;
-    font-size: 18px;
-    color: black;
-} 
+.not-active {
+   pointer-events: none;
+   cursor: default;
+}
 
 .indexPage, .categoryPage {
     position: absolute;
@@ -201,7 +203,6 @@ input:-webkit-autofill:active {
 .intro {
     height: 387px;
     background-color: #81A6AC;
-    padding: 50px 40px 50px 40px;
 }
 
 .intro > h1 {
@@ -211,15 +212,18 @@ input:-webkit-autofill:active {
     font-weight: bold;
     margin: 0;
     padding: 0;
+    margin: 50px 40px;
 }
 
 .intro > p {
+    display: inline;
     width: 80%;
     margin-top: 40px;
     font-size: 21px;
     border-bottom: 3px solid #617D81;
     color: white;
     padding: 5px;
+    margin: 0 40px;
 }
 
 .introImg {
@@ -306,6 +310,8 @@ input:-webkit-autofill:active {
     background-color: rgba(63, 127, 191, 0.3);
 }
 
+/*Beauty Products*/
+
 .bgCleanser {
     background-image: url("images/cleanser1.jpg");
 }
@@ -378,6 +384,79 @@ input:-webkit-autofill:active {
     height: 270px;
 }
 
+/*Electronics products background
+*/
+.parentElectronics {
+    width: 314px;
+    height: 319px;
+}
+
+.bgHeadphone {
+    background-image: url("images/headphone.jpg");
+}
+
+/*.parentBluetoothHeadphone {
+    width: 314px;
+    height: 419px;
+}
+*/
+.bgBluetoothHeadphone {
+    background-image: url("images/bluetoothHeadphone.jpg");
+}
+
+/*.parentBluetoothSpeaker {
+    width: 314px;
+    height: 419px;
+}*/
+
+.bgBluetoothSpeaker {
+    background-image: url("images/bluetoothSpeaker.jpg");
+}
+
+.bgUSB {
+    background-image: url("images/usb.jpg");
+}
+
+.bgOutlet {
+    background-image: url("images/outlet.jpg");
+}
+
+.bgSonos {
+    background-image: url("images/sonos.jpg");
+}
+
+.bgTV {
+    background-image: url("images/tv.jpg");
+}
+
+.bgTVStick {
+    background-image: url("images/tvStick.jpg");
+}
+
+.bgEcoDot {
+    background-image: url("images/ecoDot.jpg");
+}
+
+.bgKindle {
+    background-image: url("images/kindle.jpg");
+}
+
+/*.bgCamera {
+    background-image: url("images/camera.jpg");
+}*/
+
+.bgPowerBank {
+    background-image: url("images/powerBank.jpg");
+}
+
+.bgiPhone {
+    background-image: url("images/iphone.jpg");
+}
+
+.bgCellPhoneAccessories {
+    background-image: url("images/iphoneAccessories.jpg");
+}
+
 .title {
     color: black;
     font-size: 35px;
@@ -443,13 +522,13 @@ input:-webkit-autofill:active {
 }
 
 .modal-login, .modal-signup {
-    width: 400px;
+    width: 425px;
     text-align: center;
     padding: 25px 25px 50px 25px;
-    border: 1px solid grey;
+    border: 1px solid lightgrey;
     border-radius: 4px;
     background-color: white;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
     z-index: 1000;
 }
 
@@ -510,7 +589,6 @@ input:-webkit-autofill:active {
 .searchResultsContainer h1 {
     color: #415357 !important; /*#228CAB*/
 }
-
 
 .searchResultsBox {
     margin-top: 40px;
@@ -594,6 +672,14 @@ input:-webkit-autofill:active {
     left: 97.2%;
 }
 
+.leftArrowDetailsPage {
+    left: 2.45%;
+}
+
+.rightArrowDetailsPage {
+    left: 97.6%;
+}
+
 .heartFav {
     position: absolute;
     left: 87%;
@@ -637,9 +723,14 @@ input:-webkit-autofill:active {
     padding: 0; 
 }
 
+#pagination {
+    position: relative;
+    left: 40%;
+}
+
 .quickViewOuter {
     position: fixed;
-    background: #808080;
+    background: #999999;
     z-index: 300;
     text-align: center;
     width: 100%;
@@ -653,7 +744,6 @@ input:-webkit-autofill:active {
 .productDetailsOuter {
     position: absolute;
     width: 100%;
-    height: 100%;
     top: 16%;
     left: 0;
     margin: 0;
@@ -667,6 +757,10 @@ input:-webkit-autofill:active {
     height: 100%;
     background: #EDEFF0;
     overflow: auto;
+}
+
+.productDetailsMiddle {
+    width: 80%;    
 }
 
 .quickViewInner {
@@ -700,7 +794,7 @@ input:-webkit-autofill:active {
     height: 100%;
     display: table-cell;
     vertical-align: middle;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 #quickViewImage {
@@ -722,10 +816,14 @@ input:-webkit-autofill:active {
 }
 
 .price {
-    margin: 30px;
+    margin: 30px 0;
     display: block;
-    color: #575757;
+    color:  black;  /*#575757*/
     font-size: 23px;
+}
+
+.priceDetailsPage {
+    margin: 10px 0;
 }
 
 .viewFullDetails {
@@ -733,7 +831,7 @@ input:-webkit-autofill:active {
     text-decoration: underline;
     color: #7F919C;
     display: block;
-    margin: 30px;
+    margin: 30px 50px 30px 50px;
 }
 
 .viewFullDetails:hover {
@@ -752,31 +850,49 @@ input:-webkit-autofill:active {
     border: 1px solid #768995;
     color: white;
     font-size: 19px;
-    margin-top: 90px;
+    margin: 20px 0 20px 0;
 }
 
 .addFavBtn:hover {
     background: #515f68;
 }
 
-.productDetails {
-    position: absolute;
-    text-align: center;
-    z-index: 150;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    background: #EDEFF0;
-    left: 0;
-    top: 16%;
+.addFavBtnDetailsPage {
+    margin: 20px 0 20px 0;
 }
 
-.productDetails > div {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 100px;
-    margin-bottom: 100px;
+.favHeartDetailsPage {
+    left: 92%;
+    top: 3%;
+}
+
+.amazonLogo {
+    width: 130px;
+    margin: 20px 0 20px 0;    
+}
+
+.productFeature {
+    width: 93%;
+    margin: 0;
+    margin-top: 25px;
+    padding: 27px 0;
+    border: 1px solid #9C9C9C;
+    border-left: none;
+    border-right: none;
+}
+
+.productFeature > ul {
+    list-style-type: square;
+    font-size: 15px;
+    color: #66757f;
+    padding: 0;
+    margin: 0;
+    margin: 20px 0 0 20px;
+}
+
+.productFeature p {
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .showFavoritesWrap {
@@ -856,9 +972,6 @@ input:-webkit-autofill:active {
 @media (max-width: 784px) {
     html, body {
         overflow-x: hidden;
-    }
-    .navbar-collapse {
-        height: 210px;
     }
     .indexPage > div {
         width: 87%;

@@ -4,12 +4,11 @@ import {connect} from 'react-redux';
 import * as actions from '../actions/index';
 
 function Loader(props) {
-    if (props.isLoading) {
-        console.log('loading')
-        return (
-            <h1 className="isLoading">Loading</h1>
-        );
-    }
+    return (
+        <div>
+            <h1 className="load">Loading</h1>
+        </div>
+    );
 }
 
 const mapStateToProps = (state, props) => ({

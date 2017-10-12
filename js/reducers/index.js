@@ -168,6 +168,24 @@ export const decorHomeReducer = function(state, action) {
         console.log('stateShowProduct', state)
         return state;
 
+    } else if (action.type === actions.GO_TO_BEAUTY_SEARCH) {
+        state = Object.assign({}, 
+            state, {
+                errorSearchMessage: null,
+                searchResults: null,
+            } 
+        );
+        return state;
+
+    } else if (action.type === actions.GO_TO_ELECTRONICS_SEARCH) {
+        state = Object.assign({}, 
+            state, {
+                errorSearchMessage: null,
+                searchResults: null,
+            } 
+        );
+        return state;
+
     } else if (action.type === actions.ADD_FAVORITE_SUCCESS) {
         var confirmAddFavoriteMessage = 'Add favorite success!'
         state = Object.assign({},

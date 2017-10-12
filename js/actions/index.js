@@ -141,6 +141,7 @@ export const searchSubmit = (search_text, category, page) => dispatch => {
     })
     .then(response => response.json())
     .then(data => {
+        console.log('data', data);
         return dispatch(makeSearchSuccessMsg(data, search_text, category, page));
     })
     .catch(error => {
@@ -175,7 +176,15 @@ export const showProductQuickView = (productDetails) => ({
     productDetails: productDetails,
 })
 
+export const GO_TO_BEAUTY_SEARCH = 'GO_TO_BEAUTY_SEARCH';
+export const gotoBeautySearch = () => ({
+    type: GO_TO_BEAUTY_SEARCH,
+})
 
+export const GO_TO_ELECTRONICS_SEARCH = 'GO_TO_ELECTRONICS_SEARCH';
+export const gotoElectronicsSearch = () => ({
+    type: GO_TO_ELECTRONICS_SEARCH,
+})
 
 export const addFavorites = (product) => dispatch => {
     let url = '/favorites';

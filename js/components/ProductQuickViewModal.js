@@ -60,11 +60,13 @@ class ProductQuickViewModal extends React.Component {
         this.props.dispatch(actions.showProductDetails(this.props.productDetails));
         this.props.dispatch(actions.hide());
         hashHistory.push('/product_details');
+        window.scrollTo(0, 0)
     }
 
     render () {
         if(this.props.productDetails) {
             var item = this.props.productDetails;
+            console.log('item', this.props)
             var imageUrl;
             if (this.state.index === -1) {
                 if(item.LargeImage[0].URL[0]) {
@@ -116,7 +118,7 @@ class ProductQuickViewModal extends React.Component {
                                 <button type="button" className="close closeQuickView" data-dismiss="modal" aria-hidden="true" onClick={this.hide}>&times;</button>
                             </div>
                             <div className="row productQuickView">
-                                <div className="col-sm-6 col-xs-12 productQuickViewImage">
+                                <div className="col-lg-6 col-sm-12 col-xs-12 productQuickViewImage">
                                     <div>
                                         <img src={imageUrl} id="quickViewImage" onClick={this.showProductDetails}/>
                                         <img src={arrowLeftUrl} onClick={this.previousImage} className="leftArrow"/>
@@ -125,12 +127,13 @@ class ProductQuickViewModal extends React.Component {
                                         <span className={delFavIcon} onClick={() => this.deleteFavoriteItems(favoriteId)}></span>
                                     </div>
                                 </div>
-                                <div className="col-sm-6 col-xs-12 productDescription">
+                                <div className="col-lg-6 col-sm-12 col-xs-12 productDescription">
                                     <div className="productTitleBox">
                                         <p className="productTitle">{productTitle}</p>
                                         <span className="price">{price}</span>
                                         <span className="viewFullDetails" onClick={this.showProductDetails}>View Full Details</span>
                                         <button className="addFavBtn" onClick={this.addFavoriteItems}>Add to Favorites</button>
+                                        <a href={pageUrl} target={blank}><img src={amazonLogoUrl} className="amazonLogo"/></a>
                                     </div>
                                 </div>
                             </div>
