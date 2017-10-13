@@ -4,7 +4,6 @@ import {connect} from 'react-redux';
 import * as actions from '../actions/index';
 import ItemView from './ItemView';
 import Pagination from './Pagination';
-import Loader from './Loader';
 import {Router, Route, IndexRoute, IndexRedirect, hashHistory, browserHistory} from 'react-router';
 import LandingPageContainer from './LandingPageContainer';
 

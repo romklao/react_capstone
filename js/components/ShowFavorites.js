@@ -18,7 +18,8 @@ class ShowFavorites extends React.Component {
             if (this.props.favorites) {
                 for (var i=0; i < this.props.favorites.length; i++) {
                     var favItem = this.props.favorites[i];
-                    if (favItem.product.OfferSummary) {
+                    console.log('favItem', favItem)
+                    if (favItem.product.Offers) {
                         favoritesResults.push(<ItemView product={favItem.product}
                                                         key={i} />);
                     }

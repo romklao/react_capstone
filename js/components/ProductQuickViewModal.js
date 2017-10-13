@@ -23,7 +23,7 @@ class ProductQuickViewModal extends React.Component {
     }
 
     addFavoriteItems() {
-        this.props.dispatch(actions.addFavorites(this.props.product));
+        this.props.dispatch(actions.addFavorites(this.props.productDetails));
         if (!this.props.authenticated) {
             this.props.dispatch(actions.showLogin());
         }
@@ -66,7 +66,7 @@ class ProductQuickViewModal extends React.Component {
     render () {
         if(this.props.productDetails) {
             var item = this.props.productDetails;
-            console.log('item', this.props)
+            console.log('item', this.props.productDetails)
             var imageUrl;
             if (this.state.index === -1) {
                 if(item.LargeImage[0].URL[0]) {
@@ -87,7 +87,7 @@ class ProductQuickViewModal extends React.Component {
             }
 
             var addFavIcon = "glyphicon glyphicon-heart heartFav heartFavView";
-            var delFavIcon = "glyphicon glyphicon-heart heartFav changeToRed";
+            var delFavIcon = "glyphicon glyphicon-heart heartFav changeToRed heartFavView";
 
             if (favoriteId) {
                 addFavIcon += " hidden"
@@ -95,10 +95,43 @@ class ProductQuickViewModal extends React.Component {
                 delFavIcon += " hidden"
             }
 
-            var price;
             var productTitle;
-            if (item.OfferSummary[0].LowestNewPrice) {
-                price = item.OfferSummary[0].LowestNewPrice[0].FormattedPrice[0];
+            var salePrice;
+            var salePriceInt;
+            var amountSaved;
+            var amountSavedInt;
+            var percentageSaved;
+            var fullPrice;
+            var youSave;
+            var save;
+
+            if (item.Offers[0].Offer[0].OfferListing) {
+                if (item.Offers[0].Offer[0].OfferListing[0].Price[0] &&
+                    item.Offers[0].Offer[0].OfferListing[0].SalePrice) {
+                    salePrice = item.Offers[0].Offer[0].OfferListing[0].SalePrice[0].FormattedPrice[0];
+                    amountSaved = item.Offers[0].Offer[0].OfferListing[0].AmountSaved[0].FormattedPrice[0];
+                    percentageSaved = item.Offers[0].Offer[0].OfferListing[0].PercentageSaved[0];
+
+                    fullPrice = item.Offers[0].Offer[0].OfferListing[0].Price[0].FormattedPrice[0];
+                    youSave = 'You save: ';
+                    save = amountSaved + '(' + percentageSaved + '%)'
+                } else if (item.Offers[0].Offer[0].OfferListing[0].Price[0] &&
+                    item.Offers[0].Offer[0].OfferListing[0].AmountSaved) {
+                    salePrice = item.Offers[0].Offer[0].OfferListing[0].Price[0].FormattedPrice[0];
+                    salePriceInt = parseFloat(salePrice.replace(/\$/g, ''));
+                    amountSaved = item.Offers[0].Offer[0].OfferListing[0].AmountSaved[0].FormattedPrice[0];
+                    amountSavedInt = parseFloat(amountSaved.replace(/\$/g, ''));
+                    percentageSaved = item.Offers[0].Offer[0].OfferListing[0].PercentageSaved[0];
+
+                    fullPrice = '$'+ (salePriceInt + amountSavedInt).toFixed(2);
+                    youSave = 'You save: ';
+                    save = amountSaved + '(' + percentageSaved + '%)'
+                } else {
+                    salePrice = item.Offers[0].Offer[0].OfferListing[0].Price[0].FormattedPrice[0];
+                    fullPrice = '';
+                    youSave = '';
+                    save = '';
+                }
             }
             if (item.ItemAttributes[0].Title) {
                 productTitle = item.ItemAttributes[0].Title[0];
@@ -130,8 +163,10 @@ class ProductQuickViewModal extends React.Component {
                                 <div className="col-lg-6 col-sm-12 col-xs-12 productDescription">
                                     <div className="productTitleBox">
                                         <p className="productTitle">{productTitle}</p>
-                                        <span className="price">{price}</span>
+                                        <span className="fullPriceCrossRed"><span className="fullPrice">{fullPrice}</span></span>
+                                        <span className="price">{salePrice}</span>
                                         <span className="viewFullDetails" onClick={this.showProductDetails}>View Full Details</span>
+                                        <p className="youSave">{youSave}<span className="save">{save}</span></p>
                                         <button className="addFavBtn" onClick={this.addFavoriteItems}>Add to Favorites</button>
                                         <a href={pageUrl} target={blank}><img src={amazonLogoUrl} className="amazonLogo"/></a>
                                     </div>

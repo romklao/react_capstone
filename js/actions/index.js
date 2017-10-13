@@ -52,7 +52,7 @@ export const signupForm = (newUserData) => dispatch => {
     .then(data => {
         localStorage.authHeaders = "Basic " + btoa(newUserData.email + ":" + newUserData.password);
         localStorage.username = data.username;
-        hashHistory.push('/user');
+        // hashHistory.push('/user');
 
         return dispatch(signupSuccess(data.username));
     })
@@ -93,7 +93,7 @@ export const loginForm = (userData) => dispatch => {
     .then(data => {
         localStorage.authHeaders = fetchData.headers.Authorization;
         localStorage.username = data.user.username;
-        hashHistory.push('/user');
+        // hashHistory.push('/user');
         return dispatch(loginSuccess(data.user.username));
     })
     .catch(error => {

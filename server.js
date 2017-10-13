@@ -190,7 +190,7 @@ app.get('/amazon/search', function(req, res){
     keywords: req.query.search_text,
     searchIndex: req.query.category,
     sort: 'salesrank', 
-    responseGroup: 'ItemAttributes, Offers, Images',
+    responseGroup: 'ItemAttributes, Offers, Images, Reviews, PromotionSummary',
     itemPage: page,
     TotalPages: "All",
     }, function(err, data){

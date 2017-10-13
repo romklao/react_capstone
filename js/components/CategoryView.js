@@ -12,11 +12,15 @@ export function CategoryView(props) {
         window.scrollTo(0, 0)
     }
     let styleData = props.styleData;
+    let keywords = props.keywords;
 
     return (
         <div className="row wrapper">
             <div className={styleData.parentClass} onClick={getSearchProduct}>
-                <div className={styleData.bgClass}></div>
+                <p className="keywords">{keywords}</p>
+                <div className={styleData.bgClass}>
+                    <p className="keywordsOnImage">{keywords}</p>
+                </div>
             </div>
         </div>
     )
