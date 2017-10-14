@@ -48,15 +48,20 @@ class ItemView extends React.Component {
     }
 
     render () {
-        var item = this.props.product;
-        var imageUrl;
-            if(item.LargeImage[0].URL[0]) {
-                imageUrl = item.LargeImage[0].URL[0];
-            }
+        let item = this.props.product;
+        let imageUrl;
+        let imageSetLen = item.ImageSets[0].ImageSet.length;
 
-        var favoriteId = '';
+        if(!item.LargeImage) {
+            imageUrl = item.ImageSets[0].ImageSet[imageSetLen-1].LargeImage[0].URL[0];
+            console.log('imageUrl', imageUrl)
+        } else if(item.LargeImage) {
+            imageUrl = item.LargeImage[0].URL[0];
+        }
+
+        let favoriteId = '';
         if (this.props.favorites) {
-            for (var fav of this.props.favorites) {
+            for (let fav of this.props.favorites) {
                 if (fav.product.ASIN[0] === item.ASIN[0]) {
                     favoriteId = fav._id;
                     break;
@@ -64,8 +69,8 @@ class ItemView extends React.Component {
             }
         }
 
-        var addFavIcon = "glyphicon glyphicon-heart heartFav";
-        var delFavIcon = "glyphicon glyphicon-heart heartFav changeToRed";
+        let addFavIcon = "glyphicon glyphicon-heart heartFav";
+        let delFavIcon = "glyphicon glyphicon-heart heartFav changeToRed";
 
         if (favoriteId) {
             addFavIcon += " hidden"

@@ -82,7 +82,7 @@ class ProductQuickViewModal extends React.Component {
             if (item.ImageSets[0].ImageSet) {
                 for (var i=imageSetLen-1; i>=0; i--) {
                     eachImageUrl = item.ImageSets[0].ImageSet[i].LargeImage[0].URL[0];
-                    allImages.push(<div className="col-lg-3 smallImageBox" key={i}>
+                    allImages.push(<div className="smallImageBox" key={i}>
                                         <div className="smallImageBoxInner">
                                             <img src={eachImageUrl} className="smallImage"/>
                                         </div>
@@ -124,8 +124,11 @@ class ProductQuickViewModal extends React.Component {
             var save;
 
             if (item.Offers[0].Offer[0].OfferListing) {
-                if (item.Offers[0].Offer[0].OfferListing[0].Price[0] &&
-                    item.Offers[0].Offer[0].OfferListing[0].SalePrice) {
+                if (item.Offers[0].Offer[0].OfferListing[0].Price &&
+                    item.Offers[0].Offer[0].OfferListing[0].SalePrice &&
+                    item.Offers[0].Offer[0].OfferListing[0].AmountSaved &&
+                    item.Offers[0].Offer[0].OfferListing[0].PercentageSaved) {
+
                     salePrice = item.Offers[0].Offer[0].OfferListing[0].SalePrice[0].FormattedPrice[0];
                     amountSaved = item.Offers[0].Offer[0].OfferListing[0].AmountSaved[0].FormattedPrice[0];
                     percentageSaved = item.Offers[0].Offer[0].OfferListing[0].PercentageSaved[0];
@@ -134,7 +137,9 @@ class ProductQuickViewModal extends React.Component {
                     youSave = 'You save: ';
                     save = amountSaved + '(' + percentageSaved + '%)'
                 } else if (item.Offers[0].Offer[0].OfferListing[0].Price[0] &&
-                    item.Offers[0].Offer[0].OfferListing[0].AmountSaved) {
+                    item.Offers[0].Offer[0].OfferListing[0].AmountSaved &&
+                    item.Offers[0].Offer[0].OfferListing[0].PercentageSaved) {
+
                     salePrice = item.Offers[0].Offer[0].OfferListing[0].Price[0].FormattedPrice[0];
                     salePriceInt = parseFloat(salePrice.replace(/\$/g, ''));
                     amountSaved = item.Offers[0].Offer[0].OfferListing[0].AmountSaved[0].FormattedPrice[0];
@@ -170,12 +175,17 @@ class ProductQuickViewModal extends React.Component {
                             </div>
                             <div className="row productQuickView">
                                 <div className="col-lg-6 col-sm-12 col-xs-12 productQuickViewImage">
-                                    <div>
-                                        <img src={imageUrl} id="quickViewImage" onClick={this.showProductDetails}/>
-                                        <img src={arrowLeftUrl} onClick={this.previousImage} className="leftArrow"/>
-                                        <img src={arrowRightUrl} onClick={this.nextImage} className="rightArrow"/>
-                                        <span className={addFavIcon} onClick={this.addFavoriteItems}></span>
-                                        <span className={delFavIcon} onClick={() => this.deleteFavoriteItems(favoriteId)}></span>
+                                    <div className="productQuickViewImageInner">
+                                        <div>
+                                            <img src={imageUrl} id="quickViewImage" onClick={this.showProductDetails}/>
+                                            <img src={arrowLeftUrl} onClick={this.previousImage} className="leftArrow"/>
+                                            <img src={arrowRightUrl} onClick={this.nextImage} className="rightArrow"/>
+                                            <span className={addFavIcon} onClick={this.addFavoriteItems}></span>
+                                            <span className={delFavIcon} onClick={() => this.deleteFavoriteItems(favoriteId)}></span>
+                                        </div>
+                                    </div>
+                                    <div className="allImages">
+                                        {allImages}
                                     </div>
                                 </div>
                                 <div className="col-lg-6 col-sm-12 col-xs-12 productDescription">
@@ -190,9 +200,6 @@ class ProductQuickViewModal extends React.Component {
                                         <a href={pageUrl} target={blank}><img src={amazonLogoUrl} className="amazonLogo"/></a>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="row allImages">
-                                {allImages}
                             </div>
                         </div>
                     </div>

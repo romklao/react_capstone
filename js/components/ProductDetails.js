@@ -67,7 +67,7 @@ class ProductDetails extends React.Component {
             if (item.ImageSets[0].ImageSet) {
                 for (var i=imageSetLen-1; i>=0; i--) {
                     eachImageUrl = item.ImageSets[0].ImageSet[i].LargeImage[0].URL[0];
-                    allImages.push(<div className="col-lg-3 detailSmallImageBox" key={i}>
+                    allImages.push(<div className="smallImageBox" key={i}>
                                         <div className="smallImageBoxInner">
                                             <img src={eachImageUrl} className="smallImage"/>
                                         </div>
@@ -121,7 +121,10 @@ class ProductDetails extends React.Component {
 
             if (item.Offers[0].Offer[0].OfferListing) {
                 if (item.Offers[0].Offer[0].OfferListing[0].Price[0] &&
-                    item.Offers[0].Offer[0].OfferListing[0].SalePrice) {
+                    item.Offers[0].Offer[0].OfferListing[0].SalePrice &&
+                    item.Offers[0].Offer[0].OfferListing[0].AmountSaved &&
+                    item.Offers[0].Offer[0].OfferListing[0].PercentageSaved) {
+
                     salePrice = item.Offers[0].Offer[0].OfferListing[0].SalePrice[0].FormattedPrice[0];
                     amountSaved = item.Offers[0].Offer[0].OfferListing[0].AmountSaved[0].FormattedPrice[0];
                     percentageSaved = item.Offers[0].Offer[0].OfferListing[0].PercentageSaved[0];
@@ -130,7 +133,9 @@ class ProductDetails extends React.Component {
                     youSave = 'You save: ';
                     save = amountSaved + '(' + percentageSaved + '%)'
                 } else if (item.Offers[0].Offer[0].OfferListing[0].Price[0] &&
-                    item.Offers[0].Offer[0].OfferListing[0].AmountSaved) {
+                    item.Offers[0].Offer[0].OfferListing[0].AmountSaved &&
+                    item.Offers[0].Offer[0].OfferListing[0].PercentageSaved) {
+
                     salePrice = item.Offers[0].Offer[0].OfferListing[0].Price[0].FormattedPrice[0];
                     salePriceInt = parseFloat(salePrice.replace(/\$/g, ''));
                     amountSaved = item.Offers[0].Offer[0].OfferListing[0].AmountSaved[0].FormattedPrice[0];
@@ -161,17 +166,22 @@ class ProductDetails extends React.Component {
                 <div className="productDetailsOuter">
                     <div className="productDetailsMiddle">
                         <div className="productDetailsInner">
-                            <div className="row productQuickView">
-                                <div className="col-sm-6 col-xs-12 productQuickViewImage">
-                                    <div>
-                                        <a href={pageUrl} target={blank}><img src={imageUrl} id="quickViewImage"/></a>
-                                        <img src={arrowLeftUrl} onClick={this.previousImage} className="leftArrow leftArrowDetailsPage"/>
-                                        <img src={arrowRightUrl} onClick={this.nextImage} className="rightArrow rightArrowDetailsPage"/>
-                                        <span className={addFavIcon} onClick={this.addFavoriteItems}></span>
-                                        <span className={delFavIcon} onClick={() => this.deleteFavoriteItems(favoriteId)}></span>
+                            <div className="row productDetailsBox">
+                                <div className="col-md-6 col-sm-12 col-xs-12 productDetailsImage">
+                                    <div className="productDetailsImageInner">
+                                        <div>
+                                            <a href={pageUrl} target={blank}><img src={imageUrl} id="quickViewImage"/></a>
+                                            <img src={arrowLeftUrl} onClick={this.previousImage} className="leftArrow leftArrowDetailsPage"/>
+                                            <img src={arrowRightUrl} onClick={this.nextImage} className="rightArrow rightArrowDetailsPage"/>
+                                            <span className={addFavIcon} onClick={this.addFavoriteItems}></span>
+                                            <span className={delFavIcon} onClick={() => this.deleteFavoriteItems(favoriteId)}></span>
+                                        </div>
+                                    </div>
+                                    <div className="allImages">
+                                        {allImages}
                                     </div>
                                 </div>
-                                <div className="col-sm-6 col-xs-12 productDescription">
+                                <div className="col-md-6 col-sm-12 col-xs-12 productDescription">
                                     <div className="productTitleBox">
                                         <p className="productTitle">{productTitle}</p>
                                         <span className="fullPriceCrossRed"><span className="fullPrice">{fullPrice}</span></span>
@@ -188,9 +198,6 @@ class ProductDetails extends React.Component {
                                         <a href={pageUrl} target={blank}><img src={amazonLogoUrl} className="amazonLogo"/></a>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="row allImages detailAllImages">
-                                {allImages}
                             </div>
                         </div>
                     </div>
