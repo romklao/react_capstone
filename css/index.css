@@ -798,7 +798,7 @@ input:-webkit-autofill:active {
 
 .quickViewInner {
     padding-top: 0px;
-    padding-bottom: 0px;
+    padding-bottom: 40px;
 }
 
 .closeQuickView {
@@ -819,7 +819,7 @@ input:-webkit-autofill:active {
     height: 480px;
     display: table;
     background: white;
-    margin: 30px;
+    margin: 30px 30px 10px 30px;
 }
 
 .productQuickViewImage > div {
@@ -867,9 +867,9 @@ input:-webkit-autofill:active {
     color: black;
 }
 
-/*.youSave {
-    margin: 15px 0;
-}*/
+.youSave, .save, .fullPrice, .price {
+    font-size: 20px;
+}
 
 .productTitle {
     margin: 0;
@@ -880,7 +880,7 @@ input:-webkit-autofill:active {
 }
 
 .viewFullDetails {
-    font-size: 17px;
+    font-size: 16px;
     text-decoration: underline;
     color: #7F919C;
     display: block;
@@ -896,7 +896,7 @@ input:-webkit-autofill:active {
     display: inline-block;
 }
 
-.addFavBtn {
+.addFavBtn, .delFavBtn {
     width: 93%;
     padding: 10px 0;
     background: #768995;
@@ -907,6 +907,10 @@ input:-webkit-autofill:active {
 }
 
 .addFavBtn:hover {
+    background: #2c3d3f;
+}
+
+.delFavBtn:hover {
     background: #2c3d3f;
 }
 
@@ -921,7 +925,46 @@ input:-webkit-autofill:active {
 
 .amazonLogo {
     width: 130px;
-    margin: 10px 0;    
+    margin: 15px 0;    
+}
+
+.allImages {
+    width: 50%;
+    margin: 0 30px;
+}
+
+.detailAllImages {
+    width: 44%;
+    margin: 0px 30px;
+    position: absolute;
+    top: 69%;
+}
+
+.detailSmallImageBox {
+    width: 85px;
+    height: 85px;
+    background: white;
+    margin: 5px;
+    display: table;
+}
+
+.smallImageBox {
+    width: 80px;
+    height: 80px;
+    background: white;
+    margin: 5px;
+    display: table;
+}
+
+.smallImageBoxInner {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.smallImage {
+    max-width: 50px;
+    max-height: 50px;
 }
 
 .productFeature {

@@ -34,7 +34,7 @@ var categoriesData = {
             'bgClass': 'child bgToner',
             'parentClass': 'parent parentToner'
         },
-        'Hand Repair and Foot Repair Cream': {
+        'Hand Repair and Feet Repair Cream': {
             'bgClass': 'child bgHand',
             'parentClass': 'parent parentHand'
         }

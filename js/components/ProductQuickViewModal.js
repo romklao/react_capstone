@@ -59,7 +59,7 @@ class ProductQuickViewModal extends React.Component {
     showProductDetails() {
         this.props.dispatch(actions.showProductDetails(this.props.productDetails));
         this.props.dispatch(actions.hide());
-        hashHistory.push('/product_details');
+        hashHistory.push('/product_details?ASIN=${this.props.productDetails.ASIN}');
         window.scrollTo(0, 0)
     }
 
@@ -76,6 +76,21 @@ class ProductQuickViewModal extends React.Component {
                 imageUrl = item.ImageSets[0].ImageSet[this.state.index].LargeImage[0].URL[0];
             }
 
+            var eachImageUrl;
+            var allImages = [];
+            var imageSetLen = item.ImageSets[0].ImageSet.length;
+            if (item.ImageSets[0].ImageSet) {
+                for (var i=imageSetLen-1; i>=0; i--) {
+                    eachImageUrl = item.ImageSets[0].ImageSet[i].LargeImage[0].URL[0];
+                    allImages.push(<div className="col-lg-3 smallImageBox" key={i}>
+                                        <div className="smallImageBoxInner">
+                                            <img src={eachImageUrl} className="smallImage"/>
+                                        </div>
+                                   </div>);
+                }
+            }
+            console.log('allImages', allImages);
+
             var favoriteId = '';
             if (this.props.favorites) {
                 for (var fav of this.props.favorites) {
@@ -88,11 +103,14 @@ class ProductQuickViewModal extends React.Component {
 
             var addFavIcon = "glyphicon glyphicon-heart heartFav heartFavView";
             var delFavIcon = "glyphicon glyphicon-heart heartFav changeToRed heartFavView";
-
+            var addFavBtn = "addFavBtn";
+            var delFavBtn = "delFavBtn"
             if (favoriteId) {
-                addFavIcon += " hidden"
+                addFavIcon += " hidden";
+                addFavBtn += " hidden";
             } else {
-                delFavIcon += " hidden"
+                delFavIcon += " hidden";
+                delFavBtn += " hidden";
             }
 
             var productTitle;
@@ -167,10 +185,14 @@ class ProductQuickViewModal extends React.Component {
                                         <span className="price">{salePrice}</span>
                                         <span className="viewFullDetails" onClick={this.showProductDetails}>View Full Details</span>
                                         <p className="youSave">{youSave}<span className="save">{save}</span></p>
-                                        <button className="addFavBtn" onClick={this.addFavoriteItems}>Add to Favorites</button>
+                                        <button className={addFavBtn} onClick={this.addFavoriteItems}>Add To Favorites</button>
+                                        <button className={delFavBtn} onClick={() => this.deleteFavoriteItems(favoriteId)}>Delete From Favorites</button>
                                         <a href={pageUrl} target={blank}><img src={amazonLogoUrl} className="amazonLogo"/></a>
                                     </div>
                                 </div>
+                            </div>
+                            <div className="row allImages">
+                                {allImages}
                             </div>
                         </div>
                     </div>

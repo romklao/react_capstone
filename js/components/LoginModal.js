@@ -10,6 +10,7 @@ export class LoginModal extends React.Component {
             email: 'demo@testing.com',
             password: '123'
         }
+        this.props.dispatch(actions.getFavorites());
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
         this.hide = this.hide.bind(this);

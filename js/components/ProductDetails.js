@@ -12,6 +12,7 @@ class ProductDetails extends React.Component {
             loading: true
         }
         // this.props.dispatch(actions.showProductDetails(this.props.productDetails));
+        this.props.dispatch(actions.getFavorites());
         this.addFavoriteItems = this.addFavoriteItems.bind(this);
         this.deleteFavoriteItems = this.deleteFavoriteItems.bind(this);
         this.previousImage = this.previousImage.bind(this);
@@ -60,6 +61,20 @@ class ProductDetails extends React.Component {
                 imageUrl = item.ImageSets[0].ImageSet[this.state.index].LargeImage[0].URL[0];
             }
 
+            var eachImageUrl;
+            var allImages = [];
+            var imageSetLen = item.ImageSets[0].ImageSet.length;
+            if (item.ImageSets[0].ImageSet) {
+                for (var i=imageSetLen-1; i>=0; i--) {
+                    eachImageUrl = item.ImageSets[0].ImageSet[i].LargeImage[0].URL[0];
+                    allImages.push(<div className="col-lg-3 detailSmallImageBox" key={i}>
+                                        <div className="smallImageBoxInner">
+                                            <img src={eachImageUrl} className="smallImage"/>
+                                        </div>
+                                   </div>);
+                }
+            }
+
             var favoriteId = '';
             if (this.props.favorites) {
                 for (var fav of this.props.favorites) {
@@ -83,11 +98,15 @@ class ProductDetails extends React.Component {
 
             var addFavIcon = "glyphicon glyphicon-heart heartFav favHeartDetailsPage";
             var delFavIcon = "glyphicon glyphicon-heart heartFav changeToRed favHeartDetailsPage";
+            var addFavBtn = "addFavBtn";
+            var delFavBtn = "delFavBtn"
 
             if (favoriteId) {
-                addFavIcon += " hidden"
+                addFavIcon += " hidden";
+                addFavBtn += " hidden";
             } else {
-                delFavIcon += " hidden"
+                delFavIcon += " hidden";
+                delFavBtn += " hidden";
             }
 
             var productTitle;
@@ -158,7 +177,8 @@ class ProductDetails extends React.Component {
                                         <span className="fullPriceCrossRed"><span className="fullPrice">{fullPrice}</span></span>
                                         <span className="price">{salePrice}</span>
                                         <p className="youSave">{youSave}<span className="save">{save}</span></p>
-                                        <button className="addFavBtn" onClick={this.addFavoriteItems}>Add to Favorites</button>
+                                        <button className={addFavBtn} onClick={this.addFavoriteItems}>Add To Favorites</button>
+                                        <button className={delFavBtn} onClick={() => this.deleteFavoriteItems(favoriteId)}>Delete From Favorites</button>
                                         <div className="productFeature">
                                             <p>PRODUCT INFO</p>
                                             <ul>
@@ -168,6 +188,9 @@ class ProductDetails extends React.Component {
                                         <a href={pageUrl} target={blank}><img src={amazonLogoUrl} className="amazonLogo"/></a>
                                     </div>
                                 </div>
+                            </div>
+                            <div className="row allImages detailAllImages">
+                                {allImages}
                             </div>
                         </div>
                     </div>

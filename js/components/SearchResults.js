@@ -13,6 +13,7 @@ class SearchResults extends React.Component {
         this.props.dispatch(actions.searchSubmit(this.props.location.query.keywords, 
                                                  this.props.location.query.category,
                                                  this.props.location.query.page));
+        this.props.dispatch(actions.getFavorites());
     }
 
     render () {
