@@ -43,53 +43,100 @@ class ItemView extends React.Component {
 
     showProductDetails() {
         this.props.dispatch(actions.showProductDetails(this.props.product));
-        hashHistory.push('/product_details?ASIN=${this.props.ASIN}');
+        hashHistory.push(`/product_details?ASIN=${this.props.product.ASIN}`);
         window.scrollTo(0, 0)
     }
 
     render () {
-        let item = this.props.product;
-        let imageUrl;
-        let imageSetLen = item.ImageSets[0].ImageSet.length;
+        if(this.props.product) {
+            let item = this.props.product;
+            let imageUrl;
+            var imageSetLen = item.ImageSets[0].ImageSet.length;
 
-        if(!item.LargeImage) {
-            imageUrl = item.ImageSets[0].ImageSet[imageSetLen-1].LargeImage[0].URL[0];
-            console.log('imageUrl', imageUrl)
-        } else if(item.LargeImage) {
-            imageUrl = item.LargeImage[0].URL[0];
-        }
+            if(!item.LargeImage && item.ImageSets) {
+                imageUrl = item.ImageSets[0].ImageSet[imageSetLen-1].LargeImage[0].URL[0];
+            } else if(item.LargeImage) {
+                imageUrl = item.LargeImage[0].URL[0];
+            }
 
-        let favoriteId = '';
-        if (this.props.favorites) {
-            for (let fav of this.props.favorites) {
-                if (fav.product.ASIN[0] === item.ASIN[0]) {
-                    favoriteId = fav._id;
-                    break;
+            let favoriteId = '';
+            if (this.props.favorites) {
+                for (let fav of this.props.favorites) {
+                    if (fav.product.ASIN[0] === item.ASIN[0]) {
+                        favoriteId = fav._id;
+                        break;
+                    }
                 }
             }
-        }
 
-        let addFavIcon = "glyphicon glyphicon-heart heartFav";
-        let delFavIcon = "glyphicon glyphicon-heart heartFav changeToRed";
+            let addFavIcon = "glyphicon glyphicon-heart heartFav";
+            let delFavIcon = "glyphicon glyphicon-heart heartFav changeToRed";
 
-        if (favoriteId) {
-            addFavIcon += " hidden"
-        } else {
-            delFavIcon += " hidden"
-        }
+            if (favoriteId) {
+                addFavIcon += " hidden"
+            } else {
+                delFavIcon += " hidden"
+            }
 
-        return (
-            <div className="col-lg-4 col-sm-6 col-xs-12 itemResults wrapper">
-                <div className="imageProductBox parentImage">
-                    <div className="childImage">
-                        <img src={imageUrl} className="imageProduct" onClick={this.showProductDetails}/>
-                        <span className={addFavIcon} onClick={this.addFavoriteItems}></span>
-                        <span className={delFavIcon} onClick={() => this.deleteFavoriteItems(favoriteId)}></span>
-                        <p className="quickview" onClick={this.showProductQuickView}>QUICK VIEW</p>
+            let salePrice;
+            let salePriceInt;
+            let amountSaved;
+            let amountSavedInt;
+            let percentageSaved;
+            let fullPrice;
+            let save;
+
+            if (item.Offers[0].Offer[0].OfferListing) {
+                if (item.Offers[0].Offer[0].OfferListing[0].Price &&
+                    item.Offers[0].Offer[0].OfferListing[0].SalePrice &&
+                    item.Offers[0].Offer[0].OfferListing[0].AmountSaved &&
+                    item.Offers[0].Offer[0].OfferListing[0].PercentageSaved) {
+
+                    salePrice = item.Offers[0].Offer[0].OfferListing[0].SalePrice[0].FormattedPrice[0];
+                    amountSaved = item.Offers[0].Offer[0].OfferListing[0].AmountSaved[0].FormattedPrice[0];
+                    percentageSaved = item.Offers[0].Offer[0].OfferListing[0].PercentageSaved[0];
+
+                    fullPrice = item.Offers[0].Offer[0].OfferListing[0].Price[0].FormattedPrice[0];
+                    save = '(' + percentageSaved + '% off)';
+                } else if (item.Offers[0].Offer[0].OfferListing[0].Price[0] &&
+                    item.Offers[0].Offer[0].OfferListing[0].AmountSaved &&
+                    item.Offers[0].Offer[0].OfferListing[0].PercentageSaved) {
+
+                    salePrice = item.Offers[0].Offer[0].OfferListing[0].Price[0].FormattedPrice[0];
+                    salePriceInt = parseFloat(salePrice.replace(/\$/g, ''));
+                    amountSaved = item.Offers[0].Offer[0].OfferListing[0].AmountSaved[0].FormattedPrice[0];
+                    amountSavedInt = parseFloat(amountSaved.replace(/\$/g, ''));
+                    percentageSaved = item.Offers[0].Offer[0].OfferListing[0].PercentageSaved[0];
+
+                    fullPrice = '$'+ (salePriceInt + amountSavedInt).toFixed(2);
+                    save = '(' + percentageSaved + '% off)';
+                } else {
+                    salePrice = item.Offers[0].Offer[0].OfferListing[0].Price[0].FormattedPrice[0];
+                    fullPrice = '';
+                    save = '';
+                }
+            }
+
+            return (
+                <div className="col-lg-4 col-sm-6 col-xs-12 itemResults wrapper">
+                    <div className="imageProductBox parentImage">
+                        <div className="childImage">
+                            <img src={imageUrl} className="imageProduct" onClick={this.showProductDetails}/>
+                            <span className={addFavIcon} onClick={this.addFavoriteItems}></span>
+                            <span className={delFavIcon} onClick={() => this.deleteFavoriteItems(favoriteId)}></span>
+                            <p className="quickview" onClick={this.showProductQuickView}>QUICK VIEW</p>
+                        </div>
+                    </div>
+                    <div>
+                        <span className="fullPriceCrossGrey"><span className="fullPriceList">{fullPrice}</span></span>
+                        <span className="priceList">{salePrice}</span>
+                        <span className="saveList">{save}</span>
                     </div>
                 </div>
-            </div>
-        );
+            );
+        } else {
+                return null;
+        }
     }
 }
 

@@ -192,7 +192,7 @@ app.get('/amazon/search', function(req, res){
     sort: 'salesrank', 
     responseGroup: 'ItemAttributes, Offers, Images, Reviews, PromotionSummary',
     itemPage: page,
-    TotalPages: "All",
+    // TotalPages: "All",
     }, function(err, data){
       res.json(data);
     }

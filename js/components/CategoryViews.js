@@ -64,7 +64,7 @@ var categoriesData = {
             'bgClass': 'child bgSonos',
             'parentClass': 'parent parentSonos parentElectronics'
         },
-        'TV': {
+        'LED TVs': {
             'bgClass': 'child bgTV',
             'parentClass': 'parent parentTV parentElectronics'
         },
@@ -72,7 +72,7 @@ var categoriesData = {
             'bgClass': 'child bgTVStick',
             'parentClass': 'parent parentTVStick parentElectronics'
         },
-        'Eco Dot': {
+        'Echo Dot': {
             'bgClass': 'child bgEcoDot',
             'parentClass': 'parent parentEcoDot parentElectronics'
         },
@@ -80,7 +80,7 @@ var categoriesData = {
             'bgClass': 'child bgKindle',
             'parentClass': 'parent parentKindle parentElectronics'
         },
-        'iPhone Unlocked': {
+        'Unlocked Phone': {
             'bgClass': 'child bgiPhone',
             'parentClass': 'parent parentiPhone parentElectronics'
         },
@@ -91,7 +91,15 @@ var categoriesData = {
         'Power Bank': {
             'bgClass': 'child bgPowerBank',
             'parentClass': 'parent parentPowerBank parentElectronics'
-        }
+        },
+        'Digital Zoom Camera': {
+            'bgClass': 'child bgCamera',
+            'parentClass': 'parent parentCamera parentElectronics'
+        },
+        'Fujifilm Instant Camera': {
+            'bgClass': 'child bgInsCamera',
+            'parentClass': 'parent parentInsCamera parentElectronics'
+        }  
     }
 }
 

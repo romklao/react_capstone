@@ -17,7 +17,7 @@ class SearchResults extends React.Component {
     }
 
     render () {
-        if (this.props.isLoading && !this.props.searchResults) {
+        if (this.props.isLoading) {
             return (
                 <div>
                     <h1 className="load">Loading</h1>

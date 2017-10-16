@@ -20,6 +20,7 @@ class ProductQuickViewModal extends React.Component {
         this.nextImage = this.nextImage.bind(this);
         this.hide = this.hide.bind(this);
         this.showProductDetails = this.showProductDetails.bind(this);
+        this.setImage = this.setImage.bind(this);
     }
 
     addFavoriteItems() {
@@ -35,7 +36,7 @@ class ProductQuickViewModal extends React.Component {
         )
     }
 
-    previousImage() {
+    nextImage() {
         if (this.state.index === -1) {
             this.setState({index: this.props.productDetails.ImageSets[0].ImageSet.length - 1});
         } else {
@@ -43,12 +44,16 @@ class ProductQuickViewModal extends React.Component {
         }
     }
 
-    nextImage() {
+    previousImage() {
         if (this.state.index === this.props.productDetails.ImageSets[0].ImageSet.length - 1) {
             this.setState({index: -1});
         } else {
             this.setState({index: this.state.index + 1})
         }
+    }
+
+    setImage(imageIndex) {
+        this.setState({index: imageIndex});
     }
 
     hide(event) {
@@ -65,35 +70,35 @@ class ProductQuickViewModal extends React.Component {
 
     render () {
         if(this.props.productDetails) {
-            var item = this.props.productDetails;
-            console.log('item', this.props.productDetails)
-            var imageUrl;
+            let item = this.props.productDetails;
+            let imageUrl;
+            let imageSetLen = item.ImageSets[0].ImageSet.length;
             if (this.state.index === -1) {
-                if(item.LargeImage[0].URL[0]) {
+                if(!item.LargeImage) {
+                    imageUrl = item.ImageSets[0].ImageSet[imageSetLen-1].LargeImage[0].URL[0];
+                } else if(item.LargeImage) {
                     imageUrl = item.LargeImage[0].URL[0];
                 }
             } else if (item.ImageSets[0].ImageSet) {
                 imageUrl = item.ImageSets[0].ImageSet[this.state.index].LargeImage[0].URL[0];
             }
 
-            var eachImageUrl;
-            var allImages = [];
-            var imageSetLen = item.ImageSets[0].ImageSet.length;
+            let eachImageUrl;
+            let allImages = [];
             if (item.ImageSets[0].ImageSet) {
-                for (var i=imageSetLen-1; i>=0; i--) {
+                for (let i=imageSetLen-1; i>=0; i--) {
                     eachImageUrl = item.ImageSets[0].ImageSet[i].LargeImage[0].URL[0];
                     allImages.push(<div className="smallImageBox" key={i}>
                                         <div className="smallImageBoxInner">
-                                            <img src={eachImageUrl} className="smallImage"/>
+                                            <img src={eachImageUrl} className="smallImage" onMouseOver={() => this.setImage(i)}/>
                                         </div>
                                    </div>);
                 }
             }
-            console.log('allImages', allImages);
 
-            var favoriteId = '';
+            let favoriteId = '';
             if (this.props.favorites) {
-                for (var fav of this.props.favorites) {
+                for (let fav of this.props.favorites) {
                     if (fav.product.ASIN[0] === item.ASIN[0]) {
                         favoriteId = fav._id;
                         break;
@@ -101,10 +106,10 @@ class ProductQuickViewModal extends React.Component {
                 }
             }
 
-            var addFavIcon = "glyphicon glyphicon-heart heartFav heartFavView";
-            var delFavIcon = "glyphicon glyphicon-heart heartFav changeToRed heartFavView";
-            var addFavBtn = "addFavBtn";
-            var delFavBtn = "delFavBtn"
+            let addFavIcon = "glyphicon glyphicon-heart heartFav heartFavView";
+            let delFavIcon = "glyphicon glyphicon-heart heartFav changeToRed heartFavView";
+            let addFavBtn = "addFavBtn";
+            let delFavBtn = "delFavBtn"
             if (favoriteId) {
                 addFavIcon += " hidden";
                 addFavBtn += " hidden";
@@ -113,15 +118,15 @@ class ProductQuickViewModal extends React.Component {
                 delFavBtn += " hidden";
             }
 
-            var productTitle;
-            var salePrice;
-            var salePriceInt;
-            var amountSaved;
-            var amountSavedInt;
-            var percentageSaved;
-            var fullPrice;
-            var youSave;
-            var save;
+            let productTitle;
+            let salePrice;
+            let salePriceInt;
+            let amountSaved;
+            let amountSavedInt;
+            let percentageSaved;
+            let fullPrice;
+            let youSave;
+            let save;
 
             if (item.Offers[0].Offer[0].OfferListing) {
                 if (item.Offers[0].Offer[0].OfferListing[0].Price &&
@@ -159,12 +164,12 @@ class ProductQuickViewModal extends React.Component {
             if (item.ItemAttributes[0].Title) {
                 productTitle = item.ItemAttributes[0].Title[0];
             }
-            var arrowLeftUrl = "css/images/left-arrow.png";
-            var arrowRightUrl = "css/images/right-arrow.png";
-            var pageUrl = item.DetailPageURL[0];
-            var blank = "_blank";
-            var amazonLogoUrl = "css/images/amazon.png";
-            var productFeature = item.ItemAttributes[0].Feature;
+            let arrowLeftUrl = "css/images/left-arrow.png";
+            let arrowRightUrl = "css/images/right-arrow.png";
+            let pageUrl = item.DetailPageURL[0];
+            let blank = "_blank";
+            let amazonLogoUrl = "css/images/amazon.png";
+            let productFeature = item.ItemAttributes[0].Feature;
 
             return (
                 <div className="quickViewOuter">
@@ -195,9 +200,9 @@ class ProductQuickViewModal extends React.Component {
                                         <span className="price">{salePrice}</span>
                                         <span className="viewFullDetails" onClick={this.showProductDetails}>View Full Details</span>
                                         <p className="youSave">{youSave}<span className="save">{save}</span></p>
-                                        <button className={addFavBtn} onClick={this.addFavoriteItems}>Add To Favorites</button>
-                                        <button className={delFavBtn} onClick={() => this.deleteFavoriteItems(favoriteId)}>Delete From Favorites</button>
-                                        <a href={pageUrl} target={blank}><img src={amazonLogoUrl} className="amazonLogo"/></a>
+                                        <button className="linkToAmazonQV linkToAmazon"><a href={pageUrl} target={blank}>Available Now on Amazon</a></button>
+                                        <button className={addFavBtn} onClick={this.addFavoriteItems}>Add to Favorites</button>
+                                        <button className={delFavBtn} onClick={() => this.deleteFavoriteItems(favoriteId)}>Delete from Favorites</button>
                                     </div>
                                 </div>
                             </div>

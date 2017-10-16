@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import * as actions from '../actions/index';
+import Iframe from 'react-iframe';
 
 class ProductDetails extends React.Component {
     constructor(props) {
@@ -9,7 +10,8 @@ class ProductDetails extends React.Component {
 
         this.state = {
             index: -1,
-            loading: true
+            loading: true,
+            iFrameHeight: '0px',
         }
         // this.props.dispatch(actions.showProductDetails(this.props.productDetails));
         this.props.dispatch(actions.getFavorites());
@@ -17,6 +19,7 @@ class ProductDetails extends React.Component {
         this.deleteFavoriteItems = this.deleteFavoriteItems.bind(this);
         this.previousImage = this.previousImage.bind(this);
         this.nextImage = this.nextImage.bind(this);
+        // this.resizeIframe = this.resizeIframe.bind(this);
     }
 
     addFavoriteItems() {
@@ -32,7 +35,7 @@ class ProductDetails extends React.Component {
         )
     }
 
-    previousImage() {
+    nextImage() {
         if (this.state.index === -1) {
             this.setState({index: this.props.productDetails.ImageSets[0].ImageSet.length - 1});
         } else {
@@ -40,7 +43,7 @@ class ProductDetails extends React.Component {
         }
     }
 
-    nextImage() {
+    previousImage() {
         if (this.state.index === this.props.productDetails.ImageSets[0].ImageSet.length - 1) {
             this.setState({index: -1});
         } else {
@@ -48,13 +51,28 @@ class ProductDetails extends React.Component {
         }
     }
 
+    setImage(imageIndex) {
+        this.setState({index: imageIndex});
+    }
+
+    // resizeIframe(obj) {
+    //     const obj = ReactDOM.findDOMNode(this);
+    //                 this.setState({
+    //                     "iFrameHeight":  obj.contentWindow.document.body.scrollHeight + 'px'
+    //                 });
+    // }
+
     render () {
         console.log('query', this.props.location.query.ASIN)
         if(this.props.productDetails) {
             var item = this.props.productDetails;
             var imageUrl;
+            var imageSetLen = item.ImageSets[0].ImageSet.length;
+
             if (this.state.index === -1) {
-                if(item.LargeImage[0].URL[0]) {
+                if(!item.LargeImage) {
+                    imageUrl = item.ImageSets[0].ImageSet[imageSetLen-1].LargeImage[0].URL[0];
+                } else if(item.LargeImage) {
                     imageUrl = item.LargeImage[0].URL[0];
                 }
             } else if (item.ImageSets[0].ImageSet) {
@@ -63,13 +81,12 @@ class ProductDetails extends React.Component {
 
             var eachImageUrl;
             var allImages = [];
-            var imageSetLen = item.ImageSets[0].ImageSet.length;
             if (item.ImageSets[0].ImageSet) {
-                for (var i=imageSetLen-1; i>=0; i--) {
+                for (let i=imageSetLen-1; i>=0; i--) {
                     eachImageUrl = item.ImageSets[0].ImageSet[i].LargeImage[0].URL[0];
                     allImages.push(<div className="smallImageBox" key={i}>
                                         <div className="smallImageBoxInner">
-                                            <img src={eachImageUrl} className="smallImage"/>
+                                            <img src={eachImageUrl} className="smallImage" onMouseOver={() => this.setImage(i)} />
                                         </div>
                                    </div>);
                 }
@@ -94,12 +111,11 @@ class ProductDetails extends React.Component {
                     features.push(<li key={i}>{featuresI}</li>);
                 }
             }
-            console.log('features', features)
 
             var addFavIcon = "glyphicon glyphicon-heart heartFav favHeartDetailsPage";
             var delFavIcon = "glyphicon glyphicon-heart heartFav changeToRed favHeartDetailsPage";
-            var addFavBtn = "addFavBtn";
-            var delFavBtn = "delFavBtn"
+            var addFavBtn = "addFavBtn addFavBtnDetails";
+            var delFavBtn = "delFavBtn delFavBtnDetails"
 
             if (favoriteId) {
                 addFavIcon += " hidden";
@@ -161,6 +177,7 @@ class ProductDetails extends React.Component {
             var blank = "_blank";
             var amazonLogoUrl = "css/images/amazon.png";
             var productFeature = item.ItemAttributes[0].Feature;
+            var reviews = item.CustomerReviews[0].IFrameURL[0];
 
             return (
                 <div className="productDetailsOuter">
@@ -187,19 +204,27 @@ class ProductDetails extends React.Component {
                                         <span className="fullPriceCrossRed"><span className="fullPrice">{fullPrice}</span></span>
                                         <span className="price">{salePrice}</span>
                                         <p className="youSave">{youSave}<span className="save">{save}</span></p>
-                                        <button className={addFavBtn} onClick={this.addFavoriteItems}>Add To Favorites</button>
-                                        <button className={delFavBtn} onClick={() => this.deleteFavoriteItems(favoriteId)}>Delete From Favorites</button>
+                                        <button className="addFavBtnDetails linkToAmazon"><a href={pageUrl} target={blank}>Available Now on Amazon</a></button>
+                                        <button className={addFavBtn} onClick={this.addFavoriteItems}>Add to Favorites</button>
+                                        <button className={delFavBtn} onClick={() => this.deleteFavoriteItems(favoriteId)}>Delete from Favorites</button>
                                         <div className="productFeature">
                                             <p>PRODUCT INFO</p>
                                             <ul>
                                                 {features}
                                             </ul>
                                         </div>
-                                        <a href={pageUrl} target={blank}><img src={amazonLogoUrl} className="amazonLogo"/></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div className="row reviewsContainer">
+                        <Iframe url={reviews} 
+                            position="absolute"
+                            width="80%"
+                            height="120%"
+                            styles={{margin: "60px 120px"}}
+                        />
                     </div>
                 </div>
             );
