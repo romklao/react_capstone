@@ -44,10 +44,6 @@ var categoriesData = {
             'bgClass': 'child bgHeadphone',
             'parentClass': 'parent parentHeadphone parentElectronics'
         },
-        'Bluetooth Headphone': {
-            'bgClass': 'child bgBluetoothHeadphone',
-            'parentClass': 'parent parentBluetoothHeadphone parentElectronics'
-        },
         'Bluetooth Speaker': {
             'bgClass': 'child bgBluetoothSpeaker',
             'parentClass': 'parent parentBluetoothSpeaker parentElectronics'
@@ -99,7 +95,33 @@ var categoriesData = {
         'Fujifilm Instant Camera': {
             'bgClass': 'child bgInsCamera',
             'parentClass': 'parent parentInsCamera parentElectronics'
-        }  
+        }
+    },
+    'HealthPersonalCare': {
+        'Vitamins': {
+            'bgClass': 'child bgVitamins',
+            'parentClass': 'parent parentVitamins'
+        },
+        'Mineral Supplements': {
+            'bgClass': 'child bgMineral',
+            'parentClass': 'parent parentVitamins'
+        },
+        'Multivitamins & Prenatal Vitamins': {
+            'bgClass': 'child bgPrenatal',
+            'parentClass': 'parent parentVitamins'
+        },
+        'Nutritional Supplements': {
+            'bgClass': 'child bgSupplements',
+            'parentClass': 'parent parentVitamins'
+        },
+        'Herbal Supplements': {
+            'bgClass': 'child bgHerbal',
+            'parentClass': 'parent parentVitamins'
+        },
+        'Weight Loss Products': {
+            'bgClass': 'child bgWeight',
+            'parentClass': 'parent parentVitamins'
+        },
     }
 }
 

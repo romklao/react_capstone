@@ -151,7 +151,7 @@ class ProductQuickViewModal extends React.Component {
                     amountSavedInt = parseFloat(amountSaved.replace(/\$/g, ''));
                     percentageSaved = item.Offers[0].Offer[0].OfferListing[0].PercentageSaved[0];
 
-                    fullPrice = '$'+ (salePriceInt + amountSavedInt).toFixed(2);
+                    fullPrice = '$' + (salePriceInt + amountSavedInt).toFixed(2);
                     youSave = 'You save: ';
                     save = amountSaved + '(' + percentageSaved + '%)'
                 } else {
@@ -170,6 +170,7 @@ class ProductQuickViewModal extends React.Component {
             let blank = "_blank";
             let amazonLogoUrl = "css/images/amazon.png";
             let productFeature = item.ItemAttributes[0].Feature;
+            let reviews = item.CustomerReviews[0].IFrameURL[0];
 
             return (
                 <div className="quickViewOuter">

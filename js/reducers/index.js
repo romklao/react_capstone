@@ -186,6 +186,15 @@ export const decorHomeReducer = function(state, action) {
         );
         return state;
 
+    } else if (action.type === actions.GO_TO_HOME_SEARCH) {
+        state = Object.assign({}, 
+            state, {
+                errorSearchMessage: null,
+                searchResults: null,
+            } 
+        );
+        return state;
+
     } else if (action.type === actions.ADD_FAVORITE_SUCCESS) {
         var confirmAddFavoriteMessage = 'Add favorite success!'
         state = Object.assign({},

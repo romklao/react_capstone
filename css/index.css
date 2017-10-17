@@ -163,7 +163,7 @@ input:-webkit-autofill:active {
 #loginLink, #signupLink, #logoutLink, #favLink, #home, #beauty, #electronics {
     font-size: 17px;
     color: #999999;
-    margin: 0 15px;
+    margin: 0 14px;
 }
 
 #loginLink:hover, #signupLink:hover, #logoutLink:hover, #favLink:hover, #home:hover, #beauty:hover, #electronics:hover {
@@ -212,7 +212,7 @@ input:-webkit-autofill:active {
 
 .intro {
     height: 387px;
-    background-color: #81A6AC;
+    background-color: #81A6AC; /*#D1CABB*/
 }
 
 .intro > h1 {
@@ -327,10 +327,10 @@ input:-webkit-autofill:active {
 .keywords {
     margin: 0;
     padding: 0;
-    padding: 3px 0;
+    padding: 8px 0;
     font-size: 17px;
 /*    border: 1px solid lightgrey;
-*/    background: #81A6AC;
+*/    background: #405357;
     color: white;
 }
 
@@ -427,7 +427,7 @@ input:-webkit-autofill:active {
 */
 .parentElectronics {
     width: 314px;
-    height: 319px;
+    height: 419px;
 }
 
 .bgHeadphone {
@@ -449,7 +449,7 @@ input:-webkit-autofill:active {
 }*/
 
 .bgBluetoothSpeaker {
-    background-image: url("images/bluetoothSpeaker.jpg");
+    background-image: url("images/bluetoothSpeaker1.jpg");
 }
 
 .bgUSB {
@@ -485,7 +485,7 @@ input:-webkit-autofill:active {
 }
 
 .bgPowerBank {
-    background-image: url("images/powerBank.jpg");
+    background-image: url("images/powerBank2.jpg");
 }
 
 .bgiPhone {
@@ -497,10 +497,39 @@ input:-webkit-autofill:active {
 }
 
 .bgInsCamera {
-    background-image: url("images/instantCamera.jpg");
+    background-image: url("images/instax.jpg");
 }
 
+/*Home & Kitchen*/
 
+.parentVitamins {
+    width: 314px;
+    height: 419px;
+}
+
+.bgVitamins {
+    background-image: url("images/vitamins.jpg");
+}
+
+.bgMineral {
+    background-image: url("images/mineral.jpg");
+}
+
+.bgPrenatal {
+    background-image: url("images/prenatal.jpg");
+}
+
+.bgSupplements {
+    background-image: url("images/supplemental.jpg");
+}
+
+.bgHerbal {
+    background-image: url("images/herbal.jpg");
+}
+
+.bgWeight {
+    background-image: url("images/weight.jpg");
+}
 
 .title {
     color: black;
@@ -637,13 +666,14 @@ input:-webkit-autofill:active {
 
 .searchResultsBox {
     margin-top: 40px;
-    margin-bottom: 40px;
-}
+/*    margin-bottom: 40px;
+*/}
 
 .itemResults {
     margin: 0;
     padding: 0;
-}
+/*    height: 490px;
+*/}
 
 .imageProductBox {
     background-color: white;
@@ -651,6 +681,7 @@ input:-webkit-autofill:active {
     height: 310px;
     display: table;
     margin: 10px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 .imageProductBox > div {
@@ -663,6 +694,11 @@ input:-webkit-autofill:active {
     max-width: 80%;
     margin: 0;
     max-height: 230px;
+}
+
+.productTitleListBox {
+    text-align: left;
+    margin: 0 13px;
 }
 
 .quickview {
@@ -818,7 +854,7 @@ input:-webkit-autofill:active {
 .productQuickViewImage, .productDetailsImage {
     width: 468px;
     height: 100%;
-    margin: 30px;
+    margin: 25px;
 }
 
 /*.productDetailsImage {
@@ -911,7 +947,7 @@ input:-webkit-autofill:active {
 }
 
 .priceList {
-    margin: 3px 3px 20px 10px;
+    margin: 3px 3px 25px 10px;
     color: black;
 }
 
@@ -935,11 +971,11 @@ input:-webkit-autofill:active {
     color: #66757f;    
 }
 
-.save {
+/*.save {
     color: black;
-}
+}*/
 
-.saveList {
+.saveList, .save {
     color: #C90813;
 }
 
@@ -1057,14 +1093,13 @@ input:-webkit-autofill:active {
     font-weight: bold;
 }
 
-/*#reviewIframe {
-    width: 80%;
-    height: 100%;
-    margin: 30px 120px 50px 120px;
-    scroll-behavior: none;
-    border: none;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-}*/
+#reviewsQV {
+    height: 151px;
+    width: 427px;
+    margin-top: 25px;
+/*    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+*/    border: 1px solid #768995;
+}
 
 .showFavoritesWrap {
     position: absolute;

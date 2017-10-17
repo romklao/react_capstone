@@ -78,6 +78,7 @@ class ItemView extends React.Component {
                 delFavIcon += " hidden"
             }
 
+            let productTitle;
             let salePrice;
             let salePriceInt;
             let amountSaved;
@@ -116,6 +117,9 @@ class ItemView extends React.Component {
                     save = '';
                 }
             }
+            if (item.ItemAttributes[0].Title) {
+                productTitle = item.ItemAttributes[0].Title[0];
+            }
 
             return (
                 <div className="col-lg-4 col-sm-6 col-xs-12 itemResults wrapper">
@@ -127,7 +131,7 @@ class ItemView extends React.Component {
                             <p className="quickview" onClick={this.showProductQuickView}>QUICK VIEW</p>
                         </div>
                     </div>
-                    <div>
+                    <div className="productTitleListBox">
                         <span className="fullPriceCrossGrey"><span className="fullPriceList">{fullPrice}</span></span>
                         <span className="priceList">{salePrice}</span>
                         <span className="saveList">{save}</span>
