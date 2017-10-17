@@ -64,7 +64,7 @@ class ProductQuickViewModal extends React.Component {
     showProductDetails() {
         this.props.dispatch(actions.showProductDetails(this.props.productDetails));
         this.props.dispatch(actions.hide());
-        hashHistory.push('/product_details?ASIN=${this.props.productDetails.ASIN}');
+        hashHistory.push(`/product_details?ASIN=${this.props.productDetails.ASIN}`);
         window.scrollTo(0, 0)
     }
 
