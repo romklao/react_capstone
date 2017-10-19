@@ -192,6 +192,11 @@ export const gotoVitaminsSearch = () => ({
     type: GO_TO_VITAMINS_SEARCH,
 })
 
+export const GO_TO_BABY_SEARCH = 'GO_TO_BABY_SEARCH';
+export const gotoBabySearch = () => ({
+    type: GO_TO_BABY_SEARCH,
+})
+
 export const addFavorites = (product) => dispatch => {
     let url = '/favorites';
     let fetchData = {

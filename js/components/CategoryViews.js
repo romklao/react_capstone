@@ -8,35 +8,35 @@ var categoriesData = {
     'Beauty': {
         'Wash Face': {
             'bgClass': 'child bgCleanser',
-            'parentClass': 'parent parentCleanser'
+            'parentClass': 'parent parentCleanser parentBeauty'
         },
         'Moisturizer': {
             'bgClass': 'child bgMoist',
-            'parentClass': 'parent parentMoist'
+            'parentClass': 'parent parentMoist parentBeauty'
         },
         'Serum for Face': {
             'bgClass': 'child bgSerum',
-            'parentClass': 'parent parentSerum'
+            'parentClass': 'parent parentSerum parentBeauty'
         },
         'Oil Treatment': {
             'bgClass': 'child bgTreatment',
-            'parentClass': 'parent parentTreatment'
+            'parentClass': 'parent parentTreatment parentBeauty'
         },
         'Eyecream': {
             'bgClass': 'child bgEye',
-            'parentClass': 'parent parentEye'
+            'parentClass': 'parent parentEye parentBeauty'
         },
         'Sunscreen': {
             'bgClass': 'child bgSun',
-            'parentClass': 'parent parentSun'
+            'parentClass': 'parent parentSun parentBeauty'
         },
         'Toner for Face': {
             'bgClass': 'child bgToner',
-            'parentClass': 'parent parentToner'
+            'parentClass': 'parent parentToner parentBeauty'
         },
-        'Hand Repair and Feet Repair Cream': {
+        'Hand and Feet Cream': {
             'bgClass': 'child bgHand',
-            'parentClass': 'parent parentHand'
+            'parentClass': 'parent parentHand parentBeauty'
         }
     },
     'Electronics': {
@@ -121,6 +121,36 @@ var categoriesData = {
         'Weight Loss Products': {
             'bgClass': 'child bgWeight',
             'parentClass': 'parent parentVitamins'
+        },
+        "Children's Vitamins": {
+            'bgClass': 'child bgChildrenVitamins',
+            'parentClass': 'parent parentBaby'
+        },
+    },
+    'Baby': {
+        'Disposable Diaper': {
+            'bgClass': 'child bgDiaper',
+            'parentClass': 'parent parentBaby'
+        },
+        'Diaper Wipes and Refills': {
+            'bgClass': 'child bgDiaperWipes',
+            'parentClass': 'parent parentBaby'
+        },
+        'Diaper Pails and Refills': {
+            'bgClass': 'child bgDiaperPails',
+            'parentClass': 'parent parentBaby'
+        },
+        'Toilet Training Pants': {
+            'bgClass': 'child bgTrainingPants',
+            'parentClass': 'parent parentBaby'
+        },
+        'Baby Thermometers': {
+            'bgClass': 'child bgThermometers',
+            'parentClass': 'parent parentBaby'
+        },
+        "Colic and Gas Relief": {
+            'bgClass': 'child bgGasRelief',
+            'parentClass': 'parent parentBaby'
         },
     }
 }

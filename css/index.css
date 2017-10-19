@@ -163,7 +163,7 @@ input:-webkit-autofill:active {
 #loginLink, #signupLink, #logoutLink, #favLink, #home, #beauty, #electronics {
     font-size: 17px;
     color: #999999;
-    margin: 0 7px;
+    margin: 0 5px;
 }
 
 #loginLink:hover, #signupLink:hover, #logoutLink:hover, #favLink:hover, #home:hover, #beauty:hover, #electronics:hover {
@@ -361,77 +361,82 @@ input:-webkit-autofill:active {
     text-decoration: underline;
 }
 
+.parentBeauty {
+    width: 312px;
+    height: 400px;
+}
+
 .bgCleanser {
     background-image: url("images/cleanser1.jpg");
 }
 
-.parentCleanser {
+/*.parentCleanser {
     width: 310px;
     height: 517px;
-}
+}*/
 
 .bgMoist {
     background-image: url("images/moist1.jpg");
 }
 
-.parentMoist {
+/*.parentMoist {
     width: 618px;
     height: 270px;
-}
+}*/
 
 .bgSerum {
     background-image: url("images/serum1.jpg");
 }
 
-.parentSerum {
+/*.parentSerum {
     width: 314px;
     height: 469px;
-}
+}*/
 
 .bgTreatment {
     background-image: url("images/treatment1.jpg");
 }
 
-.parentTreatment {
+/*.parentTreatment {
     width: 314px;
     height: 369px;
-} 
+}*/ 
 
 .bgEye {
     background-image: url("images/eye1.jpg");
 }
 
-.parentEye {
+/*.parentEye {
     width: 314px;
     height: 319px;
-}
+}*/
 
 .bgSun {
     background-image: url("images/sun.jpg");
 }
 
-.parentSun {
+/*.parentSun {
     width: 314px;
     height: 469px;
 }
-
+*/
 .bgToner {
     background-image: url("images/toner2.jpg");
 }
 
-.parentToner {
+/*.parentToner {
     width: 314px;
     height: 319px;
-}
+}*/
 
 .bgHand {
-    background-image: url("images/hand.jpg");
+    background-image: url("images/handCream.jpg");
 }
 
-.parentHand {
+/*.parentHand {
     width: 650px;
     height: 270px;
-}
+}*/
 
 /*Electronics products background
 */
@@ -540,6 +545,42 @@ input:-webkit-autofill:active {
 .bgWeight {
     background-image: url("images/weight.jpg");
 }
+
+/*Baby Category*/
+
+.parentBaby {
+    width: 312px;
+    height: 400px;
+}
+
+.bgDiaper {
+    background-image: url("images/diaper.jpg");
+}
+
+.bgDiaperWipes {
+    background-image: url("images/wipes.jpg");
+}
+
+.bgDiaperPails {
+    background-image: url("images/pail.jpg");
+}
+
+.bgTrainingPants {
+    background-image: url("images/trainingpants.jpg");
+}
+
+.bgThermometers {
+    background-image: url("images/thermo.jpg");
+}
+
+.bgChildrenVitamins {
+    background-image: url("images/kidsvitamins.jpg");
+}
+
+.bgGasRelief {
+    background-image: url("images/gasRelief.jpg");
+}
+
 
 .title {
     color: black;
@@ -764,7 +805,7 @@ input:-webkit-autofill:active {
 }
 
 .rightArrow {
-    left: 97.2%;
+    left: 97.7%;
 }
 
 .leftArrowDetailsPage {
@@ -772,7 +813,7 @@ input:-webkit-autofill:active {
 }
 
 .rightArrowDetailsPage {
-    left: 97.2%;
+    left: 97.7%;
 }
 
 .heartFav {
@@ -837,7 +878,7 @@ input:-webkit-autofill:active {
 }
 
 .quickViewMiddle {
-    width: 80%;
+    width: 81%;
     height: 100%;
     background: #EDEFF0;
     overflow: auto;
@@ -862,7 +903,7 @@ input:-webkit-autofill:active {
 }
 
 .productQuickViewImage, .productDetailsImage {
-    width: 468px;
+    width: 466px;
     height: 100%;
     margin: 23px;
 }
@@ -899,7 +940,7 @@ input:-webkit-autofill:active {
 */}
 
 .productDetailsMiddle {
-    width: 80%;
+    width: 81%;
 }
 
 #quickViewImage {

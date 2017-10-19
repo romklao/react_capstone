@@ -15,6 +15,7 @@ class LoginSignupNav extends React.Component {
         this.gotoBeautySearch = this.gotoBeautySearch.bind(this);
         this.gotoElectronicsSearch = this.gotoElectronicsSearch.bind(this);
         this.gotoVitaminsSearch = this.gotoVitaminsSearch.bind(this);
+        this.gotoBabySearch = this.gotoBabySearch.bind(this);
     }
     showLogin(event) {
         event.preventDefault();
@@ -54,11 +55,21 @@ class LoginSignupNav extends React.Component {
         hashHistory.push('/category/HealthPersonalCare');
     }
 
+    gotoBabySearch(event) {
+        event.preventDefault();
+        this.props.dispatch(actions.gotoBabySearch());
+        hashHistory.push('/category/Baby');
+    }
+
     render() {
         if (this.props.authenticated) {
             return (
                 <div className="navbar-collapse collapse" id="bs-example-navbar-collapse-1" aria-expanded="false">
                     <ul className="nav navbar-nav navCategory">
+                        <li>
+                            <a href="#" className="hidden-xs" id="home" onClick={this.gotoBabySearch}>Baby</a>
+                            <a href="#" className="visible-xs" data-toggle="collapse" data-target=".navbar-collapse" onClick={this.gotoBabySearch}>Baby</a>
+                        </li>
                         <li>
                             <a href="#" className="hidden-xs" id="home" onClick={this.gotoVitaminsSearch}>Vitamins</a>
                             <a href="#" className="visible-xs" data-toggle="collapse" data-target=".navbar-collapse" onClick={this.gotoVitaminsSearch}>Vitamins</a>
@@ -93,6 +104,10 @@ class LoginSignupNav extends React.Component {
             return (
                 <div className="navbar-collapse collapse" id="bs-example-navbar-collapse-1" aria-expanded="false">
                     <ul className="nav navbar-nav navCategory">
+                        <li>
+                            <a href="#" className="hidden-xs" id="home" onClick={this.gotoBabySearch}>Baby</a>
+                            <a href="#" className="visible-xs" data-toggle="collapse" data-target=".navbar-collapse" onClick={this.gotoBabySearch}>Baby</a>
+                        </li>
                         <li>
                             <a href="#" className="hidden-xs" id="home" onClick={this.gotoVitaminsSearch}>Vitamins</a>
                             <a href="#" className="visible-xs" data-toggle="collapse" data-target=".navbar-collapse" onClick={this.gotoVitaminsSearch}>Vitamins</a>
