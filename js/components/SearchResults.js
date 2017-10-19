@@ -13,7 +13,6 @@ class SearchResults extends React.Component {
         this.props.dispatch(actions.searchSubmit(this.props.location.query.keywords, 
                                                  this.props.location.query.category,
                                                  this.props.location.query.page));
-        this.props.dispatch(actions.getFavorites());
     }
 
     render () {
@@ -31,6 +30,9 @@ class SearchResults extends React.Component {
                 let product = this.props.searchResults[i];
 
                 results.push(<ItemView product={product}
+                                        category={this.props.location.query.category}
+                                        keywords={this.props.location.query.keywords}
+                                        keywords={this.props.location.query.page}
                                         key={i} />);
             }
             console.log('results', results);
@@ -38,7 +40,7 @@ class SearchResults extends React.Component {
                 <div className="searchResultsContainer">
                     <div>
                         <h1>
-                            The Results of {this.props.searchInput}
+                            {this.props.searchInput}
                         </h1>
                         <div className="row searchResultsBox">
                             {results}

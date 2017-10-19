@@ -15,11 +15,13 @@ export function CategoryView(props) {
     let keywords = props.keywords;
 
     return (
-        <div className="row wrapper">
-            <div className={styleData.parentClass} onClick={getSearchProduct}>
-                <p className="keywords">{keywords}</p>
-                <div className={styleData.bgClass}>
-                    <p className="keywordsOnImage">{keywords}</p>
+        <div className="wrapper">
+            <div className="col-lg-4 col-sm-6 col-xs-12">
+                <div className={styleData.parentClass} onClick={getSearchProduct}>
+                    <p className="keywords">{keywords}</p>
+                    <div className={styleData.bgClass}>
+                        <p className="keywordsOnImage">{keywords}</p>
+                    </div>
                 </div>
             </div>
         </div>

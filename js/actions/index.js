@@ -94,6 +94,7 @@ export const loginForm = (userData) => dispatch => {
         localStorage.authHeaders = fetchData.headers.Authorization;
         localStorage.username = data.user.username;
         // hashHistory.push('/user');
+        // window.location = '/';
         return dispatch(loginSuccess(data.user.username));
     })
     .catch(error => {

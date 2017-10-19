@@ -30,6 +30,7 @@ class ItemView extends React.Component {
         this.props.dispatch(actions.deleteFavorites(
             {_id: favoriteId})
         )
+        hashHistory.push('/myfavorites');
     }
 
     hide(event) {

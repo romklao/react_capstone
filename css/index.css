@@ -163,7 +163,7 @@ input:-webkit-autofill:active {
 #loginLink, #signupLink, #logoutLink, #favLink, #home, #beauty, #electronics {
     font-size: 17px;
     color: #999999;
-    margin: 0 14px;
+    margin: 0 7px;
 }
 
 #loginLink:hover, #signupLink:hover, #logoutLink:hover, #favLink:hover, #home:hover, #beauty:hover, #electronics:hover {
@@ -206,7 +206,16 @@ input:-webkit-autofill:active {
 }
 
 .categoryPage > div {
-    margin-top: 70px;
+/*    margin-top: 20px;
+*/    margin-bottom: 70px;
+}
+
+.categoryPage > h1 {
+    margin-top: 40px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #415357 !important;
+    font-weight: bold;
 }
 
 
@@ -262,7 +271,7 @@ input:-webkit-autofill:active {
 
 /* Image zoom on hover + Overlay colour */
 .parent, .parentImage {
-    margin: 10px;
+    margin: 10px 10px 30px 10px;
     overflow: hidden;
     position: relative;
     float: left;
@@ -327,11 +336,12 @@ input:-webkit-autofill:active {
 .keywords {
     margin: 0;
     padding: 0;
-    padding: 8px 0;
-    font-size: 17px;
-/*    border: 1px solid lightgrey;
-*/    background: #405357;
-    color: white;
+    padding: 0 0 12px 0;
+    font-size: 19px;
+    /*border: 1px solid lightgrey;
+    background: #405357;*/
+    color: #405357;
+    font-weight: bold;
 }
 
 .keywordsOnImage {
@@ -356,7 +366,7 @@ input:-webkit-autofill:active {
 }
 
 .parentCleanser {
-    width: 314px;
+    width: 310px;
     height: 517px;
 }
 
@@ -426,8 +436,8 @@ input:-webkit-autofill:active {
 /*Electronics products background
 */
 .parentElectronics {
-    width: 314px;
-    height: 419px;
+    width: 312px;
+    height: 400px;
 }
 
 .bgHeadphone {
@@ -503,8 +513,8 @@ input:-webkit-autofill:active {
 /*Home & Kitchen*/
 
 .parentVitamins {
-    width: 314px;
-    height: 419px;
+    width: 312px;
+    height: 400px;
 }
 
 .bgVitamins {
@@ -750,7 +760,7 @@ input:-webkit-autofill:active {
 }
 
 .leftArrow {
-    left: 2.6%;
+    left: 2.8%;
 }
 
 .rightArrow {
@@ -758,7 +768,7 @@ input:-webkit-autofill:active {
 }
 
 .leftArrowDetailsPage {
-    left: 2.6%;
+    left: 2.8%;
 }
 
 .rightArrowDetailsPage {
@@ -854,7 +864,7 @@ input:-webkit-autofill:active {
 .productQuickViewImage, .productDetailsImage {
     width: 468px;
     height: 100%;
-    margin: 25px;
+    margin: 23px;
 }
 
 /*.productDetailsImage {

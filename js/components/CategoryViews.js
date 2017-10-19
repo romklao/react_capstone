@@ -76,7 +76,7 @@ var categoriesData = {
             'bgClass': 'child bgKindle',
             'parentClass': 'parent parentKindle parentElectronics'
         },
-        'Unlocked Phone': {
+        'Unlocked Cell Phone': {
             'bgClass': 'child bgiPhone',
             'parentClass': 'parent parentiPhone parentElectronics'
         },
@@ -106,7 +106,7 @@ var categoriesData = {
             'bgClass': 'child bgMineral',
             'parentClass': 'parent parentVitamins'
         },
-        'Multivitamins & Prenatal Vitamins': {
+        'Prenatal Vitamins': {
             'bgClass': 'child bgPrenatal',
             'parentClass': 'parent parentVitamins'
         },
@@ -129,6 +129,15 @@ export function CategoryViews(props) {
     console.log('category', props.params.category)
     let results = [];
     let category = props.params.category;
+    let categoryHealth;
+    let categoryGeneral
+
+    if (category === "HealthPersonalCare") {
+        categoryHealth = "Vitamins & Dietary Supplements";
+    } else {
+        categoryGeneral = category;
+    }
+
     let categoryData = categoriesData[category];
 
     if(categoryData) {
@@ -143,7 +152,8 @@ export function CategoryViews(props) {
         }
         return (
             <div className="categoryPage">
-                <div>
+                <h1 className="categoryGeneral">{categoryGeneral} {categoryHealth}</h1>
+                <div className="row">
                     {results}
                 </div>
             </div>
