@@ -14,7 +14,6 @@ function LandingPageContainer(props) {
         <div className="indexPage">
             <div>
                 <LandingPage />
-                <WhatWeDo />
             </div>
         </div>
     );
