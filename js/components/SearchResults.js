@@ -6,6 +6,7 @@ import ItemView from './ItemView';
 import Pagination from './Pagination';
 import {Router, Route, IndexRoute, IndexRedirect, hashHistory, browserHistory} from 'react-router';
 import LandingPageContainer from './LandingPageContainer';
+import Footer from './Footer';
 
 class SearchResults extends React.Component {
     constructor(props) {
@@ -38,7 +39,7 @@ class SearchResults extends React.Component {
             console.log('results', results);
             return (
                 <div className="searchResultsContainer">
-                    <div>
+                    <div className="searchResultsWrap">
                         <h1>
                             {this.props.searchInput}
                         </h1>
@@ -50,6 +51,7 @@ class SearchResults extends React.Component {
                                         keywords={this.props.location.query.keywords} />
                         </div>
                     </div>
+                    <Footer/>
                 </div>
             );
         } else {

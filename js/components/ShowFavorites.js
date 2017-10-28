@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import * as actions from '../actions/index';
 import ItemView from './ItemView';
 import SearchForm from './SearchForm';
+import Footer from './Footer';
 
 class ShowFavorites extends React.Component {
     constructor(props) {
@@ -27,7 +28,7 @@ class ShowFavorites extends React.Component {
             }
             return (
                 <div className="searchResultsContainer">
-                    <div>
+                    <div className="searchResultsWrap">
                         <h1>
                             Your Favorite Items
                         </h1>
@@ -35,6 +36,7 @@ class ShowFavorites extends React.Component {
                             {favoritesResults}
                         </div>
                     </div>
+                    <Footer/>
                 </div>
             );
         } else {

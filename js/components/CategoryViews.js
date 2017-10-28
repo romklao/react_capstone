@@ -2,7 +2,9 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import * as actions from '../actions/index';
-import CategoryView from './CategoryView'
+import CategoryView from './CategoryView';
+import Footer from './Footer';
+
 
 var categoriesData = {
     'Beauty': {
@@ -183,9 +185,10 @@ export function CategoryViews(props) {
         return (
             <div className="categoryPage">
                 <h1 className="categoryGeneral">{categoryGeneral} {categoryHealth}</h1>
-                <div className="row">
+                <div className="row categoryWrap">
                     {results}
                 </div>
+                <Footer/>
             </div>
         )
     } else {

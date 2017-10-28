@@ -7,14 +7,15 @@ import WhatWeDo from './WhatWeDo';
 import CategoryViews from './CategoryViews';
 import UserLogin from './User';
 import SearchForm from './SearchForm';
-
+import Footer from './Footer';
 
 function LandingPageContainer(props) {
     return (
         <div className="indexPage">
-            <div>
+            <div className="indexPageWrap">
                 <LandingPage />
             </div>
+            <Footer/>
         </div>
     );
 }
