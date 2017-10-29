@@ -194,6 +194,7 @@ app.get('/amazon/search', function(req, res){
     itemPage: page,
     // TotalPages: "All",
     }, function(err, data){
+      console.log('searcherror', err, data);
       res.json(data);
     }
   );

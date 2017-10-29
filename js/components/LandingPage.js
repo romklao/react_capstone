@@ -7,7 +7,7 @@ import Masonry from 'react-masonry-component';
 var masonryOptions = {
     itemSelector: '.box',
     transitionDuration: 0,
-    columnWidth: 314,
+    columnWidth: 317,
     fitWidth: true,
     gutter: 20
 };
@@ -31,16 +31,31 @@ function LandingPage(props) {
                 disableImagesLoaded={false}
                 updateOnEachImageLoad={false}
             >
-                <div className="box kindle"></div>
-                <div className="box echo"></div>
+                <div className="box kindle">
+                    <a href="https://www.amazon.com/Amazon-Kindle-Paperwhite-6-Inch-4GB-eReader/dp/B00OQVZDJM/
+                    ref=zg_bs_electronics_8?_encoding=UTF8&psc=1&refRID=2KYTJYRFTFTVV2AY0T35" target="_blank"></a>
+                </div>
+                <div className="box echo">
+                    <a href="https://www.amazon.com/Amazon-Echo-Dot-Portable-Bluetooth-Speaker-with-Alexa-White/dp/B015TJD0Y4/
+                    ref=zg_bs_electronics_7?_encoding=UTF8&psc=1&refRID=2KYTJYRFTFTVV2AY0T35" target="_blank"></a>
+                </div>
                 <div className="box category">
                     <div>
                         <h1>Electronics</h1>
                     </div>
                 </div>
-                <div className="box speaker"></div>
-                <div className="box tv"></div>
-                <div className="box fireTV"></div>
+                <div className="box speaker">
+                    <a href="https://www.amazon.com/DOSS-Wireless-Bluetooth-Portable-Speaker/dp/B01CQOV3YO/
+                    ref=zg_bs_electronics_28?_encoding=UTF8&psc=1&refRID=XDKGWRMP7YKZNW5HAANZ" target="_blank"></a>
+                </div>
+                <div className="box tv">
+                    <a href="https://www.amazon.com/HP-Pavilion-22cwa-21-5-inch-Backlit/dp/B015WCV70W/
+                    ref=zg_bs_electronics_21?_encoding=UTF8&psc=1&refRID=71HK07CZ0HB1PK7GPX6R" target="_blank"></a>
+                </div>
+                <div className="box fireTV">
+                    <a href="https://www.amazon.com/Amazon-Fire-TV-Stick-With-Alexa-Voice-Remote-Streaming-Media-Player/dp/B00ZV9RDKK/
+                    ref=zg_bs_electronics_1?_encoding=UTF8&psc=1&refRID=M39Q395AYPY6BSRMQMCZ" target="_blank"></a>
+                </div>
                 <div className="box category">
                     <div>
                         <h1>Beauty</h1>

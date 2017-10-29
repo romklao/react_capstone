@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import * as actions from '../actions/index';
+import {Router, Route, IndexRoute, IndexRedirect, hashHistory, browserHistory} from 'react-router';
 
 export class LoginModal extends React.Component {
     constructor(props) {
@@ -23,6 +24,7 @@ export class LoginModal extends React.Component {
     onSubmit(event) {
         event.preventDefault();
         this.props.dispatch(actions.loginForm(this.state));
+        // hashHistory.push('/');
     }
 
     hide(event) {

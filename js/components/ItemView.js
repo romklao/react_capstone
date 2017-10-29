@@ -52,12 +52,14 @@ class ItemView extends React.Component {
         if(this.props.product) {
             let item = this.props.product;
             let imageUrl;
-            var imageSetLen = item.ImageSets[0].ImageSet.length;
 
             if(!item.LargeImage && item.ImageSets) {
+                var imageSetLen = item.ImageSets[0].ImageSet.length;
                 imageUrl = item.ImageSets[0].ImageSet[imageSetLen-1].LargeImage[0].URL[0];
             } else if(item.LargeImage) {
                 imageUrl = item.LargeImage[0].URL[0];
+            } else {
+                imageUrl = 'css/images/amazon.png';
             }
 
             let favoriteId = '';
@@ -88,38 +90,50 @@ class ItemView extends React.Component {
             let fullPrice;
             let save;
 
-            if (item.Offers[0].Offer[0].OfferListing) {
-                if (item.Offers[0].Offer[0].OfferListing[0].Price &&
-                    item.Offers[0].Offer[0].OfferListing[0].SalePrice &&
-                    item.Offers[0].Offer[0].OfferListing[0].AmountSaved &&
-                    item.Offers[0].Offer[0].OfferListing[0].PercentageSaved) {
+            console.assert(item.Offers.length > 0, item.Offers)
+            console.assert(item.Offers[0].Offer.length > 0, item.Offers[0].Offer)
+            console.assert(item.Offers[0].Offer[0].OfferListing.length > 0, item.Offers[0].Offer[0].OfferListing)
 
-                    salePrice = item.Offers[0].Offer[0].OfferListing[0].SalePrice[0].FormattedPrice[0];
-                    amountSaved = item.Offers[0].Offer[0].OfferListing[0].AmountSaved[0].FormattedPrice[0];
-                    percentageSaved = item.Offers[0].Offer[0].OfferListing[0].PercentageSaved[0];
+            let offer = item.Offers[0].Offer[0].OfferListing[0];
+            if (offer.Price && 
+                offer.SalePrice &&
+                offer.AmountSaved &&
+                offer.PercentageSaved) {
 
-                    fullPrice = item.Offers[0].Offer[0].OfferListing[0].Price[0].FormattedPrice[0];
-                    save = '(' + percentageSaved + '% off)';
-                } else if (item.Offers[0].Offer[0].OfferListing[0].Price[0] &&
-                    item.Offers[0].Offer[0].OfferListing[0].AmountSaved &&
-                    item.Offers[0].Offer[0].OfferListing[0].PercentageSaved) {
+                salePrice = offer.SalePrice[0].FormattedPrice[0];
+                amountSaved = offer.AmountSaved[0].FormattedPrice[0];
+                percentageSaved = offer.PercentageSaved[0];
 
-                    salePrice = item.Offers[0].Offer[0].OfferListing[0].Price[0].FormattedPrice[0];
-                    salePriceInt = parseFloat(salePrice.replace(/\$/g, ''));
-                    amountSaved = item.Offers[0].Offer[0].OfferListing[0].AmountSaved[0].FormattedPrice[0];
-                    amountSavedInt = parseFloat(amountSaved.replace(/\$/g, ''));
-                    percentageSaved = item.Offers[0].Offer[0].OfferListing[0].PercentageSaved[0];
+                fullPrice = offer.Price[0].FormattedPrice[0];
+                save = '(' + percentageSaved + '% off)';
+            } else if (offer.Price[0] &&
+                offer.AmountSaved &&
+                offer.PercentageSaved) {
 
-                    fullPrice = '$'+ (salePriceInt + amountSavedInt).toFixed(2);
-                    save = '(' + percentageSaved + '% off)';
-                } else {
-                    salePrice = item.Offers[0].Offer[0].OfferListing[0].Price[0].FormattedPrice[0];
-                    fullPrice = '';
-                    save = '';
-                }
+                salePrice = offer.Price[0].FormattedPrice[0];
+                salePriceInt = parseFloat(salePrice.replace(/\$/g, ''));
+                amountSaved = offer.AmountSaved[0].FormattedPrice[0];
+                amountSavedInt = parseFloat(amountSaved.replace(/\$/g, ''));
+                percentageSaved = offer.PercentageSaved[0];
+
+                fullPrice = '$'+ (salePriceInt + amountSavedInt).toFixed(2);
+                save = '(' + percentageSaved + '% off)';
+            } else if (offer.Price){
+                salePrice = offer.Price[0].FormattedPrice[0];
+                fullPrice = '';
+                save = '';
+            } else {
+                salePrice = '';
+                fullPrice = '';
+                save = '';
             }
-            if (item.ItemAttributes[0].Title) {
-                productTitle = item.ItemAttributes[0].Title[0];
+
+            if (item.ItemAttributes) {
+                if(item.ItemAttributes[0].Title) {
+                    productTitle = item.ItemAttributes[0].Title[0];
+                } else {
+                    productTitle = '';
+                }
             }
 
             return (

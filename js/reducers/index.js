@@ -146,7 +146,7 @@ export const decorHomeReducer = function(state, action) {
                 isLoading: false
             }
         );
-        console.warn(action.error);
+        console.warn('error', action.error);
         return state;
 
     } else if (action.type === actions.SHOW_PRODUCT_DETAILS) {
@@ -186,7 +186,7 @@ export const decorHomeReducer = function(state, action) {
         );
         return state;
 
-    } else if (action.type === actions.GO_TO_HOME_SEARCH) {
+    } else if (action.type === actions.GO_TO_VITAMINS_SEARCH) {
         state = Object.assign({}, 
             state, {
                 errorSearchMessage: null,

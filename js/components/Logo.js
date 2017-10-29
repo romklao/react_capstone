@@ -19,7 +19,7 @@ function Logo(props) {
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
             </button>
-            <a className="navbar-brand" href="#" onClick={returnHome}>Amazonbestsellers</a>
+            <a className="navbar-brand" href="#" onClick={returnHome}>AmazonBest</a>
         </div>
     );
 }

@@ -146,6 +146,7 @@ export const searchSubmit = (search_text, category, page) => dispatch => {
         return dispatch(makeSearchSuccessMsg(data, search_text, category, page));
     })
     .catch(error => {
+        console.error(error.stack);
         return dispatch(searchError(error.message));
     })
 }

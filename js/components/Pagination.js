@@ -22,7 +22,7 @@ class Pagination extends React.Component {
 
     render() {
         return (
-            <div className="col-lg-12 col-sm-12 btn-toolbar" id="pagination">
+            <div className="btn-toolbar" id="pagination">
                 <div className="btn-group">
                     <button type="button" value="1" className="btn btn-default" onClick={() => this.onClick(1)}>1</button>
                     <button type="button" value="2" className="btn btn-default" onClick={() => this.onClick(2)}>2</button>

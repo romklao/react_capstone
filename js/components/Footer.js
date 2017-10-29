@@ -6,7 +6,7 @@ import * as actions from '../actions/index';
 function Footer(props) {
     return (
         <div className="footer">
-            <h1>Amazonbestsellers</h1>
+            <h1>AmazonBest</h1>
             <div>
                 <a href="mailto:rchai2020@gmail.com" target="_top"><img src="css/images/mail.png" className="mail"/></a>
             </div>
