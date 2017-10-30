@@ -101,16 +101,6 @@ class ProductDetails extends React.Component {
                     }
                 }
             }
-            
-            if (item.ItemAttributes["0"].Feature) {
-                var features = [];
-                var featuresLen = item.ItemAttributes["0"].Feature.length;
-
-                for (var i=0; i<featuresLen; i++) {
-                    var featuresI = item.ItemAttributes["0"].Feature[i];
-                    features.push(<li key={i}>{featuresI}</li>);
-                }
-            }
 
             var addFavIcon = "glyphicon glyphicon-heart heartFav favHeartDetailsPage";
             var delFavIcon = "glyphicon glyphicon-heart heartFav changeToRed favHeartDetailsPage";
@@ -168,6 +158,7 @@ class ProductDetails extends React.Component {
                     save = '';
                 }
             }
+
             if (item.ItemAttributes[0].Title) {
                 productTitle = item.ItemAttributes[0].Title[0];
             }
@@ -178,6 +169,17 @@ class ProductDetails extends React.Component {
             var amazonLogoUrl = "css/images/amazon.png";
             var productFeature = item.ItemAttributes[0].Feature;
             var reviews = item.CustomerReviews[0].IFrameURL[0];
+
+            if (item.ItemAttributes["0"].Feature) {
+                var features = [];
+                var featuresLen = item.ItemAttributes["0"].Feature.length;
+
+                for (var i=0; i<featuresLen; i++) {
+                    var featuresI = item.ItemAttributes["0"].Feature[i];
+                    features.push(<li key={i}>{featuresI}</li>);
+                }
+            } 
+            
 
             return (
                 <div className="productDetailsOuter">

@@ -15,7 +15,7 @@ export function CategoryView(props) {
     let keywords = props.keywords;
 
     return (
-        <div className="col-lg-4 col-sm-6 col-xs-12">
+        <div className="col-lg-4 col-md-6 col-xs-12">
             <p className="keywords">{keywords}</p>
             <div className="wrapper">
                 <div className={styleData.parentClass} onClick={getSearchProduct}>
