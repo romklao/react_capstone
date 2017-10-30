@@ -257,6 +257,7 @@ input:-webkit-autofill:active {
 .intro {
     height: 387px;
     background-color: #81A6AC; /* #B3E5FC #D1CABB*/
+    padding: 50px;
 }
 
 .intro > h1 {
@@ -267,18 +268,16 @@ input:-webkit-autofill:active {
     font-weight: bold;
     margin: 0;
     padding: 0;
-    margin: 50px 40px;
+    margin-bottom: 60px;
 }
 
 .intro > p {
     display: inline;
-    width: 80%;
-    margin-top: 40px;
+    width: 82%;
     font-size: 21px;
     border-bottom: 3px solid #617D81;
     color: white;
     padding: 5px;
-    margin: 0 40px;
 }
 
 .introImg {
@@ -1414,6 +1413,15 @@ input:-webkit-autofill:active {
 */
 
 @media screen and (max-width: 500px) {
+    .intro {
+        padding: 30px;
+    }
+    .intro h1 {
+        margin-bottom: 40px;
+    }
+    .indexPageWrap {
+        width: 100%;
+    }
     .quickViewMiddle {
         width: 90%;
     }
