@@ -178,13 +178,13 @@ input:-webkit-autofill:active {
     border-color: #023f7c; /*#389738*/
 }
 
-#loginLink, #signupLink, #logoutLink, #favLink, #home, #beauty, #electronics {
+#loginLink, #signupLink, #logoutLink, #favLink, #baby, #vitamin, #beauty, #electronics {
     font-size: 17px;
     color: #999999;
 /*    margin: 0 5px;
 */}
 
-#loginLink:hover, #signupLink:hover, #logoutLink:hover, #favLink:hover, #home:hover, #beauty:hover, #electronics:hover {
+#loginLink:hover, #signupLink:hover, #logoutLink:hover, #favLink:hover, #baby:hover, #vitamin:hover, #beauty:hover, #electronics:hover {
     color: #415357; 
 }
 
@@ -1357,7 +1357,7 @@ input:-webkit-autofill:active {
     }
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 992px) {
     .navbar-collapse.collapse {
         display: none !important;
     }
@@ -1387,6 +1387,9 @@ input:-webkit-autofill:active {
     }
     .navbar-nav>li>a {
         color: white !important;
+    }
+    .navbar-nav>li>a:hover {
+        color: black !important;
     }
     .nav>li {
         text-align: left;

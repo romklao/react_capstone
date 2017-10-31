@@ -67,34 +67,34 @@ class LoginSignupNav extends React.Component {
                 <div className="navbar-collapse collapse" id="bs-example-navbar-collapse-1" aria-expanded="false">
                     <ul className="nav navbar-nav navCategory">
                         <li>
-                            <a href="#" className="hidden-xs" id="home" onClick={this.gotoBabySearch}>Baby</a>
-                            <a href="#" className="visible-xs" data-toggle="collapse" data-target=".navbar-collapse" onClick={this.gotoBabySearch}>Baby</a>
+                            <a href="#" className="hidden-sm" id="baby" onClick={this.gotoBabySearch}>Baby</a>
+                            <a href="#" className="visible-sm" data-toggle="collapse" data-target=".navbar-collapse" onClick={this.gotoBabySearch}>Baby</a>
                         </li>
                         <li>
-                            <a href="#" className="hidden-xs" id="home" onClick={this.gotoVitaminsSearch}>Vitamins</a>
-                            <a href="#" className="visible-xs" data-toggle="collapse" data-target=".navbar-collapse" onClick={this.gotoVitaminsSearch}>Vitamins</a>
+                            <a href="#" className="hidden-sm" id="vitamin" onClick={this.gotoVitaminsSearch}>Vitamins</a>
+                            <a href="#" className="visible-sm" data-toggle="collapse" data-target=".navbar-collapse" onClick={this.gotoVitaminsSearch}>Vitamins</a>
                         </li>
                         <li>
-                            <a href="#" className="hidden-xs" id="beauty" onClick={this.gotoBeautySearch}>Beauty</a>
-                            <a href="#" className="visible-xs" data-toggle="collapse" data-target=".navbar-collapse" onClick={this.gotoBeautySearch}>Beauty</a>
+                            <a href="#" className="hidden-sm" id="beauty" onClick={this.gotoBeautySearch}>Beauty</a>
+                            <a href="#" className="visible-sm" data-toggle="collapse" data-target=".navbar-collapse" onClick={this.gotoBeautySearch}>Beauty</a>
                         </li>
                         <li>
-                            <a href="#" className="hidden-xs" id="electronics" onClick={this.gotoElectronicsSearch}>Electronics</a>
-                            <a href="#" className="visible-xs" data-toggle="collapse" data-target=".navbar-collapse" onClick={this.gotoElectronicsSearch}>Electronics</a>
+                            <a href="#" className="hidden-sm" id="electronics" onClick={this.gotoElectronicsSearch}>Electronics</a>
+                            <a href="#" className="visible-sm" data-toggle="collapse" data-target=".navbar-collapse" onClick={this.gotoElectronicsSearch}>Electronics</a>
                         </li>
                     </ul>
                     <ul className="nav navbar-nav navbar-right">
                         <li>
-                            <a href="#" className="hidden-xs" id="favLink" onClick={this.getFavoriteItems}>Favorites</a>
-                            <a href="#" className="visible-xs" data-toggle="collapse" data-target=".navbar-collapse" onClick={this.getFavoriteItems}>Favorites</a>
+                            <a href="#" className="hidden-sm" id="favLink" onClick={this.getFavoriteItems}>Favorites</a>
+                            <a href="#" className="visible-sm" data-toggle="collapse" data-target=".navbar-collapse" onClick={this.getFavoriteItems}>Favorites</a>
                         </li>
                         <li>
-                            <a href="#" className="hidden-xs" id="logoutLink" onClick={this.logoutUser}>Log Out</a>
-                            <a href="#" className="visible-xs" data-toggle="collapse" data-target=".navbar-collapse" onClick={this.logoutUser}>Log Out</a>
+                            <a href="#" className="hidden-sm" id="logoutLink" onClick={this.logoutUser}>Log Out</a>
+                            <a href="#" className="visible-sm" data-toggle="collapse" data-target=".navbar-collapse" onClick={this.logoutUser}>Log Out</a>
                         </li>
                         <li>
-                            <a href="link.html" className="hidden-xs not-active" id="electronics">Hi! {this.props.user}</a>
-                            <a href="link.html" className="visible-xs not-active" data-toggle="collapse" data-target=".navbar-collapse">Hi! {this.props.user}</a>
+                            <a href="link.html" className="hidden-sm not-active" id="electronics">Hi! {this.props.user}</a>
+                            <a href="link.html" className="visible-sm not-active" data-toggle="collapse" data-target=".navbar-collapse">Hi! {this.props.user}</a>
                         </li>
                     </ul>
                 </div>
@@ -105,30 +105,30 @@ class LoginSignupNav extends React.Component {
                 <div className="navbar-collapse collapse" id="bs-example-navbar-collapse-1" aria-expanded="false">
                     <ul className="nav navbar-nav navCategory">
                         <li>
-                            <a href="#" className="hidden-xs" id="home" onClick={this.gotoBabySearch}>Baby</a>
-                            <a href="#" className="visible-xs" data-toggle="collapse" data-target=".navbar-collapse" onClick={this.gotoBabySearch}>Baby</a>
+                            <a href="#" className="hidden-sm" id="baby" onClick={this.gotoBabySearch}>Baby</a>
+                            <a href="#" className="visible-sm" data-toggle="collapse" data-target=".navbar-collapse" onClick={this.gotoBabySearch}>Baby</a>
                         </li>
                         <li>
-                            <a href="#" className="hidden-xs" id="home" onClick={this.gotoVitaminsSearch}>Vitamins</a>
-                            <a href="#" className="visible-xs" data-toggle="collapse" data-target=".navbar-collapse" onClick={this.gotoVitaminsSearch}>Vitamins</a>
+                            <a href="#" className="hidden-sm" id="vitamin" onClick={this.gotoVitaminsSearch}>Vitamins</a>
+                            <a href="#" className="visible-sm" data-toggle="collapse" data-target=".navbar-collapse" onClick={this.gotoVitaminsSearch}>Vitamins</a>
                         </li>
                         <li>
-                            <a href="#" className="hidden-xs" id="beauty" onClick={this.gotoBeautySearch}>Beauty</a>
-                            <a href="#" className="visible-xs" data-toggle="collapse" data-target=".navbar-collapse" onClick={this.gotoBeautySearch}>Beauty</a>
+                            <a href="#" className="hidden-sm" id="beauty" onClick={this.gotoBeautySearch}>Beauty</a>
+                            <a href="#" className="visible-sm" data-toggle="collapse" data-target=".navbar-collapse" onClick={this.gotoBeautySearch}>Beauty</a>
                         </li>
                         <li>
-                            <a href="#" className="hidden-xs" id="electronics" onClick={this.gotoElectronicsSearch}>Electronics</a>
-                            <a href="#" className="visible-xs" data-toggle="collapse" data-target=".navbar-collapse" onClick={this.gotoElectronicsSearch}>Electronics</a>
+                            <a href="#" className="hidden-sm" id="electronics" onClick={this.gotoElectronicsSearch}>Electronics</a>
+                            <a href="#" className="visible-sm" data-toggle="collapse" data-target=".navbar-collapse" onClick={this.gotoElectronicsSearch}>Electronics</a>
                         </li>
                     </ul>
                     <ul className="nav navbar-nav navbar-right">
                         <li>
-                            <a href="/" onClick={this.showLogin} className="hidden-xs" id="loginLink">Log In</a>
-                            <a href="/" onClick={this.showLogin} className="visible-xs" data-toggle="collapse" data-target=".navbar-collapse">Log In</a>
+                            <a href="/" onClick={this.showLogin} className="hidden-sm" id="loginLink">Log In</a>
+                            <a href="/" onClick={this.showLogin} className="visible-sm" data-toggle="collapse" data-target=".navbar-collapse">Log In</a>
                         </li>
                         <li>
-                            <a href="/" onClick={this.showSignup} className="hidden-xs" id="signupLink">Sign Up</a>
-                            <a href="/" onClick={this.showSignup} className="visible-xs" data-toggle="collapse" data-target=".navbar-collapse">Sign Up</a>
+                            <a href="/" onClick={this.showSignup} className="hidden-sm" id="signupLink">Sign Up</a>
+                            <a href="/" onClick={this.showSignup} className="visible-sm" data-toggle="collapse" data-target=".navbar-collapse">Sign Up</a>
                         </li>
                     </ul>
                 </div>
