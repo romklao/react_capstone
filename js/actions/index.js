@@ -126,6 +126,8 @@ export const logoutUser = () => ({
 })
 
 export const searchSubmit = (search_text, category, page) => dispatch => {
+    dispatch(makeSearchSubmitMsg(search_text));
+
     let url = `/amazon/search?search_text=${search_text}&category=${category}&page=${page}`;
     let fetchData = {
             method: 'GET',

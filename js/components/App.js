@@ -5,7 +5,7 @@ import * as actions from '../actions/index';
 import Nav from './Nav';
 import LoginModal from './LoginModal';
 import SignupModal from './SignupModal';
-import ProductQuickViewModal from './ProductQuickViewModal';
+import ProductQuickView from './ProductQuickView';
 
 class App extends React.Component {
     constructor(props) {
@@ -19,10 +19,10 @@ class App extends React.Component {
     }
 
     render() {
-        let { loading } = this.state
+        let { loading } = this.state;
         let loginModal;
         let signupModal;
-        let productQuickViewModal;
+        let productQuickView;
 
         if(loading) {
             return null;
@@ -34,7 +34,7 @@ class App extends React.Component {
             signupModal = <SignupModal />
         }
         if(this.props.showQuickView) {
-            productQuickViewModal = <ProductQuickViewModal />
+            productQuickView = <ProductQuickView />
         }
         return (
             <div className="decorHome">
@@ -43,7 +43,7 @@ class App extends React.Component {
                 {signupModal}
                 <div>
                     {this.props.children}
-                    {productQuickViewModal}
+                    {productQuickView}
                 </div>
             </div>
         );

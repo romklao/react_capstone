@@ -2,7 +2,7 @@ import * as actions from '../actions/index';
 import { handle } from 'redux-pack';
 
 const initialState = {
-    isLoading: true,
+    isLoading: false,
     showLogin: false,
     showSignup: false,
     showSearchForm: false,
@@ -94,7 +94,6 @@ export const decorHomeReducer = function(state, action) {
                 landingPageHidden:true,
                 showLogin: false,
                 showSignup: false,
-                isLoading: true
             }
         );
         return state;

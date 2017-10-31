@@ -3,9 +3,9 @@ import {connect} from 'react-redux';
 
 import * as actions from '../actions/index';
 import Iframe from 'react-iframe';
-import ProductQuickView from './ProductQuickView';
+import ProductView from './ProductView';
 
-class ProductDetails1 extends React.Component {
+class ProductPageView extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -44,7 +44,7 @@ class ProductDetails1 extends React.Component {
                 <div className="productDetailsOuter">
                     <div className="productDetailsMiddle">
                         <div className="productDetailsInner">
-                            <ProductQuickView extraDetails={extraDetails} 
+                            <ProductView extraDetails={extraDetails} 
                                               customerReviews={customerReviews} />
                         </div>
                     </div>
@@ -69,4 +69,4 @@ const mapStateToProps = (state, props) => ({
     errorSearchMessage: state.errorSearchMessage,
 });
 
-export default connect(mapStateToProps)(ProductDetails1);
+export default connect(mapStateToProps)(ProductPageView);

@@ -10,7 +10,7 @@ import UserLogin from './User';
 import SearchResults from './SearchResults';
 import ShowFavorites from './ShowFavorites';
 import CategoryViews from './CategoryViews';
-import ProductDetails1 from './ProductDetails1';
+import ProductPageView from './ProductPageView';
 
 
 export function Routes(props) {
@@ -22,7 +22,7 @@ export function Routes(props) {
                 <Route path="user" component={UserLogin} />
                 <Route path="myfavorites" component={ShowFavorites} />
                 <Route path="search" component={SearchResults}/>
-                <Route path="product_details" component={ProductDetails1} />
+                <Route path="product_details" component={ProductPageView} />
                 <Route path="category/:category" component={CategoryViews} />
             </Route>
         </Router>
