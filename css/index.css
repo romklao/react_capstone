@@ -142,28 +142,10 @@ input:-webkit-autofill:active {
     border-bottom: 3px solid rgba(64, 83, 87, 1);
 }
 
-/*.username {
-    top: 50%;
-    position: absolute;
-    font-size: 18px;
-    margin: 0 42px;
-    color: #999999;
-    transform: translateX(-50%) translateY(-50%);
-}*/
-
 .navCategory {
     margin: 0 10px;
 }
 
-/*.navbar .navbar-nav {
-    display: inline-block;
-    float: none;
-}
-
-.navbar .navbar-collapse {
-    text-align: center;
-}
-*/
 .loginBtn, .signupBtn {
     margin-right: 3px;
     margin-left: 3px;
@@ -1009,10 +991,6 @@ input:-webkit-autofill:active {
     padding-bottom: 20px;
 }
 
-/*.productQuickView {
-    padding: 0 20px;
-}*/
-
 .closeQuickView {
     font-size: 30px;
     border: none;
@@ -1107,11 +1085,6 @@ input:-webkit-autofill:active {
     color: #66757f;
 }
 
-/*.productTitleBox {
-    width: 100%;
-    height: 100%;
-}
-*/
 .price {
     margin: 15px 0;
     display: block;
@@ -1217,25 +1190,12 @@ input:-webkit-autofill:active {
     background: #2c3d3f;
 }
 
-/*.addFavBtnDetailsPage {
-    margin: 20px 0 20px 0;
-}*/
-
-/*.favHeartDetailsPage {
-    left: 92%;
-    top: 2.4%;
-}*/
-
 .amazonLogo {
     width: 130px;
     margin: 15px 0;    
 }
 
 .productFeature {
-    /*position: absolute;
-    top: 50%;
-    left: 51.6%;
-    width: 35.3%;*/
     margin: 0;
     margin: 37px 0;
     padding: 27px 0;
@@ -1370,9 +1330,6 @@ input:-webkit-autofill:active {
     .navbar-header {
         float:none;
     }
-    /*.navbar-default .navbar-nav>li>a {
-        padding: 20px;
-    }*/
     .navCategory {
         margin: 0;
     }
@@ -1401,26 +1358,6 @@ input:-webkit-autofill:active {
 
 }
 
-
-
-/*@media screen and (max-width: 765px) {
-    .nav>li {
-        text-align: left;
-        background: #637F83;
-        margin: 2px;
-        font-size: 17px;
-        color: white;
-    }
-    .navbar-default .navbar-nav>li>a {
-        color: white;
-    }
-    .navCategory {
-        margin: 0;
-    }
-    .navbar-right {
-        margin: 0;
-    }
-}*/
 
 
 

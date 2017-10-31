@@ -28,8 +28,6 @@ class ProductQuickView extends React.Component {
     }
 
     render () {
-        
-
         if(this.props.productDetails) {
             var fullDetailsLink = <span className="viewFullDetails" onClick={this.showProductDetails}>View Full Details</span>
 

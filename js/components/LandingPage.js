@@ -9,7 +9,7 @@ var masonryOptions = {
     transitionDuration: 0,
     columnWidth: 317,
     fitWidth: true,
-    gutter: 20
+    gutter: 20,
 };
 
 function LandingPage(props) {
