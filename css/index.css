@@ -142,10 +142,28 @@ input:-webkit-autofill:active {
     border-bottom: 3px solid rgba(64, 83, 87, 1);
 }
 
+/*.username {
+    top: 50%;
+    position: absolute;
+    font-size: 18px;
+    margin: 0 42px;
+    color: #999999;
+    transform: translateX(-50%) translateY(-50%);
+}*/
+
 .navCategory {
-    margin: 0 20px;
+    margin: 0 10px;
 }
 
+/*.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+}
+
+.navbar .navbar-collapse {
+    text-align: center;
+}
+*/
 .loginBtn, .signupBtn {
     margin-right: 3px;
     margin-left: 3px;
@@ -211,7 +229,7 @@ input:-webkit-autofill:active {
     text-align: center;
     margin: 0;
     padding: 70px 30px 45px;
-    margin-top: 50px;
+    margin-top: 70px;
 }
 
 .footer h1 {
@@ -309,7 +327,7 @@ input:-webkit-autofill:active {
 
 .my-gallery-class {
     margin-top: 20px;
-    width: 992px;
+    width: 100%;
 }
 
 .box {
@@ -959,8 +977,10 @@ input:-webkit-autofill:active {
 }
 
 #pagination {
-    position: relative;
-    left: 41.5%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    margin-top: 15px;
 }
 
 .quickViewOuter {
@@ -1288,131 +1308,24 @@ input:-webkit-autofill:active {
     margin: 0 auto;
     margin-top: 40px;
 }
-/*
-.userBox, .userBox > div, .userBox > div > p, .userBackground {
-    margin: 0;
-    padding: 0;
-}
 
-.userBox {
-    position: fixed;
-    text-align: center;
-    width: 100%;
-}
-
-.userBox > div {
-    text-align: center;
-    position: fixed;
-    top: 5%;
-}
-
-.userBox > div > p {
-    font-size: 35px;
-    margin-top: 65px;
-    color: black;
-}
-
-.userBackground {
-    position: fixed;
-    left: 0;
-    width: : auto;
-    max-height: 100%;
-}*/
-
-
-/*@media (max-width: 784px) {
-    html, body {
-        overflow-x: hidden;
-    }
-    .indexPage > div {
-        width: 87%;
-    }
-    .intro > p {
-        margin-top: 20px;
-        width: 94%;
-        font-size: 24px;
-    }
-    .formWrap {
-        margin-top: 20px;
-    }
-    .search_input {
-        width: 265px;
-    }
-    .visible-xs {
-        color: black !important;
+@media screen and (max-width: 768px) {
+    .nav>li {
+        text-align: left;
+        background: #637F83;
+        margin: 2px;
         font-size: 17px;
+        color: white;
     }
-    .visible-xs:hover {
-        color: #228CAB !important;
+    .navbar-default .navbar-nav>li>a {
+        color: white;
     }
-    .submitSearchXs {
-        margin-left: 0;
+    .navCategory {
+        margin: 0;
     }
-    .whatWeDo {
-        font-size: 17px;
+    .navbar-right {
+        margin: 0;
     }
-    .imageFurnitures {
-        max-height: 175px;
-    }
-    .overlay {
-        height: 100%;
-    }
-    .modal-signup {
-        margin-top: 140px;
-    }
-    .itemResults {
-        margin-bottom: 16px;
-        border-color: #c0d0e8;
-    }
-    .productDescription {
-        font-size: 14px;
-        top: 62.5%;
-        width: 89%;
-        height: 190px;       
-    }
-    .imageProductBox {
-        height: 310px;
-    }
-    #imageProduct {
-        max-width: 80%;
-        top: 29.5%;
-        max-height: 280px;
-    }
-    .showFavoritesWrap {
-        top: 10%;
-    }
-    .showFavoritesContainer {
-        padding: 20px 20px 50px 20px;        
-    }
-    .searchResultsContainer {
-        padding: 20px 20px 50px 20px;        
-    }
-    .errorMsgWrap {
-        margin-top: 3%;
-    }
-    .errorMsgWrap h3 {
-        font-size: 17px;
-    }
-    .loginHi {
-        margin-left: 14px;
-    }
-    .userBox > div > p {
-        font-size: 26px;
-        width: 100%;
-        margin-top: 80px;
-    }
-    .heartFav, .changeToRed {
-        left: 94%;
-        font-size: 17px;
-    }
-    .leftArrow {
-        left: 1%;
-    }
-}
-
-*/
-
-@media screen and (max-width: 500px) {
     .intro {
         padding: 30px;
     }
@@ -1443,6 +1356,68 @@ input:-webkit-autofill:active {
         width: 90%;
     }
 }
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .navbar-collapse.collapse {
+        display: none !important;
+    }
+    .navbar-collapse.collapse.in {
+        display: block !important;
+    }
+    .navbar-header .collapse, .navbar-toggle {
+        display:block !important;
+    }
+    .navbar-header {
+        float:none;
+    }
+    /*.navbar-default .navbar-nav>li>a {
+        padding: 20px;
+    }*/
+    .navCategory {
+        margin: 0;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav {
+        float: none !important; 
+    }
+    .navbar-right {
+        padding-right: 15px;
+    }
+    .navbar-nav>li>a {
+        color: white !important;
+    }
+    .nav>li {
+        text-align: left;
+        background: #637F83;
+        margin: 2px;
+        font-size: 17px;
+        color: white;
+    }
+
+}
+
+
+
+/*@media screen and (max-width: 765px) {
+    .nav>li {
+        text-align: left;
+        background: #637F83;
+        margin: 2px;
+        font-size: 17px;
+        color: white;
+    }
+    .navbar-default .navbar-nav>li>a {
+        color: white;
+    }
+    .navCategory {
+        margin: 0;
+    }
+    .navbar-right {
+        margin: 0;
+    }
+}*/
 
 
 

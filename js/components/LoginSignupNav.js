@@ -85,16 +85,16 @@ class LoginSignupNav extends React.Component {
                     </ul>
                     <ul className="nav navbar-nav navbar-right">
                         <li>
-                            <a href="link.html" className="hidden-xs not-active" id="electronics">Hi! {this.props.user}</a>
-                            <a href="link.html" className="visible-xs not-active" data-toggle="collapse" data-target=".navbar-collapse">Hi! {this.props.user}</a>
-                        </li>
-                        <li>
                             <a href="#" className="hidden-xs" id="favLink" onClick={this.getFavoriteItems}>Favorites</a>
                             <a href="#" className="visible-xs" data-toggle="collapse" data-target=".navbar-collapse" onClick={this.getFavoriteItems}>Favorites</a>
                         </li>
                         <li>
                             <a href="#" className="hidden-xs" id="logoutLink" onClick={this.logoutUser}>Log Out</a>
                             <a href="#" className="visible-xs" data-toggle="collapse" data-target=".navbar-collapse" onClick={this.logoutUser}>Log Out</a>
+                        </li>
+                        <li>
+                            <a href="link.html" className="hidden-xs not-active" id="electronics">Hi! {this.props.user}</a>
+                            <a href="link.html" className="visible-xs not-active" data-toggle="collapse" data-target=".navbar-collapse">Hi! {this.props.user}</a>
                         </li>
                     </ul>
                 </div>

@@ -11,17 +11,39 @@ function Logo(props) {
         props.dispatch(actions.returnHome());
         hashHistory.push('/');
     }
-    return (
-        <div className="navbar-header">
-            <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span className="sr-only">Toggle navigation</span>
-                <span className="icon-bar"></span>
-                <span className="icon-bar"></span>
-                <span className="icon-bar"></span>
-            </button>
-            <a className="navbar-brand" href="#" onClick={returnHome}>AmazonBest</a>
-        </div>
-    );
+    if (props.authenticated) {
+        console.log('hi')
+        return (
+            <div className="navbar-header">
+                <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span className="sr-only">Toggle navigation</span>
+                    <span className="icon-bar"></span>
+                    <span className="icon-bar"></span>
+                    <span className="icon-bar"></span>
+                </button>
+                <a className="navbar-brand" href="#" onClick={returnHome}>AmazonBest</a>
+            </div>
+        );
+    } else {
+        return (
+            <div className="navbar-header">
+                <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span className="sr-only">Toggle navigation</span>
+                    <span className="icon-bar"></span>
+                    <span className="icon-bar"></span>
+                    <span className="icon-bar"></span>
+                </button>
+                <a className="navbar-brand" href="#" onClick={returnHome}>AmazonBest</a>
+            </div>
+        );
+    }
+    
 }
 
-export default connect()(Logo);
+const mapStateToProps = (state, props) => ({
+    user: state.user,
+    authenticated: localStorage.authHeaders,
+});
+
+export default connect(mapStateToProps)(Logo);
+
