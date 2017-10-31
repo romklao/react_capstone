@@ -308,13 +308,13 @@ input:-webkit-autofill:active {
 }
 
 .my-gallery-class {
-    margin-top: 20px;
+    margin-top: 10px;
     width: 100%;
 }
 
 .box {
-    width: 317px;
-    margin-bottom: 20px;
+    width: 322px;
+    margin-bottom: 10px;
 
     -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
             box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
@@ -337,13 +337,13 @@ input:-webkit-autofill:active {
 }
 
 .tv {
-    height: 320px;
+    height: 330px;
     background: url('images/tv1.jpg') no-repeat center;
     background-size: cover;
 }
 
 .speaker {
-    height: 469px;
+    height: 479px;
     background: url('images/speaker.jpg') no-repeat center;
     background-size: cover;
 }
@@ -357,7 +357,7 @@ input:-webkit-autofill:active {
 
 .category div {
     height: 170px;
-    width: 317px;
+    width: 322px;
     background: #81A6AC;
     text-align: center;
     display: table;

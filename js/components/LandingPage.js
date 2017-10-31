@@ -7,9 +7,9 @@ import Masonry from 'react-masonry-component';
 var masonryOptions = {
     itemSelector: '.box',
     transitionDuration: 0,
-    columnWidth: 317,
+    columnWidth: 322,
     fitWidth: true,
-    gutter: 20,
+    gutter: 10,
 };
 
 function LandingPage(props) {
@@ -52,9 +52,9 @@ function LandingPage(props) {
                     <a href="https://www.amazon.com/HP-Pavilion-22cwa-21-5-inch-Backlit/dp/B015WCV70W/
                     ref=zg_bs_electronics_21?_encoding=UTF8&psc=1&refRID=71HK07CZ0HB1PK7GPX6R" target="_blank"></a>
                 </div>
-                <div className="box fireTV">
-                    <a href="https://www.amazon.com/Amazon-Fire-TV-Stick-With-Alexa-Voice-Remote-Streaming-Media-Player/dp/B00ZV9RDKK/
-                    ref=zg_bs_electronics_1?_encoding=UTF8&psc=1&refRID=M39Q395AYPY6BSRMQMCZ" target="_blank"></a>
+                <div className="box clay">
+                    <a href="https://www.amazon.com/Aztec-Secret-Indian-Healing-Cleansing/dp/B0014P8L9W/
+                    ref=zg_bs_beauty_1?_encoding=UTF8&psc=1&refRID=2H3845NQ5H3TJG506F3Y" target="_blank"></a>
                 </div>
                 <div className="box category">
                     <div>
@@ -64,10 +64,6 @@ function LandingPage(props) {
                 <div className="box olay">
                     <a href="https://www.amazon.com/Olay-Regenerist-Regenerating-Anti-Aging-Fragrance/dp/B0081NLR0K/
                     ref=sr_1_9_s_it?s=beauty&ie=UTF8&qid=1509159586&sr=1-9&keywords=serum&th=1" target="_blank"></a>
-                </div>
-                <div className="box clay">
-                    <a href="https://www.amazon.com/Aztec-Secret-Indian-Healing-Cleansing/dp/B0014P8L9W/
-                    ref=zg_bs_beauty_1?_encoding=UTF8&psc=1&refRID=2H3845NQ5H3TJG506F3Y" target="_blank"></a>
                 </div>
                 <div className="box truskin">
                     <a href="https://www.amazon.com/TruSkin-Naturals-Vitamin-Anti-Aging-Hyaluronic/dp/B01M4MCUAF/
