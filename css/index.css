@@ -256,7 +256,7 @@ input:-webkit-autofill:active {
 
 .intro {
     background-color: #81A6AC; /* #B3E5FC #D1CABB*/
-    padding: 50px 65px 50px 50px;
+    padding: 50px 65px 65px 50px;
 }
 
 .intro > h1 {
@@ -280,7 +280,7 @@ input:-webkit-autofill:active {
 }
 
 .introImg {
-    height: 384px;
+    height: 399px;
     background: url('images/kindle2.jpg') no-repeat center;
     background-size: cover;
     margin: 0;
