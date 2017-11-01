@@ -147,7 +147,7 @@ class ItemView extends React.Component {
                         </div>
                     </div>
                     <div className="productTitleListBox">
-                        <span className="fullPriceCrossGrey"><span className="fullPriceList">{fullPrice}</span></span>
+                        <span className="fullPriceCross"><span className="fullPriceList">{fullPrice}</span></span>
                         <span className="priceList">{salePrice}</span>
                         <span className="saveList">{save}</span>
                     </div>

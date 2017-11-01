@@ -1099,7 +1099,8 @@ input:-webkit-autofill:active {
 }
 
 .fullPriceList {
-    color: #66757f;    
+    color: #66757f;
+    font-size: 16px;
 }
 
 .saveList, .save {
