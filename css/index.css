@@ -113,6 +113,15 @@ input:-webkit-autofill:active {
     transition: background-color 5000s ease-in-out 0s;
 }
 
+.landing, .bestselling, .box, .child {
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: '' 0 1px 1px rgba(0, 0, 0, 0.2) 1px 2px rgba(0, 0, 0, 0.2);
+       -moz-box-shadow: '' 0 1px 1px rgba(0, 0, 0, 0.2) 1px 2px rgba(0, 0, 0, 0.2);
+         -o-box-shadow: '' 0 1px 1px rgba(0, 0, 0, 0.2) 1px 2px rgba(0, 0, 0, 0.2);
+            box-shadow: '' 0 1px 1px rgba(0, 0, 0, 0.2) 1px 2px rgba(0, 0, 0, 0.2);
+}
+
 .btn {
     margin-left: 2px;
     margin-right: 2px;
@@ -245,15 +254,6 @@ input:-webkit-autofill:active {
     font-weight: bold;
 }
 
-.landing, .bestselling {
-    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-    -webkit-box-shadow: '' 0 1px 1px rgba(0, 0, 0, 0.2) 1px 2px rgba(0, 0, 0, 0.2);
-       -moz-box-shadow: '' 0 1px 1px rgba(0, 0, 0, 0.2) 1px 2px rgba(0, 0, 0, 0.2);
-         -o-box-shadow: '' 0 1px 1px rgba(0, 0, 0, 0.2) 1px 2px rgba(0, 0, 0, 0.2);
-            box-shadow: '' 0 1px 1px rgba(0, 0, 0, 0.2) 1px 2px rgba(0, 0, 0, 0.2);
-}
-
 .intro {
     background-color: #81A6AC; /* #B3E5FC #D1CABB*/
     padding: 50px 65px 50px 50px;
@@ -314,12 +314,12 @@ input:-webkit-autofill:active {
     width: 324px;
     margin-bottom: 10px;
 
-    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    /*-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
             box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
     -webkit-box-shadow: '' 0 1px 1px rgba(0, 0, 0, 0.2) 1px 2px rgba(0, 0, 0, 0.2);
        -moz-box-shadow: '' 0 1px 1px rgba(0, 0, 0, 0.2) 1px 2px rgba(0, 0, 0, 0.2);
          -o-box-shadow: '' 0 1px 1px rgba(0, 0, 0, 0.2) 1px 2px rgba(0, 0, 0, 0.2);
-            box-shadow: '' 0 1px 1px rgba(0, 0, 0, 0.2) 1px 2px rgba(0, 0, 0, 0.2);
+            box-shadow: '' 0 1px 1px rgba(0, 0, 0, 0.2) 1px 2px rgba(0, 0, 0, 0.2);*/
 }
 
 .kindle {
@@ -1283,6 +1283,9 @@ input:-webkit-autofill:active {
     .intro h1 {
         margin-bottom: 17px;
         font-size: 44px;
+    }
+    .indexPageWrap {
+        width: 81%;
     }
     .quickViewMiddle {
         width: 90%;
