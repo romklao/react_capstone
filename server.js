@@ -168,6 +168,22 @@ app.post('/login',
     (req, res) => res.json({user: req.user.apiRepr()})
 );
 
+// <-------- Data has $ so we could not save datas in the app's API. 
+// We need to clean $ first before storing datas. --------->
+
+function cleanDollars(obj) {
+  for (var property in obj) {
+    if (obj.hasOwnProperty(property)) {
+      if (property[0] === '$') {
+        delete obj[property];
+      } else if (typeof obj[property] == "object") {
+        cleanDollars(obj[property]);
+      }
+    }
+  }
+  return obj;
+}
+
 // <----------- Retrieve data from Amazon API -------------->
 
 var amazon = require('amazon-product-api');
@@ -198,22 +214,21 @@ app.get('/amazon/search', function(req, res){
       res.json(data);
     }
   );
-});
+}); 
 
-// <-------- Data has $ so we could not save datas in the app's API. 
-// We need to clean $ first before storing datas. --------->
+app.get('/amazon/product_details', function(req, res){
+  var asin = req.query.ASIN;
 
-function cleanDollars(obj) {
-  for (var property in obj) {
-    if (obj.hasOwnProperty(property)) {
-      if (property[0] === '$') {
-        delete obj[property];
-      } else if (typeof obj[property] == "object") {
-        cleanDollars(obj[property]);
-      }
+  client.itemLookup({
+    idType: 'asin',
+    responseGroup: 'ItemAttributes, Offers, Images, Reviews, PromotionSummary'
+  }, function(err, results) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.json(data);
     }
-  }
-  return obj;
+  });
 }
 
 app.post('/favorites',

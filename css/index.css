@@ -255,9 +255,8 @@ input:-webkit-autofill:active {
 }
 
 .intro {
-    height: 387px;
     background-color: #81A6AC; /* #B3E5FC #D1CABB*/
-    padding: 50px;
+    padding: 50px 65px 50px 50px;
 }
 
 .intro > h1 {
@@ -268,7 +267,7 @@ input:-webkit-autofill:active {
     font-weight: bold;
     margin: 0;
     padding: 0;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
 }
 
 .intro > p {
@@ -281,7 +280,7 @@ input:-webkit-autofill:active {
 }
 
 .introImg {
-    height: 387px;
+    height: 384px;
     background: url('images/kindle2.jpg') no-repeat center;
     background-size: cover;
     margin: 0;
@@ -303,7 +302,6 @@ input:-webkit-autofill:active {
     background: white;
     color: #415357;
     font-size: 40px;
-    font-weight: bold;
     margin: 0;
 }
 
@@ -313,7 +311,7 @@ input:-webkit-autofill:active {
 }
 
 .box {
-    width: 322px;
+    width: 324px;
     margin-bottom: 10px;
 
     -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
@@ -357,7 +355,7 @@ input:-webkit-autofill:active {
 
 .category div {
     height: 170px;
-    width: 322px;
+    width: 324px;
     background: #81A6AC;
     text-align: center;
     display: table;
@@ -1287,13 +1285,11 @@ input:-webkit-autofill:active {
         margin: 0;
     }
     .intro {
-        padding: 30px;
+        padding: 40px;
     }
     .intro h1 {
-        margin-bottom: 40px;
-    }
-    .indexPageWrap {
-        width: 100%;
+        margin-bottom: 17px;
+        font-size: 44px;
     }
     .quickViewMiddle {
         width: 90%;
@@ -1358,9 +1354,12 @@ input:-webkit-autofill:active {
 
 }
 
-
-
-
+/*@media (min-width: 440px) and (max-width: 992px) {
+    .intro > h1 {
+        margin-bottom: 30px;
+        font-size: 47px;
+    }
+}*/
 
 
 
