@@ -229,7 +229,7 @@ app.get('/amazon/product_details', function(req, res){
       res.json(data);
     }
   });
-}
+});
 
 app.post('/favorites',
     passport.authenticate(
