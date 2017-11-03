@@ -3,11 +3,14 @@ import {connect} from 'react-redux';
 
 import * as actions from '../actions/index';
 import Iframe from 'react-iframe';
+import {Router, Route, IndexRoute, IndexRedirect, hashHistory, browserHistory} from 'react-router';
 import ProductView from './ProductView';
 
 class ProductPageView extends React.Component {
     constructor(props) {
         super(props);
+
+        this.props.dispatch(actions.searchProductDetails(this.props.location.query.ASIN));
     }
 
     render () {

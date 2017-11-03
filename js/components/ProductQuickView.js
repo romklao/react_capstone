@@ -17,7 +17,6 @@ class ProductQuickView extends React.Component {
     hide(event) {
         event.preventDefault();
         this.props.dispatch(actions.hide());
-        this.showProductDetails = this.showProductDetails.bind(this);
     };
 
     showProductDetails() {

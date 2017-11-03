@@ -217,14 +217,14 @@ app.get('/amazon/search', function(req, res){
 }); 
 
 app.get('/amazon/product_details', function(req, res){
-  var asin = req.query.ASIN;
-
   client.itemLookup({
-    idType: 'asin',
+    idType: 'ASIN',
+    itemId: req.query.ASIN,
     responseGroup: 'ItemAttributes, Offers, Images, Reviews, PromotionSummary'
-  }, function(err, results) {
+  }, function(err, data) {
     if (err) {
-      console.log(err);
+      console.log('err', err);
+      res.json(err)
     } else {
       res.json(data);
     }

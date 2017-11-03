@@ -24,7 +24,6 @@ export class LoginModal extends React.Component {
     onSubmit(event) {
         event.preventDefault();
         this.props.dispatch(actions.loginForm(this.state));
-        // hashHistory.push('/');
     }
 
     hide(event) {

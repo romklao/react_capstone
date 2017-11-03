@@ -93,8 +93,6 @@ export const loginForm = (userData) => dispatch => {
     .then(data => {
         localStorage.authHeaders = fetchData.headers.Authorization;
         localStorage.username = data.user.username;
-        // hashHistory.push('/user');
-        // window.location = '/';
         return dispatch(loginSuccess(data.user.username));
     })
     .catch(error => {
@@ -124,6 +122,32 @@ export const LOG_OUT_USER = 'LOG_OUT_USER';
 export const logoutUser = () => ({
     type: LOG_OUT_USER
 })
+
+export const searchProductDetails = asin => dispatch => {
+    let url = `/amazon/product_details?ASIN=${asin}`;
+    let fetchData = {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json',
+            },
+    }
+    return fetch(url, fetchData).then(response => {
+        if (!response.ok) {
+            throw Error(response.statusText);
+        }
+        return response;
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('datadetails', data);
+        return dispatch(showProductDetails(data[0]));
+    })
+    .catch(error => {
+        console.error(error.stack);
+        return dispatch(searchError(error.message));
+    })
+}
 
 export const searchSubmit = (search_text, category, page) => dispatch => {
     dispatch(makeSearchSubmitMsg(search_text));

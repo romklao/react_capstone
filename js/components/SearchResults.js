@@ -4,14 +4,13 @@ import {connect} from 'react-redux';
 import * as actions from '../actions/index';
 import ItemView from './ItemView';
 import Pagination from './Pagination';
-import {Router, Route, IndexRoute, IndexRedirect, hashHistory, browserHistory} from 'react-router';
 import LandingPageContainer from './LandingPageContainer';
 import Footer from './Footer';
 
 class SearchResults extends React.Component {
     constructor(props) {
         super(props);
-        
+
         this.props.dispatch(actions.searchSubmit(this.props.location.query.keywords, 
                                                  this.props.location.query.category,
                                                  this.props.location.query.page));

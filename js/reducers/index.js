@@ -145,7 +145,7 @@ export const decorHomeReducer = function(state, action) {
                 isLoading: false
             }
         );
-        console.warn('error', action.error);
+        // console.warn('error', action.error);
         return state;
 
     } else if (action.type === actions.SHOW_PRODUCT_DETAILS) {

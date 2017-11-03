@@ -19,7 +19,6 @@ class ProductView extends React.Component {
         this.nextImage = this.nextImage.bind(this);
         this.hide = this.hide.bind(this);
         this.setImage = this.setImage.bind(this);
-        this.showProductDetails = this.showProductDetails.bind(this);
     }
 
     addFavoriteItems() {
@@ -60,14 +59,10 @@ class ProductView extends React.Component {
         this.props.dispatch(actions.hide());
     };
 
-    showProductDetails() {
-        this.props.dispatch(actions.showProductDetails(this.props.productDetails));
-        this.props.dispatch(actions.hide());
-        hashHistory.push(`/product_details?ASIN=${this.props.productDetails.ASIN}`);
-        window.scrollTo(0, 0);
-    }
-
     render () {
+        if(this.props.productDetails === null) {
+            console.log('No product details for?')
+        }
         if(this.props.productDetails) {
             let item = this.props.productDetails;
             let imageUrl;
