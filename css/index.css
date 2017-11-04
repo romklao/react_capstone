@@ -145,10 +145,10 @@ input:-webkit-autofill:active {
 }
 
 .navbar-brand {
-    color: #205172 !important;
+    color: #004c40 !important;
     font-size: 23px;
     font-weight: bold;
-    border-bottom: 3px solid #22638e;
+    border-bottom: 3px solid #00796b;
 }
 
 .navCategory {
@@ -255,14 +255,14 @@ input:-webkit-autofill:active {
 }
 
 .intro {
-    background-color: #1D5A83; /* #B3E5FC #D1CABB*/
+    background-color: #48a999; /* #B3E5FC #D1CABB*/
     padding: 40px 65px 60px 50px;
 }
 
 .intro > h1 {
     font-size: 47px;
     font-weight: bold;
-    color: #c7e5f9;
+    color: #004c40;
     line-height: 1.2em;
     font-weight: bold;
     margin: 0;
@@ -274,14 +274,14 @@ input:-webkit-autofill:active {
     display: inline;
     width: 82%;
     font-size: 21px;
-    border-bottom: 3px solid #4b8cb7;
+    border-bottom: 3px solid #00796b;
     color: white;
     padding: 5px;
 }
 
 .introImg {
     height: 384px;
-    background: url('images/kindle2.jpg') no-repeat center;
+    background: url('images/kindleOutdoor.jpg') no-repeat center;
     background-size: cover;
     margin: 0;
     padding: 0;
@@ -357,7 +357,7 @@ input:-webkit-autofill:active {
 .category div {
     height: 170px;
     width: 324px;
-    background: #1D5A83;
+    background: #48a999;
     text-align: center;
     display: table;
 }
