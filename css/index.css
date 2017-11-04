@@ -145,10 +145,10 @@ input:-webkit-autofill:active {
 }
 
 .navbar-brand {
-    color: #004c40 !important;
+    color: #62757f !important;
     font-size: 23px;
     font-weight: bold;
-    border-bottom: 3px solid #00796b;
+    border-bottom: 3px solid #62757f;
 }
 
 .navCategory {
@@ -216,7 +216,7 @@ input:-webkit-autofill:active {
 
 .footer {
     width: 100%;
-    background: #424242; /*#424242;*/
+    background: #62757f; /*#424242;*/
     text-align: center;
     margin: 0;
     padding: 70px 30px 45px;
@@ -224,7 +224,7 @@ input:-webkit-autofill:active {
 }
 
 .footer h1 {
-    color: #CCCFCF;
+    color: white;
     margin: 0;
     font-weight: bold;
 }
@@ -238,7 +238,7 @@ input:-webkit-autofill:active {
 }
 
 .footer p {
-    color: #CCCFCF;
+    color: white;
 }
 
 .copyright {
@@ -255,7 +255,7 @@ input:-webkit-autofill:active {
 }
 
 .intro {
-    background-color: #48a999; /* #B3E5FC #D1CABB*/
+    background-color: #90a4ae; /* #B3E5FC #D1CABB*/
     padding: 40px 65px 60px 50px;
 }
 
@@ -274,7 +274,7 @@ input:-webkit-autofill:active {
     display: inline;
     width: 82%;
     font-size: 21px;
-    border-bottom: 3px solid #00796b;
+    border-bottom: 3px solid #62757f;
     color: white;
     padding: 5px;
 }
@@ -357,7 +357,7 @@ input:-webkit-autofill:active {
 .category div {
     height: 170px;
     width: 324px;
-    background: #48a999;
+    background: #90a4ae;
     text-align: center;
     display: table;
 }
@@ -898,12 +898,12 @@ input:-webkit-autofill:active {
 }
 
 .leftArrow {
-    left: 7.3%;
+    left: 3.75%;
     transform: translateX(-50%) translateY(-50%);
 }
 
 .rightArrow {
-    left: 92.8%;
+    left: 96.2%;
     transform: translateX(-50%) translateY(-50%);
 }
 
@@ -1017,6 +1017,7 @@ input:-webkit-autofill:active {
     display: table-cell;
     vertical-align: middle;
     text-align: center;
+    position: relative;
 }
 
 .productDetailsOuter {
@@ -1355,7 +1356,7 @@ input:-webkit-autofill:active {
 
 }
 
-@media (min-width: 992px) and (max-width: 1100px) {
+/*@media (min-width: 992px) and (max-width: 1100px) {
     .leftArrow {
     left: 8.4%;
     transform: translateX(-50%) translateY(-50%);
@@ -1368,7 +1369,7 @@ input:-webkit-autofill:active {
 }
 
 
-
+*/
 
 
 
