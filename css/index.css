@@ -216,7 +216,7 @@ input:-webkit-autofill:active {
 
 .footer {
     width: 100%;
-    background: #424242;
+    background: #424242; /*#424242;*/
     text-align: center;
     margin: 0;
     padding: 70px 30px 45px;
@@ -262,7 +262,7 @@ input:-webkit-autofill:active {
 .intro > h1 {
     font-size: 47px;
     font-weight: bold;
-    color: #004c40;
+    color: white; /*#033f1e;*/
     line-height: 1.2em;
     font-weight: bold;
     margin: 0;

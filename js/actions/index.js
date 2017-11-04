@@ -124,6 +124,8 @@ export const logoutUser = () => ({
 })
 
 export const searchProductDetails = asin => dispatch => {
+    dispatch(makeSearchSubmitMsg(asin));
+
     let url = `/amazon/product_details?ASIN=${asin}`;
     let fetchData = {
             method: 'GET',
