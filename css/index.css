@@ -909,8 +909,8 @@ input:-webkit-autofill:active {
 
 .heartFav {
     position: absolute;
-    left: 87%;
-    top: 6%;
+    left: 83%;
+    top: 10%;
     font-size: 19px;
     color: #b9bdbf;
     border: none;
