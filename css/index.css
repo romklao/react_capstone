@@ -301,7 +301,7 @@ input:-webkit-autofill:active {
     padding: 15px;
     background: white;
     color: #415357;
-    font-size: 40px;
+    font-size: 35px;
     margin: 0;
 }
 
@@ -318,7 +318,7 @@ input:-webkit-autofill:active {
 }
 
 .box {
-    width: 324px;
+    width: 320px;
     margin-bottom: 10px;
     float: left;
 }
@@ -356,7 +356,7 @@ input:-webkit-autofill:active {
 
 .category div {
     height: 170px;
-    width: 324px;
+    width: 320px;
     background: #90a4ae;
     text-align: center;
     display: table;
@@ -412,7 +412,7 @@ input:-webkit-autofill:active {
 }
 
 
-/* Image zoom on hover + Overlay colour */
+/* Image zoom on hover + Overlay color */
 
 .wrapper {
     max-width: 100%;

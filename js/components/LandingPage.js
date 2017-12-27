@@ -7,7 +7,7 @@ import Masonry from 'react-masonry-component';
 var masonryOptions = {
     itemSelector: '.box',
     transitionDuration: 0,
-    columnWidth: 324,
+    columnWidth: 320,
     isFitWidth: true,
     gutter: 10,
 };
