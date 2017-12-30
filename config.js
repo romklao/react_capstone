@@ -9,7 +9,3 @@ exports.AWSID = process.env.AWSID;
 exports.AWSSECRET = process.env.AWSSECRET;
 exports.AWSTAG = process.env.AWSTAG; 
 
-// Access Key ID:
-// AKIAJ6RQXN4KVS2AGDMQ
-// Secret Access Key:
-// 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
